@@ -15,8 +15,8 @@ export default function Navigation() {
   return (
     <nav className="text-lg font-bold">
       <div className="fixed right-5 top-5">
-        <button onClick={showMenu} className="uppercase">
-          Menu
+        <button onClick={showMenu}>
+          <span className="material-symbols-outlined">menu</span>
         </button>
       </div>
       <ul

@@ -2,7 +2,7 @@ export default function HeroSection() {
   return (
     <div
       id="hero"
-      className="flex min-h-screen items-center justify-center bg-stone-800 text-4xl font-black md:text-5xl lg:text-7xl"
+      className="flex min-h-screen items-center justify-center text-4xl font-black md:text-5xl lg:text-7xl"
     >
       <h1 className="text-right leading-tight">
         <span className="opacity-10">Hey! </span>
