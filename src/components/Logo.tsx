@@ -8,7 +8,7 @@ export default function Logo() {
         onClick={handleClickToTop}
         className="text-lg font-bold uppercase"
       >
-        Edward Vonschondorf
+        Edward Vonschondorf<span className="lowercase text-sm">.dev</span>
       </button>
     </div>
   );
