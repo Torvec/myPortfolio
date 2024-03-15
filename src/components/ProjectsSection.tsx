@@ -2,14 +2,17 @@ import { motion } from "framer-motion";
 import projectsData from "../data/projectsData.json";
 
 const ProjectsList = () => {
+ 
   const reversedProjects = [...projectsData].reverse();
 
   return (
-    <section className="grid grid-cols-1 gap-5 px-10 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
+    <div
+      className="grid grid-cols-1 gap-5 px-10 md:grid-cols-2 md:gap-10 lg:grid-cols-3"
+    >
       {reversedProjects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
-    </section>
+    </div>
   );
 };
 

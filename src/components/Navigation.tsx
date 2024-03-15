@@ -13,49 +13,49 @@ export default function Navigation() {
     }
   };
   return (
-    <nav className="text-lg font-bold">
-      <div className="fixed right-5 top-5">
-        <button onClick={showMenu}>
-          <span className="material-symbols-outlined">menu</span>
-        </button>
-      </div>
-      <ul
-        className="fixed right-5 top-14 hidden bg-white text-stone-500"
+    <>
+      <button onClick={showMenu}>
+        <span className="material-symbols-outlined">menu</span>
+      </button>
+      <div
         id="menu"
+        className="fixed right-5 top-14 hidden bg-white text-stone-500"
       >
-        <li>
-          <button
-            className="px-3 py-4 uppercase"
-            onClick={() => handleClickToSection("about")}
-          >
-            About Me
-          </button>
-        </li>
-        <li>
-          <button
-            className="px-3 py-4 uppercase"
-            onClick={() => handleClickToSection("projects")}
-          >
-            Projects
-          </button>
-        </li>
-        <li>
-          <button
-            className="px-3 py-4 uppercase"
-            onClick={() => handleClickToSection("resume")}
-          >
-            Resume
-          </button>
-        </li>
-        <li>
-          <button
-            className="px-3 py-4 uppercase"
-            onClick={() => handleClickToSection("contact")}
-          >
-            Contact
-          </button>
-        </li>
-      </ul>
-    </nav>
+        <ul>
+          <li>
+            <button
+              className="px-3 py-2 uppercase"
+              onClick={() => handleClickToSection("about")}
+            >
+              About Me
+            </button>
+          </li>
+          <li>
+            <button
+              className="px-3 py-2 uppercase"
+              onClick={() => handleClickToSection("projects")}
+            >
+              Projects
+            </button>
+          </li>
+          <li>
+            <button
+              className="px-3 py-2 uppercase"
+              onClick={() => handleClickToSection("resume")}
+            >
+              Resume
+            </button>
+          </li>
+          <li>
+            <button
+              className="px-3 py-2 uppercase"
+              onClick={() => handleClickToSection("contact")}
+            >
+              Contact
+            </button>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 }

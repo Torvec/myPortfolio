@@ -3,13 +3,8 @@ export default function Logo() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="fixed left-5 top-5">
-      <button
-        onClick={handleClickToTop}
-        className="text-lg font-bold uppercase"
-      >
-        Edward Vonschondorf<span className="lowercase text-sm">.dev</span>
-      </button>
-    </div>
+    <button onClick={handleClickToTop} className="text-lg font-bold uppercase">
+      Edward Vonschondorf<span className="text-sm lowercase">.dev</span>
+    </button>
   );
 }
