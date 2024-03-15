@@ -1,14 +1,10 @@
-import { motion } from "framer-motion";
 import projectsData from "../data/projectsData.json";
 
 const ProjectsList = () => {
- 
   const reversedProjects = [...projectsData].reverse();
 
   return (
-    <div
-      className="grid grid-cols-1 gap-5 px-10 md:grid-cols-2 md:gap-10 lg:grid-cols-3"
-    >
+    <div className="grid grid-cols-1 gap-5 px-5 md:grid-cols-2 md:gap-10 md:px-10 lg:grid-cols-3 lg:gap-20 lg:px-20">
       {reversedProjects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
@@ -18,54 +14,64 @@ const ProjectsList = () => {
 
 interface Project {
   id: number;
-  imageURL?: string | null;
-  title: string;
-  dateCompleted?: string | null;
+  projectName: string;
+  imageURL?: string;
+  repositoryURL?: string;
+  deploymentURL?: string | null;
   status?: string;
+  dateCompleted?: string | null;
 }
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  const { id, imageURL, title, dateCompleted, status } = project;
+  const {
+    projectName,
+    imageURL,
+    repositoryURL,
+    deploymentURL,
+    status,
+    dateCompleted,
+  } = project;
 
   return (
-    <motion.div
-      initial={{}}
-      whileInView={{
-        transition: { duration: 0.3, ease: "easeInOut", stiffness: 260 },
-      }}
-      whileHover={{
-        x: -8,
-        y: -8,
-        transition: { duration: 0.3, ease: "easeInOut", stiffness: 260 },
-      }}
-      className="border-1 flex max-w-full flex-col border-stone-950 bg-stone-200 hover:bg-stone-200"
-    >
-      <a href={`${id}`}>
-        {imageURL ? (
-          <img
-            src={`/assets/img/${imageURL}`}
-            alt={title}
-            className="h-96 w-full border-b-2 border-stone-950 object-cover"
-          />
+    <div className="border-2 border-stone-700 bg-stone-500">
+      {/* TODO: Image Area  */}
+      <div>
+        <img
+          src={imageURL}
+          alt={projectName}
+          className="h-full w-full object-contain"
+        />
+      </div>
+      {/* TODO: Name, Status, Date Area */}
+      <div className="bg-stone-200 p-5 text-stone-900">
+        <p className="text-xl">{projectName}</p>
+        <p className="text-lg">
+          {status} {dateCompleted}
+        </p>
+      </div>
+      <div className="flex divide-x-2 divide-stone-900 border-t-2 border-stone-900 bg-stone-300 text-center text-lg text-stone-500">
+        <a
+          href={repositoryURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-1/2 p-2 text-orange-600 hover:bg-stone-400 hover:text-stone-100"
+        >
+          Repository
+        </a>
+        {deploymentURL ? (
+          <a
+            href={deploymentURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-1/2 p-2 text-orange-600 hover:bg-stone-400 hover:text-stone-100"
+          >
+            Deployment
+          </a>
         ) : (
-          <p className="flex h-96 w-full items-center justify-center border-b-2 border-stone-950 bg-stone-300 font-bold">
-            Image Not Available - Work In Progress
-          </p>
+          <span className="w-1/2 p-2">Deployment</span>
         )}
-        <div className="p-5">
-          <h4 className="text-2xl">{title}</h4>
-          <p className="text-lg">
-            {dateCompleted ? (
-              <>
-                {status} {dateCompleted}
-              </>
-            ) : (
-              <>Under Development</>
-            )}
-          </p>
-        </div>
-      </a>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 
