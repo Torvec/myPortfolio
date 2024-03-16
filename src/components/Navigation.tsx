@@ -1,5 +1,5 @@
 export default function Navigation() {
-  const showMenu = () => {
+  const toggleMenu = () => {
     const menu = document.getElementById("menu");
     if (menu) {
       menu.classList.toggle("hidden");
@@ -12,48 +12,44 @@ export default function Navigation() {
       window.scrollTo({ top: rect.top + window.scrollY, behavior: "smooth" });
     }
   };
+  function MenuItem({
+    children,
+    anchor,
+  }: {
+    children: string;
+    anchor: string;
+  }) {
+    return (
+      <li>
+        <button
+          className="px-3 py-2 uppercase"
+          onClick={() => handleClickToSection(anchor)}
+        >
+          {children}
+        </button>
+      </li>
+    );
+  }
   return (
     <>
-      <button onClick={showMenu}>
+      <button onClick={toggleMenu}>
         <span className="material-symbols-outlined">menu</span>
       </button>
+      {/* POP OUT MENU STARTS HERE */}
       <div
         id="menu"
-        className="fixed right-5 top-14 hidden bg-white text-stone-500"
+        className="fixed right-0 top-0 z-10 hidden h-screen w-screen bg-stone-200/90 text-stone-600 lg:w-1/2"
       >
-        <ul>
-          <li>
-            <button
-              className="px-3 py-2 uppercase"
-              onClick={() => handleClickToSection("about")}
-            >
-              About Me
-            </button>
-          </li>
-          <li>
-            <button
-              className="px-3 py-2 uppercase"
-              onClick={() => handleClickToSection("projects")}
-            >
-              Projects
-            </button>
-          </li>
-          <li>
-            <button
-              className="px-3 py-2 uppercase"
-              onClick={() => handleClickToSection("resume")}
-            >
-              Resume
-            </button>
-          </li>
-          <li>
-            <button
-              className="px-3 py-2 uppercase"
-              onClick={() => handleClickToSection("contact")}
-            >
-              Contact
-            </button>
-          </li>
+        <div className="flex justify-end border-b-2 border-stone-400 p-4">
+          <button onClick={toggleMenu}>
+            <span className="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <ul className="grid h-full place-content-evenly text-5xl lg:text-8xl">
+          <MenuItem anchor="about">About Me</MenuItem>
+          <MenuItem anchor="projects">Projects</MenuItem>
+          <MenuItem anchor="resume">Resume</MenuItem>
+          <MenuItem anchor="contact">Contact</MenuItem>
         </ul>
       </div>
     </>

@@ -25,6 +25,7 @@ export default function ProjectsSection() {
   return (
     <motion.div
       ref={ref}
+      id="projects"
       className="grid grid-cols-1 gap-5 px-5 md:grid-cols-2 md:gap-10 md:px-10 lg:grid-cols-3 lg:gap-20 lg:px-20"
       animate={isInView ? "inView" : "initial"}
       variants={cardVariants}
