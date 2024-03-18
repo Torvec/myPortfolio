@@ -1,67 +1,24 @@
 {
-  "experience": [
+  "resume": [
     {
+      "type": "experience",
+      "startDate": "2023-10",
+      "endDate": "Present",
       "company": "Freelance",
-      "dates": "Oct 2023 - Present",
       "title": "Full Stack Web Developer",
       "location": "Fremont, CA, USA",
-      "accomplishments": [
+      "details": [
         "Continuously and enthusiastically learning new technologies and languages.",
         "Adding to my portfolio by creating new personal projects and collaborating with my fellow UC Berkeley Extension alumni."
       ]
     },
     {
-      "company": "Tesla Motors Inc.",
-      "dates": "Oct 2019 - Jan 2024",
-      "title": "Automation Controls Technician IV",
-      "location": "Fremont, CA, USA",
-      "accomplishments": [
-        "Actively pursued and completed various complex projects from engineering at every opportunity.",
-        "Utilized multiple PLC programs to troubleshoot, make modifications, and add functionality to existing equipment.",
-        "The go-to technician for any critical system that had a major fault or was down for long periods of time.",
-        "Proficient in delivering comprehensive training to team members."
-      ]
-    },
-    {
-      "company": "Tesla Motors Inc.",
-      "dates": "Oct 2019 - Sep 2020",
-      "title": "Equipment Maintenance Technician II",
-      "location": "Fremont, CA, USA",
-      "accomplishments": [
-        "Troubleshot, diagnosed, and corrected hundreds of faults.",
-        "Learned the intricacies of multiple systems with no prior knowledge.",
-        "Collaborated with engineering to commission new equipment.",
-        "Monitored and analyzed recurring problems with various equipment."
-      ]
-    },
-    {
-      "company": "United States Navy",
-      "dates": "Dec 2010 - Oct 2018",
-      "title": "Electronics Technician",
-      "location": "Yokosuka & Sasebo, Japan",
-      "accomplishments": [
-        "Consistently scored up to 90% on over a dozen ship-wide certifications and inspections.",
-        "Maintained 3 radars and corrected over 25 major and minor system casualties.",
-        "Significantly increased calibration readiness of all 455 electronic test equipment units onboard.",
-        "Aggressively and thoroughly trained 47 personnel."
-      ]
-    },
-    {
-      "company": "Freelance",
-      "dates": "Jun 2005 - Dec 2010",
-      "title": "Front-End Web Developer",
-      "location": "Atlanta, GA, USA",
-      "accomplishments": [
-        "Designed, developed, and maintained several small business and school websites.",
-        "Created web content for various promotional advertisements."
-      ]
-    }
-  ],
-  "education": [
-    {
+      "type": "education",
+      "startDate": "2023-04",
+      "endDate": "2023-10",
       "institution": "UC Berkeley Extension",
       "program": "Full Stack Web Development Course",
-      "dates": "Apr 2023 - Oct 2023",
+      "location": "Online",
       "details": [
         "24-week, part-time web development boot camp.",
         "Full stack curriculum includes HTML5, CSS3, JavaScript, jQuery, Bootstrap, Express.js, React.js, databases, MongoDB, Node.js, MySQL, Command Line, Git, and more.",
@@ -72,18 +29,66 @@
       ]
     },
     {
+      "type": "education",
+      "startDate": "2022-12",
+      "endDate": "2022-12",
       "institution": "E and M Training Course",
       "program": "Siemens TIA Portal Software Development I/II",
-      "dates": "Dec 2022",
+      "location": "Fremont, CA, USA",
       "details": [
         "Two-part instructor-led, hands-on course using TIA Portal software to integrate PLC, HMI, and Variable Frequency Drive (VFD) controls.",
         "Learned how to program in Ladder Logic, Function Block Diagrams, Sequential Function Charts, and Structured Text."
       ]
     },
     {
+      "type": "experience",
+      "startDate": "2020-09",
+      "endDate": "2024-01",
+      "company": "Tesla Motors Inc.",
+      "title": "Automation Controls Technician IV",
+      "location": "Fremont, CA, USA",
+      "details": [
+        "Actively pursued and completed various complex projects from engineering at every opportunity.",
+        "Utilized multiple PLC programs to troubleshoot, make modifications, and add functionality to existing equipment.",
+        "The go-to technician for any critical system that had a major fault or was down for long periods of time.",
+        "Proficient in delivering comprehensive training to team members."
+      ]
+    },
+    {
+      "type": "experience",
+      "startDate": "2019-10",
+      "endDate": "2020-09",
+      "company": "Tesla Motors Inc.",
+      "title": "Equipment Maintenance Technician II",
+      "location": "Fremont, CA, USA",
+      "details": [
+        "Troubleshot, diagnosed, and corrected hundreds of faults.",
+        "Learned the intricacies of multiple systems with no prior knowledge.",
+        "Collaborated with engineering to commission new equipment.",
+        "Monitored and analyzed recurring problems with various equipment."
+      ]
+    },
+    {
+      "type": "experience",
+      "startDate": "2010-12",
+      "endDate": "2018-10",
+      "company": "United States Navy",
+      "title": "Electronics Technician",
+      "location": "Japan and San Diego, CA, USA",
+      "details": [
+        "Consistently scored up to 90% on over a dozen ship-wide certifications and inspections.",
+        "Maintained 3 radars and corrected over 25 major and minor system casualties.",
+        "Significantly increased calibration readiness of all 455 electronic test equipment units onboard.",
+        "Aggressively and thoroughly trained 47 personnel."
+      ]
+    },
+    {
+      "type": "education",
+      "startDate": "2010-12",
+      "endDate": "2016-04",
       "institution": "US Navy Training Schools",
       "program": "Certificates, Electronics Technology",
-      "dates": "Dec 2010 - Oct 2018",
+      "location": "Various Locations Nationwide",
       "details": [
         "Basic Training (9 Weeks)",
         "Apprentice Technical Training (3 Months)",
@@ -97,76 +102,27 @@
       ]
     },
     {
+      "type": "experience",
+      "startDate": "2005-05",
+      "endDate": "2010-12",
+      "company": "Freelance",
+      "title": "Front-End Web Developer",
+      "location": "Atlanta, GA, USA",
+      "details": [
+        "Designed, developed, and maintained several small business and school websites.",
+        "Created web content for various promotional advertisements."
+      ]
+    },
+    {
+      "type": "education",
+      "startDate": "2001-08",
+      "endDate": "2005-05",
       "institution": "Norcross High School",
       "program": "High School Diploma",
-      "dates": "Aug 2001 - May 2005",
+      "location": "Norcross, GA, USA",
       "details": [
-        "Learned the basics of website development using HTML and CSS to create the school's website. This is where I discovered my passion for web development."
+        "Learned the basics of website development using HTML and CSS to create the school's website. This is where I discovered my passion for website design and development."
       ]
     }
-  ],
-  "skills": [
-    "Root Cause Analysis",
-    "AI Prompt Engineering",
-    "Test-Driven Development",
-    "Responsive Web Design",
-    "Interpersonal Communication",
-    "Financial Planning",
-    "Team Building",
-    "Web Design",
-    "Teamwork",
-    "Supervisory Skills",
-    "Military Training",
-    "Program Management",
-    "Inventory Management",
-    "Continuous Improvement"
-  ],
-  "software": [
-    "PowerPoint",
-    "Excel",
-    "Word",
-    "Insomnia",
-    "Apollo Server",
-    "MongoDB Compass",
-    "Visual Studio Code",
-    "Git Bash",
-    "GitHub",
-    "MySQL Workbench",
-    "Figma"
-  ],
-  "programming": [
-    "Handlebars JS",
-    "Sequelize JS",
-    "JSON",
-    "APIs",
-    "Jest",
-    "jQuery",
-    "MySQL",
-    "Inquirer JS",
-    "Bootstrap",
-    "MongoDB",
-    "Mongoose",
-    "Express JS",
-    "React JS",
-    "Node JS",
-    "CSS",
-    "HTML",
-    "Bulma CSS",
-    "Tailwind CSS",
-    "Material UI",
-    "Materialize CSS",
-    "Python",
-    "JavaScript",
-    "Astro"
-  ],
-  "technician": [
-    "PLC Troubleshooting",
-    "Electronic Test Equipment",
-    "Electronics Troubleshooting",
-    "Electro-Mechanical Systems",
-    "Maintenance and Repair",
-    "Preventative Maintenance",
-    "Corrective Maintenance",
-    "Schematics"
   ]
 }
