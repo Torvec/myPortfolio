@@ -29,7 +29,7 @@ export default function ResumeSection() {
   const myResume = resumeData.resume;
 
   return (
-    <div id="resume" className="min-h-screen space-y-10 px-10 py-96">
+    <section id="resume" className="min-h-screen space-y-10 px-10 py-96">
       {myResume.map((resume) => (
         <>
           {resume.type === "education" ? (
@@ -67,6 +67,6 @@ export default function ResumeSection() {
           )}
         </>
       ))}
-    </div>
+    </section>
   );
 }

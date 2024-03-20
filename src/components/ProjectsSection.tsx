@@ -1,34 +1,14 @@
 import projectsData from "../data/projectsData.json";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function ProjectsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const cardVariants = {
-    initial: {
-      opacity: 0,
-      y: 200,
-    },
-    inView: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.5,
-      },
-    },
-  };
 
   const reversedProjects = [...projectsData].reverse();
 
   return (
-    <motion.div
-      ref={ref}
+    <section
       id="projects"
-      className="grid grid-cols-1 gap-5 px-5 md:grid-cols-2 md:gap-10 md:px-10 lg:grid-cols-3 lg:gap-20 lg:px-20"
-      animate={isInView ? "inView" : "initial"}
-      variants={cardVariants}
+      className="grid grid-cols-1 gap-5 p-5 md:grid-cols-2 md:gap-10 md:p-10 lg:grid-cols-3 lg:gap-20 lg:p-20"
     >
       {reversedProjects.map((project) => (
         <motion.div className="border-2 border-stone-700 bg-stone-500">
@@ -69,6 +49,6 @@ export default function ProjectsSection() {
           </div>
         </motion.div>
       ))}
-    </motion.div>
+    </section>
   );
 }

@@ -29,7 +29,7 @@ export default function AboutMeSection() {
   const isInView4 = useInView(ref4, { once: true });
 
   return (
-    <section id="about" className="relative p-10 bg-stone-700">
+    <section id="about" className="relative p-10">
       <motion.img
         src="/imgna.png"
         alt="Placeholder"

@@ -31,7 +31,7 @@ export default function ContactMeSection() {
   return (
     <section
       id="contact"
-      className="flex min-h-screen flex-col justify-end bg-stone-950"
+      className="flex min-h-screen flex-col justify-end "
     >
       <div className="space-y-10 p-10 lg:p-20 text-3xl lg:text-6xl font-black uppercase">
         <p>Interested in collaborating, hiring me, or saying hello?</p>
