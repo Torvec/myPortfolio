@@ -34,7 +34,7 @@ export default function ResumeSection() {
         <>
           {resume.type === "education" ? (
             <div className="flex justify-end">
-              <div className="w-1/2 border-2 p-10">
+              <div className="w-1/2 p-10">
                 <div>
                   {convertDateFormat(resume.startDate)} -{" "}
                   {convertDateFormat(resume.endDate)}
@@ -50,7 +50,7 @@ export default function ResumeSection() {
               </div>
             </div>
           ) : (
-            <div className="w-1/2 border-2 p-10">
+            <div className="w-1/2 p-10">
               <div>
                 {convertDateFormat(resume.startDate)} -{" "}
                 {convertDateFormat(resume.endDate)}

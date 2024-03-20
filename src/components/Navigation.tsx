@@ -38,7 +38,7 @@ export default function Navigation() {
       {/* POP OUT MENU STARTS HERE */}
       <div
         id="menu"
-        className="fixed right-0 top-0 z-10 hidden h-screen w-screen bg-stone-200/90 text-stone-600 lg:w-1/2"
+        className="fixed right-0 top-0 z-10 hidden h-screen w-screen bg-stone-200/95 text-stone-600"
       >
         <div className="flex justify-end border-b-2 border-stone-400 p-4">
           <button onClick={toggleMenu}>

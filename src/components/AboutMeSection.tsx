@@ -29,7 +29,7 @@ export default function AboutMeSection() {
   const isInView4 = useInView(ref4, { once: true });
 
   return (
-    <motion.div id="about" className="relative p-10">
+    <section id="about" className="relative p-10 bg-stone-700">
       <motion.img
         src="/imgna.png"
         alt="Placeholder"
@@ -87,6 +87,6 @@ export default function AboutMeSection() {
           ducimus maxime aspernatur aliquid?
         </p>
       </motion.div>
-    </motion.div>
+    </section>
   );
 }
