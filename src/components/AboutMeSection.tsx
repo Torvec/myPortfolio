@@ -30,11 +30,14 @@ export default function AboutMeSection() {
 
   return (
     <section id="about" className="relative p-10">
-      <motion.img
+      <h1 className="py-96 text-center text-5xl font-bold uppercase">
+        All about me
+      </h1>
+      {/* <motion.img
         src="/imgna.png"
         alt="Placeholder"
         className="absolute left-10 top-10 h-96 w-96"
-      />
+      /> */}
       <motion.div
         ref={ref1}
         className="mb-96 flex justify-end"

@@ -29,11 +29,8 @@ export default function ContactMeSection() {
   };
 
   return (
-    <section
-      id="contact"
-      className="flex min-h-screen flex-col justify-end "
-    >
-      <div className="space-y-10 p-10 lg:p-20 text-3xl lg:text-6xl font-black uppercase">
+    <section id="contact" className="flex min-h-screen flex-col justify-end">
+      <div className="space-y-10 p-10 text-3xl font-black uppercase lg:p-20 lg:text-6xl">
         <p>Interested in collaborating, hiring me, or saying hello?</p>
         <p>Currently open to full time, part time, and contract work.</p>
         <p>
@@ -47,7 +44,10 @@ export default function ContactMeSection() {
           </a>
         </p>
       </div>
-      <footer className="flex gap-5 p-10 lg:p-20 text-stone-300 md:flex-row">
+      <div className="text-center text-lg">
+        <button onClick={handleClickToTop}>Top</button>
+      </div>
+      <footer className="flex gap-5 p-10 text-stone-300 md:flex-row lg:p-20">
         <div className="w-2/3">
           <p>&copy; {getCurrentYear()}</p>
         </div>
@@ -64,9 +64,6 @@ export default function ContactMeSection() {
           </div>
         </div>
       </footer>
-      <div className="pb-5 text-center text-lg">
-        <button onClick={handleClickToTop}>Top</button>
-      </div>
     </section>
   );
 }

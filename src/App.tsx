@@ -9,79 +9,108 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function App() {
+  // Refs for each section to trigger effects on scroll
   const heroRef = useRef(null);
-  const scrollHero = useScroll({
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const resumeRef = useRef(null);
+  // Parallax effects where it looks like the next section cover the previous section
+  // uses the next section's ref to trigger the effect when the start of the section
+  // intersects the end of the viewport
+  const scrollHeroY = useScroll({
     target: heroRef,
-    offset: ["start start", "end start"],
+    offset: ["start end", "start start"],
   });
   const heroY = useTransform(
-    scrollHero.scrollYProgress,
+    scrollHeroY.scrollYProgress,
     [0, 1],
-    ["0%", "600%"],
+    ["0vh", "100vh"],
   );
-
-  const aboutRef = useRef(null);
-  const scrollAbout = useScroll({
+  const scrollAboutY = useScroll({
     target: aboutRef,
     offset: ["start end", "start start"],
   });
   const aboutY = useTransform(
-    scrollAbout.scrollYProgress,
+    scrollAboutY.scrollYProgress,
     [0, 1],
-    ["0%", "50%"],
+    ["0vh", "100vh"],
   );
-
-  const projectsRef = useRef(null);
-  const scrollProjects = useScroll({
+  const scrollProjectsY = useScroll({
     target: projectsRef,
     offset: ["start end", "start start"],
   });
   const projectsY = useTransform(
-    scrollProjects.scrollYProgress,
+    scrollProjectsY.scrollYProgress,
     [0, 1],
-    ["0%", "50%"],
+    ["0vh", "100vh"],
   );
-
-  const resumeRef = useRef(null);
-  const scrollResume = useScroll({
+  const scrollResumeY = useScroll({
     target: resumeRef,
     offset: ["start end", "start start"],
   });
   const resumeY = useTransform(
-    scrollResume.scrollYProgress,
+    scrollResumeY.scrollYProgress,
     [0, 1],
-    ["0%", "20%"],
+    ["0vh", "100vh"],
+  );
+  // Background Transition effects for each section, uses the previous section's ref
+  // and triggers bg color transition when the start of the section intersects the middle
+  // of the viewport
+  const scrollAboutBg = useScroll({
+    target: heroRef,
+    offset: ["start center", "start start"],
+  });
+  const aboutBgColorTransition = useTransform(
+    scrollAboutBg.scrollYProgress,
+    [0, 1],
+    ["#292524", "#1c1917"],
+  );
+  const scrollProjectsBg = useScroll({
+    target: aboutRef,
+    offset: ["start center", "start start"],
+  });
+  const projectsBgColorTransition = useTransform(
+    scrollProjectsBg.scrollYProgress,
+    [0, 1],
+    ["#292524", "#1c1917"],
+  );
+  const scrollResumeBg = useScroll({
+    target: projectsRef,
+    offset: ["start center", "start start"],
+  });
+  const resumeBgColorTransition = useTransform(
+    scrollResumeBg.scrollYProgress,
+    [0, 1],
+    ["#292524", "#1c1917"],
   );
 
-  console.log(
-    "Made in 2024 by Edward Vonschondorf with Vite, React, Framer Motion, and a dash of TypeScript.",
-  );
+  console.log("Made in 2024 by Edward Vonschondorf");
 
   return (
     <>
       <Header />
-      <motion.div className="overflow-hidden bg-stone-800 text-xl text-stone-300">
+      <motion.div className="overflow-hidden bg-stone-900 text-xl text-stone-300">
         <motion.div style={{ y: heroY }} className="z-0">
           <HeroSection />
         </motion.div>
         <motion.div
           ref={heroRef}
-          style={{ y: aboutY }}
-          className="relative z-10 bg-stone-800"
+          style={{ y: aboutY, backgroundColor: aboutBgColorTransition }}
+          className="relative z-10"
         >
           <AboutMeSection />
         </motion.div>
         <motion.div
           ref={aboutRef}
-          className="relative z-20 bg-stone-700"
-          style={{ y: projectsY }}
+          className="relative z-20"
+          style={{ y: projectsY, backgroundColor: projectsBgColorTransition }}
         >
           <ProjectsSection />
         </motion.div>
         <motion.div
           ref={projectsRef}
-          className="relative z-30 bg-stone-700"
-          style={{ y: resumeY }}
+          className="relative z-30"
+          style={{ y: resumeY, backgroundColor: resumeBgColorTransition }}
         >
           <ResumeSection />
         </motion.div>
