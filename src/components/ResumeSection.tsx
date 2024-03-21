@@ -30,12 +30,14 @@ export default function ResumeSection() {
 
   return (
     <section id="resume" className="min-h-screen space-y-10 p-20">
-      <h1 className="text-center text-5xl font-bold uppercase py-96">My Resume</h1>
+      <h1 className="py-96 text-center text-5xl font-bold uppercase">
+        My Resume
+      </h1>
       {myResume.map((resume) => (
         <>
           {resume.type === "education" ? (
             <div className="flex justify-end">
-              <div className="w-1/2 p-10">
+              <div className="md:w-1/2 md:p-10">
                 <div>
                   {convertDateFormat(resume.startDate)} -{" "}
                   {convertDateFormat(resume.endDate)}
@@ -43,7 +45,7 @@ export default function ResumeSection() {
                 <div>{resume.institution}</div>
                 <div>{resume.program}</div>
                 <div>{resume.location}</div>
-                <ul className="p-5 space-y-5">
+                <ul className="space-y-5 p-5">
                   {resume.details.map((detailItem) => (
                     <li>{detailItem}</li>
                   ))}
@@ -51,7 +53,7 @@ export default function ResumeSection() {
               </div>
             </div>
           ) : (
-            <div className="w-1/2 p-10">
+            <div className="md:w-1/2 md:p-10">
               <div>
                 {convertDateFormat(resume.startDate)} -{" "}
                 {convertDateFormat(resume.endDate)}
@@ -59,7 +61,7 @@ export default function ResumeSection() {
               <div>{resume.company}</div>
               <div>{resume.title}</div>
               <div>{resume.location}</div>
-              <ul className="p-5 space-y-5">
+              <ul className="space-y-5 p-5">
                 {resume.details.map((detailItem) => (
                   <li>{detailItem}</li>
                 ))}

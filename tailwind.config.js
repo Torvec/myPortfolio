@@ -19,7 +19,7 @@ export default {
       xxl: "1536px",
     },
     fontFamily: {
-      sans: ["Poppins", "sans-serif"],
+      sans: ["Inter", "sans-serif"],
     },
     extend: {},
   },

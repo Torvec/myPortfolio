@@ -31,7 +31,7 @@ export default function AboutMeSection() {
   return (
     <section id="about" className="relative p-10">
       <h1 className="py-96 text-center text-5xl font-bold uppercase">
-        All about me
+        A little about me...
       </h1>
       {/* <motion.img
         src="/imgna.png"

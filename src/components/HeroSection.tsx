@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function HeroSection() {
   return (
     <section
@@ -26,9 +28,22 @@ export default function HeroSection() {
         </span>
         <span>Web Developer</span>
       </h1>
-      <h2 className="absolute bottom-5 text-center text-lg font-normal">
-        Would you like to know more? <br />V{/* replace with svg arrow */}
-      </h2>
+      <div className="absolute bottom-5 text-center text-sm font-bold uppercase">
+        <h2>Would you like to know more?</h2>
+        <motion.span
+          className="material-symbols-outlined"
+          whileInView={{ y: 10 }}
+          transition={{
+            repeat: Infinity,
+            duration: 0.5,
+            ease: "easeInOut",
+            repeatType: "reverse",
+            repeatDelay: 0.2,
+          }}
+        >
+          keyboard_arrow_down
+        </motion.span>
+      </div>
     </section>
   );
 }
