@@ -1,3 +1,4 @@
+import React from "react";
 import UpArrowIcon from "../assets/upArrowIcon.svg?react";
 
 export default function ProjectsSection() {
@@ -34,6 +35,14 @@ export default function ProjectsSection() {
       deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
       dateCompleted: "October 2023",
     },
+    {
+      id: 5,
+      projectName: "My Portfolio",
+      imageURL: "https://picsum.photos/800",
+      repositoryURL: "https://github.com/Torvec/myPortfolio",
+      deploymentURL: "https://edward-vonschondorf.dev/",
+      dateCompleted: "N/A",
+    },
   ];
 
   interface ImageContainerProps {
@@ -50,7 +59,7 @@ export default function ProjectsSection() {
     deploymentURL,
   }: ImageContainerProps) {
     return (
-      <div className="relative w-1/2">
+      <div className="relative md:w-1/2">
         <img src={imageURL} alt={projectName} className="w-full" />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
           <a
@@ -81,7 +90,7 @@ export default function ProjectsSection() {
 
   function TextContainer({ projectName, dateCompleted }: TextContainerProps) {
     return (
-      <div className="flex w-1/2 flex-col justify-end gap-5 bg-stone-950 p-5">
+      <div className="flex md:w-1/2 flex-col justify-end gap-5 bg-stone-950 p-10">
         <p className="text-5xl font-bold">{projectName}</p>
         <p className="text-xl uppercase">Completed {dateCompleted}</p>
       </div>
@@ -90,43 +99,41 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="min-h-screen">
-      <h2 className="py-96 text-center text-5xl font-bold uppercase">
+      <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         Featured Projects
       </h2>
-      <div>
-        {featuredProjects.map((project) => (
-          <>
-            {project.id % 2 === 0 ? (
-              <div className="flex">
-                <ImageContainer
-                  imageURL={project.imageURL}
-                  projectName={project.projectName}
-                  repositoryURL={project.repositoryURL}
-                  deploymentURL={project.deploymentURL}
-                />
-                <TextContainer
-                  projectName={project.projectName}
-                  dateCompleted={project.dateCompleted}
-                />
-              </div>
-            ) : (
-              <div className="flex">
-                <TextContainer
-                  projectName={project.projectName}
-                  dateCompleted={project.dateCompleted}
-                />
-                <ImageContainer
-                  imageURL={project.imageURL}
-                  projectName={project.projectName}
-                  repositoryURL={project.repositoryURL}
-                  deploymentURL={project.deploymentURL}
-                />
-              </div>
-            )}
-          </>
-        ))}
-      </div>
-      <div className="flex justify-center items-center min-h-screen">
+      <>
+        {featuredProjects.map((project) =>
+          project.id % 2 === 0 ? (
+            <div key={project.id} className="flex flex-col md:flex-row">
+              <ImageContainer
+                imageURL={project.imageURL}
+                projectName={project.projectName}
+                repositoryURL={project.repositoryURL}
+                deploymentURL={project.deploymentURL}
+              />
+              <TextContainer
+                projectName={project.projectName}
+                dateCompleted={project.dateCompleted}
+              />
+            </div>
+          ) : (
+            <div key={project.id} className="flex flex-col-reverse md:flex-row">
+              <TextContainer
+                projectName={project.projectName}
+                dateCompleted={project.dateCompleted}
+              />
+              <ImageContainer
+                imageURL={project.imageURL}
+                projectName={project.projectName}
+                repositoryURL={project.repositoryURL}
+                deploymentURL={project.deploymentURL}
+              />
+            </div>
+          ),
+        )}
+      </>
+      <div className="min-h-screen grid place-content-center">
         <a
           href="https://github.com/Torvec?tab=repositories"
           target="_blank"

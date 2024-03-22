@@ -1,7 +1,6 @@
 import resumeData from "../data/resumeData.json";
 
 export default function ResumeSection() {
-  
   function convertDateFormat(dateString: string) {
     if (dateString === "Present") {
       return "Present";
@@ -30,13 +29,13 @@ export default function ResumeSection() {
 
   return (
     <section id="resume" className="min-h-screen space-y-10 p-20">
-      <h1 className="py-96 text-center text-5xl font-bold uppercase">
+      <h2 className="min-h-screen grid place-content-center text-center text-5xl font-bold uppercase">
         My Resume
-      </h1>
+      </h2>
+      <>
       {myResume.map((resume) => (
-        <>
-          {resume.type === "education" ? (
-            <div className="flex justify-end">
+          resume.type === "education" ? (
+            <div key={resume.id} className="flex justify-end">
               <div className="md:w-1/2 md:p-10">
                 <div>
                   {convertDateFormat(resume.startDate)} -{" "}
@@ -46,14 +45,14 @@ export default function ResumeSection() {
                 <div>{resume.program}</div>
                 <div>{resume.location}</div>
                 <ul className="space-y-5 p-5">
-                  {resume.details.map((detailItem) => (
-                    <li>{detailItem}</li>
+                  {resume.details.map((detailItem, index) => (
+                    <li key={index}>{detailItem}</li>
                   ))}
                 </ul>
               </div>
             </div>
           ) : (
-            <div className="md:w-1/2 md:p-10">
+            <div key={resume.id} className="md:w-1/2 md:p-10">
               <div>
                 {convertDateFormat(resume.startDate)} -{" "}
                 {convertDateFormat(resume.endDate)}
@@ -62,14 +61,17 @@ export default function ResumeSection() {
               <div>{resume.title}</div>
               <div>{resume.location}</div>
               <ul className="space-y-5 p-5">
-                {resume.details.map((detailItem) => (
-                  <li>{detailItem}</li>
+                {resume.details.map((detailItem, index) => (
+                  <li key={index}>{detailItem}</li>
                 ))}
               </ul>
             </div>
-          )}
-        </>
+          )
       ))}
+      </>
+      <div className="min-h-screen grid place-content-center">
+        <h3 className="uppercase text-4xl font-bold">Skills</h3>
+      </div>
     </section>
   );
 }

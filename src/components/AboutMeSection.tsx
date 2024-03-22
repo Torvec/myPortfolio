@@ -1,10 +1,10 @@
 export default function AboutMeSection() {
   return (
     <section id="about" className="min-h-screen py-96">
-      <h2 className="py-96 text-center text-5xl font-bold uppercase">
+      <h2 className="grid place-content-center text-center text-5xl font-bold uppercase min-h-screen">
         About Me
       </h2>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row gap-10">
         <img src="https://picsum.photos/800" alt="me" />
         <div className="px-10 text-2xl space-y-10 text-balance">
           <p>
