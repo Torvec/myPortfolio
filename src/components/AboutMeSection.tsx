@@ -1,95 +1,32 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-
 export default function AboutMeSection() {
-  const pVariants = {
-    initial: {
-      opacity: 0.5,
-      y: 200,
-      scale: 0.9,
-    },
-    inView: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.25,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const ref1 = useRef(null);
-  const isInView1 = useInView(ref1, { once: true });
-  const ref2 = useRef(null);
-  const isInView2 = useInView(ref2, { once: true });
-  const ref3 = useRef(null);
-  const isInView3 = useInView(ref3, { once: true });
-  const ref4 = useRef(null);
-  const isInView4 = useInView(ref4, { once: true });
-
   return (
-    <section id="about" className="relative p-10">
-      <h1 className="py-96 text-center text-5xl font-bold uppercase">
-        A little about me...
-      </h1>
-      {/* <motion.img
-        src="/imgna.png"
-        alt="Placeholder"
-        className="absolute left-10 top-10 h-96 w-96"
-      /> */}
-      <motion.div
-        ref={ref1}
-        className="mb-96 flex justify-end"
-        animate={isInView1 ? "inView" : "initial"}
-        variants={pVariants}
-      >
-        <p className="w-2/5 text-3xl">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo atque
-          dolorum corrupti, pariatur expedita inventore, laudantium consequatur
-          sunt, maxime nesciunt hic cumque quisquam. Autem, provident animi
-          ducimus maxime aspernatur aliquid?
-        </p>
-      </motion.div>
-      <motion.div
-        ref={ref2}
-        className="mb-96"
-        animate={isInView2 ? "inView" : "initial"}
-        variants={pVariants}
-      >
-        <p className="w-2/5 text-3xl">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo atque
-          dolorum corrupti, pariatur expedita inventore, laudantium consequatur
-          sunt, maxime nesciunt hic cumque quisquam. Autem, provident animi
-          ducimus maxime aspernatur aliquid?
-        </p>
-      </motion.div>
-      <motion.div
-        ref={ref3}
-        className="mb-96 flex justify-end"
-        animate={isInView3 ? "inView" : "initial"}
-        variants={pVariants}
-      >
-        <p className="w-2/5 text-3xl">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo atque
-          dolorum corrupti, pariatur expedita inventore, laudantium consequatur
-          sunt, maxime nesciunt hic cumque quisquam. Autem, provident animi
-          ducimus maxime aspernatur aliquid?
-        </p>
-      </motion.div>
-      <motion.div
-        ref={ref4}
-        className="mb-96"
-        animate={isInView4 ? "inView" : "initial"}
-        variants={pVariants}
-      >
-        <p className="w-2/5 text-3xl">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo atque
-          dolorum corrupti, pariatur expedita inventore, laudantium consequatur
-          sunt, maxime nesciunt hic cumque quisquam. Autem, provident animi
-          ducimus maxime aspernatur aliquid?
-        </p>
-      </motion.div>
+    <section id="about" className="min-h-screen py-96">
+      <h2 className="py-96 text-center text-5xl font-bold uppercase">
+        About Me
+      </h2>
+      <div className="flex">
+        <img src="https://picsum.photos/800" alt="me" />
+        <div className="px-10 text-2xl space-y-10 text-balance">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
+            temporibus cumque beatae nemo, saepe a quasi, eveniet animi optio
+            minima corrupti ratione corporis necessitatibus inventore iusto
+            eius. Praesentium, omnis exercitationem.
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
+            distinctio animi vero, sint, odio enim voluptatem, labore totam
+            repudiandae perferendis nemo. Modi, ex repudiandae quam placeat
+            numquam animi a officiis?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Necessitatibus ea, ratione alias perferendis iusto dignissimos
+            distinctio dolor quos eos laborum unde rerum praesentium error
+            repudiandae, aliquam, magnam et! Mollitia, ea!
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
