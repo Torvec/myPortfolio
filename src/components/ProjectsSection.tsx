@@ -1,5 +1,5 @@
-import React from "react";
 import UpArrowIcon from "../assets/upArrowIcon.svg?react";
+import { motion } from "framer-motion";
 
 export default function ProjectsSection() {
   const featuredProjects = [
@@ -48,52 +48,62 @@ export default function ProjectsSection() {
   interface ImageContainerProps {
     imageURL: string;
     projectName: string;
-    repositoryURL: string;
     deploymentURL: string;
   }
 
   function ImageContainer({
     imageURL,
     projectName,
-    repositoryURL,
     deploymentURL,
   }: ImageContainerProps) {
     return (
-      <div className="relative md:w-1/2">
+      <motion.div className="relative md:w-1/2">
         <img src={imageURL} alt={projectName} className="w-full" />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
-          <a
-            href={repositoryURL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg border p-2"
-          >
-            View Repository
-          </a>
-          <a
-            href={deploymentURL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg border p-2"
-          >
-            View Deployment
-          </a>
+          <LinkButton text="View Deployment" href={deploymentURL} />
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   interface TextContainerProps {
     projectName: string;
     dateCompleted: string;
+    repositoryURL: string;
   }
 
-  function TextContainer({ projectName, dateCompleted }: TextContainerProps) {
+  function TextContainer({
+    projectName,
+    dateCompleted,
+    repositoryURL,
+  }: TextContainerProps) {
     return (
-      <div className="flex md:w-1/2 flex-col justify-end gap-5 bg-stone-950 p-10">
+      <motion.div className="relative flex flex-col justify-end gap-5 bg-stone-950 p-10 md:w-1/2">
         <p className="text-5xl font-bold">{projectName}</p>
         <p className="text-xl uppercase">Completed {dateCompleted}</p>
-      </div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
+          <LinkButton text="View Repository" href={repositoryURL} />
+        </div>
+      </motion.div>
+    );
+  }
+
+  interface LinkButtonProps {
+    text: string;
+    href: string;
+  }
+
+  function LinkButton({ text, href }: LinkButtonProps) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center gap-2 rounded-lg border border-stone-200 p-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
+      >
+        <span className="text-lg uppercase">{text}</span>
+        <UpArrowIcon className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:-translate-y-2" />
+      </a>
     );
   }
 
@@ -109,12 +119,12 @@ export default function ProjectsSection() {
               <ImageContainer
                 imageURL={project.imageURL}
                 projectName={project.projectName}
-                repositoryURL={project.repositoryURL}
                 deploymentURL={project.deploymentURL}
               />
               <TextContainer
                 projectName={project.projectName}
                 dateCompleted={project.dateCompleted}
+                repositoryURL={project.repositoryURL}
               />
             </div>
           ) : (
@@ -122,27 +132,22 @@ export default function ProjectsSection() {
               <TextContainer
                 projectName={project.projectName}
                 dateCompleted={project.dateCompleted}
+                repositoryURL={project.repositoryURL}
               />
               <ImageContainer
                 imageURL={project.imageURL}
                 projectName={project.projectName}
-                repositoryURL={project.repositoryURL}
                 deploymentURL={project.deploymentURL}
               />
             </div>
           ),
         )}
       </>
-      <div className="min-h-screen grid place-content-center">
-        <a
+      <div className="grid min-h-screen place-content-center">
+        <LinkButton
+          text="More Projects"
           href="https://github.com/Torvec?tab=repositories"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex items-center gap-2 rounded-lg border border-stone-200 p-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
-        >
-          <span className="text-lg uppercase">More Projects</span>
-          <UpArrowIcon className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:-translate-y-2" />
-        </a>
+        />
       </div>
     </section>
   );
