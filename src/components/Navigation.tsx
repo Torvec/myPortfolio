@@ -22,7 +22,7 @@ export default function Navigation() {
     return (
       <li>
         <button
-          className="px-3 py-2 uppercase"
+          className="uppercase"
           onClick={() => handleClickToSection(anchor)}
         >
           {children}
@@ -32,7 +32,7 @@ export default function Navigation() {
   }
   return (
     <>
-      <button onClick={toggleMenu}>
+      <button onClick={toggleMenu} className="flex items-center">
         <span className="material-symbols-outlined">menu</span>
       </button>
       {/* POP OUT MENU STARTS HERE */}

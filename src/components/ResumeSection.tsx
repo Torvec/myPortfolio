@@ -20,7 +20,7 @@ export default function ResumeSection() {
   //     location: "Online",
   //     details: "",
   //   },
-  //   {
+  //   {npm
   //     id: 7,
   //     type: "education",
   //     startDate: "Dec 2022",
@@ -138,112 +138,66 @@ export default function ResumeSection() {
         </div>
       </div>
 
-      {/* 
-      
-      Container DIV for entire timeline
-      - Container DIV for experience OR education entry
-      - - If experience: will be on the left side
-      - - - Experience DIV container
-      - - - - Header DIV for Job Title
-      - - - - Details section
-      - - - - Company Logo Div Container Left of Details, but under header
-      - - - - - Logo
-      - - - - - Company Name
-      - - If education: will be on the righ side
-      - - - Same as Experience DIV but everything is on the right side
-        
-      */}
-
-      <div className="bg-stone-300">
-        <div className="bg-stone-400 ">
-          <div className="min-h-96 w-1/2 bg-stone-500">
-            <div className="min-h-16 bg-stone-600">
-              <h1 className="flex w-3/4 justify-end bg-stone-700">Job Title</h1>
+      <div className="relative space-y-5">
+        <div className="absolute left-1/2 top-0 z-0 md:z-20 h-full w-2 -translate-x-1/2 transform bg-orange-500"></div>
+        <div>
+          <div className="relative z-10 md:w-1/2">
+            <div className="mb-4">
+              <h2 className="text-balance bg-stone-600 p-4 font-bold uppercase">
+                Full Stack Web Developer
+              </h2>
             </div>
-            <div className="flex min-h-80 bg-stone-700">
-              <div className="w-1/4">Logo</div>
-              <div className="w-3/4 bg-stone-800">Details</div>
+            <div className="flex">
+              <div className="flex w-1/4 flex-col items-center gap-5">
+                <img
+                  src="https://picsum.photos/200"
+                  alt="Logo"
+                  className="w-full object-contain"
+                />
+                <h3 className="text-sm font-bold">Freelance</h3>
+              </div>
+              <div className="w-3/4 space-y-4 text-balance px-4 text-lg">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Culpa dolorem quisquam dolorum sunt et beatae,</p>
+                <p>
+                  perferendis laboriosam maiores consequuntur aut alias non
+                  nihil
+                </p>
+                <p>molestias omnis inventore reiciendis sed velit illo.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex  justify-end bg-stone-400">
-          <div className="min-h-96 w-1/2 bg-stone-500">
-            <div className="min-h-16 bg-stone-600">
-              <h1 className="w-3/4 justify-end bg-stone-700">Job Title</h1>
+
+        <div className="md:flex md:justify-end">
+          <div className="relative z-10 md:w-1/2">
+            <div className="mb-4">
+              <h2 className="text-balance bg-stone-600 p-4 font-bold uppercase">
+                Full Stack Web Development Bootcamp
+              </h2>
             </div>
-            <div className="min-h-16 bg-stone-600">
-              <div className="flex min-h-80 bg-stone-700">
-                <div className="w-3/4 bg-stone-800">Details</div>
-                <div className="w-1/4">Logo</div>
+            <div className="flex flex-row-reverse">
+              <div className="flex w-1/4 flex-col items-center gap-5">
+                <img
+                  src="https://picsum.photos/200"
+                  alt="Logo"
+                  className="w-full object-contain"
+                />
+                <h3 className="text-sm font-bold">UC Berkeley Extension</h3>
+              </div>
+              <div className="w-3/4 space-y-4 text-balance px-4 text-lg">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Culpa dolorem quisquam dolorum sunt et beatae,</p>
+                <p>
+                  perferendis laboriosam maiores consequuntur aut alias non
+                  nihil
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* <div className="flex gap-5 overflow-x-scroll whitespace-nowrap p-5">
-        {myResume.map((resume) => (
-          <div className="flex flex-col">
-            {resume.company ? (
-              <div>
-                {resume.company} <br /> {resume.title}
-              </div>
-            ) : (
-              <div>
-                <br />
-                <br />
-              </div>
-            )}
-            <div className="bg-stone-500">
-              {resume.endDate} - {resume.startDate}
-            </div>
-            {resume.institution ? (
-              <div>
-                {resume.institution} <br /> {resume.program}
-              </div>
-            ) : (
-              <div>
-                <br />
-                <br />
-              </div>
-            )}
-          </div>
-        ))}
-      </div> */}
-
-      {/* <>
-        {myResume.map((resume) =>
-          resume.type === "education" ? (
-            <div key={resume.id} className="flex justify-end">
-              <div className="md:w-1/2 md:p-10">
-                <div>
-                  {convertDateFormat(resume.startDate)} -{" "}
-                  {convertDateFormat(resume.endDate)}
-                </div>
-                <div>{resume.institution}</div>
-                <div>{resume.program}</div>
-                <div>{resume.location}</div>
-                <ul className="space-y-5 p-5">
-                  <li>{resume.details}</li>
-                </ul>
-              </div>
-            </div>
-          ) : (
-            <div key={resume.id} className="md:w-1/2 md:p-10">
-              <div>
-                {convertDateFormat(resume.startDate)} -{" "}
-                {convertDateFormat(resume.endDate)}
-              </div>
-              <div>{resume.company}</div>
-              <div>{resume.title}</div>
-              <div>{resume.location}</div>
-              <ul className="space-y-5 p-5">
-                <li>{resume.details}</li>
-              </ul>
-            </div>
-          ),
-        )}
-      </> */}
       <div className="flex min-h-screen flex-col items-center justify-center gap-10">
         <h3 className="text-4xl font-bold uppercase">Skills</h3>
         <ul className="flex gap-5">
