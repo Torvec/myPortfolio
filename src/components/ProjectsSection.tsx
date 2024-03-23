@@ -1,4 +1,3 @@
-import UpArrowIcon from "../assets/upArrowIcon.svg?react";
 import { motion } from "framer-motion";
 
 export default function ProjectsSection() {
@@ -58,7 +57,7 @@ export default function ProjectsSection() {
   }: ImageContainerProps) {
     return (
       <motion.div className="relative md:w-1/2">
-        <img src={imageURL} alt={projectName} className="w-full" />
+        <img src={imageURL} alt={projectName} className="w-full min-h-[50vh] object-cover" />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
           <LinkButton text="View Deployment" href={deploymentURL} />
         </div>
@@ -78,7 +77,7 @@ export default function ProjectsSection() {
     repositoryURL,
   }: TextContainerProps) {
     return (
-      <motion.div className="relative flex flex-col justify-end gap-5 bg-stone-950 p-10 md:w-1/2">
+      <motion.div className="relative flex flex-col justify-end gap-5 bg-stone-950 p-10 md:w-1/2 min-h-[50vh]">
         <p className="text-5xl font-bold">{projectName}</p>
         <p className="text-xl uppercase">Completed {dateCompleted}</p>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
@@ -102,7 +101,9 @@ export default function ProjectsSection() {
         className="group flex items-center gap-2 rounded-lg border border-stone-200 p-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
       >
         <span className="text-lg uppercase">{text}</span>
-        <UpArrowIcon className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:-translate-y-2" />
+        <span className="material-symbols-outlined text-lg transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
+          north_east
+        </span>
       </a>
     );
   }

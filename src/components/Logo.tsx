@@ -4,7 +4,7 @@ export default function Logo() {
   };
   return (
     <button onClick={handleClickToTop} className="text-lg font-bold uppercase">
-      Edward Vonschondorf
+      EV
     </button>
   );
 }

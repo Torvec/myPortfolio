@@ -1,4 +1,3 @@
-import UpArrowIcon from "../assets/upArrowIcon.svg?react";
 import { motion } from "framer-motion";
 
 export default function ContactMeSection() {
@@ -20,7 +19,9 @@ export default function ContactMeSection() {
         className="group flex items-center gap-2 transition-all duration-300 ease-in-out hover:text-stone-900"
       >
         <span className="text-lg">{children}</span>
-        <UpArrowIcon className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:-translate-y-2" />
+        <span className="material-symbols-outlined text-lg transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
+          north_east
+        </span>
       </a>
     );
   }
@@ -35,7 +36,7 @@ export default function ContactMeSection() {
       className="flex min-h-screen flex-col items-center justify-center px-5"
     >
       <div className="space-y-10 md:w-3/4">
-        <p className="text-balance text-right text-4xl font-black uppercase md:text-6xl">
+        <p className="text-balance text-right text-4xl font-bold uppercase md:text-6xl">
           Interested in collaborating, hiring me, or just saying hello? You can
           contact{" "}
           <a
@@ -45,10 +46,10 @@ export default function ContactMeSection() {
             me@edward-vonschondorf.dev
           </a>
         </p>
-        <p className="text-balance text-right text-2xl font-black uppercase md:text-4xl">
+        <p className="text-balance text-right text-2xl font-bold uppercase md:text-4xl">
           Currently open to full time, part time, or contract opportunities
         </p>
-        <p className="text-right text-lg font-black md:text-2xl">
+        <p className="text-right text-lg font-bold md:text-2xl">
           Thanks for stopping by!
         </p>
         <div className="flex flex-col items-end gap-2">
@@ -62,7 +63,9 @@ export default function ContactMeSection() {
           </SocialLink>
         </div>
       </div>
-      <span className="absolute bottom-5 left-5 font-bold text-sm">&copy; {getCurrentYear()}</span>
+      <span className="absolute bottom-5 left-5 text-sm font-bold">
+        &copy; {getCurrentYear()}
+      </span>
       <div className="absolute bottom-5 flex w-full justify-center">
         <button
           onClick={handleClickToTop}

@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col items-center justify-center text-4xl font-black md:text-5xl lg:text-7xl"
+      className="flex min-h-screen flex-col items-center justify-center text-4xl font-bold md:text-5xl lg:text-7xl"
     >
       <h1>Edward Vonschondorf</h1>
       <h2>
