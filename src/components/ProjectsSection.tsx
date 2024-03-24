@@ -8,7 +8,7 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/Loot-Vault",
       deploymentURL: "https://torvec.github.io/Loot-Vault/",
-      dateCompleted: "June 2023",
+      description: "A video game deals site for gamers on a budget using third party API's.",
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/Task-Titan",
       deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
-      dateCompleted: "August 2023",
+      description: "A task completion and collaboration app for managing projects.",
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/wedloc",
       deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
-      dateCompleted: "October 2023",
+      description: "A social media app for wedding photographers to share their work and allow clients to interact with guests.",
     },
     {
       id: 4,
@@ -32,7 +32,7 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
       deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
-      dateCompleted: "October 2023",
+      description: "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
     },
     {
       id: 5,
@@ -40,7 +40,7 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/myPortfolio",
       deploymentURL: "https://edward-vonschondorf.dev/",
-      dateCompleted: "N/A",
+      description: "This portfolio.",
     },
   ];
 
@@ -67,19 +67,19 @@ export default function ProjectsSection() {
 
   interface TextContainerProps {
     projectName: string;
-    dateCompleted: string;
+    description: string;
     repositoryURL: string;
   }
 
   function TextContainer({
     projectName,
-    dateCompleted,
+    description,
     repositoryURL,
   }: TextContainerProps) {
     return (
-      <motion.div className="relative flex flex-col justify-end gap-5 bg-stone-950 p-10 md:w-1/2 min-h-[50vh]">
+      <motion.div className="relative flex flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2 min-h-[50vh]">
         <p className="text-5xl font-bold">{projectName}</p>
-        <p className="text-xl uppercase">Completed {dateCompleted}</p>
+        <p className="text-xl">{description}</p>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
           <LinkButton text="View Repository" href={repositoryURL} />
         </div>
@@ -114,37 +114,41 @@ export default function ProjectsSection() {
         Featured Projects
       </h2>
       <>
-        {featuredProjects.map((project) =>
-          project.id % 2 === 0 ? (
-            <div key={project.id} className="flex flex-col md:flex-row">
-              <ImageContainer
-                imageURL={project.imageURL}
-                projectName={project.projectName}
-                deploymentURL={project.deploymentURL}
-              />
-              <TextContainer
-                projectName={project.projectName}
-                dateCompleted={project.dateCompleted}
-                repositoryURL={project.repositoryURL}
-              />
-            </div>
-          ) : (
-            <div key={project.id} className="flex flex-col-reverse md:flex-row">
-              <TextContainer
-                projectName={project.projectName}
-                dateCompleted={project.dateCompleted}
-                repositoryURL={project.repositoryURL}
-              />
-              <ImageContainer
-                imageURL={project.imageURL}
-                projectName={project.projectName}
-                deploymentURL={project.deploymentURL}
-              />
-            </div>
-          ),
+        {featuredProjects.map(
+          ({ id, projectName, imageURL, repositoryURL, deploymentURL, description }) =>
+            id % 2 === 0 ? (
+              <div key={id} className="flex flex-col md:flex-row">
+                <ImageContainer
+                  imageURL={imageURL}
+                  projectName={projectName}
+                  deploymentURL={deploymentURL}
+                />
+                <TextContainer
+                  projectName={projectName}
+                  description={description}
+                  repositoryURL={repositoryURL}
+                />
+              </div>
+            ) : (
+              <div
+                key={id}
+                className="flex flex-col-reverse md:flex-row"
+              >
+                <TextContainer
+                  projectName={projectName}
+                  description={description}
+                  repositoryURL={repositoryURL}
+                />
+                <ImageContainer
+                  imageURL={imageURL}
+                  projectName={projectName}
+                  deploymentURL={deploymentURL}
+                />
+              </div>
+            ),
         )}
       </>
-      <div className="grid min-h-screen place-content-center">
+      <div className="grid place-content-center py-96">
         <LinkButton
           text="More Projects"
           href="https://github.com/Torvec?tab=repositories"

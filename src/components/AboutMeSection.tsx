@@ -1,23 +1,26 @@
 export default function AboutMeSection() {
   return (
-    <section id="about" className="min-h-screen py-96">
-      <h2 className="grid place-content-center text-center text-5xl font-bold uppercase min-h-screen">
+    <section id="about" className="min-h-screen pb-96">
+      <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         About Me
       </h2>
-      <div className="flex flex-col md:flex-row gap-10">
+      <div className="flex flex-col gap-10 md:flex-row">
         <img src="https://picsum.photos/800" alt="me" />
-        <div className="px-10 text-2xl space-y-10 text-balance">
+        <div className="space-y-10 text-balance px-10 text-2xl">
+          <p>Hello and welcome!</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
-            temporibus cumque beatae nemo, saepe a quasi, eveniet animi optio
-            minima corrupti ratione corporis necessitatibus inventore iusto
-            eius. Praesentium, omnis exercitationem.
+            I'm a full stack developer with a passion for creating beautiful and
+            functional web applications. I have experience in working with
+            various technologies, such as HTML, CSS, JavaScript, React, Node.js,
+            MongoDB, and more. I enjoy learning new skills and exploring new
+            challenges in the web development field.
           </p>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-            distinctio animi vero, sint, odio enim voluptatem, labore totam
-            repudiandae perferendis nemo. Modi, ex repudiandae quam placeat
-            numquam animi a officiis?
+            In this portfolio, you can find some of the projects that I have
+            worked on, both individually and collaboratively. You can also learn
+            more about me, my skills, and my interests. Feel free to contact me
+            if you have any questions or feedback. I'm always open to new
+            opportunities and collaborations. Thank you for visiting my website!
           </p>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.

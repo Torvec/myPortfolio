@@ -186,7 +186,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <motion.div className="overflow-hidden bg-stone-900 text-xl text-stone-200">
+      <motion.div className="overflow-hidden bg-stone-950 text-xl text-stone-200">
         <motion.div
           style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
           className="relative z-0"
