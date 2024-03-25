@@ -58,8 +58,8 @@ export default function App() {
   // Background colors from tailwindcss
   const bgStone700 = "#44403c";
   const bgStone900 = "#1c1917";
-  const bgStone950 = "#0c0a09";
-  const bgOrange600 = "#ea580c";
+  const bgOrange700 = "#c2410c";
+  const bgOrange500 = "#f97316";
 
   // Background Transition effects for each section, uses the previous section's ref
   // and triggers bg color transition when the start of the section intersects the middle
@@ -98,7 +98,7 @@ export default function App() {
   const contactBgColorTransition = useTransform(
     scrollContactBg.scrollYProgress,
     [0, 1],
-    [bgStone950, bgOrange600],
+    [bgOrange700, bgOrange500],
   );
 
   // Section scale down effect
