@@ -30,24 +30,27 @@ export default function ContactMeSection() {
 
   return (
     <section id="contact" className="min-h-screen">
-      <div className="flex h-[50vh] flex-col justify-evenly text-balance border-b border-black/25 p-10 text-4xl font-bold uppercase md:text-6xl">
-        <p>Interested in collaborating, hiring me, or just saying hello?</p>
-        <p>
-          You can contact
-          <br />
+      <div className="flex h-[50vh] flex-col justify-center gap-10 border-b border-black/25 p-10 text-5xl font-bold uppercase">
+        <p className="text-balanced md:w-3/4">
+          Interested in collaborating, hiring me, or just saying hello?
+        </p>
+        <div>
+          <h2 className="text-base mb-5">Please contact</h2>
           <a
             href="mailto:me@edward-vonschondorf.dev"
-            className="text-stone-900"
+            className="text-stone-900 hover:text-stone-200 transition-all duration-500 ease-in-out"
           >
             me@edward-vonschondorf.dev
           </a>
-        </p>
+        </div>
       </div>
       <div className="flex h-[46vh] flex-col md:flex-row">
-        <div className="flex h-1/2 flex-col justify-center gap-10 border-b border-r border-black/25 p-10 md:h-full md:w-1/2">
+        <div className="flex h-1/2 flex-col justify-center gap-5 border-b border-r border-black/25 p-10 md:h-full md:w-1/2">
+          <h2 className="text-base font-bold uppercase">
+            Current Availability
+          </h2>
           <p className="text-balance text-3xl font-bold uppercase md:text-4xl">
-            I am currently open to full time, part time, and contract
-            opportunities
+            I am open to full time, part time, and contract opportunities
           </p>
         </div>
         <div className="h-1/2 md:h-full md:w-1/2">
@@ -65,7 +68,7 @@ export default function ContactMeSection() {
         <span className="absolute bottom-4 left-5">[C] {getCurrentYear()}</span>
         <div className="absolute bottom-3 right-5 flex w-max justify-center">
           <button onClick={handleClickToTop}>
-            <span className="material-symbols-outlined rounded-full border border-white/50 transition-all duration-500 ease-in-out hover:border-black hover:bg-black hover:p-1">
+            <span className="material-symbols-outlined rounded-full border border-white/50 transition-all duration-500 ease-in-out hover:border-orange-800 hover:bg-orange-600 hover:p-1 hover:text-orange-800">
               keyboard_arrow_up
             </span>
           </button>
