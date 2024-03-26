@@ -14,6 +14,7 @@ export default function App() {
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const resumeRef = useRef(null);
+  const contactRef = useRef(null);
 
   // Parallax effects where it looks like the next section cover the previous section
   // uses the next section's ref to trigger the effect when the start of the section
@@ -45,15 +46,24 @@ export default function App() {
     [0, 1],
     ["0vh", "100vh"],
   );
-  const scrollResumeY = useScroll({
-    target: resumeRef,
-    offset: ["start end", "start start"],
-  });
-  const resumeY = useTransform(
-    scrollResumeY.scrollYProgress,
-    [0, 1],
-    ["0vh", "100vh"],
-  );
+  // const scrollResumeY = useScroll({
+  //   target: resumeRef,
+  //   offset: ["start end", "start start"],
+  // });
+  // const resumeY = useTransform(
+  //   scrollResumeY.scrollYProgress,
+  //   [0, 1],
+  //   ["0vh", "100vh"],
+  // );
+  // const scrollContactY = useScroll({
+  //   target: resumeRef,
+  //   offset: ["end end", "end end"],
+  // });
+  // const contactY = useTransform(
+  //   scrollContactY.scrollYProgress,
+  //   [0, 1],
+  //   ["100vh", "100vh"],
+  // );
 
   // Background colors from tailwindcss
   const bgStone700 = "#44403c";
@@ -102,8 +112,6 @@ export default function App() {
   );
 
   // Section scale down effect
-  //
-  //
   const scrollHeroScale = useScroll({
     target: heroRef,
     offset: ["start end", "start start"],
@@ -131,15 +139,15 @@ export default function App() {
     [0, 1],
     ["100%", "80%"],
   );
-  const scrollResumeScale = useScroll({
-    target: resumeRef,
-    offset: ["start end", "start start"],
-  });
-  const resumeScale = useTransform(
-    scrollResumeScale.scrollYProgress,
-    [0, 1],
-    ["100%", "80%"],
-  );
+  // const scrollResumeScale = useScroll({
+  //   target: resumeRef,
+  //   offset: ["start end", "start start"],
+  // });
+  // const resumeScale = useTransform(
+  //   scrollResumeScale.scrollYProgress,
+  //   [0, 1],
+  //   ["100%", "80%"],
+  // );
 
   // Section fade out effect
   //
@@ -151,7 +159,7 @@ export default function App() {
   const heroOpacity = useTransform(
     scrollHeroOpacity.scrollYProgress,
     [0, 1],
-    ["100%", "0%"],
+    [1, 0],
   );
   const scrollAboutOpacity = useScroll({
     target: aboutRef,
@@ -160,7 +168,7 @@ export default function App() {
   const aboutOpacity = useTransform(
     scrollAboutOpacity.scrollYProgress,
     [0, 1],
-    ["100%", "0%"],
+    [1, 0],
   );
   const scrollProjectsOpacity = useScroll({
     target: projectsRef,
@@ -169,16 +177,25 @@ export default function App() {
   const projectsOpacity = useTransform(
     scrollProjectsOpacity.scrollYProgress,
     [0, 1],
-    ["100%", "0%"],
+    [1, 0],
   );
-  const scrollResumeOpacity = useScroll({
-    target: resumeRef,
-    offset: ["start end", "start start"],
+  // const scrollResumeOpacity = useScroll({
+  //   target: resumeRef,
+  //   offset: ["start end", "start start"],
+  // });
+  // const resumeOpacity = useTransform(
+  //   scrollResumeOpacity.scrollYProgress,
+  //   [0, 1],
+  //   ["100%", "0%"],
+  // );
+  const scrollContactOpacity = useScroll({
+    target: contactRef,
+    offset: ["end end", "end end"],
   });
-  const resumeOpacity = useTransform(
-    scrollResumeOpacity.scrollYProgress,
+  const contactOpacity = useTransform(
+    scrollContactOpacity.scrollYProgress,
     [0, 1],
-    ["100%", "0%"],
+    [0, 1],
   );
 
   console.log("Made in 2024 by Edward Vonschondorf");
@@ -186,10 +203,13 @@ export default function App() {
   return (
     <>
       <Header />
-      <motion.div className="overflow-hidden bg-stone-950 text-xl text-stone-200">
+      <motion.div
+        ref={contactRef}
+        className="overflow-hidden bg-stone-950 text-xl text-stone-200"
+      >
         <motion.div
           style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
-          className="relative z-0"
+          className="relative z-10"
         >
           <HeroSection />
         </motion.div>
@@ -201,13 +221,13 @@ export default function App() {
             opacity: aboutOpacity,
             backgroundColor: aboutBgColorTransition,
           }}
-          className="relative z-10"
+          className="relative z-20"
         >
           <AboutMeSection />
         </motion.div>
         <motion.div
           ref={aboutRef}
-          className="relative z-20"
+          className="relative z-30"
           style={{
             y: projectsY,
             scale: projectsScale,
@@ -219,23 +239,22 @@ export default function App() {
         </motion.div>
         <motion.div
           ref={projectsRef}
-          className="relative z-30"
+          className="relative z-40"
           style={{
-            y: resumeY,
-            scale: resumeScale,
-            opacity: resumeOpacity,
             backgroundColor: resumeBgColorTransition,
           }}
         >
           <ResumeSection />
         </motion.div>
-        <motion.div
-          ref={resumeRef}
-          className="relative z-40"
-          style={{ backgroundColor: contactBgColorTransition }}
-        >
-          <ContactMeSection />
-        </motion.div>
+      </motion.div>
+      <motion.div
+        className="sticky bottom-0 left-0 z-0"
+        style={{
+          opacity: contactOpacity,
+          backgroundColor: contactBgColorTransition,
+        }}
+      >
+        <ContactMeSection />
       </motion.div>
     </>
   );
