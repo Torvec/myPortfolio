@@ -1,6 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, MotionStyle } from "framer-motion";
 
-export default function ProjectsSection() {
+type ProjectsSectionProps = {
+  style: MotionStyle;
+};
+
+export default function ProjectsSection({ style }: ProjectsSectionProps) {
   const featuredProjects = [
     {
       id: 1,
@@ -8,7 +12,8 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/Loot-Vault",
       deploymentURL: "https://torvec.github.io/Loot-Vault/",
-      description: "A video game deals site for gamers on a budget using third party API's.",
+      description:
+        "A video game deals site for gamers on a budget using third party API's.",
     },
     {
       id: 2,
@@ -16,7 +21,8 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/Task-Titan",
       deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
-      description: "A task completion and collaboration app for managing projects.",
+      description:
+        "A task completion and collaboration app for managing projects.",
     },
     {
       id: 3,
@@ -24,7 +30,8 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/wedloc",
       deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
-      description: "A social media app for wedding photographers to share their work and allow clients to interact with guests.",
+      description:
+        "A social media app for wedding photographers to share their work and allow clients to interact with guests.",
     },
     {
       id: 4,
@@ -32,7 +39,8 @@ export default function ProjectsSection() {
       imageURL: "https://picsum.photos/800",
       repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
       deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
-      description: "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
+      description:
+        "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
     },
     {
       id: 5,
@@ -57,7 +65,11 @@ export default function ProjectsSection() {
   }: ImageContainerProps) {
     return (
       <motion.div className="relative md:w-1/2">
-        <img src={imageURL} alt={projectName} className="w-full min-h-[50vh] object-cover" />
+        <img
+          src={imageURL}
+          alt={projectName}
+          className="min-h-[50vh] w-full object-cover"
+        />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
           <LinkButton text="View Deployment" href={deploymentURL} />
         </div>
@@ -77,7 +89,7 @@ export default function ProjectsSection() {
     repositoryURL,
   }: TextContainerProps) {
     return (
-      <motion.div className="relative flex flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2 min-h-[50vh]">
+      <motion.div className="relative flex min-h-[50vh] flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2">
         <p className="text-5xl font-bold">{projectName}</p>
         <p className="text-xl">{description}</p>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
@@ -109,13 +121,20 @@ export default function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="min-h-screen">
+    <motion.section id="projects" className="min-h-screen" style={style}>
       <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         Featured Projects
       </h2>
       <>
         {featuredProjects.map(
-          ({ id, projectName, imageURL, repositoryURL, deploymentURL, description }) =>
+          ({
+            id,
+            projectName,
+            imageURL,
+            repositoryURL,
+            deploymentURL,
+            description,
+          }) =>
             id % 2 === 0 ? (
               <div key={id} className="flex flex-col md:flex-row">
                 <ImageContainer
@@ -130,10 +149,7 @@ export default function ProjectsSection() {
                 />
               </div>
             ) : (
-              <div
-                key={id}
-                className="flex flex-col-reverse md:flex-row"
-              >
+              <div key={id} className="flex flex-col-reverse md:flex-row">
                 <TextContainer
                   projectName={projectName}
                   description={description}
@@ -154,6 +170,6 @@ export default function ProjectsSection() {
           href="https://github.com/Torvec?tab=repositories"
         />
       </div>
-    </section>
+    </motion.section>
   );
 }

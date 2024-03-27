@@ -32,7 +32,7 @@ export default function ContactMeSection() {
     <section id="contact" className="min-h-screen text-stone-900">
       <div className="flex h-[50vh] flex-col justify-center gap-10 border-b border-black/25 p-10 text-4xl font-bold uppercase md:text-5xl">
         <p className="text-balanced md:w-3/4">
-          Interested in collaborating, hiring me, or just saying hello?
+          Interested in collaborating, or just saying hello?
         </p>
         <div>
           <h2 className="mb-5 text-base">Please contact</h2>
@@ -68,7 +68,7 @@ export default function ContactMeSection() {
         <span className="absolute bottom-4 left-5">[C] {getCurrentYear()}</span>
         <div className="absolute bottom-3 right-5 flex w-max justify-center">
           <button onClick={handleClickToTop}>
-            <span className="material-symbols-outlined rounded-full border text-stone-200 border-white/50 transition-all duration-500 ease-in-out hover:border-orange-800 hover:bg-orange-600 hover:p-1 hover:text-orange-800">
+            <span className="material-symbols-outlined rounded-full border border-white/50 text-stone-200 transition-all duration-500 ease-in-out hover:border-orange-800 hover:bg-orange-600 hover:p-1 hover:text-orange-800">
               keyboard_arrow_up
             </span>
           </button>

@@ -1,6 +1,12 @@
-export default function AboutMeSection() {
+import { motion, MotionStyle } from "framer-motion";
+
+type AboutSectionProps = {
+  style: MotionStyle;
+};
+
+export default function AboutMeSection({ style }: AboutSectionProps) {
   return (
-    <section id="about" className="min-h-screen pb-96">
+    <motion.section id="about" className="min-h-screen pb-96" style={style}>
       <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         About Me
       </h2>
@@ -30,6 +36,6 @@ export default function AboutMeSection() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

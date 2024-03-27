@@ -29,6 +29,9 @@ const Navigation = () => {
 
   const handleClickToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
+    if (sectionId === "contact") {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
     if (element) {
       const rect = element.getBoundingClientRect();
       window.scrollTo({ top: rect.top + window.scrollY, behavior: "smooth" });
@@ -37,16 +40,16 @@ const Navigation = () => {
 
   const MenuItem = ({
     children,
-    anchor,
+    sectionId,
   }: {
     children: string;
-    anchor: string;
+    sectionId: string;
   }) => {
     return (
       <li className="flex h-1/4 w-full justify-center">
         <button
           className="uppercase w-full"
-          onClick={() => handleClickToSection(anchor)}
+          onClick={() => handleClickToSection(sectionId)}
         >
           {children}
         </button>
@@ -72,10 +75,10 @@ const Navigation = () => {
             </button>
           </div>
           <ul className="h-full divide-y divide-black/25 text-4xl md:text-5xl">
-            <MenuItem anchor="about">About Me</MenuItem>
-            <MenuItem anchor="projects">Projects</MenuItem>
-            <MenuItem anchor="resume">Resume</MenuItem>
-            <MenuItem anchor="contact">Contact</MenuItem>
+            <MenuItem sectionId="about">About Me</MenuItem>
+            <MenuItem sectionId="projects">Projects</MenuItem>
+            <MenuItem sectionId="resume">Resume</MenuItem>
+            <MenuItem sectionId="contact">Contact</MenuItem>
           </ul>
         </div>
       </div>

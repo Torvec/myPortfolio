@@ -1,10 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, MotionStyle } from "framer-motion";
 
-export default function HeroSection() {
+type HeroSectionProps = {
+  style: MotionStyle;
+};
+
+export default function HeroSection({ style }: HeroSectionProps) {
   return (
-    <section
+    <motion.section
       id="hero"
-      className="flex min-h-screen flex-col items-center justify-center text-4xl font-bold md:text-5xl lg:text-7xl bg-stone-950"
+      className="flex min-h-screen flex-col items-center justify-center bg-stone-950 text-4xl font-bold md:text-5xl lg:text-7xl"
+      style={style}
     >
       <h1>Edward Vonschondorf</h1>
       <h2>
@@ -26,6 +31,6 @@ export default function HeroSection() {
           keyboard_arrow_down
         </motion.span>
       </div>
-    </section>
+    </motion.section>
   );
 }

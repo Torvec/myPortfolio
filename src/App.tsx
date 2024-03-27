@@ -13,8 +13,7 @@ export default function App() {
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
-  const resumeRef = useRef(null);
-  const contactRef = useRef(null);
+  // const resumeRef = useRef(null);
 
   // Parallax effects where it looks like the next section cover the previous section
   // uses the next section's ref to trigger the effect when the start of the section
@@ -55,21 +54,10 @@ export default function App() {
   //   [0, 1],
   //   ["0vh", "100vh"],
   // );
-  // const scrollContactY = useScroll({
-  //   target: resumeRef,
-  //   offset: ["end end", "end end"],
-  // });
-  // const contactY = useTransform(
-  //   scrollContactY.scrollYProgress,
-  //   [0, 1],
-  //   ["100vh", "100vh"],
-  // );
 
   // Background colors from tailwindcss
   const bgStone700 = "#44403c";
   const bgStone900 = "#1c1917";
-  const bgOrange700 = "#c2410c";
-  const bgOrange500 = "#f97316";
 
   // Background Transition effects for each section, uses the previous section's ref
   // and triggers bg color transition when the start of the section intersects the middle
@@ -100,15 +88,6 @@ export default function App() {
     scrollResumeBg.scrollYProgress,
     [0, 1],
     [bgStone700, bgStone900],
-  );
-  const scrollContactBg = useScroll({
-    target: resumeRef,
-    offset: ["start center", "start start"],
-  });
-  const contactBgColorTransition = useTransform(
-    scrollContactBg.scrollYProgress,
-    [0, 1],
-    [bgOrange700, bgOrange500],
   );
 
   // Section scale down effect
@@ -150,8 +129,6 @@ export default function App() {
   // );
 
   // Section fade out effect
-  //
-  //
   const scrollHeroOpacity = useScroll({
     target: heroRef,
     offset: ["start end", "start start"],
@@ -188,72 +165,47 @@ export default function App() {
   //   [0, 1],
   //   ["100%", "0%"],
   // );
-  const scrollContactOpacity = useScroll({
-    target: contactRef,
-    offset: ["end end", "end end"],
-  });
-  const contactOpacity = useTransform(
-    scrollContactOpacity.scrollYProgress,
-    [0, 1],
-    [0, 1],
-  );
 
   console.log("Made in 2024 by Edward Vonschondorf");
 
   return (
     <>
       <Header />
-      <motion.div
-        ref={contactRef}
-        className="overflow-hidden bg-stone-950 text-xl text-stone-200"
-      >
-        <motion.div
-          style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
-          className="relative z-10"
-        >
-          <HeroSection />
+      <main className="text-xl text-stone-200">
+        <div className="relative z-10 bg-stone-950">
+          <HeroSection
+            style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
+          />
+        </div>
+        <motion.div ref={heroRef} className="relative z-20 bg-stone-950">
+          <AboutMeSection
+            style={{
+              y: aboutY,
+              scale: aboutScale,
+              opacity: aboutOpacity,
+              backgroundColor: aboutBgColorTransition,
+            }}
+          />
         </motion.div>
-        <motion.div
-          ref={heroRef}
-          style={{
-            y: aboutY,
-            scale: aboutScale,
-            opacity: aboutOpacity,
-            backgroundColor: aboutBgColorTransition,
-          }}
-          className="relative z-20"
-        >
-          <AboutMeSection />
+        <motion.div ref={aboutRef} className="relative z-30 bg-stone-950">
+          <ProjectsSection
+            style={{
+              y: projectsY,
+              scale: projectsScale,
+              opacity: projectsOpacity,
+              backgroundColor: projectsBgColorTransition,
+            }}
+          />
         </motion.div>
-        <motion.div
-          ref={aboutRef}
-          className="relative z-30"
-          style={{
-            y: projectsY,
-            scale: projectsScale,
-            opacity: projectsOpacity,
-            backgroundColor: projectsBgColorTransition,
-          }}
-        >
-          <ProjectsSection />
+        <motion.div ref={projectsRef} className="relative z-40 bg-stone-950">
+          <ResumeSection
+            style={{
+              backgroundColor: resumeBgColorTransition,
+            }}
+          />
         </motion.div>
-        <motion.div
-          ref={projectsRef}
-          className="relative z-40"
-          style={{
-            backgroundColor: resumeBgColorTransition,
-          }}
-        >
-          <ResumeSection />
-        </motion.div>
-      </motion.div>
-      <motion.div
-        className="sticky bottom-0 left-0 z-0"
-        style={{
-          opacity: contactOpacity,
-          backgroundColor: contactBgColorTransition,
-        }}
-      >
+      </main>
+      <motion.div className="sticky bottom-0 left-0 z-0 bg-orange-500">
         <ContactMeSection />
       </motion.div>
     </>

@@ -1,4 +1,10 @@
-export default function ResumeSection() {
+import { motion, MotionStyle } from "framer-motion";
+
+type ResumeSectionProps = {
+  style: MotionStyle;
+};
+
+export default function ResumeSection({ style }: ResumeSectionProps) {
   const myResume = [
     {
       id: 9,
@@ -171,7 +177,7 @@ export default function ResumeSection() {
     "Continuous Development",
     "Handlebars JS",
     "Inquirer JS",
-    "Microsoft Office"
+    "Microsoft Office",
   ];
 
   interface LinkButtonProps {
@@ -218,7 +224,7 @@ export default function ResumeSection() {
         key={id}
         className="text-pretty rounded-lg border-2 border-stone-700 p-5 text-stone-300 md:w-5/12"
       >
-        <span className="mx-auto block w-max -translate-y-8 bg-stone-700 rounded-sm px-2 text-center text-base font-black uppercase">
+        <span className="mx-auto block w-max -translate-y-8 rounded-sm bg-stone-700 px-2 text-center text-base font-black uppercase">
           {startDate} -&gt; {endDate}
         </span>
         <h2 className="text-2xl font-bold">{jobTitle || program}</h2>
@@ -238,7 +244,7 @@ export default function ResumeSection() {
   }
 
   return (
-    <section id="resume" className="min-h-screen py-96">
+    <motion.section id="resume" className="min-h-screen py-96" style={style}>
       <div className="mb-96 flex flex-col items-center justify-center gap-10">
         <h2 className="text-center text-5xl font-bold uppercase">My Resume</h2>
         <div>
@@ -272,7 +278,7 @@ export default function ResumeSection() {
         </div>
       </div>
 
-      <div className="mt-10 mx-5 rounded-lg border-2 border-stone-700 p-4 md:mx-auto md:w-7/12">
+      <div className="mx-5 mt-10 rounded-lg border-2 border-stone-700 p-4 md:mx-auto md:w-7/12">
         <h3 className="mx-auto w-max -translate-y-8 rounded-sm bg-stone-700 px-2 text-center text-2xl font-black uppercase">
           Skills
         </h3>
@@ -287,6 +293,6 @@ export default function ResumeSection() {
           ))}
         </ul>
       </div>
-    </section>
+    </motion.section>
   );
 }
