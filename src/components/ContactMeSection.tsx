@@ -38,7 +38,7 @@ export default function ContactMeSection() {
           Interested in collaborating, or just saying hello?
         </p>
         <div>
-          <h2 className="mb-5 text-base">Please contact</h2>
+          <h2 className="mb-5 text-2xl">Please contact</h2>
           <a
             href="mailto:me@edward-vonschondorf.dev"
             className="text-stone-200 transition-all duration-500 ease-in-out hover:text-stone-900"
@@ -48,12 +48,13 @@ export default function ContactMeSection() {
         </div>
       </div>
       <div className="flex h-[46vh] flex-col md:flex-row">
-        <div className="flex h-1/2 flex-col justify-center gap-5 border-b border-r border-black/25 p-10 md:h-full md:w-1/2">
-          <h2 className="text-base font-bold uppercase">
-            Current Availability
-          </h2>
-          <p className="text-balance text-3xl font-bold uppercase md:text-4xl">
-            I am open to full time, part time, and contract opportunities
+        <div className="flex h-1/2 flex-col justify-center gap-5 text-balance border-b border-r border-black/25 p-10 uppercase md:h-full md:w-1/2">
+          <h2 className="font-bold ">Current Availability</h2>
+          <p className=" text-3xl font-bold">
+            Open to full time, part time, and contract opportunities.
+          </p>
+          <p className="text-xl font-bold">
+            Also, flexible with remote, on-site, or hybrid work.
           </p>
         </div>
         <div className="grid h-1/2 grid-cols-2 grid-rows-2 md:h-full md:w-1/2 md:grid-cols-1 md:grid-rows-4">

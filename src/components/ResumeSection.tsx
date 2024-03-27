@@ -222,9 +222,9 @@ export default function ResumeSection({ style }: ResumeSectionProps) {
     return (
       <div
         key={id}
-        className="text-pretty rounded-lg border-2 border-stone-700 p-5 text-stone-300 md:w-5/12"
+        className="text-pretty rounded-lg border-2 border-white/20 p-5 text-stone-300 md:w-5/12"
       >
-        <span className="mx-auto block w-max -translate-y-8 rounded-sm bg-stone-700 px-2 text-center text-base font-black uppercase">
+        <span className="mx-auto block w-max -translate-y-8 rounded-sm bg-orange-700 px-2 text-center text-lg font-black uppercase">
           {startDate} -&gt; {endDate}
         </span>
         <h2 className="text-2xl font-bold">{jobTitle || program}</h2>

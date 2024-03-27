@@ -91,15 +91,15 @@ export default function App() {
   );
 
   // Section scale down effect
-  const scrollHeroScale = useScroll({
-    target: heroRef,
-    offset: ["start end", "start start"],
-  });
-  const heroScale = useTransform(
-    scrollHeroScale.scrollYProgress,
-    [0, 1],
-    ["100%", "80%"],
-  );
+  // const scrollHeroScale = useScroll({
+  //   target: heroRef,
+  //   offset: ["start end", "start start"],
+  // });
+  // const heroScale = useTransform(
+  //   scrollHeroScale.scrollYProgress,
+  //   [0, 1],
+  //   ["100%", "80%"],
+  // );
   const scrollAboutScale = useScroll({
     target: aboutRef,
     offset: ["start end", "start start"],
@@ -172,9 +172,9 @@ export default function App() {
     <>
       <Header />
       <main className="text-xl text-stone-200">
-        <div className="relative z-10 bg-stone-950" id="hero">
+        <div className="relative z-10 bg-[url(heroBG.png)]" id="hero">
           <HeroSection
-            style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
+            style={{ y: heroY,  opacity: heroOpacity }}
           />
         </div>
         <div
