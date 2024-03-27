@@ -7,7 +7,6 @@ type HeroSectionProps = {
 export default function HeroSection({ style }: HeroSectionProps) {
   return (
     <motion.section
-      id="hero"
       className="flex min-h-screen flex-col items-center justify-center bg-stone-950 text-4xl font-bold md:text-5xl lg:text-7xl"
       style={style}
     >

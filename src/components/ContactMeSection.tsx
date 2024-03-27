@@ -29,7 +29,10 @@ export default function ContactMeSection() {
   };
 
   return (
-    <section id="contact" className="min-h-screen text-stone-900">
+    <section
+      className="sticky bottom-0 left-0 z-0 min-h-screen bg-orange-500 text-stone-900"
+      id="contact"
+    >
       <div className="flex h-[50vh] flex-col justify-center gap-10 border-b border-black/25 p-10 text-4xl font-bold uppercase md:text-5xl">
         <p className="text-balanced md:w-3/4">
           Interested in collaborating, or just saying hello?

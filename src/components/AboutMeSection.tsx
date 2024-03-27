@@ -6,7 +6,7 @@ type AboutSectionProps = {
 
 export default function AboutMeSection({ style }: AboutSectionProps) {
   return (
-    <motion.section id="about" className="min-h-screen pb-96" style={style}>
+    <motion.section className="min-h-screen pb-96" style={style}>
       <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         About Me
       </h2>

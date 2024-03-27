@@ -5,7 +5,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import ResumeSection from "./components/ResumeSection";
 import ContactMeSection from "./components/ContactMeSection";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function App() {
@@ -172,12 +172,16 @@ export default function App() {
     <>
       <Header />
       <main className="text-xl text-stone-200">
-        <div className="relative z-10 bg-stone-950">
+        <div className="relative z-10 bg-stone-950" id="hero">
           <HeroSection
             style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
           />
         </div>
-        <motion.div ref={heroRef} className="relative z-20 bg-stone-950">
+        <div
+          ref={heroRef}
+          className="relative z-20 bg-stone-950"
+          id="about"
+        >
           <AboutMeSection
             style={{
               y: aboutY,
@@ -186,8 +190,12 @@ export default function App() {
               backgroundColor: aboutBgColorTransition,
             }}
           />
-        </motion.div>
-        <motion.div ref={aboutRef} className="relative z-30 bg-stone-950">
+        </div>
+        <div
+          ref={aboutRef}
+          className="relative z-30 bg-stone-950"
+          id="projects"
+        >
           <ProjectsSection
             style={{
               y: projectsY,
@@ -196,18 +204,20 @@ export default function App() {
               backgroundColor: projectsBgColorTransition,
             }}
           />
-        </motion.div>
-        <motion.div ref={projectsRef} className="relative z-40 bg-stone-950">
+        </div>
+        <div
+          ref={projectsRef}
+          className="relative z-40 bg-stone-950"
+          id="resume"
+        >
           <ResumeSection
             style={{
               backgroundColor: resumeBgColorTransition,
             }}
           />
-        </motion.div>
+        </div>
       </main>
-      <motion.div className="sticky bottom-0 left-0 z-0 bg-orange-500">
-        <ContactMeSection />
-      </motion.div>
+      <ContactMeSection />
     </>
   );
 }

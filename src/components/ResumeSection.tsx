@@ -244,7 +244,7 @@ export default function ResumeSection({ style }: ResumeSectionProps) {
   }
 
   return (
-    <motion.section id="resume" className="min-h-screen py-96" style={style}>
+    <motion.section className="min-h-screen py-96" style={style}>
       <div className="mb-96 flex flex-col items-center justify-center gap-10">
         <h2 className="text-center text-5xl font-bold uppercase">My Resume</h2>
         <div>

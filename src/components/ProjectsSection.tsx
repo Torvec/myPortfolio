@@ -121,7 +121,7 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
   }
 
   return (
-    <motion.section id="projects" className="min-h-screen" style={style}>
+    <motion.section  className="min-h-screen" style={style}>
       <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         Featured Projects
       </h2>
