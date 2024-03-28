@@ -9,7 +9,8 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     {
       id: 1,
       projectName: "Loot Vault",
-      imageURL: "https://picsum.photos/800",
+      deploymentImgURL: "loot_vault.jpg",
+      repositoryImgURL: "loot_vault_repo.jpg",
       repositoryURL: "https://github.com/Torvec/Loot-Vault",
       deploymentURL: "https://torvec.github.io/Loot-Vault/",
       description:
@@ -18,7 +19,8 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     {
       id: 2,
       projectName: "Task Titan",
-      imageURL: "https://picsum.photos/800",
+      deploymentImgURL: "task_titan.jpg",
+      repositoryImgURL: "task_titan_repo.jpg",
       repositoryURL: "https://github.com/Torvec/Task-Titan",
       deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
       description:
@@ -27,7 +29,8 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     {
       id: 3,
       projectName: "Wedloc",
-      imageURL: "https://picsum.photos/800",
+      deploymentImgURL: "wedloc.jpg",
+      repositoryImgURL: "wedloc_repo.jpg",
       repositoryURL: "https://github.com/Torvec/wedloc",
       deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
       description:
@@ -36,7 +39,8 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     {
       id: 4,
       projectName: "Bootcamp Challenges",
-      imageURL: "https://picsum.photos/800",
+      deploymentImgURL: "bootcamp_challenges.jpg",
+      repositoryImgURL: "bootcamp_challenges_repo.jpg",
       repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
       deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
       description:
@@ -45,30 +49,31 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     {
       id: 5,
       projectName: "My Portfolio",
-      imageURL: "https://picsum.photos/800",
+      deploymentImgURL: "my_portfolio.jpg",
+      repositoryImgURL: "my_portfolio_repo.jpg",
       repositoryURL: "https://github.com/Torvec/myPortfolio",
       deploymentURL: "https://edward-vonschondorf.dev/",
       description: "This portfolio.",
     },
   ];
 
-  interface ImageContainerProps {
-    imageURL: string;
+  interface DeploymentContainerProps {
+    deploymentImgURL: string;
     projectName: string;
     deploymentURL: string;
   }
 
-  function ImageContainer({
-    imageURL,
+  function DeploymentContainer({
+    deploymentImgURL,
     projectName,
     deploymentURL,
-  }: ImageContainerProps) {
+  }: DeploymentContainerProps) {
     return (
       <motion.div className="relative md:w-1/2">
         <img
-          src={imageURL}
+          src={deploymentImgURL}
           alt={projectName}
-          className="min-h-[50vh] w-full object-cover"
+          className="max-h-[75vh] min-h-[75vh] w-full object-cover object-top"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
           <LinkButton text="View Deployment" href={deploymentURL} />
@@ -77,19 +82,19 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     );
   }
 
-  interface TextContainerProps {
+  interface RepoContainerProps {
     projectName: string;
     description: string;
     repositoryURL: string;
   }
 
-  function TextContainer({
+  function RepoContainer({
     projectName,
     description,
     repositoryURL,
-  }: TextContainerProps) {
+  }: RepoContainerProps) {
     return (
-      <motion.div className="relative flex min-h-[50vh] flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2">
+      <motion.div className="relative flex min-h-[25vh] flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2">
         <p className="text-5xl font-bold">{projectName}</p>
         <p className="text-xl">{description}</p>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
@@ -121,7 +126,7 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
   }
 
   return (
-    <motion.section  className="min-h-screen" style={style}>
+    <motion.section className="min-h-screen" style={style}>
       <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         Featured Projects
       </h2>
@@ -130,38 +135,31 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
           ({
             id,
             projectName,
-            imageURL,
+            deploymentImgURL,
             repositoryURL,
             deploymentURL,
             description,
-          }) =>
-            id % 2 === 0 ? (
-              <div key={id} className="flex flex-col md:flex-row">
-                <ImageContainer
-                  imageURL={imageURL}
-                  projectName={projectName}
-                  deploymentURL={deploymentURL}
-                />
-                <TextContainer
-                  projectName={projectName}
-                  description={description}
-                  repositoryURL={repositoryURL}
-                />
-              </div>
-            ) : (
-              <div key={id} className="flex flex-col-reverse md:flex-row">
-                <TextContainer
-                  projectName={projectName}
-                  description={description}
-                  repositoryURL={repositoryURL}
-                />
-                <ImageContainer
-                  imageURL={imageURL}
-                  projectName={projectName}
-                  deploymentURL={deploymentURL}
-                />
-              </div>
-            ),
+          }) => (
+            <div
+              key={id}
+              className={
+                id % 2 === 0
+                  ? "flex flex-col md:flex-row"
+                  : "flex flex-col md:flex-row-reverse"
+              }
+            >
+              <DeploymentContainer
+                deploymentImgURL={deploymentImgURL}
+                projectName={projectName}
+                deploymentURL={deploymentURL}
+              />
+              <RepoContainer
+                projectName={projectName}
+                description={description}
+                repositoryURL={repositoryURL}
+              />
+            </div>
+          ),
         )}
       </>
       <div className="grid place-content-center py-96">
