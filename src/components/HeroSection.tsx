@@ -23,17 +23,17 @@ export default function HeroSection({ style }: HeroSectionProps) {
           with a desire and work ethic to make great things happen.
         </p>
       </div>
-      <div className="absolute bottom-5 text-center text-sm font-bold uppercase text-stone-400">
+      <div className="absolute bottom-1 text-center text-sm font-bold uppercase text-stone-400">
         <span className="block">Would you like to know more?</span>
         <motion.span
           className="material-symbols-outlined"
-          whileInView={{ y: 10 }}
+          whileInView={{ y: 5 }}
           transition={{
             repeat: Infinity,
             duration: 0.5,
-            ease: "easeInOut",
+            ease: "anticipate",
             repeatType: "reverse",
-            repeatDelay: 0.2,
+            repeatDelay: 0.1,
           }}
         >
           keyboard_arrow_down

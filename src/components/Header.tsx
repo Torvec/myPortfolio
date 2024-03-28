@@ -10,7 +10,7 @@ export default function Header() {
     return (
       <button
         onClick={handleClickToTop}
-        className="text-lg font-bold uppercase"
+        className="text-lg font-bold uppercase text-stone-300"
       >
         EV
       </button>
@@ -18,9 +18,10 @@ export default function Header() {
   };
 
   const Navigation = () => {
-    
+    const sections = ["about", "projects", "resume", "contact"];
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
     };
@@ -46,7 +47,7 @@ export default function Header() {
       sectionId: string;
     }) => {
       return (
-        <li className="flex h-1/4 w-full justify-center">
+        <li className="md:block flex h-1/4 w-full justify-center">
           <button
             className="w-full uppercase"
             onClick={() => handleClickToSection(sectionId)}
@@ -59,10 +60,22 @@ export default function Header() {
 
     return (
       <>
-        <button onClick={toggleMenu}>
+        {/* Menu Items for desktop */}
+        <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 md:flex text-stone-300 font-bold">
+          {sections.map((section) => (
+            <MenuItem key={section} sectionId={section}>
+              {section}
+            </MenuItem>
+          ))}
+        </ul>
+        {/* Menu Icon Button for mobile */}
+        <button
+          onClick={toggleMenu}
+          className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden text-stone-300"
+        >
           <span className="material-symbols-outlined">menu</span>
         </button>
-        {/* POP OUT MENU STARTS HERE */}
+        {/* Pop out menu for mobile */}
         <div
           id="menu"
           className={`fixed inset-0 z-10 ${isMenuOpen ? "" : "hidden"} h-screen w-screen bg-black/25 text-stone-200`}
@@ -75,10 +88,11 @@ export default function Header() {
               </button>
             </div>
             <ul className="h-full divide-y divide-black/25 text-4xl md:text-5xl">
-              <MenuItem sectionId="about">About Me</MenuItem>
-              <MenuItem sectionId="projects">Projects</MenuItem>
-              <MenuItem sectionId="resume">Resume</MenuItem>
-              <MenuItem sectionId="contact">Contact</MenuItem>
+              {sections.map((section) => (
+                <MenuItem key={section} sectionId={section}>
+                  {section}
+                </MenuItem>
+              ))}
             </ul>
           </div>
         </div>
@@ -93,7 +107,7 @@ export default function Header() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (previous !== undefined) {
-      latest > previous && latest > 150 ? setHidden(true) : setHidden(false);
+      latest > previous && latest > 200 ? setHidden(true) : setHidden(false);
     }
   });
 
@@ -107,7 +121,8 @@ export default function Header() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <nav className="flex w-full justify-between border-b border-white/25 px-4 py-2 text-lg font-bold text-stone-200 backdrop-blur-lg">
+      {/* <nav className="flex w-full justify-between border-b border-white/25 px-4 py-2 text-lg font-bold text-stone-200 backdrop-blur-lg"> */}
+      <nav className="relative border-b border-white/25 px-4 py-2 backdrop-blur-lg">
         <Logo />
         <Navigation />
       </nav>

@@ -9,13 +9,13 @@ import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function App() {
-  // Refs for each section to trigger effects on scroll
+  // Refs for each section to trigger scroll based animations
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   // const resumeRef = useRef(null);
 
-  // Parallax effects where it looks like the next section cover the previous section
+  // Parallax effects where it looks like the next section covers the previous section
   // uses the next section's ref to trigger the effect when the start of the section
   // intersects the end of the viewport
   const scrollHeroY = useScroll({
@@ -91,6 +91,8 @@ export default function App() {
   );
 
   // Section scale down effect
+  //
+  //
   // const scrollHeroScale = useScroll({
   //   target: heroRef,
   //   offset: ["start end", "start start"],
