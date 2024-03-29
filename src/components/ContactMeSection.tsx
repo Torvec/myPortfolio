@@ -3,12 +3,13 @@ export default function ContactMeSection() {
     return new Date().getFullYear();
   };
 
-  interface SocialLinkProps {
+  function SocialLink({
+    href,
+    children,
+  }: {
     href: string;
     children: React.ReactNode;
-  }
-
-  function SocialLink({ href, children }: SocialLinkProps) {
+  }) {
     return (
       <a
         href={href}

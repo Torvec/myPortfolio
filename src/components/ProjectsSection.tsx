@@ -1,10 +1,6 @@
 import { motion, MotionStyle } from "framer-motion";
 
-type ProjectsSectionProps = {
-  style: MotionStyle;
-};
-
-export default function ProjectsSection({ style }: ProjectsSectionProps) {
+export default function ProjectsSection({ style }: { style: MotionStyle }) {
   const featuredProjects = [
     {
       id: 1,
@@ -57,17 +53,15 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     },
   ];
 
-  interface DeploymentContainerProps {
-    deploymentImgURL: string;
-    projectName: string;
-    deploymentURL: string;
-  }
-
   function DeploymentContainer({
     deploymentImgURL,
     projectName,
     deploymentURL,
-  }: DeploymentContainerProps) {
+  }: {
+    deploymentImgURL: string;
+    projectName: string;
+    deploymentURL: string;
+  }) {
     return (
       <motion.div className="relative md:w-1/2">
         <img
@@ -82,17 +76,15 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     );
   }
 
-  interface RepoContainerProps {
-    projectName: string;
-    description: string;
-    repositoryURL: string;
-  }
-
   function RepoContainer({
     projectName,
     description,
     repositoryURL,
-  }: RepoContainerProps) {
+  }: {
+    projectName: string;
+    description: string;
+    repositoryURL: string;
+  }) {
     return (
       <motion.div className="relative flex min-h-[25vh] flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2">
         <p className="text-5xl font-bold">{projectName}</p>
@@ -104,12 +96,7 @@ export default function ProjectsSection({ style }: ProjectsSectionProps) {
     );
   }
 
-  interface LinkButtonProps {
-    text: string;
-    href: string;
-  }
-
-  function LinkButton({ text, href }: LinkButtonProps) {
+  function LinkButton({ text, href }: { text: string; href: string }) {
     return (
       <a
         href={href}

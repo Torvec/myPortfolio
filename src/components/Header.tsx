@@ -47,7 +47,7 @@ export default function Header() {
       sectionId: string;
     }) => {
       return (
-        <li className="md:block flex h-1/4 w-full justify-center">
+        <li className="flex h-1/4 w-full justify-center md:block">
           <button
             className="w-full uppercase"
             onClick={() => handleClickToSection(sectionId)}
@@ -61,9 +61,9 @@ export default function Header() {
     return (
       <>
         {/* Menu Items for desktop */}
-        <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 md:flex text-stone-300 font-bold">
-          {sections.map((section) => (
-            <MenuItem key={section} sectionId={section}>
+        <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 font-bold text-stone-300 md:flex">
+          {sections.map((section, index) => (
+            <MenuItem key={index} sectionId={section}>
               {section}
             </MenuItem>
           ))}
@@ -71,7 +71,7 @@ export default function Header() {
         {/* Menu Icon Button for mobile */}
         <button
           onClick={toggleMenu}
-          className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden text-stone-300"
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-300 md:hidden"
         >
           <span className="material-symbols-outlined">menu</span>
         </button>

@@ -175,15 +175,9 @@ export default function App() {
       <Header />
       <main className="text-xl text-stone-200">
         <div className="relative z-10 bg-[url(heroBG.png)]" id="hero">
-          <HeroSection
-            style={{ y: heroY,  opacity: heroOpacity }}
-          />
+          <HeroSection style={{ y: heroY, opacity: heroOpacity }} />
         </div>
-        <div
-          ref={heroRef}
-          className="relative z-20 bg-stone-950"
-          id="about"
-        >
+        <div ref={heroRef} className="relative z-20 bg-stone-950" id="about">
           <AboutMeSection
             style={{
               y: aboutY,

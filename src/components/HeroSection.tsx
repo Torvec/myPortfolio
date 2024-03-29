@@ -1,10 +1,6 @@
 import { motion, MotionStyle } from "framer-motion";
 
-type HeroSectionProps = {
-  style: MotionStyle;
-};
-
-export default function HeroSection({ style }: HeroSectionProps) {
+export default function HeroSection({ style }: { style: MotionStyle }) {
   return (
     <motion.section
       className="flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent to-stone-950 to-60% font-bold"

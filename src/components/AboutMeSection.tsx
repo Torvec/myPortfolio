@@ -1,18 +1,16 @@
 import { motion, MotionStyle } from "framer-motion";
 
-type AboutSectionProps = {
-  style: MotionStyle;
-};
-
-export default function AboutMeSection({ style }: AboutSectionProps) {
+export default function AboutMeSection({ style }: { style: MotionStyle }) {
   return (
     <motion.section className="min-h-screen pb-96" style={style}>
       <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         About Me
       </h2>
       <div className="flex flex-col gap-10 md:flex-row">
-        <img src="https://picsum.photos/800" alt="me" />
-        <div className="space-y-10 text-balance px-10 text-2xl">
+        <div className="md:w-1/2">
+          <img src="me.png" alt="me" className="size-full object-contain" />
+        </div>
+        <div className="space-y-10 text-balance px-10 text-2xl md:w-1/2">
           <p>Hello and welcome!</p>
           <p>
             I'm a full stack developer with a passion for creating beautiful and

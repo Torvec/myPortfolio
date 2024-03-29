@@ -1,10 +1,6 @@
 import { motion, MotionStyle } from "framer-motion";
 
-type ResumeSectionProps = {
-  style: MotionStyle;
-};
-
-export default function ResumeSection({ style }: ResumeSectionProps) {
+export default function ResumeSection({ style }: { style: MotionStyle }) {
   const myResume = [
     {
       id: 9,
@@ -180,12 +176,7 @@ export default function ResumeSection({ style }: ResumeSectionProps) {
     "Microsoft Office",
   ];
 
-  interface LinkButtonProps {
-    text: string;
-    href: string;
-  }
-
-  function LinkButton({ text, href }: LinkButtonProps) {
+  function LinkButton({ text, href }: { text: string; href: string }) {
     return (
       <a
         href={href}
