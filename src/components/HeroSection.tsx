@@ -1,17 +1,14 @@
-import { motion, MotionStyle } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function HeroSection({ style }: { style: MotionStyle }) {
+export default function HeroSection() {
   return (
-    <motion.section
-      className="flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent to-stone-950 to-60% font-bold"
-      style={style}
-    >
+    <motion.section className="flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent to-stone-950 to-60% font-bold">
       <div className="space-y-5 text-center">
         <h1 className="text-5xl text-stone-300 md:text-6xl lg:text-8xl">
-          Hi! I'm{" "}
+          / Hi! I'm{" "}
           <span className="uppercase text-orange-600">
             Edward <br />
-            Vonschondorf
+            Vonschondorf /
           </span>
         </h1>
         <p className="text-balance text-base text-stone-400 md:text-2xl">

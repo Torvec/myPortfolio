@@ -1,6 +1,6 @@
-import { motion, MotionStyle } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function ProjectsSection({ style }: { style: MotionStyle }) {
+export default function ProjectsSection() {
   const featuredProjects = [
     {
       id: 1,
@@ -53,7 +53,7 @@ export default function ProjectsSection({ style }: { style: MotionStyle }) {
     },
   ];
 
-  function DeploymentContainer({
+  const DeploymentContainer = ({
     deploymentImgURL,
     projectName,
     deploymentURL,
@@ -61,7 +61,7 @@ export default function ProjectsSection({ style }: { style: MotionStyle }) {
     deploymentImgURL: string;
     projectName: string;
     deploymentURL: string;
-  }) {
+  }) => {
     return (
       <motion.div className="relative md:w-1/2">
         <img
@@ -74,9 +74,9 @@ export default function ProjectsSection({ style }: { style: MotionStyle }) {
         </div>
       </motion.div>
     );
-  }
+  };
 
-  function RepoContainer({
+  const RepoContainer = ({
     projectName,
     description,
     repositoryURL,
@@ -84,7 +84,7 @@ export default function ProjectsSection({ style }: { style: MotionStyle }) {
     projectName: string;
     description: string;
     repositoryURL: string;
-  }) {
+  }) => {
     return (
       <motion.div className="relative flex min-h-[25vh] flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2">
         <p className="text-5xl font-bold">{projectName}</p>
@@ -94,9 +94,9 @@ export default function ProjectsSection({ style }: { style: MotionStyle }) {
         </div>
       </motion.div>
     );
-  }
+  };
 
-  function LinkButton({ text, href }: { text: string; href: string }) {
+  const LinkButton = ({ text, href }: { text: string; href: string }) => {
     return (
       <a
         href={href}
@@ -110,10 +110,10 @@ export default function ProjectsSection({ style }: { style: MotionStyle }) {
         </span>
       </a>
     );
-  }
+  };
 
   return (
-    <motion.section className="min-h-screen" style={style}>
+    <motion.section className="min-h-screen">
       <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         Featured Projects
       </h2>

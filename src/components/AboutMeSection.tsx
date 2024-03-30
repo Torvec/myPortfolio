@@ -1,8 +1,8 @@
-import { motion, MotionStyle } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function AboutMeSection({ style }: { style: MotionStyle }) {
+export default function AboutMeSection() {
   return (
-    <motion.section className="min-h-screen pb-96" style={style}>
+    <motion.section className="min-h-screen pb-96">
       <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
         About Me
       </h2>

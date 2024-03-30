@@ -1,6 +1,6 @@
-import { motion, MotionStyle } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function ResumeSection({ style }: { style: MotionStyle }) {
+export default function ResumeSection() {
   const myResume = [
     {
       id: 9,
@@ -174,6 +174,7 @@ export default function ResumeSection({ style }: { style: MotionStyle }) {
     "Handlebars JS",
     "Inquirer JS",
     "Microsoft Office",
+    "TypeScript",
   ];
 
   function LinkButton({ text, href }: { text: string; href: string }) {
@@ -235,7 +236,7 @@ export default function ResumeSection({ style }: { style: MotionStyle }) {
   }
 
   return (
-    <motion.section className="min-h-screen py-96" style={style}>
+    <motion.section className="min-h-screen py-96">
       <div className="mb-96 flex flex-col items-center justify-center gap-10">
         <h2 className="text-center text-5xl font-bold uppercase">My Resume</h2>
         <div>
