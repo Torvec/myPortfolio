@@ -22,20 +22,17 @@ export default function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
+
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
     };
 
     const handleClickToSection = (sectionId: string) => {
       const element = document.getElementById(sectionId);
-      if (sectionId === "contact") {
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth",
-        });
-      } else if (element) {
+      if (element) {
         const rect = element.getBoundingClientRect();
-        window.scrollTo({ top: rect.top + window.scrollY, behavior: "smooth" });
+        window.scrollTo({ top: rect.top + window.scrollY });
       }
     };
 
@@ -107,7 +104,7 @@ export default function Header() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (previous !== undefined) {
-      latest > previous && latest > 200 ? setHidden(true) : setHidden(false);
+      latest > previous && latest > 256 ? setHidden(true) : setHidden(false);
     }
   });
 
@@ -122,7 +119,7 @@ export default function Header() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       {/* <nav className="flex w-full justify-between border-b border-white/25 px-4 py-2 text-lg font-bold text-stone-200 backdrop-blur-lg"> */}
-      <nav className="relative border-b border-white/25 px-4 py-2 backdrop-blur-lg">
+      <nav className="relative px-4 py-2 backdrop-blur-lg">
         <Logo />
         <Navigation />
       </nav>

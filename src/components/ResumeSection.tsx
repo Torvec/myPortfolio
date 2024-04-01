@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 
 export default function ResumeSection() {
   const myResume = [
@@ -175,6 +174,7 @@ export default function ResumeSection() {
     "Inquirer JS",
     "Microsoft Office",
     "TypeScript",
+    "Framer Motion"
   ];
 
   function LinkButton({ text, href }: { text: string; href: string }) {
@@ -214,7 +214,7 @@ export default function ResumeSection() {
     return (
       <div
         key={id}
-        className="text-pretty rounded-lg border-2 border-white/20 p-5 text-stone-300 md:w-5/12"
+        className="text-pretty rounded-lg border-2 border-white/15 p-5 text-stone-300 md:w-5/12 bg-stone-900"
       >
         <span className="mx-auto block w-max -translate-y-8 rounded-sm bg-orange-700 px-2 text-center text-lg font-black uppercase">
           {startDate} -&gt; {endDate}
@@ -236,17 +236,22 @@ export default function ResumeSection() {
   }
 
   return (
-    <motion.section className="min-h-screen py-96">
-      <div className="mb-96 flex flex-col items-center justify-center gap-10">
-        <h2 className="text-center text-5xl font-bold uppercase">My Resume</h2>
+    <section className="py-64">
+      <div className="flex py-64 flex-col items-center justify-center ">
+        <div className="flex flex-col gap-6">
+          <h2 className="text-7xl font-bold">My Professional Journey...</h2>
+          <span className="self-end text-sm font-bold uppercase text-stone-600">
+            [Resume]
+          </span>
+        </div>
         <div>
           <LinkButton
-            text="Download PDF"
+            text="Download Resume"
             href="https://www.linkedin.com/in/edward-von/"
           />
         </div>
       </div>
-      <div className="flex flex-col gap-10 px-5">
+      <div className="flex flex-col gap-20 px-5">
         <div className="flex justify-center">
           <ResumeItem id={9} />
         </div>
@@ -270,7 +275,7 @@ export default function ResumeSection() {
         </div>
       </div>
 
-      <div className="mx-5 mt-10 rounded-lg border-2 border-stone-700 p-4 md:mx-auto md:w-7/12">
+      <div className="mx-5 mt-10 rounded-lg border-2 border-white/15 p-4 md:mx-auto md:w-7/12 bg-stone-900">
         <h3 className="mx-auto w-max -translate-y-8 rounded-sm bg-stone-700 px-2 text-center text-2xl font-black uppercase">
           Skills
         </h3>
@@ -285,6 +290,6 @@ export default function ResumeSection() {
           ))}
         </ul>
       </div>
-    </motion.section>
+    </section>
   );
 }

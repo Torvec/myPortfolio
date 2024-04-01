@@ -1,16 +1,20 @@
-import { motion } from "framer-motion";
 
 export default function AboutMeSection() {
   return (
-    <motion.section className="min-h-screen pb-96">
-      <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
-        About Me
-      </h2>
-      <div className="flex flex-col gap-10 md:flex-row">
-        <div className="md:w-1/2">
-          <img src="me.png" alt="me" className="size-full object-contain" />
+    <section>
+      <div className="flex flex-col items-center justify-center py-64 ">
+        <div className="flex flex-col gap-6">
+          <h2 className="text-7xl font-bold">Who I am...</h2>
+          <span className="self-end text-sm font-bold uppercase text-stone-600">
+            [About Me]
+          </span>
         </div>
-        <div className="space-y-10 text-balance px-10 text-2xl md:w-1/2">
+      </div>
+      <div className="flex flex-col gap-32 bg-stone-950/80 md:flex-row">
+        <div className="md:w-5/12">
+          <img src="me.png" alt="me" className="size-[768px]" />
+        </div>
+        <div className="space-y-10 text-balance text-2xl md:w-5/12">
           <p>Hello and welcome!</p>
           <p>
             I'm a full stack developer with a passion for creating beautiful and
@@ -34,6 +38,6 @@ export default function AboutMeSection() {
           </p>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

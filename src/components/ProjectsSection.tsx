@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 
 export default function ProjectsSection() {
   const featuredProjects = [
@@ -63,7 +62,7 @@ export default function ProjectsSection() {
     deploymentURL: string;
   }) => {
     return (
-      <motion.div className="relative md:w-1/2">
+      <div className="relative md:w-1/2">
         <img
           src={deploymentImgURL}
           alt={projectName}
@@ -72,7 +71,7 @@ export default function ProjectsSection() {
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
           <LinkButton text="View Deployment" href={deploymentURL} />
         </div>
-      </motion.div>
+      </div>
     );
   };
 
@@ -86,13 +85,13 @@ export default function ProjectsSection() {
     repositoryURL: string;
   }) => {
     return (
-      <motion.div className="relative flex min-h-[25vh] flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2">
+      <div className="relative flex min-h-[25vh] flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2">
         <p className="text-5xl font-bold">{projectName}</p>
         <p className="text-xl">{description}</p>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
           <LinkButton text="View Repository" href={repositoryURL} />
         </div>
-      </motion.div>
+      </div>
     );
   };
 
@@ -113,10 +112,15 @@ export default function ProjectsSection() {
   };
 
   return (
-    <motion.section className="min-h-screen">
-      <h2 className="grid min-h-screen place-content-center text-center text-5xl font-bold uppercase">
-        Featured Projects
-      </h2>
+    <section>
+      <div className="flex py-64 flex-col items-center justify-center ">
+        <div className="flex flex-col gap-6">
+          <h2 className="text-7xl font-bold">Some cool things I've made...</h2>
+          <span className="self-end text-sm font-bold uppercase text-stone-600">
+            [Featured Projects]
+          </span>
+        </div>
+      </div>
       <>
         {featuredProjects.map(
           ({
@@ -149,12 +153,12 @@ export default function ProjectsSection() {
           ),
         )}
       </>
-      <div className="grid place-content-center py-96">
+      <div className="grid place-content-center py-64">
         <LinkButton
           text="More Projects"
           href="https://github.com/Torvec?tab=repositories"
         />
       </div>
-    </motion.section>
+    </section>
   );
 }
