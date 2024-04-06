@@ -22,8 +22,6 @@ export default function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
-
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
     };

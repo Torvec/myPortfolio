@@ -41,15 +41,6 @@ export default function ProjectsSection() {
       description:
         "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
     },
-    {
-      id: 5,
-      projectName: "My Portfolio",
-      deploymentImgURL: "my_portfolio.jpg",
-      repositoryImgURL: "my_portfolio_repo.jpg",
-      repositoryURL: "https://github.com/Torvec/myPortfolio",
-      deploymentURL: "https://edward-vonschondorf.dev/",
-      description: "This portfolio.",
-    },
   ];
 
   const DeploymentContainer = ({
