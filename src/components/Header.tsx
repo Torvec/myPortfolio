@@ -108,7 +108,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed inset-0 z-50 h-max"
+      className="fixed inset-0 z-50 h-max border-b border-white/25"
       variants={{
         visible: { y: 0 },
         hidden: { y: "-100%" },

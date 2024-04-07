@@ -9,7 +9,7 @@ export default function SectionHeader({
 }) {
   const Title = () => {
     return (
-      <div className="flex justify-between items-baseline font-bold">
+      <div className="flex items-baseline justify-between font-bold">
         <h2 className="text-5xl text-stone-300">{title}</h2>
         <span className="text-base text-stone-600">{number}</span>
       </div>
@@ -23,7 +23,7 @@ export default function SectionHeader({
   };
 
   return (
-    <div className="mx-5 mb-20 border-b-4 border-orange-600 flex flex-col-reverse">
+    <div className="container mx-5 my-20 flex flex-col-reverse border-b-4 border-orange-600 md:mx-auto">
       <Title />
       <Subtitle />
     </div>
