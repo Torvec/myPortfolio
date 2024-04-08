@@ -56,7 +56,7 @@ export default function Header() {
     return (
       <>
         {/* Menu Items for desktop */}
-        <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 font-bold text-stone-300 md:flex">
+        <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 font-bold text-stone-200 md:flex">
           {sections.map((section, index) => (
             <MenuItem key={index} sectionId={section}>
               {section}
@@ -66,7 +66,7 @@ export default function Header() {
         {/* Menu Icon Button for mobile */}
         <button
           onClick={toggleMenu}
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-300 md:hidden"
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-200 md:hidden"
         >
           <span className="material-symbols-outlined">menu</span>
         </button>
@@ -108,7 +108,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed inset-0 z-50 h-max border-b border-white/25"
+      className="fixed inset-0 z-50 h-max border-b border-white/25 backdrop-blur-lg"
       variants={{
         visible: { y: 0 },
         hidden: { y: "-100%" },
@@ -116,8 +116,7 @@ export default function Header() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      {/* <nav className="flex w-full justify-between border-b border-white/25 px-4 py-2 text-lg font-bold text-stone-200 backdrop-blur-lg"> */}
-      <nav className="relative px-4 py-2 backdrop-blur-lg">
+      <nav className="container relative mx-auto px-4 py-2">
         <Logo />
         <Navigation />
       </nav>
