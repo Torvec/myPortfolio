@@ -1,6 +1,12 @@
 export default function AboutMeSection() {
+  const introduction = `From robotics and radar systems to full stack applications - I'm a San
+          Francisco Bay Area based developer with 14+ years as a technician, and
+          5 years of freelance front-end web development experience. I recently
+          transitioned to full stack web development after completing UC
+          Berkeley's Full Stack Web Development Boot Camp.`;
+
   const goalsText = [
-    "Visually captivating, responsive, and accessible designs.",
+    "Visually captivating, responsive, and have accessible designs.",
     "User Friendly and engaging interactive experiences.",
     "Secure, Robust, and scalable data-driven applications.",
   ];
@@ -19,6 +25,14 @@ export default function AboutMeSection() {
     { logo: "", label: "Figma" },
     { logo: "", label: "VS Code" },
   ];
+
+  const SubHeader = ({ text }: { text: string }) => {
+    return (
+      <h3 className="text-center text-lg font-bold uppercase text-stone-200">
+        {text}
+      </h3>
+    );
+  };
 
   const GoalsContainer = ({
     number,
@@ -55,7 +69,7 @@ export default function AboutMeSection() {
   };
 
   return (
-    <section className="container mx-auto grid gap-4 p-4 pb-20 md:grid-cols-2 md:gap-8">
+    <section className="container mx-auto grid gap-4 p-4 pb-64 md:grid-cols-2 md:gap-8">
       {/* Pic of Me */}
       <div className="overflow-hidden rounded-3xl border-2 border-white/50">
         <img
@@ -69,19 +83,11 @@ export default function AboutMeSection() {
         <h2 className="text-center text-4xl font-bold text-stone-200">
           About Me
         </h2>
-        <p className="text-lg text-stone-300 md:text-xl">
-          From robotics and radar systems to full stack applications - I'm a San
-          Francisco Bay Area based developer with 14+ years as a technician, and
-          5 years of freelance front-end web development experience. I recently
-          transitioned to full stack web development after completing UC
-          Berkeley's Full Stack Web Development Boot Camp.
-        </p>
+        <p className="text-lg text-stone-300 md:text-xl">{introduction}</p>
       </div>
       {/* Developer Goals */}
       <div className="space-y-4 rounded-3xl border-2 border-white/20 p-4 md:space-y-8 md:p-8">
-        <h3 className="text-center text-lg font-bold uppercase text-stone-200">
-          I develop websites that are...
-        </h3>
+        <SubHeader text="I develop websites that are..." />
         <div className="space-y-4">
           {goalsText.map((goal, index) => (
             <GoalsContainer number={index + 1} text={goal} />
@@ -90,9 +96,7 @@ export default function AboutMeSection() {
       </div>
       {/* My Toolkit */}
       <div className="space-y-4 rounded-3xl border-2 border-white/20 p-4 md:space-y-8 md:p-8">
-        <h3 className="text-center text-lg font-bold uppercase text-stone-200">
-          My Toolkit:
-        </h3>
+        <SubHeader text="My Toolkit:" />
         <Toolkit />
       </div>
     </section>

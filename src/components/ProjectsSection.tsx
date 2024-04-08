@@ -1,87 +1,109 @@
-
 export default function ProjectsSection() {
   const featuredProjects = [
     {
       id: 1,
       projectName: "Loot Vault",
-      deploymentImgURL: "loot_vault.jpg",
-      repositoryImgURL: "loot_vault_repo.jpg",
-      repositoryURL: "https://github.com/Torvec/Loot-Vault",
+      imgURL: "loot_vault.jpg",
       deploymentURL: "https://torvec.github.io/Loot-Vault/",
       description:
         "A video game deals site for gamers on a budget using third party API's.",
+      techStack: ["HTML", "Bulma CSS", "JavaScript", "Fetch API"],
     },
     {
       id: 2,
       projectName: "Task Titan",
-      deploymentImgURL: "task_titan.jpg",
-      repositoryImgURL: "task_titan_repo.jpg",
-      repositoryURL: "https://github.com/Torvec/Task-Titan",
+      imgURL: "task_titan.jpg",
       deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
       description:
         "A task completion and collaboration app for managing projects.",
+      techStack: [
+        "Handlebars",
+        "Materialize CSS",
+        "MySQL",
+        "Node",
+        "Express",
+        "Sequelize",
+      ],
     },
     {
       id: 3,
       projectName: "Wedloc",
-      deploymentImgURL: "wedloc.jpg",
-      repositoryImgURL: "wedloc_repo.jpg",
-      repositoryURL: "https://github.com/Torvec/wedloc",
+      imgURL: "wedloc.jpg",
       deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
       description:
         "A social media app for wedding photographers to share their work and allow clients to interact with guests.",
+      techStack: [
+        "React",
+        "Tailwind",
+        "Material UI",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "GraphQL",
+        "Apollo Server",
+      ],
     },
     {
       id: 4,
       projectName: "Bootcamp Challenges",
-      deploymentImgURL: "bootcamp_challenges.jpg",
-      repositoryImgURL: "bootcamp_challenges_repo.jpg",
-      repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
+      imgURL: "bootcamp_challenges.jpg",
       deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
       description:
         "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
+      techStack: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "JQuery",
+        "Bootstrap",
+        "Node",
+        "Express",
+        "MySQL",
+        "Handlebars",
+        "MongoDB",
+        "PWA",
+        "React",
+        "Redux",
+      ],
     },
   ];
 
-  const DeploymentContainer = ({
-    deploymentImgURL,
+  const ProjectCard = ({
+    imgURL,
     projectName,
     deploymentURL,
+    description,
+    techStack,
   }: {
-    deploymentImgURL: string;
+    imgURL: string;
     projectName: string;
     deploymentURL: string;
-  }) => {
-    return (
-      <div className="relative md:w-1/2">
-        <img
-          src={deploymentImgURL}
-          alt={projectName}
-          className="max-h-[75vh] min-h-[75vh] w-full object-cover object-top"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
-          <LinkButton text="View Deployment" href={deploymentURL} />
-        </div>
-      </div>
-    );
-  };
-
-  const RepoContainer = ({
-    projectName,
-    description,
-    repositoryURL,
-  }: {
-    projectName: string;
     description: string;
-    repositoryURL: string;
+    techStack: string[];
   }) => {
     return (
-      <div className="relative flex min-h-[25vh] flex-col justify-end gap-2 bg-stone-950 p-10 md:w-1/2">
-        <p className="text-5xl font-bold">{projectName}</p>
-        <p className="text-xl">{description}</p>
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-black bg-opacity-50 text-lg uppercase text-white opacity-0 transition-opacity hover:opacity-100">
-          <LinkButton text="View Repository" href={repositoryURL} />
-        </div>
+      <div className="relative overflow-hidden rounded-3xl border-2 border-white/20">
+        <a href={deploymentURL}>
+          <img
+            src={imgURL}
+            alt={projectName}
+            className="max-h-[60vh] min-h-[60vh] w-full object-cover object-top"
+          />
+          <div className="absolute bottom-0 left-0 flex h-full w-full flex-col justify-end bg-gradient-to-t from-stone-950 from-20% px-4 pb-4">
+            <h3 className="mb-2 text-2xl font-bold text-stone-200">
+              {projectName}
+            </h3>
+            <p className="mb-4 text-stone-300 text-base">{description}</p>
+            <ul className="flex flex-wrap gap-2">
+              {techStack.map((tech) => (
+                <li className="rounded-2xl bg-stone-800 px-4 py-1 text-sm text-stone-400">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </a>
       </div>
     );
   };
@@ -92,7 +114,7 @@ export default function ProjectsSection() {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2 rounded-lg border border-stone-200 p-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
+        className="group flex items-center gap-2 rounded-2xl border-2 border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
       >
         <span className="text-lg uppercase">{text}</span>
         <span className="material-symbols-outlined text-lg transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
@@ -103,48 +125,33 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section>
-      <div className="flex py-64 flex-col items-center justify-center ">
-        <div className="flex flex-col gap-6">
-          <h2 className="text-7xl font-bold">Some cool things I've made...</h2>
-          <span className="self-end text-sm font-bold uppercase text-stone-600">
-            [Featured Projects]
-          </span>
-        </div>
+    <section className="container mx-auto">
+      <div className="mx-4 mb-16 border-b-4 border-orange-600 md:mx-0">
+        <h2 className="text-center text-4xl font-bold">Featured Projects</h2>
       </div>
-      <>
+      <div className="grid gap-4 px-4 md:grid-cols-2 md:gap-8 md:px-0 mb-16">
         {featuredProjects.map(
           ({
             id,
+            imgURL,
             projectName,
-            deploymentImgURL,
-            repositoryURL,
             deploymentURL,
             description,
+            techStack,
           }) => (
-            <div
-              key={id}
-              className={
-                id % 2 === 0
-                  ? "flex flex-col md:flex-row"
-                  : "flex flex-col md:flex-row-reverse"
-              }
-            >
-              <DeploymentContainer
-                deploymentImgURL={deploymentImgURL}
+            <div key={id}>
+              <ProjectCard
+                imgURL={imgURL}
                 projectName={projectName}
                 deploymentURL={deploymentURL}
-              />
-              <RepoContainer
-                projectName={projectName}
                 description={description}
-                repositoryURL={repositoryURL}
+                techStack={techStack}
               />
             </div>
           ),
         )}
-      </>
-      <div className="grid place-content-center py-64">
+      </div>
+      <div className="grid place-content-center pb-64">
         <LinkButton
           text="More Projects"
           href="https://github.com/Torvec?tab=repositories"
