@@ -117,46 +117,6 @@ export default function ResumeSection() {
     );
   };
 
-  // function ResumeItem({ id }: { id: number }) {
-  //   const resume = myResume.find((item) => item.id === id);
-
-  //   if (!resume) {
-  //     return null;
-  //   }
-
-  //   const {
-  //     startDate,
-  //     endDate,
-  //     company,
-  //     institution,
-  //     jobTitle,
-  //     program,
-  //     details,
-  //   } = resume;
-
-  //   return (
-  //     <div
-  //       key={id}
-  //       className="text-pretty rounded-lg border-2 border-white/15 bg-stone-900 p-5 text-stone-300 md:w-5/12"
-  //     >
-  //       <span className="mx-auto block w-max -translate-y-8 rounded-sm bg-orange-700 px-2 text-center text-lg font-black uppercase">
-  //         {startDate} -&gt; {endDate}
-  //       </span>
-  //       <h2 className="text-2xl font-bold">{jobTitle || program}</h2>
-  //       <div className="flex justify-between text-sm uppercase">
-  //         <h3>{company || institution}</h3>
-  //       </div>
-  //       <ul className="space-y-2 p-5 text-lg">
-  //         {details.map((detailsItem, index) => (
-  //           <li key={index} className="list-disc">
-  //             {detailsItem}
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     </div>
-  //   );
-  // }
-
   return (
     <section className="container mx-auto">
       <div className="mx-4 mb-16 border-b-4 border-orange-600 md:mx-0">

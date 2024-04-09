@@ -3,7 +3,7 @@ import HeroSection from "./components/HeroSection";
 import AboutMeSection from "./components/AboutMeSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ResumeSection from "./components/ResumeSection";
-// import ContactMeSection from "./components/ContactMeSection";
+import ContactMeSection from "./components/ContactMeSection";
 
 export default function App() {
   console.log("Made in 2024 by Edward Vonschondorf");
@@ -25,7 +25,7 @@ export default function App() {
           <ResumeSection />
         </div>
       </main>
-      {/* <ContactMeSection /> */}
+      <ContactMeSection />
     </>
   );
 }
