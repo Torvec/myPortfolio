@@ -1,22 +1,4 @@
 export default function HeroSection() {
-  // const Title = () => {
-  //   return (
-  //     <h1 className="text-center text-5xl md:text-7xl font-bold text-stone-300">
-  //       Hi! I'm{" "}
-  //       <span className="uppercase text-orange-600">
-  //         Edward <br /> Vonschondorf
-  //       </span>
-  //     </h1>
-  //   );
-  // };
-
-  // const Subtitle = () => {
-  //   return (
-  //     <p className="text-center text-4xl font-bold text-stone-500">
-  //       <span className="text-stone-300">Full Stack</span> Web Developer
-  //     </p>
-  //   );
-  // };
 
   return (
     <section className="bg-[url(grid_pattern_bg.png)]">

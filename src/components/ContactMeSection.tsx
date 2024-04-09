@@ -1,13 +1,10 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 import { motion /*, useInView*/ } from "framer-motion";
+import Footer from "./template/Footer";
 
 export default function ContactMeSection() {
-  const contactRef = useRef(null);
+  // const contactRef = useRef(null);
   // const contactInView = useInView(contactRef, { once: false });
-
-  const getCurrentYear = () => {
-    return new Date().getFullYear();
-  };
 
   const socialLinkInfo = [
     { href: "https://www.linkedin.com/in/edward-von/", logo: "LI" },
@@ -42,10 +39,6 @@ export default function ContactMeSection() {
     );
   };
 
-  const handleClickToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <motion.section
       // style={{
@@ -68,25 +61,14 @@ export default function ContactMeSection() {
             Let's Collaborate
           </a>
         </h2>
-        <div className="flex justify-evenly border-y-2 border-white/50 py-16">
+        <div className="flex justify-evenly border-t-2 border-white/50 py-16">
           {socialLinkInfo.map(({ href, logo }, index) => (
             <SocialLink key={index} href={href}>
               {logo}
             </SocialLink>
           ))}
         </div>
-        <footer
-          ref={contactRef}
-          className="flex relative items-center justify-between px-2 py-8 md:px-0 text-sm font-bold uppercase text-stone-200"
-        >
-          <span>[C] {getCurrentYear()}</span>
-          <button onClick={handleClickToTop} className="absolute bottom-1/2 translate-y-1/2 left-1/2 -translate-x-1/2">
-            <span className="material-symbols-outlined transition-all duration-500 ease-in-out hover:text-stone-800">
-              keyboard_arrow_up
-            </span>
-          </button>
-          <a href="mailto:me@edward-vonschondorf.dev">[ ] Contact Me</a>
-        </footer>
+        <Footer />
       </div>
     </motion.section>
   );
