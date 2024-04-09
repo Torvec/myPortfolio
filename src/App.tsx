@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import AboutMeSection from "./components/AboutMeSection";
 import ProjectsSection from "./components/ProjectsSection";
-// import ResumeSection from "./components/ResumeSection";
+import ResumeSection from "./components/ResumeSection";
 // import ContactMeSection from "./components/ContactMeSection";
 
 export default function App() {
@@ -21,9 +21,9 @@ export default function App() {
         <div id="projects">
           <ProjectsSection />
         </div>
-        {/* <div id="resume">
+        <div id="resume">
           <ResumeSection />
-        </div> */}
+        </div>
       </main>
       {/* <ContactMeSection /> */}
     </>

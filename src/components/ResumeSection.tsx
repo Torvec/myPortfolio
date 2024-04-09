@@ -1,4 +1,3 @@
-
 export default function ResumeSection() {
   const myResume = [
     {
@@ -8,10 +7,8 @@ export default function ResumeSection() {
       endDate: "Present",
       company: "Freelance",
       jobTitle: "Full Stack Web Developer",
-      location: "Fremont, CA, USA",
       details: [
-        "Continuously and enthusiastically learning new technologies and languages.",
-        "Adding to my portfolio by creating new personal projects and collaborating with my fellow UC Berkeley Extension alumni.",
+        "Specializing in React, Typescript, and Tailwind CSS for front-end development and Node.js, Express, GraphQL, MySQL, and MongoDB for back-end development. Continuously honing my skills and knowledge in other frameworks/libraries like Next.js, Astro, and Framer Motion.",
       ],
     },
     {
@@ -21,11 +18,8 @@ export default function ResumeSection() {
       endDate: "Oct 2023",
       institution: "UC Berkeley Extension",
       program: "Full Stack Web Development Course",
-      location: "Online",
       details: [
-        "Intensive, 6-month, full-stack web development bootcamp led by a senior full stack developer with 20+ years of experience",
-        "Project-driven curriculum, with weekly challenges and 3 collaborative pojects to build out our portfolio.",
-        "Developed skills in everything from the basics of HTML, CSS, and JavaScript, to MySQL, MongoDB, and GraphQL in order to make full stack MERN applications.",
+        "Intensive, 6-month, full-stack web development boot camp led by a senior full stack developer with 20+ years of experience. Project-driven curriculum, with 19 weekly challenges and 3 collaborative projects to build out our portfolio. Developed skills and experience with everything from the fundamentals of HTML, CSS, and JavaScript, to React, Node.js, MySQL, MongoDB, and GraphQL in order to make full stack MERN applications.",
       ],
     },
     {
@@ -35,10 +29,8 @@ export default function ResumeSection() {
       endDate: "Dec 2022",
       institution: "E and M Training Course",
       program: "Siemens TIA Portal Software Development I/II",
-      location: "Fremont, CA, USA",
       details: [
-        "Two-part instructor-led, hands-on course using TIA Portal software to integrate PLC, HMI, and Variable Frequency Drive (VFD) controls.",
-        "Learned how to program in Ladder Logic, Function Block Diagrams, Sequential Function Charts, and Structured Text.",
+        "Two week, instructor-led, hands-on course using TIA Portal software to integrate PLC, HMI, and Variable Frequency Drive (VFD) controls. Learned how to program in Ladder Logic, Function Block Diagrams, Sequential Function Charts, and Structured Text.",
       ],
     },
     {
@@ -48,12 +40,8 @@ export default function ResumeSection() {
       endDate: "Jan 2024",
       company: "Tesla Motors Inc.",
       jobTitle: "Automation Controls Technician IV",
-      location: "Fremont, CA, USA",
       details: [
-        "Actively pursued and completed various complex projects from engineering at every opportunity.",
-        "Utilized multiple PLC programs to troubleshoot, make modifications, and add functionality to existing equipment.",
-        "The go-to technician for any critical system that had a major fault or was down for long periods of time.",
-        "Proficient in delivering comprehensive training to team members.",
+        "The go-to technician for any task that needed technical expertise with electronics, PLC programming, automation, robotic systems, and any engineering department projects.",
       ],
     },
     {
@@ -63,12 +51,8 @@ export default function ResumeSection() {
       endDate: "Sep 2020",
       company: "Tesla Motors Inc.",
       jobTitle: "Equipment Maintenance Technician II",
-      location: "Fremont, CA, USA",
       details: [
-        "Troubleshot, diagnosed, and corrected hundreds of faults.",
-        "Learned the intricacies of multiple systems with no prior knowledge.",
-        "Collaborated with engineering to commission new equipment.",
-        "Monitored and analyzed recurring problems with various equipment.",
+        "Adapted quickly to dozens of unfamiliar mechanical, electronic, and robotic systems, diagnosing and correcting numerous faults. Collaborated with engineering for successful equipment commissioning and problem analysis.",
       ],
     },
     {
@@ -78,12 +62,8 @@ export default function ResumeSection() {
       endDate: "Oct 2018",
       company: "United States Navy",
       jobTitle: "Electronics Technician",
-      location: "Japan and San Diego, CA, USA",
       details: [
-        "Consistently scored up to 90% on over a dozen ship-wide certifications and inspections.",
-        "Maintained 3 radars and corrected over 25 major and minor system casualties.",
-        "Significantly increased calibration readiness of all 455 electronic test equipment units onboard.",
-        "Aggressively and thoroughly trained 47 personnel.",
+        "Led two of the largest shipboard work centers, consistently excelling in inspections (90%+ scores). Resolved 25+ radar system casualties and boosted electronic test equipment readiness by 15%. Trained 47 personnel with dedication.",
       ],
     },
     {
@@ -92,11 +72,9 @@ export default function ResumeSection() {
       startDate: "Dec 2010",
       endDate: "Apr 2016",
       institution: "US Navy Training Schools",
-      program: "Certificates, Electronics Technology",
-      location: "Various Locations Nationwide",
+      program: "Electronics Technology Courses",
       details: [
-        "Learned the fundamentals of seamanship, electrical theory, and radio/radar electronics",
-        "Attended and excelled at six radar and radio equipment schools, becoming the lead tech on both ships I was assigned to.",
+        "Mastered seamanship fundamentals, electrical theory, and radio/radar electronics. Excelled in six equipment schools, specializing in air traffic control radar systems, and became the lead technician on both assigned ships.",
       ],
     },
     {
@@ -106,10 +84,8 @@ export default function ResumeSection() {
       endDate: "Dec 2010",
       company: "Freelance",
       jobTitle: "Front-End Web Developer",
-      location: "Atlanta, GA, USA",
       details: [
-        "Designed, developed, and maintained several small business and school websites.",
-        "Created web content for various promotional advertisements.",
+        "Built and maintained multiple websites for small businesses and schools, leveraging web design and development skills in Dreamweaver, Photoshop, HTML, and CSS.  Created promotional content to drive user engagement.",
       ],
     },
     {
@@ -119,71 +95,19 @@ export default function ResumeSection() {
       endDate: "May 2005",
       institution: "Norcross High School",
       program: "High School Diploma",
-      location: "Norcross, GA, USA",
       details: [
-        "My first experience with web development was leading a class in creating the school website using HTML and CSS",
+        "Spearheaded the creation of the school website, rapidly learning front-end web design and development principles to lead a successful class project.",
       ],
     },
   ];
 
-  const mySkills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Tailwind",
-    "React",
-    "Node",
-    "MongoDB",
-    "MySQL",
-    "MERN",
-    "Express",
-    "Visual Studio Code",
-    "Postman",
-    "Insomnia",
-    "Heroku",
-    "Git",
-    "GitHub",
-    "Git Bash",
-    "MongoDB Compass",
-    "MySQL Workbench",
-    "Astro",
-    "GraphQL",
-    "Apollo Server",
-    "REST API's",
-    "jQuery",
-    "Bootstrap",
-    "Teamwork",
-    "Time Management",
-    "Project Management",
-    "Root Cause Analysis",
-    "Interpersonal Communication",
-    "Test-Driven Development",
-    "Agile Development",
-    "Figma",
-    "Mongoose",
-    "Sequelize",
-    "Jest",
-    "Material UI",
-    "Bulma CSS",
-    "Materialize CSS",
-    "Troubleshooting",
-    "Responsive Web Design",
-    "Continuous Integration",
-    "Continuous Development",
-    "Handlebars JS",
-    "Inquirer JS",
-    "Microsoft Office",
-    "TypeScript",
-    "Framer Motion"
-  ];
-
-  function LinkButton({ text, href }: { text: string; href: string }) {
+  const LinkButton = ({ text, href }: { text: string; href: string }) => {
     return (
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2 rounded-lg border border-stone-200 p-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
+        className="group flex items-center gap-2 rounded-2xl border-2 border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
       >
         <span className="text-lg uppercase">{text}</span>
         <span className="material-symbols-outlined text-lg transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
@@ -191,104 +115,95 @@ export default function ResumeSection() {
         </span>
       </a>
     );
-  }
+  };
 
-  function ResumeItem({ id }: { id: number }) {
-    const resume = myResume.find((item) => item.id === id);
+  // function ResumeItem({ id }: { id: number }) {
+  //   const resume = myResume.find((item) => item.id === id);
 
-    if (!resume) {
-      return null;
-    }
+  //   if (!resume) {
+  //     return null;
+  //   }
 
-    const {
-      startDate,
-      endDate,
-      company,
-      institution,
-      jobTitle,
-      program,
-      location,
-      details,
-    } = resume;
+  //   const {
+  //     startDate,
+  //     endDate,
+  //     company,
+  //     institution,
+  //     jobTitle,
+  //     program,
+  //     details,
+  //   } = resume;
 
-    return (
-      <div
-        key={id}
-        className="text-pretty rounded-lg border-2 border-white/15 p-5 text-stone-300 md:w-5/12 bg-stone-900"
-      >
-        <span className="mx-auto block w-max -translate-y-8 rounded-sm bg-orange-700 px-2 text-center text-lg font-black uppercase">
-          {startDate} -&gt; {endDate}
-        </span>
-        <h2 className="text-2xl font-bold">{jobTitle || program}</h2>
-        <div className="flex justify-between text-sm uppercase">
-          <h3>{company || institution}</h3>
-          <span>{location}</span>
-        </div>
-        <ul className="space-y-2 p-5 text-lg">
-          {details.map((detailsItem, index) => (
-            <li key={index} className="list-disc">
-              {detailsItem}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
+  //   return (
+  //     <div
+  //       key={id}
+  //       className="text-pretty rounded-lg border-2 border-white/15 bg-stone-900 p-5 text-stone-300 md:w-5/12"
+  //     >
+  //       <span className="mx-auto block w-max -translate-y-8 rounded-sm bg-orange-700 px-2 text-center text-lg font-black uppercase">
+  //         {startDate} -&gt; {endDate}
+  //       </span>
+  //       <h2 className="text-2xl font-bold">{jobTitle || program}</h2>
+  //       <div className="flex justify-between text-sm uppercase">
+  //         <h3>{company || institution}</h3>
+  //       </div>
+  //       <ul className="space-y-2 p-5 text-lg">
+  //         {details.map((detailsItem, index) => (
+  //           <li key={index} className="list-disc">
+  //             {detailsItem}
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     </div>
+  //   );
+  // }
 
   return (
-    <section className="py-64">
-      <div className="flex py-64 flex-col items-center justify-center ">
-        <div className="flex flex-col gap-6">
-          <h2 className="text-7xl font-bold">My Professional Journey...</h2>
-          <span className="self-end text-sm font-bold uppercase text-stone-600">
-            [Resume]
-          </span>
-        </div>
-        <div>
-          <LinkButton
-            text="Download Resume"
-            href="https://www.linkedin.com/in/edward-von/"
-          />
-        </div>
+    <section className="container mx-auto">
+      <div className="mx-4 mb-16 border-b-4 border-orange-600 md:mx-0">
+        <h2 className="text-center text-4xl font-bold">Chronological Resume</h2>
       </div>
-      <div className="flex flex-col gap-20 px-5">
-        <div className="flex justify-center">
-          <ResumeItem id={9} />
-        </div>
-        <div className="flex flex-col justify-center gap-10 md:flex-row">
-          <ResumeItem id={6} />
-          <ResumeItem id={8} />
-        </div>
-        <div className="flex flex-col-reverse justify-center gap-10 md:flex-row">
-          <ResumeItem id={5} />
-          <ResumeItem id={7} />
-        </div>
-        <div className="flex flex-col justify-center gap-10 md:flex-row">
-          <ResumeItem id={4} />
-          <ResumeItem id={3} />
-        </div>
-        <div className="flex justify-center">
-          <ResumeItem id={2} />
-        </div>
-        <div className="flex justify-center">
-          <ResumeItem id={1} />
-        </div>
-      </div>
-
-      <div className="mx-5 mt-10 rounded-lg border-2 border-white/15 p-4 md:mx-auto md:w-7/12 bg-stone-900">
-        <h3 className="mx-auto w-max -translate-y-8 rounded-sm bg-stone-700 px-2 text-center text-2xl font-black uppercase">
-          Skills
-        </h3>
-        <ul className="flex flex-wrap justify-center gap-4 px-4">
-          {mySkills.map((skill, index) => (
-            <li
-              key={index}
-              className="rounded-md bg-orange-700 p-2 text-sm font-bold uppercase text-white"
+      <div className="mb-16 flex flex-col">
+        {myResume.map(
+          ({
+            id,
+            type,
+            startDate,
+            endDate,
+            company,
+            institution,
+            jobTitle,
+            program,
+            details,
+          }) => (
+            <div
+              key={id}
+              className={
+                type === "education" ? "md:w-5/6 md:self-end ml-8" : "md:w-5/6 mr-8"
+              }
             >
-              {skill}
-            </li>
-          ))}
-        </ul>
+              <div className="mx-auto w-max translate-y-4 border border-white/25 bg-stone-900 px-4 py-2 text-sm font-bold uppercase">
+                <span className="text-stone-500">{startDate}</span>{" "}
+                <span className="text-orange-600">-&gt;</span>{" "}
+                <span className="text-stone-300">{endDate}</span>
+              </div>
+              <div className="border border-white/25 px-4 pb-4 pt-8 md:px-8 md:pb-8">
+                <h3 className="text-sm md:text-base uppercase text-stone-500">
+                  {company || institution}
+                </h3>
+                <h4 className="mb-2 text-xl md:text-2xl font-bold text-stone-300">
+                  {jobTitle || program}
+                </h4>
+                <p className="text-sm md:text-lg text-pretty text-stone-400">{details}</p>
+              </div>
+            </div>
+          ),
+        )}
+      </div>
+      <div className="grid place-content-center pb-64">
+        <LinkButton
+          text="ATS Resume"
+          href="https://www.linkedin.com/in/edward-von/"
+        />
       </div>
     </section>
   );
