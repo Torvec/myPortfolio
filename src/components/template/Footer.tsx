@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer
       //   ref={contactRef}
-      className="relative flex items-center justify-between px-2 py-4 text-sm font-bold uppercase border-t-2 border-white/50 text-stone-200 md:px-0"
+      className="relative flex items-center justify-between border-t-2 border-white/50 px-2 py-4 text-sm font-bold uppercase text-stone-200 md:px-0"
     >
       <span>[C] {getCurrentYear()}</span>
       <button
@@ -21,7 +21,11 @@ export default function Footer() {
           keyboard_arrow_up
         </span>
       </button>
-      <a href="mailto:me@edward-vonschondorf.dev">[ ] Contact Me</a>
+      <a
+        href="mailto:me@edward-vonschondorf.dev?subject=🦾Lets Collab"
+      >
+        [ ] Contact Me
+      </a>
     </footer>
   );
 }

@@ -26,7 +26,7 @@ export default function Header() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <nav className="container relative mx-auto px-4 py-2">
+      <nav className="container mx-auto px-4 py-2 md:px-0">
         <Logo />
         <Navigation />
       </nav>

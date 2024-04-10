@@ -5,15 +5,15 @@ import Footer from "../Footer";
 export default function Navigation() {
   const sections = ["About", "Projects", "Resume", "Contact"];
 
-    const socialLinkData = [
-      { href: "https://www.linkedin.com/in/edward-von/", text: "LinkedIn" },
-      { href: "https://github.com/Torvec", text: "GitHub" },
-      { href: "https://dev.to/torvec", text: "Dev.to" },
-      {
-        href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
-        text: "YouTube",
-      },
-    ];
+  const socialLinkData = [
+    { href: "https://www.linkedin.com/in/edward-von/", text: "LinkedIn" },
+    { href: "https://github.com/Torvec", text: "GitHub" },
+    { href: "https://dev.to/torvec", text: "Dev.to" },
+    {
+      href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
+      text: "YouTube",
+    },
+  ];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -38,9 +38,9 @@ export default function Navigation() {
     sectionId: string;
   }) => {
     return (
-      <li className="">
+      <li>
         <button
-          className="border-b-2 border-white/50 w-full md:border-0 text-left"
+          className="w-full border-b-2 border-white/50 text-left md:border-0"
           onClick={() => handleClickToSection(sectionId)}
         >
           {children}
@@ -61,7 +61,7 @@ export default function Navigation() {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex justify-end gap-2 text-stone-200 transition-all duration-500 ease-in-out hover:bg-orange-600 hover:text-stone-900 text-lg"
+        className="group flex justify-end gap-2 text-lg text-stone-200 transition-all duration-500 ease-in-out hover:bg-orange-600 hover:text-stone-900"
       >
         <span>{children}</span>
         <span className="material-symbols-outlined transition-transform duration-300 ease-in-out group-hover:-translate-y-2">
@@ -100,7 +100,7 @@ export default function Navigation() {
             <span className="material-symbols-outlined">close</span>
           </button>
         </div>
-        <div className="flex flex-col h-full justify-evenly">
+        <div className="flex h-full flex-col justify-evenly">
           <ul className="space-y-16 px-4 py-16 text-6xl">
             {sections.map((section) => (
               <MenuItem key={section} sectionId={section}>
@@ -108,7 +108,6 @@ export default function Navigation() {
               </MenuItem>
             ))}
           </ul>
-
           <ul className="space-y-4 px-4 py-32">
             {socialLinkData.map(({ href, text }, index) => (
               <SocialLink key={index} href={href}>
@@ -117,7 +116,6 @@ export default function Navigation() {
             ))}
           </ul>
         </div>
-
         <div className="absolute bottom-0 w-full">
           <Footer />
         </div>
