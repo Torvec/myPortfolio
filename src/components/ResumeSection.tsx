@@ -1,3 +1,5 @@
+import SectionHeader from "./template/SectionHeader";
+
 export default function ResumeSection() {
   const myResume = [
     {
@@ -119,9 +121,7 @@ export default function ResumeSection() {
 
   return (
     <section className="container mx-auto">
-      <div className="mx-4 mb-16 border-b-4 border-orange-600 md:mx-0">
-        <h2 className="text-center text-4xl font-bold">Chronological Resume</h2>
-      </div>
+      <SectionHeader title="Resume" subtitle="Chronological" number="03" />
       <div className="mb-16 flex flex-col">
         {myResume.map(
           ({
@@ -138,7 +138,9 @@ export default function ResumeSection() {
             <div
               key={id}
               className={
-                type === "education" ? "md:w-5/6 md:self-end ml-8" : "md:w-5/6 mr-8"
+                type === "education"
+                  ? "ml-8 md:w-5/6 md:self-end"
+                  : "mr-8 md:w-5/6"
               }
             >
               <div className="mx-auto w-max translate-y-4 border border-white/25 bg-stone-900 px-4 py-2 text-sm font-bold uppercase">
@@ -147,13 +149,15 @@ export default function ResumeSection() {
                 <span className="text-stone-300">{endDate}</span>
               </div>
               <div className="border border-white/25 px-4 pb-4 pt-8 md:px-8 md:pb-8">
-                <h3 className="text-sm md:text-base uppercase text-stone-500">
+                <h3 className="text-sm uppercase text-stone-500 md:text-base">
                   {company || institution}
                 </h3>
-                <h4 className="mb-2 text-xl md:text-2xl font-bold text-stone-300">
+                <h4 className="mb-2 text-pretty text-xl font-bold text-stone-300 md:text-2xl">
                   {jobTitle || program}
                 </h4>
-                <p className="text-sm md:text-lg text-pretty text-stone-400">{details}</p>
+                <p className="text-pretty text-sm text-stone-400 md:text-lg">
+                  {details}
+                </p>
               </div>
             </div>
           ),

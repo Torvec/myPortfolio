@@ -21,27 +21,27 @@ export default function Navigation() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleClickToSection = (sectionId: string) => {
-    const sectId = sectionId.toLocaleLowerCase();
+  const handleClickToSection = (section: string) => {
+    const sectId = section.toLocaleLowerCase();
     const element = document.getElementById(sectId);
     if (element) {
       const rect = element.getBoundingClientRect();
-      window.scrollTo({ top: rect.top + window.scrollY });
+      window.scrollTo({ top: rect.top + window.scrollY - 100 });
     }
   };
 
   const MenuItem = ({
     children,
-    sectionId,
+    section,
   }: {
     children: string;
-    sectionId: string;
+    section: string;
   }) => {
     return (
       <li>
         <button
           className="w-full border-b-2 border-white/50 text-left md:border-0"
-          onClick={() => handleClickToSection(sectionId)}
+          onClick={() => handleClickToSection(section)}
         >
           {children}
         </button>
@@ -51,10 +51,10 @@ export default function Navigation() {
 
   const SocialLink = ({
     href,
-    children,
+    text,
   }: {
     href: string;
-    children: React.ReactNode;
+    text: string;
   }) => {
     return (
       <a
@@ -63,7 +63,7 @@ export default function Navigation() {
         rel="noopener noreferrer"
         className="group flex justify-end gap-2 text-lg text-stone-200 transition-all duration-500 ease-in-out hover:bg-orange-600 hover:text-stone-900"
       >
-        <span>{children}</span>
+        <span>{text}</span>
         <span className="material-symbols-outlined transition-transform duration-300 ease-in-out group-hover:-translate-y-2">
           north_east
         </span>
@@ -76,7 +76,7 @@ export default function Navigation() {
       {/* Menu Items for desktop */}
       <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 font-bold text-stone-200 md:flex">
         {sections.map((section, index) => (
-          <MenuItem key={index} sectionId={section}>
+          <MenuItem key={index} section={section}>
             {section}
           </MenuItem>
         ))}
@@ -103,16 +103,14 @@ export default function Navigation() {
         <div className="flex h-full flex-col justify-evenly">
           <ul className="space-y-16 px-4 py-16 text-6xl">
             {sections.map((section) => (
-              <MenuItem key={section} sectionId={section}>
+              <MenuItem key={section} section={section}>
                 {section}
               </MenuItem>
             ))}
           </ul>
           <ul className="space-y-4 px-4 py-32">
             {socialLinkData.map(({ href, text }, index) => (
-              <SocialLink key={index} href={href}>
-                {text}
-              </SocialLink>
+              <SocialLink key={index} href={href} text={text} />
             ))}
           </ul>
         </div>

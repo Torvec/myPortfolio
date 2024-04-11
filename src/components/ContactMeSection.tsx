@@ -1,11 +1,4 @@
-// import { useRef } from "react";
-import { motion /*, useInView*/ } from "framer-motion";
-import Footer from "./template/Footer";
-
 export default function ContactMeSection() {
-  // const contactRef = useRef(null);
-  // const contactInView = useInView(contactRef, { once: false });
-
   const socialLinkInfo = [
     { href: "https://www.linkedin.com/in/edward-von/", logo: "LI" },
     { href: "https://github.com/Torvec", logo: "GH" },
@@ -28,11 +21,7 @@ export default function ContactMeSection() {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-stone-200 transition-all duration-300 ease-in-out hover:text-stone-900 bg-stone-200 size-16"
-        // style={{
-        //   color: contactInView ? "#e7e5e4" : "#f97316",
-        //   transition: "all 0.5s",
-        // }}
+        className="size-16 bg-stone-200 text-stone-200 transition-all duration-300 ease-in-out hover:text-stone-900"
       >
         {children}
       </a>
@@ -40,25 +29,17 @@ export default function ContactMeSection() {
   };
 
   return (
-    <motion.section
-      // style={{
-      //   backgroundColor: contactInView ? "#ea580c" : "#1c1917",
-      //   color: contactInView ? "#292524" : "#e7e5e4",
-      //   transition: "all 0.5s",
-      // }}
-      className="bg-orange-600"
-      id="contact"
-    >
+    <section className="bg-orange-600" id="contact">
       <div className="container mx-auto bg-orange-600">
-        <h2 className="py-32 mx-auto w-max">
-          <span className="block text-lg text-white/50 md:text-2xl">
-            If you're interested,
+        <h2 className="mx-auto w-max py-32">
+          <span className="block text-lg text-white/75 md:text-2xl">
+            Let's Connect
           </span>
           <a
-            href="mailto:me@edward-vonschondorf.dev"
-            className="border-b-4 border-white/50 text-4xl uppercase text-stone-200 md:text-7xl"
+            href="mailto:me@edward-vonschondorf.dev?subject=Let's Connect!"
+            className="border-b-2 border-white/50 text-2xl uppercase text-stone-200 md:border-b-4 md:text-5xl"
           >
-            Let's Collaborate
+            me@edward-vonschondorf.dev
           </a>
         </h2>
         <div className="flex justify-evenly border-t-2 border-white/50 py-16">
@@ -68,8 +49,7 @@ export default function ContactMeSection() {
             </SocialLink>
           ))}
         </div>
-        <Footer />
       </div>
-    </motion.section>
+    </section>
   );
 }

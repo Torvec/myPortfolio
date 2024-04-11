@@ -1,5 +1,7 @@
+import SectionHeader from "./template/SectionHeader";
+
 export default function ProjectsSection() {
-  const featuredProjects = [
+  const projects = [
     {
       id: 1,
       projectName: "Loot Vault",
@@ -83,7 +85,7 @@ export default function ProjectsSection() {
     techStack: string[];
   }) => {
     return (
-      <div className="relative overflow-hidden rounded-3xl border-2 border-white/20">
+      <div className="relative overflow-hidden border-2 border-white/20">
         <a href={deploymentURL}>
           <img
             src={imgURL}
@@ -94,16 +96,42 @@ export default function ProjectsSection() {
             <h3 className="mb-2 text-2xl font-bold text-stone-200">
               {projectName}
             </h3>
-            <p className="mb-4 text-stone-300 text-base">{description}</p>
+            <p className="mb-4 text-base text-stone-300">{description}</p>
             <ul className="flex flex-wrap gap-2">
               {techStack.map((tech) => (
-                <li className="rounded-2xl bg-stone-800 px-4 py-1 text-sm text-stone-400">
+                <li className="bg-stone-800 px-4 py-1 text-sm text-stone-400">
                   {tech}
                 </li>
               ))}
             </ul>
           </div>
         </a>
+      </div>
+    );
+  };
+
+  const ProjectCardList = () => {
+    return (
+      <div className="mb-16 grid gap-4 px-4 md:grid-cols-2 md:gap-8 md:px-0">
+        {projects.map(
+          ({
+            id,
+            imgURL,
+            projectName,
+            deploymentURL,
+            description,
+            techStack,
+          }) => (
+            <ProjectCard
+              key={id}
+              imgURL={imgURL}
+              projectName={projectName}
+              deploymentURL={deploymentURL}
+              description={description}
+              techStack={techStack}
+            />
+          ),
+        )}
       </div>
     );
   };
@@ -126,31 +154,8 @@ export default function ProjectsSection() {
 
   return (
     <section className="container mx-auto">
-      <div className="mx-4 mb-16 border-b-4 border-orange-600 md:mx-0">
-        <h2 className="text-center text-4xl font-bold">Featured Projects</h2>
-      </div>
-      <div className="grid gap-4 px-4 md:grid-cols-2 md:gap-8 md:px-0 mb-16">
-        {featuredProjects.map(
-          ({
-            id,
-            imgURL,
-            projectName,
-            deploymentURL,
-            description,
-            techStack,
-          }) => (
-            <div key={id}>
-              <ProjectCard
-                imgURL={imgURL}
-                projectName={projectName}
-                deploymentURL={deploymentURL}
-                description={description}
-                techStack={techStack}
-              />
-            </div>
-          ),
-        )}
-      </div>
+      <SectionHeader title="Projects" subtitle="Featured" number="02" />
+      <ProjectCardList />
       <div className="grid place-content-center pb-64">
         <LinkButton
           text="More Projects"

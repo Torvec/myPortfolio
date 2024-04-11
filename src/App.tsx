@@ -4,6 +4,7 @@ import AboutMeSection from "./components/AboutMeSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ResumeSection from "./components/ResumeSection";
 import ContactMeSection from "./components/ContactMeSection";
+import Footer from "./components/template/Footer";
 
 export default function App() {
   console.log("Made in 2024 by Edward Vonschondorf");
@@ -11,7 +12,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="bg-stone-950 text-xl text-stone-200">
+      <main className="bg-stone-950">
         <div id="hero">
           <HeroSection />
         </div>
@@ -26,6 +27,7 @@ export default function App() {
         </div>
       </main>
       <ContactMeSection />
+      <Footer />
     </>
   );
 }
