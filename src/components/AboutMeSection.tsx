@@ -77,7 +77,7 @@ export default function AboutMeSection() {
     text: string;
   }) => {
     return (
-      <div className="flex h-[50vh] flex-col justify-end space-y-8 bg-gradient-to-b from-stone-800 p-8">
+      <div className="flex h-[50vh] flex-col justify-end space-y-8 text-pretty bg-gradient-to-b from-stone-800 p-8 lg:p-16">
         <div className="text-base text-orange-600">0{number}</div>
         <div className="text-xl text-stone-400">{text}</div>
       </div>
@@ -129,7 +129,7 @@ export default function AboutMeSection() {
   const { title, subtitle, number } = data.sectionHeader;
 
   return (
-    <section className="pb-64">
+    <section className="mb-64">
       <SectionHeader title={title} subtitle={subtitle} number={number} />
       <Intro />
       <GoalList />

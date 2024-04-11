@@ -1,18 +1,54 @@
 export default function HeroSection() {
-  return (
-    <section className="bg-[url(grid_pattern_bg.png)]">
-      <div className="flex min-h-[80vh] flex-col items-center justify-center">
-        <h1 className="text-center text-5xl font-bold text-stone-300 md:text-7xl">
-          Hi! I'm{" "}
-          <span className="uppercase text-orange-600">
-            Edward <br /> Vonschondorf
-          </span>
-        </h1>
-        <p className="text-center text-3xl font-bold text-stone-500 md:text-4xl">
-          <span className="text-stone-300">Full Stack</span> Web Developer
-        </p>
+  // Data Object
+  const data = {
+    intro: "Hi! I am ",
+    firstName: "Edward ",
+    lastName: "Vonschondorf",
+    roles: ["Front-End ", "Back-End ", "Full Stack "],
+    developerType: "Web Developer",
+  };
+
+  // Section Components
+  const HeroHeader = () => {
+    const { intro, firstName, lastName } = data;
+
+    return (
+      <h1 className="p-4 md:p-0">
+        <span className="text-2xl md:text-4xl text-stone-300">{intro}</span>
+        <br />
+        <span className="text-5xl uppercase text-orange-600 md:text-7xl">
+          {firstName}
+        </span>
+        <span className="text-5xl uppercase text-orange-600 md:text-7xl">
+          {lastName}
+        </span>
+      </h1>
+    );
+  };
+
+  const HeroSubHeader = () => {
+    const { roles, developerType } = data;
+
+    return (
+      <h2 className="text-3xl text-stone-300 md:text-5xl">
+        <span>{roles[2]}</span>
+        <span className="text-stone-500">{developerType}</span>
+      </h2>
+    );
+  };
+
+  const HeroText = () => {
+    return (
+      <div className="flex min-h-[70vh] flex-col items-center justify-center font-bold">
+        <HeroHeader />
+        <HeroSubHeader />
       </div>
-      <div className="flex min-h-[10vh] items-end justify-center bg-gradient-to-t from-stone-950 from-10% px-16" />
+    );
+  };
+
+  return (
+    <section className="mb-32 border-b border-white/10 bg-[url(grid_pattern_bg.png)]">
+      <HeroText />
     </section>
   );
 }
