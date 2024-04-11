@@ -1,5 +1,5 @@
 export default function ContactMeSection() {
-  
+  // Data Object
   const data = {
     connectCTA: {
       text: "Let's Connect",
@@ -7,20 +7,20 @@ export default function ContactMeSection() {
       mailto: "mailto:me@edward-vonschondorf.dev?subject=Let's Connect!",
     },
     socialLinks: [
-        { href: "https://www.linkedin.com/in/edward-von/", logo: "LI" },
-        { href: "https://github.com/Torvec", logo: "GH" },
-        { href: "https://dev.to/torvec", logo: "DT" },
-        {
-          href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
-          logo: "YT",
-        },
-      ]
+      { href: "https://www.linkedin.com/in/edward-von/", logo: "LI" },
+      { href: "https://github.com/Torvec", logo: "GH" },
+      { href: "https://dev.to/torvec", logo: "DT" },
+      {
+        href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
+        logo: "YT",
+      },
+    ],
   };
 
+  // Section Components
   const ConnectCTA = () => {
-    
     const { text, email, mailto } = data.connectCTA;
-    
+
     return (
       <div className="container mx-auto bg-orange-600">
         <h2 className="mx-auto w-max py-32">
@@ -37,7 +37,7 @@ export default function ContactMeSection() {
       </div>
     );
   };
-  
+
   const SocialLink = ({
     href,
     children,
@@ -58,9 +58,8 @@ export default function ContactMeSection() {
   };
 
   const SocialLinkList = () => {
-    
-    const {socialLinks} = data;
-    
+    const { socialLinks } = data;
+
     return (
       <div className="flex justify-evenly border-t-2 border-white/50 py-16">
         {socialLinks.map(({ href, logo }, index) => (

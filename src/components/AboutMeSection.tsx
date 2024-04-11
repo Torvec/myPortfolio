@@ -51,9 +51,8 @@ export default function AboutMeSection() {
   };
 
   const Intro = () => {
-    
     const { myPic, paragraph } = data.intro;
-    
+
     return (
       <div className="mb-32 flex flex-col border border-white/10 md:flex-row md:items-center lg:mx-auto lg:w-2/3">
         <div className="border-b border-white/10 p-8 md:w-1/2 md:border-b-0 md:border-r">
@@ -86,9 +85,8 @@ export default function AboutMeSection() {
   };
 
   const GoalList = () => {
-    
     const { header: goalHeaderText, text: goalsText } = data.goals;
-    
+
     return (
       <div className="mb-32 border-y border-white/10">
         <SubHeader text={goalHeaderText} />
@@ -113,9 +111,8 @@ export default function AboutMeSection() {
   };
 
   const ToolList = () => {
-    
     const { header: toolHeaderText, tools } = data.tools;
-    
+
     return (
       <div className="border-y border-white/10">
         <SubHeader text={toolHeaderText} />
@@ -133,11 +130,7 @@ export default function AboutMeSection() {
 
   return (
     <section className="pb-64">
-      <SectionHeader
-        title={title}
-        subtitle={subtitle}
-        number={number}
-      />
+      <SectionHeader title={title} subtitle={subtitle} number={number} />
       <Intro />
       <GoalList />
       <ToolList />

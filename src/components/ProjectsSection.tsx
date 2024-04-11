@@ -1,76 +1,89 @@
 import SectionHeader from "./template/SectionHeader";
 
 export default function ProjectsSection() {
-  const projects = [
-    {
-      id: 1,
-      projectName: "Loot Vault",
-      imgURL: "loot_vault.jpg",
-      deploymentURL: "https://torvec.github.io/Loot-Vault/",
-      description:
-        "A video game deals site for gamers on a budget using third party API's.",
-      techStack: ["HTML", "Bulma CSS", "JavaScript", "Fetch API"],
+  // Data Object
+  const data = {
+    sectionHeader: {
+      title: "Projects",
+      subtitle: "Featured",
+      number: "02",
     },
-    {
-      id: 2,
-      projectName: "Task Titan",
-      imgURL: "task_titan.jpg",
-      deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
-      description:
-        "A task completion and collaboration app for managing projects.",
-      techStack: [
-        "Handlebars",
-        "Materialize CSS",
-        "MySQL",
-        "Node",
-        "Express",
-        "Sequelize",
-      ],
+    projects: [
+      {
+        id: 1,
+        projectName: "Loot Vault",
+        imgURL: "loot_vault.jpg",
+        deploymentURL: "https://torvec.github.io/Loot-Vault/",
+        description:
+          "A video game deals site for gamers on a budget using third party API's.",
+        techStack: ["HTML", "Bulma CSS", "JavaScript", "Fetch API"],
+      },
+      {
+        id: 2,
+        projectName: "Task Titan",
+        imgURL: "task_titan.jpg",
+        deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
+        description:
+          "A task completion and collaboration app for managing projects.",
+        techStack: [
+          "Handlebars",
+          "Materialize CSS",
+          "MySQL",
+          "Node",
+          "Express",
+          "Sequelize",
+        ],
+      },
+      {
+        id: 3,
+        projectName: "Wedloc",
+        imgURL: "wedloc.jpg",
+        deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
+        description:
+          "A social media app for wedding photographers to share their work and allow clients to interact with guests.",
+        techStack: [
+          "React",
+          "Tailwind",
+          "Material UI",
+          "Node",
+          "Express",
+          "MongoDB",
+          "Mongoose",
+          "GraphQL",
+          "Apollo Server",
+        ],
+      },
+      {
+        id: 4,
+        projectName: "Bootcamp Challenges",
+        imgURL: "bootcamp_challenges.jpg",
+        deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
+        description:
+          "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
+        techStack: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "JQuery",
+          "Bootstrap",
+          "Node",
+          "Express",
+          "MySQL",
+          "Handlebars",
+          "MongoDB",
+          "PWA",
+          "React",
+          "Redux",
+        ],
+      },
+    ],
+    moreProjects: {
+      text: "More Projects",
+      href: "https://github.com/Torvec?tab=repositories",
     },
-    {
-      id: 3,
-      projectName: "Wedloc",
-      imgURL: "wedloc.jpg",
-      deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
-      description:
-        "A social media app for wedding photographers to share their work and allow clients to interact with guests.",
-      techStack: [
-        "React",
-        "Tailwind",
-        "Material UI",
-        "Node",
-        "Express",
-        "MongoDB",
-        "Mongoose",
-        "GraphQL",
-        "Apollo Server",
-      ],
-    },
-    {
-      id: 4,
-      projectName: "Bootcamp Challenges",
-      imgURL: "bootcamp_challenges.jpg",
-      deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
-      description:
-        "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
-      techStack: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "JQuery",
-        "Bootstrap",
-        "Node",
-        "Express",
-        "MySQL",
-        "Handlebars",
-        "MongoDB",
-        "PWA",
-        "React",
-        "Redux",
-      ],
-    },
-  ];
+  };
 
+  // Section Components
   const ProjectCard = ({
     imgURL,
     projectName,
@@ -111,6 +124,8 @@ export default function ProjectsSection() {
   };
 
   const ProjectCardList = () => {
+    const { projects } = data;
+
     return (
       <div className="mb-16 grid gap-4 px-4 md:grid-cols-2 md:gap-8 md:px-0">
         {projects.map(
@@ -152,15 +167,15 @@ export default function ProjectsSection() {
     );
   };
 
+  const { title, subtitle, number } = data.sectionHeader;
+  const { text, href } = data.moreProjects;
+
   return (
     <section className="container mx-auto">
-      <SectionHeader title="Projects" subtitle="Featured" number="02" />
+      <SectionHeader title={title} subtitle={subtitle} number={number} />
       <ProjectCardList />
       <div className="grid place-content-center pb-64">
-        <LinkButton
-          text="More Projects"
-          href="https://github.com/Torvec?tab=repositories"
-        />
+        <LinkButton text={text} href={href} />
       </div>
     </section>
   );
