@@ -3,17 +3,18 @@ import Logo from "./Logo";
 import Footer from "../Footer";
 
 export default function Navigation() {
-  const sections = ["About", "Projects", "Resume", "Contact"];
-
-  const socialLinkData = [
-    { href: "https://www.linkedin.com/in/edward-von/", text: "LinkedIn" },
-    { href: "https://github.com/Torvec", text: "GitHub" },
-    { href: "https://dev.to/torvec", text: "Dev.to" },
-    {
-      href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
-      text: "YouTube",
-    },
-  ];
+  const data = {
+    sections: ["About", "Projects", "Resume", "Contact"],
+    socialLinks: [
+      { href: "https://www.linkedin.com/in/edward-von/", text: "LinkedIn" },
+      { href: "https://github.com/Torvec", text: "GitHub" },
+      { href: "https://dev.to/torvec", text: "Dev.to" },
+      {
+        href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
+        text: "YouTube",
+      },
+    ],
+  };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -49,13 +50,54 @@ export default function Navigation() {
     );
   };
 
-  const SocialLink = ({
-    href,
-    text,
-  }: {
-    href: string;
-    text: string;
-  }) => {
+  const HorizontalMenu = () => {
+    const { sections } = data;
+
+    return (
+      <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 font-bold text-stone-200 md:flex">
+        {sections.map((section, index) => (
+          <MenuItem key={index} section={section}>
+            {section}
+          </MenuItem>
+        ))}
+      </ul>
+    );
+  };
+
+  const VerticalMenuOpenBtn = () => {
+    return (
+      <button
+        onClick={toggleMenu}
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-200 md:hidden"
+      >
+        <span className="material-symbols-outlined">menu</span>
+      </button>
+    );
+  };
+
+  const VerticalMenuCloseBtn = () => {
+    return (
+      <button onClick={toggleMenu}>
+        <span className="material-symbols-outlined">close</span>
+      </button>
+    );
+  };
+
+  const MenuItemList = () => {
+    const { sections } = data;
+
+    return (
+      <ul className="space-y-16 px-4 py-16 text-6xl">
+        {sections.map((section) => (
+          <MenuItem key={section} section={section}>
+            {section}
+          </MenuItem>
+        ))}
+      </ul>
+    );
+  };
+
+  const SocialLink = ({ href, text }: { href: string; text: string }) => {
     return (
       <a
         href={href}
@@ -71,24 +113,20 @@ export default function Navigation() {
     );
   };
 
-  return (
-    <>
-      {/* Menu Items for desktop */}
-      <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 font-bold text-stone-200 md:flex">
-        {sections.map((section, index) => (
-          <MenuItem key={index} section={section}>
-            {section}
-          </MenuItem>
+  const SocialLinkList = () => {
+    const { socialLinks } = data;
+
+    return (
+      <ul className="space-y-4 px-4 py-32">
+        {socialLinks.map(({ href, text }, index) => (
+          <SocialLink key={index} href={href} text={text} />
         ))}
       </ul>
-      {/* Menu Icon Button for mobile */}
-      <button
-        onClick={toggleMenu}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-200 md:hidden"
-      >
-        <span className="material-symbols-outlined">menu</span>
-      </button>
-      {/* Pop out menu for mobile */}
+    );
+  };
+
+  const VerticalMenu = () => {
+    return (
       <div
         id="menu"
         className={`fixed inset-0 z-10 ${isMenuOpen ? "" : "hidden"} h-screen bg-orange-600 text-stone-200 md:hidden`}
@@ -96,28 +134,26 @@ export default function Navigation() {
       >
         <div className="flex justify-between border-b border-white/50 px-4 py-2">
           <Logo />
-          <button onClick={toggleMenu}>
-            <span className="material-symbols-outlined">close</span>
-          </button>
+          <VerticalMenuCloseBtn />
         </div>
+
         <div className="flex h-full flex-col justify-evenly">
-          <ul className="space-y-16 px-4 py-16 text-6xl">
-            {sections.map((section) => (
-              <MenuItem key={section} section={section}>
-                {section}
-              </MenuItem>
-            ))}
-          </ul>
-          <ul className="space-y-4 px-4 py-32">
-            {socialLinkData.map(({ href, text }, index) => (
-              <SocialLink key={index} href={href} text={text} />
-            ))}
-          </ul>
+          <MenuItemList />
+          <SocialLinkList />
         </div>
+
         <div className="absolute bottom-0 w-full">
           <Footer />
         </div>
       </div>
+    );
+  };
+
+  return (
+    <>
+      <HorizontalMenu />
+      <VerticalMenuOpenBtn />
+      <VerticalMenu />
     </>
   );
 }
