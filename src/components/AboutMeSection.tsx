@@ -128,12 +128,15 @@ export default function AboutMeSection() {
     );
   };
 
+  // Destructure sectionHeader data from data object
+  const { title, subtitle, number } = data.sectionHeader;
+
   return (
     <section className="pb-64">
       <SectionHeader
-        title={data.sectionHeader.title}
-        subtitle={data.sectionHeader.subtitle}
-        number={data.sectionHeader.number}
+        title={title}
+        subtitle={subtitle}
+        number={number}
       />
       <Intro />
       <GoalList />
