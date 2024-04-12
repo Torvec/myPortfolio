@@ -1,19 +1,9 @@
 import { useState } from "react";
 import Logo from "./Logo";
-import Footer from "../Footer";
 
 export default function Navigation() {
   const data = {
     sections: ["About", "Projects", "Resume", "Contact"],
-    socialLinks: [
-      { href: "https://www.linkedin.com/in/edward-von/", text: "LinkedIn" },
-      { href: "https://github.com/Torvec", text: "GitHub" },
-      { href: "https://dev.to/torvec", text: "Dev.to" },
-      {
-        href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
-        text: "YouTube",
-      },
-    ],
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +25,7 @@ export default function Navigation() {
     children,
     section,
   }: {
-    children: string;
+    children: React.ReactNode;
     section: string;
   }) => {
     return (
@@ -87,39 +77,14 @@ export default function Navigation() {
     const { sections } = data;
 
     return (
-      <ul className="space-y-16 px-4 py-16 text-6xl">
-        {sections.map((section) => (
-          <MenuItem key={section} section={section}>
-            {section}
+      <ul className="flex h-[75vh] flex-col justify-evenly px-4 text-6xl">
+        {sections.map((section, index) => (
+          <MenuItem key={index} section={section}>
+            <div className="flex items-baseline justify-between">
+              <span>{section}</span>
+              <span className="text-base text-white/50">0{index + 1}</span>
+            </div>
           </MenuItem>
-        ))}
-      </ul>
-    );
-  };
-
-  const SocialLink = ({ href, text }: { href: string; text: string }) => {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex justify-end gap-2 text-lg text-stone-200 transition-all duration-500 ease-in-out hover:bg-orange-600 hover:text-stone-900"
-      >
-        <span>{text}</span>
-        <span className="material-symbols-outlined transition-transform duration-300 ease-in-out group-hover:-translate-y-2">
-          north_east
-        </span>
-      </a>
-    );
-  };
-
-  const SocialLinkList = () => {
-    const { socialLinks } = data;
-
-    return (
-      <ul className="space-y-4 px-4 py-32">
-        {socialLinks.map(({ href, text }, index) => (
-          <SocialLink key={index} href={href} text={text} />
         ))}
       </ul>
     );
@@ -136,15 +101,7 @@ export default function Navigation() {
           <Logo />
           <VerticalMenuCloseBtn />
         </div>
-
-        <div className="flex h-full flex-col justify-evenly">
-          <MenuItemList />
-          <SocialLinkList />
-        </div>
-
-        <div className="absolute bottom-0 w-full">
-          <Footer />
-        </div>
+        <MenuItemList />
       </div>
     );
   };
