@@ -12,11 +12,13 @@ export default function HeroSection() {
 
     return (
       <h1 className="p-4 md:p-0">
-        <span className="text-2xl md:text-4xl text-stone-300 block">{intro}</span>
-        <span className="text-5xl uppercase text-orange-600 md:text-7xl block">
+        <span className="block text-2xl text-stone-300 md:text-4xl">
+          {intro}
+        </span>
+        <span className="block text-5xl uppercase text-orange-600 md:text-7xl">
           {firstName}
         </span>
-        <span className="text-5xl uppercase text-orange-600 md:text-7xl block">
+        <span className="block text-5xl uppercase text-orange-600 md:text-7xl">
           {lastName}
         </span>
       </h1>
@@ -36,7 +38,7 @@ export default function HeroSection() {
 
   const HeroText = () => {
     return (
-      <div className="flex min-h-[70vh] flex-col items-center justify-center font-bold">
+      <div className="flex min-h-[80vh] flex-col items-center justify-center font-bold">
         <HeroHeader />
         <HeroSubHeader />
       </div>

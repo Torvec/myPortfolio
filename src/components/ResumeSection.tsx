@@ -1,4 +1,5 @@
 import SectionHeader from "./template/SectionHeader";
+import ActionButton from "./template/ActionButton";
 
 export default function ResumeSection() {
   const data = {
@@ -99,7 +100,7 @@ export default function ResumeSection() {
           "Spearheaded the creation of the school website, rapidly learning front-end web design and development principles to lead a successful class project.",
       },
     ],
-    downloadResume: {
+    download: {
       text: "Download",
       href: "https://www.linkedin.com/in/edward-von/",
     },
@@ -129,7 +130,7 @@ export default function ResumeSection() {
           <span className="text-orange-600">-&gt;</span>{" "}
           <span className="text-stone-300">{endDate}</span>
         </div>
-        <div className="border border-white/25 px-4 pb-4 pt-8 md:px-8 md:pb-8 bg-stone-950">
+        <div className="border border-white/25 bg-stone-950 px-4 pb-4 pt-8 md:px-8 md:pb-8">
           <h3 className="text-sm uppercase text-stone-500 md:text-base">
             {company || institution}
           </h3>
@@ -148,7 +149,7 @@ export default function ResumeSection() {
     const { myResume } = data;
 
     return (
-      <div className="mb-16 flex flex-col">
+      <div className="container mx-auto mb-16 flex flex-col">
         {myResume.map(
           ({
             id,
@@ -185,32 +186,23 @@ export default function ResumeSection() {
     );
   };
 
-  const LinkButton = ({ text, href }: { text: string; href: string }) => {
+  const Download = () => {
+    const { text, href } = data.download;
+
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center gap-2 rounded-2xl border-2 border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
-      >
-        <span className="text-lg uppercase">{text}</span>
-        <span className="material-symbols-outlined text-lg transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
-          download
-        </span>
-      </a>
+      <div className="flex min-h-[25vh] items-center justify-center border-t border-white/15 bg-stone-900">
+        <ActionButton text={text} icon="download" href={href} />
+      </div>
     );
   };
 
   const { title, subtitle, number } = data.sectionHeader;
-  const { text, href } = data.downloadResume;
 
   return (
-    <section className="container mx-auto">
+    <section>
       <SectionHeader title={title} subtitle={subtitle} number={number} />
       <ChronoResume />
-      <div className="grid place-content-center pb-64">
-        <LinkButton text={text} href={href} />
-      </div>
+      <Download />
     </section>
   );
 }

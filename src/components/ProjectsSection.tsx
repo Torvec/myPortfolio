@@ -1,4 +1,5 @@
 import SectionHeader from "./template/SectionHeader";
+import ActionButton from "./template/ActionButton";
 
 export default function ProjectsSection() {
   const data = {
@@ -96,7 +97,7 @@ export default function ProjectsSection() {
     techStack: string[];
   }) => {
     return (
-      <div className="border-b border-white/15 p-8">
+      <div className="border-b border-white/15 p-4 md:p-8">
         <div className="relative">
           <a href={deploymentURL}>
             <img
@@ -127,7 +128,7 @@ export default function ProjectsSection() {
     const { projects } = data;
 
     return (
-      <div className="mb-16 grid md:grid-cols-2 md:px-0 border-t border-white/15 bg-stone-950 md:bg-transparent">
+      <div className="grid border-t border-white/15 bg-stone-950 md:grid-cols-2 md:bg-transparent md:px-0">
         {projects.map(
           ({
             id,
@@ -151,32 +152,23 @@ export default function ProjectsSection() {
     );
   };
 
-  const LinkButton = ({ text, href }: { text: string; href: string }) => {
+  const MoreProjects = () => {
+    const { text, href } = data.moreProjects;
+
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center gap-2 rounded-2xl border-2 border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:border-orange-600 hover:text-orange-600"
-      >
-        <span className="text-lg uppercase">{text}</span>
-        <span className="material-symbols-outlined text-lg transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
-          north_east
-        </span>
-      </a>
+      <div className="mx-auto flex min-h-[25vh] w-5/6 items-center justify-center border-x border-white/15 bg-stone-950 md:w-1/2">
+        <ActionButton text={text} icon="north_east" href={href} />
+      </div>
     );
   };
 
   const { title, subtitle, number } = data.sectionHeader;
-  const { text, href } = data.moreProjects;
 
   return (
     <section className="border-b border-white/15">
       <SectionHeader title={title} subtitle={subtitle} number={number} />
       <ProjectCardList />
-      <div className="grid place-content-center pb-64">
-        <LinkButton text={text} href={href} />
-      </div>
+      <MoreProjects />
     </section>
   );
 }
