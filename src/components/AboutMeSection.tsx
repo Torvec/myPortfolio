@@ -54,8 +54,8 @@ export default function AboutMeSection() {
     const { myPic, paragraph1, paragraph2 } = data.intro;
 
     return (
-      <div className="flex flex-col border border-white/10 md:flex-row md:items-center lg:mx-auto lg:w-2/3 bg-stone-950">
-        <div className="border-b border-white/10 p-8 md:w-1/2 md:border-b-0 md:border-r">
+      <div className="flex flex-col border border-white/10 md:flex-row md:items-center lg:mx-auto lg:w-2/3 bg-stone-950 md:bg-transparent">
+        <div className="border-b border-white/10 p-8 md:w-1/2 md:border-b-0">
           <img
             src={myPic}
             alt="Me at the grand canyon"
@@ -79,7 +79,7 @@ export default function AboutMeSection() {
   }) => {
     return (
       <div className="flex h-[80vh] flex-col justify-center border-b border-white/10">
-        <div className="flex h-3/4 flex-col justify-end gap-8 text-pretty border-y border-white/10 bg-gradient-to-tl from-stone-800 p-8 lg:p-16">
+        <div className="flex h-3/4 flex-col justify-end gap-8 text-pretty border-y border-white/10 bg-gradient-to-tl from-stone-800 to-stone-950 p-8 lg:p-16">
           <div className="text-base text-orange-600 md:text-lg">0{number}</div>
           <div className="text-xl text-stone-400">{text}</div>
         </div>
@@ -117,9 +117,9 @@ export default function AboutMeSection() {
     const { header: toolHeaderText, tools } = data.tools;
 
     return (
-      <div className="flex min-h-[50vh] flex-col justify-evenly border-y border-white/10 pb-16">
+      <div className="flex flex-col justify-evenly border-y border-white/10">
         <SubHeader text={toolHeaderText} />
-        <div className="grid grid-cols-2 gap-16 border-y border-white/10 bg-[url(grid_pattern_bg.png)] p-8 md:grid-cols-6 md:px-0 md:py-32 lg:grid-cols-12 lg:gap-4">
+        <div className="grid grid-cols-2 gap-16 border-y border-white/10 bg-stone-950 bg-[url(grid_pattern_bg.png)] p-8 md:grid-cols-6 md:px-0 md:py-32 lg:grid-cols-12 lg:gap-4">
           {tools.map(({ logo, label }, index) => (
             <ToolContainer key={index} logo={logo} label={label} />
           ))}
@@ -133,7 +133,7 @@ export default function AboutMeSection() {
   return (
     <section>
       <div
-        className="flex min-h-screen flex-col justify-center border-y border-white/15 bg-[url(line_bg.png)] bg-repeat-y bg-center"
+        className="flex min-h-screen flex-col justify-center border-y border-white/15"
       >
         <SectionHeader title={title} subtitle={subtitle} number={number} />
         <Intro />

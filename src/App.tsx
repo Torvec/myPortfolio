@@ -12,7 +12,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="bg-stone-950">
+      <main className="bg-stone-950 bg-[url(line_bg.png)] bg-center bg-repeat-y">
         <div id="hero">
           <HeroSection />
         </div>

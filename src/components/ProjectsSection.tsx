@@ -96,27 +96,29 @@ export default function ProjectsSection() {
     techStack: string[];
   }) => {
     return (
-      <div className="relative overflow-hidden border-2 border-white/20">
-        <a href={deploymentURL}>
-          <img
-            src={imgURL}
-            alt={projectName}
-            className="max-h-[60vh] min-h-[60vh] w-full object-cover object-top"
-          />
-          <div className="absolute bottom-0 left-0 flex h-full w-full flex-col justify-end bg-gradient-to-t from-stone-950 from-20% px-4 pb-4">
-            <h3 className="mb-2 text-2xl font-bold text-stone-200">
-              {projectName}
-            </h3>
-            <p className="mb-4 text-base text-stone-300">{description}</p>
-            <ul className="flex flex-wrap gap-2">
-              {techStack.map((tech) => (
-                <li className="bg-stone-800 px-4 py-1 text-sm text-stone-400">
-                  {tech}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </a>
+      <div className="border-b border-white/15 p-8">
+        <div className="relative">
+          <a href={deploymentURL}>
+            <img
+              src={imgURL}
+              alt={projectName}
+              className="max-h-[80vh] min-h-[80vh] w-full object-cover object-top"
+            />
+            <div className="absolute bottom-0 left-0 flex h-full w-full flex-col justify-end bg-gradient-to-t from-stone-950 from-20% px-4 pb-4">
+              <h3 className="mb-2 text-2xl font-bold text-stone-200">
+                {projectName}
+              </h3>
+              <p className="mb-4 text-base text-stone-300">{description}</p>
+              <ul className="flex flex-wrap gap-2">
+                {techStack.map((tech) => (
+                  <li className="bg-stone-800 px-4 py-1 text-sm text-stone-400">
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </a>
+        </div>
       </div>
     );
   };
@@ -125,7 +127,7 @@ export default function ProjectsSection() {
     const { projects } = data;
 
     return (
-      <div className="mb-16 grid gap-4 px-4 md:grid-cols-2 md:gap-8 md:px-0">
+      <div className="mb-16 grid md:grid-cols-2 md:px-0 border-t border-white/15 bg-stone-950 md:bg-transparent">
         {projects.map(
           ({
             id,
@@ -169,7 +171,7 @@ export default function ProjectsSection() {
   const { text, href } = data.moreProjects;
 
   return (
-    <section className="container mx-auto">
+    <section className="border-b border-white/15">
       <SectionHeader title={title} subtitle={subtitle} number={number} />
       <ProjectCardList />
       <div className="grid place-content-center pb-64">

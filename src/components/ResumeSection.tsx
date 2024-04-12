@@ -129,7 +129,7 @@ export default function ResumeSection() {
           <span className="text-orange-600">-&gt;</span>{" "}
           <span className="text-stone-300">{endDate}</span>
         </div>
-        <div className="border border-white/25 px-4 pb-4 pt-8 md:px-8 md:pb-8">
+        <div className="border border-white/25 px-4 pb-4 pt-8 md:px-8 md:pb-8 bg-stone-950">
           <h3 className="text-sm uppercase text-stone-500 md:text-base">
             {company || institution}
           </h3>

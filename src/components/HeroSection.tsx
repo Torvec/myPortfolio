@@ -44,7 +44,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="border-b border-white/10 bg-[url(grid_pattern_bg.png)]">
+    <section className="border-b border-white/10 bg-stone-950 bg-[url(grid_pattern_bg.png)]">
       <HeroText />
     </section>
   );
