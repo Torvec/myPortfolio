@@ -1,5 +1,4 @@
 export default function ContactMeSection() {
-  // Data Object
   const data = {
     connectCTA: {
       text: "Let's Connect",
@@ -17,7 +16,6 @@ export default function ContactMeSection() {
     ],
   };
 
-  // Section Components
   const ConnectCTA = () => {
     const { text, email, mailto } = data.connectCTA;
 

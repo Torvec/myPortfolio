@@ -1,5 +1,4 @@
 export default function HeroSection() {
-  // Data Object
   const data = {
     intro: "Hi! I am ",
     firstName: "Edward ",
@@ -8,7 +7,6 @@ export default function HeroSection() {
     developerType: "Web Developer",
   };
 
-  // Section Components
   const HeroHeader = () => {
     const { intro, firstName, lastName } = data;
 

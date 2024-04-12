@@ -1,7 +1,6 @@
 import SectionHeader from "./template/SectionHeader";
 
 export default function ProjectsSection() {
-  // Data Object
   const data = {
     sectionHeader: {
       title: "Projects",
@@ -83,7 +82,6 @@ export default function ProjectsSection() {
     },
   };
 
-  // Section Components
   const ProjectCard = ({
     imgURL,
     projectName,

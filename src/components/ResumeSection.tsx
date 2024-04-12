@@ -1,7 +1,6 @@
 import SectionHeader from "./template/SectionHeader";
 
 export default function ResumeSection() {
-  // Data Object
   const data = {
     sectionHeader: {
       title: "Resume",
@@ -106,7 +105,6 @@ export default function ResumeSection() {
     },
   };
 
-  // Section Components
   const ResumeItem = ({
     startDate,
     endDate,

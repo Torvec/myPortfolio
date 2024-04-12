@@ -1,7 +1,6 @@
 import SectionHeader from "./template/SectionHeader";
 
 export default function AboutMeSection() {
-  // Data Object
   const data = {
     sectionHeader: {
       title: "About Me",
@@ -10,8 +9,10 @@ export default function AboutMeSection() {
     },
     intro: {
       myPic: "me.png",
-      paragraph:
+      paragraph1:
         "From robotics and radar systems to full stack applications - I'm a San Francisco Bay Area based developer with 14+ years as a technician, and 5 years of freelance front-end web development experience. I recently transitioned to full stack web development after completing UC Berkeley's Full Stack Web Development Boot Camp.",
+      paragraph2:
+        "On a personal note, I'm an avid hiker, runner, traveler, gamer, home cook, and enjoy movies and anime in my free time.",
     },
     goals: {
       header: "I Create",
@@ -41,7 +42,6 @@ export default function AboutMeSection() {
     },
   };
 
-  // Section Components
   const SubHeader = ({ text }: { text: string }) => {
     return (
       <h3 className="border-b border-white/10 py-4 text-center text-3xl font-bold text-stone-300">
@@ -51,7 +51,7 @@ export default function AboutMeSection() {
   };
 
   const Intro = () => {
-    const { myPic, paragraph } = data.intro;
+    const { myPic, paragraph1, paragraph2 } = data.intro;
 
     return (
       <div className="mb-32 flex flex-col border border-white/10 md:flex-row md:items-center lg:mx-auto lg:w-2/3">
@@ -62,9 +62,10 @@ export default function AboutMeSection() {
             className="max-h-[1000px]"
           />
         </div>
-        <p className="xl:text-2xl p-8 text-lg text-stone-300 md:w-1/2 lg:text-xl">
-          {paragraph}
-        </p>
+        <div className="space-y-8 p-8 text-lg text-stone-300 md:w-1/2 lg:text-xl">
+          <p className="">{paragraph1}</p>
+          <p className="">{paragraph2}</p>
+        </div>
       </div>
     );
   };
@@ -125,7 +126,6 @@ export default function AboutMeSection() {
     );
   };
 
-  // Destructure sectionHeader data from data object
   const { title, subtitle, number } = data.sectionHeader;
 
   return (
