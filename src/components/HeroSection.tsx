@@ -1,6 +1,6 @@
 export default function HeroSection() {
   const data = {
-    intro: "Hi! I am ",
+    intro: "Hi! I'm ",
     firstName: "Edward ",
     lastName: "Vonschondorf",
     roles: ["Front-End ", "Back-End ", "Full Stack "],
@@ -12,12 +12,11 @@ export default function HeroSection() {
 
     return (
       <h1 className="p-4 md:p-0">
-        <span className="text-2xl md:text-4xl text-stone-300">{intro}</span>
-        <br />
-        <span className="text-5xl uppercase text-orange-600 md:text-7xl">
+        <span className="text-2xl md:text-4xl text-stone-300 block">{intro}</span>
+        <span className="text-5xl uppercase text-orange-600 md:text-7xl block">
           {firstName}
         </span>
-        <span className="text-5xl uppercase text-orange-600 md:text-7xl">
+        <span className="text-5xl uppercase text-orange-600 md:text-7xl block">
           {lastName}
         </span>
       </h1>
@@ -45,7 +44,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="mb-32 border-b border-white/10 bg-[url(grid_pattern_bg.png)]">
+    <section className="border-b border-white/10 bg-[url(grid_pattern_bg.png)]">
       <HeroText />
     </section>
   );

@@ -1,4 +1,14 @@
 export default function Footer() {
+  const socialLinks = [
+    { href: "https://www.linkedin.com/in/edward-von/", logo: "LI" },
+    { href: "https://github.com/Torvec", logo: "GH" },
+    { href: "https://dev.to/torvec", logo: "DT" },
+    {
+      href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
+      logo: "YT",
+    },
+  ];
+
   const Copyright = () => {
     const getCurrentYear = () => {
       return new Date().getFullYear();
@@ -23,15 +33,34 @@ export default function Footer() {
     );
   };
 
-  const ContactMe = () => {
+  const SocialLink = ({
+    href,
+    children,
+  }: {
+    href: string;
+    children: React.ReactNode;
+  }) => {
     return (
       <a
-        href="mailto:me@edward-vonschondorf.dev?subject=Let's Connect!"
-        className="flex items-center gap-2"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-stone-200 transition-all duration-300 ease-in-out hover:text-stone-900"
       >
-        <span className="material-symbols-outlined">mail</span>{" "}
-        <span>Contact Me</span>
+        {children}
       </a>
+    );
+  };
+
+  const SocialLinkList = () => {
+    return (
+      <div className="flex justify-evenly gap-2">
+        {socialLinks.map(({ href, logo }, index) => (
+          <SocialLink key={index} href={href}>
+            {logo}
+          </SocialLink>
+        ))}
+      </div>
     );
   };
 
@@ -40,7 +69,7 @@ export default function Footer() {
       <div className="container relative mx-auto flex items-center justify-between px-2 py-4">
         <Copyright />
         <UpArrow />
-        <ContactMe />
+        <SocialLinkList />
       </div>
     </footer>
   );
