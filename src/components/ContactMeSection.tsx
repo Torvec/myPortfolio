@@ -1,5 +1,11 @@
+import SectionHeader from "./template/SectionHeader";
+
 export default function ContactMeSection() {
   const data = {
+    sectionHeader: {
+      title: "Contact Me",
+      number: "04",
+    },
     connectCTA: {
       text: "Let's Connect",
       email: "me@edward-vonschondorf.dev",
@@ -27,8 +33,12 @@ export default function ContactMeSection() {
     );
   };
 
+const { title, number } = data.sectionHeader;
+
   return (
-    <section className="bg-orange-600" id="contact">
+    
+    <section className="bg-orange-600 min-h-[50vh]" id="contact">
+      <SectionHeader title={title} number={number} />
       <ConnectCTA />
     </section>
   );

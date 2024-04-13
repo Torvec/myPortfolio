@@ -5,7 +5,6 @@ export default function ProjectsSection() {
   const data = {
     sectionHeader: {
       title: "Projects",
-      subtitle: "Featured",
       number: "02",
     },
     projects: [
@@ -156,17 +155,17 @@ export default function ProjectsSection() {
     const { text, href } = data.moreProjects;
 
     return (
-      <div className="mx-auto flex min-h-[25vh] w-5/6 items-center justify-center border-x border-white/15 bg-stone-950 md:w-1/2">
+      <div className="mx-auto flex min-h-[50vh] w-5/6 items-center justify-center border-x border-white/15 bg-stone-950 md:w-1/2">
         <ActionButton text={text} icon="north_east" href={href} />
       </div>
     );
   };
 
-  const { title, subtitle, number } = data.sectionHeader;
+  const { title, number } = data.sectionHeader;
 
   return (
     <section className="border-b border-white/15">
-      <SectionHeader title={title} subtitle={subtitle} number={number} />
+      <SectionHeader title={title} number={number} />
       <ProjectCardList />
       <MoreProjects />
     </section>

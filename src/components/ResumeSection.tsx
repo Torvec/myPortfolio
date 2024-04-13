@@ -5,7 +5,6 @@ export default function ResumeSection() {
   const data = {
     sectionHeader: {
       title: "Resume",
-      subtitle: "Chronological",
       number: "03",
     },
     myResume: [
@@ -125,12 +124,12 @@ export default function ResumeSection() {
   }) => {
     return (
       <>
-        <div className="mx-auto w-max translate-y-4 border border-white/25 bg-stone-900 px-4 py-2 text-sm font-bold uppercase">
-          <span className="text-stone-500">{startDate}</span>{" "}
-          <span className="text-orange-600">-&gt;</span>{" "}
-          <span className="text-stone-300">{endDate}</span>
-        </div>
-        <div className="border border-white/25 bg-stone-950 px-4 pb-4 pt-8 md:px-8 md:pb-8">
+        <div className="border border-white/15 bg-stone-950 p-8">
+          <div className="w-max border border-white/15  px-4 py-2 text-sm font-bold uppercase">
+            <span className="text-stone-500">{startDate}</span>{" "}
+            <span className="text-orange-600">-&gt;</span>{" "}
+            <span className="text-stone-300">{endDate}</span>
+          </div>
           <h3 className="text-sm uppercase text-stone-500 md:text-base">
             {company || institution}
           </h3>
@@ -145,15 +144,14 @@ export default function ResumeSection() {
     );
   };
 
-  const ChronoResume = () => {
+  const ResumeList = () => {
     const { myResume } = data;
 
     return (
-      <div className="container mx-auto mb-16 flex flex-col">
+      <div className="container mx-auto py-32 px-4 md:px-0 flex flex-col gap-16">
         {myResume.map(
           ({
             id,
-            type,
             startDate,
             endDate,
             company,
@@ -164,11 +162,11 @@ export default function ResumeSection() {
           }) => (
             <div
               key={id}
-              className={
-                type === "education"
-                  ? "ml-8 md:w-5/6 md:self-end"
-                  : "mr-8 md:w-5/6"
-              }
+              // className={
+              //   type === "education"
+              //     ? "ml-8 md:w-5/6 md:self-end"
+              //     : "mr-8 md:w-5/6"
+              // }
             >
               <ResumeItem
                 startDate={startDate}
@@ -190,18 +188,18 @@ export default function ResumeSection() {
     const { text, href } = data.download;
 
     return (
-      <div className="flex min-h-[25vh] items-center justify-center border-t border-white/15 bg-stone-900">
+      <div className="flex min-h-[50vh] items-center justify-center border-t border-white/15 bg-stone-950">
         <ActionButton text={text} icon="download" href={href} />
       </div>
     );
   };
 
-  const { title, subtitle, number } = data.sectionHeader;
+  const { title, number } = data.sectionHeader;
 
   return (
     <section>
-      <SectionHeader title={title} subtitle={subtitle} number={number} />
-      <ChronoResume />
+      <SectionHeader title={title} number={number} />
+      <ResumeList />
       <Download />
     </section>
   );
