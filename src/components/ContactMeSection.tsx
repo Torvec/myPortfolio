@@ -17,7 +17,7 @@ export default function ContactMeSection() {
     const { text, email, mailto } = data.connectCTA;
 
     return (
-      <div className="container mx-auto bg-orange-600">
+      <div className="container mx-auto ">
         <h2 className="mx-auto w-max py-32">
           <span className="block text-lg text-white/75 md:text-2xl">
             {text}
@@ -33,11 +33,10 @@ export default function ContactMeSection() {
     );
   };
 
-const { title, number } = data.sectionHeader;
+  const { title, number } = data.sectionHeader;
 
   return (
-    
-    <section className="bg-orange-600 min-h-[50vh]" id="contact">
+    <section id="contact">
       <SectionHeader title={title} number={number} />
       <ConnectCTA />
     </section>

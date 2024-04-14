@@ -60,7 +60,7 @@ export default function Navigation() {
         onClick={toggleMenu}
         className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-200 md:hidden"
       >
-        <span className="material-symbols-outlined">menu</span>
+        <span className="material-symbols-sharp">menu</span>
       </button>
     );
   };
@@ -68,7 +68,7 @@ export default function Navigation() {
   const VerticalMenuCloseBtn = () => {
     return (
       <button onClick={toggleMenu}>
-        <span className="material-symbols-outlined">close</span>
+        <span className="material-symbols-sharp">close</span>
       </button>
     );
   };

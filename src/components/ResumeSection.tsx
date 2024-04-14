@@ -36,7 +36,7 @@ export default function ResumeSection() {
         startDate: "12.2022",
         endDate: "12.2022",
         institution: "E and M Training Course",
-        program: "Siemens TIA Portal Software Development I/II",
+        program: "Siemens TIA Portal Software Development",
         location: "Fremont, CA",
         details:
           "Two week, instructor-led, hands-on course using TIA Portal software to integrate PLC, HMI, and Variable Frequency Drive (VFD) controls. Learned how to program in Ladder Logic, Function Block Diagrams, Sequential Function Charts, and Structured Text.",
@@ -47,7 +47,7 @@ export default function ResumeSection() {
         startDate: "09.2020",
         endDate: "01.2024",
         company: "Tesla Motors Inc.",
-        jobTitle: "Automation Controls Technician IV",
+        jobTitle: "Automation Controls Technician",
         location: "Fremont, CA",
         details:
           "The go-to technician for any task that needed technical expertise with electronics, PLC programming, automation, robotic systems, and any engineering department projects.",
@@ -58,7 +58,7 @@ export default function ResumeSection() {
         startDate: "10.2019",
         endDate: "09.2020",
         company: "Tesla Motors Inc.",
-        jobTitle: "Equipment Maintenance Technician II",
+        jobTitle: "Equipment Maintenance Technician",
         location: "Fremont, CA",
         details:
           "Adapted quickly to dozens of unfamiliar mechanical, electronic, and robotic systems, diagnosing and correcting numerous faults. Collaborated with engineering for successful equipment commissioning and problem analysis.",
@@ -139,25 +139,29 @@ export default function ResumeSection() {
       <div
         className={
           id % 2 === 0
-            ? "flex text-stone-300"
-            : "flex flex-row-reverse text-stone-300"
+            ? "flex flex-col text-stone-300 md:flex-row"
+            : "flex flex-col text-stone-300 md:flex-row-reverse"
         }
       >
-        <div className="flex flex-col justify-center gap-4 border border-white/25 bg-stone-900 p-4 text-center font-bold text-sm">
+        <div className="flex justify-center gap-2 border border-white/25 bg-stone-900 p-4 text-center text-sm font-bold md:flex-col">
           <span className="block">{endDate}</span>
+          <span className="material-symbols-sharp hidden md:block">
+            arrow_drop_down
+          </span>
+          <span className="material-symbols-sharp md:hidden">arrow_right</span>
           <span className="block">{startDate}</span>
         </div>
-        <div className="flex gap-4 border border-white/15 p-8">
-          <div className="w-5/12 self-center">
+        <div className="flex flex-col gap-4 border border-white/15 bg-stone-950 p-8 md:flex-row">
+          <div className="md:w-5/12 md:self-center">
             <h3 className="text-pretty text-2xl font-bold">
               {jobTitle || program}
             </h3>
             <h4 className="uppercase text-stone-500">
               {company || institution}
             </h4>
-            <h5 className="text-lg text-stone-500">{location}</h5>
+            <h5 className="text-stone-500">{location}</h5>
           </div>
-          <p className="w-7/12 text-pretty text-sm leading-relaxed text-stone-400">
+          <p className="text-pretty text-sm leading-relaxed text-stone-400 md:w-7/12">
             {details}
           </p>
         </div>
@@ -169,7 +173,7 @@ export default function ResumeSection() {
     const { myResume } = data;
 
     return (
-      <div className="mx-auto flex flex-col gap-8 px-4 py-32 md:px-8">
+      <div className="mx-auto flex flex-col gap-16 px-4 py-64 md:px-8">
         {myResume.map(
           ({
             id,
@@ -208,7 +212,7 @@ export default function ResumeSection() {
     const { text, href } = data.download;
 
     return (
-      <div className="flex min-h-[50vh] items-center justify-center border-t border-white/15 bg-stone-950">
+      <div className="flex items-center justify-center bg-stone-950 pb-64">
         <ActionButton text={text} icon="download" href={href} />
       </div>
     );

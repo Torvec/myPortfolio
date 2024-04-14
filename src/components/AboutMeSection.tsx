@@ -23,17 +23,21 @@ export default function AboutMeSection() {
         "Performance and SEO optimized websites.",
       ],
     },
-    tools: {
+    toolsList: {
       header: "My Toolkit",
       tools: [
         { logo: "", label: "React" },
         { logo: "", label: "Next" },
+        { logo: "", label: "Astro" },
         { logo: "", label: "Tailwind" },
+        { logo: "", label: "Material UI" },
         { logo: "", label: "Framer Motion" },
         { logo: "", label: "Node" },
         { logo: "", label: "Express" },
         { logo: "", label: "MySQL" },
+        { logo: "", label: "Sequelize" },
         { logo: "", label: "MongoDB" },
+        { logo: "", label: "Mongoose" },
         { logo: "", label: "GraphQL" },
         { logo: "", label: "TypeScript" },
         { logo: "", label: "Figma" },
@@ -44,7 +48,7 @@ export default function AboutMeSection() {
 
   const SubHeader = ({ text }: { text: string }) => {
     return (
-      <h3 className="border-b border-white/15 bg-stone-950 py-32 text-center text-3xl text-stone-300 md:text-5xl">
+      <h3 className="bg-stone-950 py-32 text-center text-3xl text-stone-300 md:text-5xl">
         {text}
       </h3>
     );
@@ -54,9 +58,9 @@ export default function AboutMeSection() {
     const { myPic, header, paragraph1, paragraph2 } = data.intro;
 
     return (
-      <div className="flex min-h-screen flex-col justify-evenly border-y border-white/15">
+      <div className="flex min-h-screen flex-col justify-evenly border-b border-white/15">
         <div className="bg-[url(horiz_line_bg.png)] bg-center bg-repeat-x">
-          <div className="flex flex-col border border-white/15 bg-stone-950 md:flex-row lg:mx-auto lg:w-2/3">
+          <div className="flex flex-col border border-white/15 bg-stone-950 md:flex-row md:bg-[url(vert_line_bg.png)] md:bg-center md:bg-repeat-y lg:mx-auto lg:w-2/3">
             <div className="border-b border-white/15 p-8 md:w-1/2 md:border-b-0">
               <img
                 src={myPic}
@@ -77,15 +81,9 @@ export default function AboutMeSection() {
     );
   };
 
-  const GoalItem = ({
-    number,
-    text,
-  }: {
-    number: number;
-    text: string;
-  }) => {
+  const GoalItem = ({ number, text }: { number: number; text: string }) => {
     return (
-      <div className="flex h-[80vh] flex-col justify-center border-b border-white/15 bg-stone-950">
+      <div className="flex h-[80vh] flex-col justify-center border-y border-white/15 bg-stone-950">
         <div className="flex h-3/4 flex-col justify-end gap-8 text-pretty border-y border-white/15 bg-gradient-to-tl from-stone-800 to-stone-950 p-8">
           <div className="text-base text-orange-600 md:text-lg">0{number}</div>
           <div className="text-xl text-stone-400">{text}</div>
@@ -111,26 +109,53 @@ export default function AboutMeSection() {
 
   const ToolItem = ({ logo, label }: { logo: string; label: string }) => {
     return (
-      <div className="flex items-center gap-4 md:flex-col">
-        <span className="size-4 bg-orange-600 md:size-16">{logo}</span>
-        <span className="text-sm font-bold uppercase text-stone-400">
-          {label}
-        </span>
+      <div className="flex aspect-square flex-col items-center justify-center gap-2">
+        <span className="size-16 bg-orange-600">{logo}</span>
+        <span className="text-sm uppercase text-stone-400">{label}</span>
+      </div>
+    );
+  };
+
+  const ToolGroup = ({
+    groupData,
+  }: {
+    groupData: { logo: string; label: string }[];
+  }) => {
+    return (
+      <div className="grid grid-cols-2 border border-white/15">
+        {groupData.map(({ logo, label }, index) => (
+          <ToolItem key={index} logo={logo} label={label} />
+        ))}
       </div>
     );
   };
 
   const ToolList = () => {
-    const { header: toolHeaderText, tools } = data.tools;
+    const { tools } = data.toolsList;
+
+    // Group tools into groups of 4
+    const groupedTools = [];
+    const groupSize = 4;
+    for (let i = 0; i < tools.length; i += groupSize) {
+      groupedTools.push(tools.slice(i, i + groupSize));
+    }
 
     return (
-      <div className="flex flex-col justify-evenly border-y border-white/15">
+      <div className="grid gap-4 border border-white/15 bg-stone-950 p-4 md:grid-cols-2">
+        {groupedTools.map((group, index) => (
+          <ToolGroup key={index} groupData={group} />
+        ))}
+      </div>
+    );
+  };
+
+  const ToolsSection = () => {
+    const { header: toolHeaderText } = data.toolsList;
+
+    return (
+      <div className="container mx-auto flex flex-col justify-evenly pb-64">
         <SubHeader text={toolHeaderText} />
-        <div className="grid grid-cols-2 gap-16 border-y border-white/15 bg-stone-950 p-8 md:grid-cols-6 md:px-0 md:py-32 ">
-          {tools.map(({ logo, label }, index) => (
-            <ToolItem key={index} logo={logo} label={label} />
-          ))}
-        </div>
+        <ToolList />
       </div>
     );
   };
@@ -142,7 +167,7 @@ export default function AboutMeSection() {
       <SectionHeader title={title} number={number} />
       <Intro />
       <GoalList />
-      <ToolList />
+      <ToolsSection />
     </section>
   );
 }

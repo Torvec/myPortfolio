@@ -26,8 +26,8 @@ export default function Footer() {
         onClick={handleClickToTop}
         className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2"
       >
-        <span className="material-symbols-outlined transition-all duration-500 ease-in-out hover:text-stone-800">
-          keyboard_arrow_up
+        <span className="material-symbols-sharp transition-all duration-500 ease-in-out hover:text-stone-800">
+          arrow_drop_up
         </span>
       </button>
     );

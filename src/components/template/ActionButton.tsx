@@ -14,7 +14,7 @@ export default function ActionButton({
           {text}
         </span>
         <span className="bg-orange-600 p-4">
-          <span className="material-symbols-outlined text-2xl transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:text-white">
+          <span className="material-symbols-sharp text-2xl transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:text-white">
             {icon}
           </span>
         </span>

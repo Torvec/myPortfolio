@@ -127,7 +127,7 @@ export default function ProjectsSection() {
     const { projects } = data;
 
     return (
-      <div className="grid border-t border-white/15 bg-stone-950 md:grid-cols-2 md:bg-transparent md:px-0">
+      <div className="grid bg-stone-950 py-64 md:grid-cols-2 md:bg-transparent">
         {projects.map(
           ({
             id,
@@ -155,7 +155,7 @@ export default function ProjectsSection() {
     const { text, href } = data.moreProjects;
 
     return (
-      <div className="mx-auto flex min-h-[50vh] w-5/6 items-center justify-center border-x border-white/15 bg-stone-950 md:w-1/2">
+      <div className="mx-auto flex w-5/6 items-center justify-center bg-stone-950 pb-64 md:w-1/2">
         <ActionButton text={text} icon="north_east" href={href} />
       </div>
     );
@@ -164,7 +164,7 @@ export default function ProjectsSection() {
   const { title, number } = data.sectionHeader;
 
   return (
-    <section className="border-b border-white/15">
+    <section>
       <SectionHeader title={title} number={number} />
       <ProjectCardList />
       <MoreProjects />
