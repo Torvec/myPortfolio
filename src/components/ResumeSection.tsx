@@ -4,8 +4,7 @@ import ActionButton from "./template/ActionButton";
 export default function ResumeSection() {
   const data = {
     sectionHeader: {
-      title: "Resume",
-      number: "03",
+      title: "My Chronological Resume",
     },
     myResume: [
       {
@@ -218,11 +217,11 @@ export default function ResumeSection() {
     );
   };
 
-  const { title, number } = data.sectionHeader;
+  const { title } = data.sectionHeader;
 
   return (
     <section>
-      <SectionHeader title={title} number={number} />
+      <SectionHeader title={title} />
       <ResumeList />
       <Download />
     </section>

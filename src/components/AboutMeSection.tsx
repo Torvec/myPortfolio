@@ -3,16 +3,14 @@ import SectionHeader from "./template/SectionHeader";
 export default function AboutMeSection() {
   const data = {
     sectionHeader: {
-      title: "About Me",
-      number: "01",
+      title: "A Brief Intro About Me",
     },
     intro: {
       myPic: "me.png",
-      header: "A Brief Intro",
       paragraph1:
-        "With a foundation in robotics and radar systems, I've leveraged my 14+ years of technical experience to become a full-stack web developer.  After completing UC Berkeley's Full Stack Web Development Boot Camp, I'm now building modern, responsive web applications. I'm excited to bring my unique perspective and technical skills to your team/project!",
+        "With a foundation in robotics and radar systems, I've leveraged my 14+ years of technician and 5+ years of front-end design and development experience to become a full-stack web developer.  After completing UC Berkeley's Full Stack Web Development Boot Camp, I'm now building modern, responsive web applications. I'm excited to bring my unique perspective and technical skills to your team/project!",
       paragraph2:
-        "On a personal note, my hobbies include hiking, running, travel, gaming, home cooking, PC building, and movies/anime.",
+        "On a personal note, my hobbies include hiking, running, traveling, gaming, home cooking, PC building, and watching movies/anime.",
     },
     goals: {
       header: "I Design and Develop",
@@ -55,10 +53,11 @@ export default function AboutMeSection() {
   };
 
   const Intro = () => {
-    const { myPic, header, paragraph1, paragraph2 } = data.intro;
-
+    const { myPic, paragraph1, paragraph2 } = data.intro;
+    const { title } = data.sectionHeader;
     return (
       <div className="flex min-h-screen flex-col justify-evenly border-b border-white/15">
+        <SectionHeader title={title} />
         <div className="bg-[url(horiz_line_bg.png)] bg-center bg-repeat-x">
           <div className="flex flex-col border border-white/15 bg-stone-950 md:flex-row md:bg-[url(vert_line_bg.png)] md:bg-center md:bg-repeat-y lg:mx-auto lg:w-2/3">
             <div className="border-b border-white/15 p-8 md:w-1/2 md:border-b-0">
@@ -69,9 +68,6 @@ export default function AboutMeSection() {
               />
             </div>
             <div className="xl:text-2xl space-y-8 p-8 text-lg text-stone-300 md:w-1/2 md:text-xl">
-              <h3 className="border border-white/15 p-4 text-3xl font-bold">
-                {header}
-              </h3>
               <p className="text-stone-400">{paragraph1}</p>
               <p className="text-stone-400">{paragraph2}</p>
             </div>
@@ -160,11 +156,8 @@ export default function AboutMeSection() {
     );
   };
 
-  const { title, number } = data.sectionHeader;
-
   return (
     <section>
-      <SectionHeader title={title} number={number} />
       <Intro />
       <GoalList />
       <ToolsSection />

@@ -3,11 +3,10 @@ import SectionHeader from "./template/SectionHeader";
 export default function ContactMeSection() {
   const data = {
     sectionHeader: {
-      title: "Contact Me",
-      number: "04",
+      title: "Let's Connect and Collaborate!",
     },
     connectCTA: {
-      text: "Let's Connect",
+      text: "Contact me here:",
       email: "me@edward-vonschondorf.dev",
       mailto: "mailto:me@edward-vonschondorf.dev?subject=Let's Connect!",
     },
@@ -33,12 +32,13 @@ export default function ContactMeSection() {
     );
   };
 
-  const { title, number } = data.sectionHeader;
+  const { title } = data.sectionHeader;
 
   return (
     <section id="contact">
-      <SectionHeader title={title} number={number} />
+      <SectionHeader title={title} />
       <ConnectCTA />
+      <p className="text-center text-white py-64 font-bold uppercase">Insert Form here</p>
     </section>
   );
 }

@@ -4,8 +4,7 @@ import ActionButton from "./template/ActionButton";
 export default function ProjectsSection() {
   const data = {
     sectionHeader: {
-      title: "Projects",
-      number: "02",
+      title: "Featured Full-Stack Projects",
     },
     projects: [
       {
@@ -161,11 +160,11 @@ export default function ProjectsSection() {
     );
   };
 
-  const { title, number } = data.sectionHeader;
+  const { title } = data.sectionHeader;
 
   return (
     <section>
-      <SectionHeader title={title} number={number} />
+      <SectionHeader title={title} />
       <ProjectCardList />
       <MoreProjects />
     </section>

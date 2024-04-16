@@ -44,7 +44,7 @@ export default function Navigation() {
     const { sections } = data;
 
     return (
-      <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-20 font-bold text-stone-200 md:flex">
+      <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-16 font-bold text-stone-200 md:flex">
         {sections.map((section, index) => (
           <MenuItem key={index} section={section}>
             {section}
