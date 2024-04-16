@@ -46,7 +46,7 @@ export default function AboutMeSection() {
 
   const SubHeader = ({ text }: { text: string }) => {
     return (
-      <h3 className="bg-stone-950 py-32 text-center text-3xl text-stone-300 md:text-5xl">
+      <h3 className="bg-stone-950 pb-16 pt-32 text-center text-3xl text-stone-300 md:text-5xl">
         {text}
       </h3>
     );
@@ -56,7 +56,7 @@ export default function AboutMeSection() {
     const { myPic, paragraph1, paragraph2 } = data.intro;
     const { title } = data.sectionHeader;
     return (
-      <div className="flex min-h-screen flex-col justify-evenly border-b border-white/15">
+      <div className="flex flex-col justify-center pb-64">
         <SectionHeader title={title} />
         <div className="bg-[url(horiz_line_bg.png)] bg-center bg-repeat-x">
           <div className="flex flex-col border border-white/15 bg-stone-950 md:flex-row md:bg-[url(vert_line_bg.png)] md:bg-center md:bg-repeat-y lg:mx-auto lg:w-2/3">
@@ -149,7 +149,7 @@ export default function AboutMeSection() {
     const { header: toolHeaderText } = data.toolsList;
 
     return (
-      <div className="container mx-auto flex flex-col justify-evenly pb-64">
+      <div className="container mx-auto flex flex-col justify-evenly">
         <SubHeader text={toolHeaderText} />
         <ToolList />
       </div>

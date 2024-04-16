@@ -126,7 +126,7 @@ export default function ProjectsSection() {
     const { projects } = data;
 
     return (
-      <div className="grid bg-stone-950 py-64 md:grid-cols-2 md:bg-transparent">
+      <div className="grid bg-stone-950 md:grid-cols-2 md:bg-transparent">
         {projects.map(
           ({
             id,
@@ -154,7 +154,7 @@ export default function ProjectsSection() {
     const { text, href } = data.moreProjects;
 
     return (
-      <div className="mx-auto flex w-5/6 items-center justify-center bg-stone-950 pb-64 md:w-1/2">
+      <div className="mx-auto flex items-center justify-center bg-stone-950 py-32 md:w-1/2">
         <ActionButton text={text} icon="north_east" href={href} />
       </div>
     );

@@ -17,7 +17,7 @@ export default function ContactMeSection() {
 
     return (
       <div className="container mx-auto ">
-        <h2 className="mx-auto w-max py-32">
+        <h2 className="mx-auto w-max">
           <span className="block text-lg text-white/75 md:text-2xl">
             {text}
           </span>

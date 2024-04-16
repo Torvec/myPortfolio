@@ -4,7 +4,7 @@ import ActionButton from "./template/ActionButton";
 export default function ResumeSection() {
   const data = {
     sectionHeader: {
-      title: "My Chronological Resume",
+      title: "My Professional and Academic Journey",
     },
     myResume: [
       {
@@ -172,7 +172,7 @@ export default function ResumeSection() {
     const { myResume } = data;
 
     return (
-      <div className="mx-auto flex flex-col gap-16 px-4 py-64 md:px-8">
+      <div className="mx-auto flex flex-col gap-16 px-4 md:px-8">
         {myResume.map(
           ({
             id,
@@ -211,7 +211,7 @@ export default function ResumeSection() {
     const { text, href } = data.download;
 
     return (
-      <div className="flex items-center justify-center bg-stone-950 pb-64">
+      <div className="flex items-center justify-center bg-stone-950 py-32">
         <ActionButton text={text} icon="download" href={href} />
       </div>
     );

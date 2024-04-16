@@ -77,7 +77,7 @@ export default function Navigation() {
     const { sections } = data;
 
     return (
-      <ul className="flex h-[75vh] flex-col justify-evenly px-4 text-6xl">
+      <ul className="space-y-32 px-4 text-6xl py-32">
         {sections.map((section, index) => (
           <MenuItem key={index} section={section}>
             <div className="flex items-baseline justify-between">
@@ -94,10 +94,10 @@ export default function Navigation() {
     return (
       <div
         id="menu"
-        className={`fixed inset-0 z-10 ${isMenuOpen ? "" : "hidden"} h-screen bg-orange-600 text-stone-200 md:hidden`}
+        className={`fixed inset-0 z-10 ${isMenuOpen ? "" : "hidden"} h-max bg-orange-600 text-stone-200 md:hidden rounded-lg border border-white/25`}
         onClick={toggleMenu}
       >
-        <div className="flex justify-between border-b border-white/50 px-4 py-2">
+        <div className="flex justify-between border-b border-white/25 px-4 py-2">
           <Logo />
           <VerticalMenuCloseBtn />
         </div>

@@ -4,10 +4,8 @@ export default function SectionHeader({
   title: string;
 }) {
   return (
-    <div className="px-4">
-      <div className="container mx-auto bg-stone-950 p-4 md:p-8">
-        <h2 className="text-4xl text-stone-200 md:text-5xl text-center font-bold">{title}</h2>
-      </div>
-    </div>
+    <h2 className="mx-auto text-pretty text-center text-4xl font-bold text-stone-200 md:text-5xl pt-32 pb-16">
+      {title}
+    </h2>
   );
 }
