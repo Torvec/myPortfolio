@@ -1,6 +1,5 @@
 <svg width="1300" height="1300" viewBox="0 0 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_412_557)">
-<g opacity="0.4">
 <g filter="url(#filter0_f_412_557)">
 <circle cx="650" cy="650" r="98" stroke="#EA580C" stroke-width="4"/>
 </g>
@@ -14,8 +13,6 @@
 <circle cx="650" cy="650" r="98" stroke="#EA580C" stroke-width="4"/>
 </g>
 <circle cx="650" cy="650" r="98" stroke="#F97316" stroke-width="4"/>
-</g>
-<g opacity="0.3">
 <g filter="url(#filter4_f_412_557)">
 <circle cx="650" cy="650" r="198" stroke="#EA580C" stroke-width="4"/>
 </g>
@@ -29,8 +26,6 @@
 <circle cx="650" cy="650" r="198" stroke="#EA580C" stroke-width="4"/>
 </g>
 <circle cx="650" cy="650" r="198" stroke="#F97316" stroke-width="4"/>
-</g>
-<g opacity="0.3">
 <g filter="url(#filter8_f_412_557)">
 <circle cx="650" cy="650" r="398" stroke="#EA580C" stroke-width="4"/>
 </g>
@@ -44,8 +39,6 @@
 <circle cx="650" cy="650" r="398" stroke="#EA580C" stroke-width="4"/>
 </g>
 <circle cx="650" cy="650" r="398" stroke="#F97316" stroke-width="4"/>
-</g>
-<g opacity="0.3">
 <g filter="url(#filter12_f_412_557)">
 <circle cx="650" cy="650" r="598" stroke="#EA580C" stroke-width="4"/>
 </g>
@@ -59,7 +52,6 @@
 <circle cx="650" cy="650" r="598" stroke="#EA580C" stroke-width="4"/>
 </g>
 <circle cx="650" cy="650" r="598" stroke="#F97316" stroke-width="4"/>
-</g>
 </g>
 <defs>
 <filter id="filter0_f_412_557" x="500" y="500" width="300" height="300" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
