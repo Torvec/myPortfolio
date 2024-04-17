@@ -58,7 +58,7 @@ export default function HeroSection() {
           return (
             <motion.span
               key={index}
-              className="absolute bottom-0 text-xs font-bold uppercase text-orange-600 z-50"
+              className="absolute bottom-0 text-xs font-bold uppercase text-orange-600 z-40"
               initial={{ x: initPosX, y: initPosY, opacity: 0 }}
               animate={{ opacity: [0, 1, 0] }}
               transition={{
@@ -166,7 +166,7 @@ export default function HeroSection() {
   const HeroText = () => {
     return (
       <div className="relative flex min-h-[55vh] flex-col items-center justify-end md:justify-center bg-stone-950">
-        <div className="z-50 text-center md:space-y-4 pb-32 md:pb-0 md:pt-32">
+        <div className="z-40 text-center md:space-y-4 pb-32 md:pb-0 md:pt-32">
           <HeroHeader />
           <Tagline />
         </div>
