@@ -8,14 +8,15 @@ export default function HeroSection() {
     tagline:
       "A Full Stack Web Developer with a technician's eye, and a passion for troubleshooting, creating, and collaborating.",
     techList: [
-      { label: "React", initPosX: -450, initPosY: -200 },
-      { label: "Tailwind", initPosX: 320, initPosY: -220 },
-      { label: "Node", initPosX: -240, initPosY: -100 },
-      { label: "Express", initPosX: -270, initPosY: -470 },
-      { label: "MySQL", initPosX: 450, initPosY: -300 },
-      { label: "MongoDB", initPosX: 120, initPosY: -80 },
-      { label: "GraphQL", initPosX: 150, initPosY: -500 },
-      { label: "TypeScript", initPosX: 300, initPosY: -50 },
+      { label: "React", initPosX: -450, initPosY: -200, delay: 1 },
+      { label: "Node", initPosX: -240, initPosY: -100, delay: 1 },
+      { label: "Express", initPosX: -270, initPosY: -470, delay: 3 },
+      { label: "MongoDB", initPosX: 120, initPosY: -80, delay: 7.5 },
+      { label: "GraphQL", initPosX: 150, initPosY: -500, delay: 5.5 },
+      { label: "TypeScript", initPosX: 300, initPosY: -50, delay: 8.75 },
+      { label: "Tailwind", initPosX: 320, initPosY: -220, delay: 7.5 },
+      { label: "MySQL", initPosX: 450, initPosY: -300, delay: 7.5 },
+      { label: "JavaScript", initPosX: 0, initPosY: -140, delay: 4.75 },
     ],
     radarDisplayEffect: [
       "radar_screen.svg",
@@ -48,39 +49,29 @@ export default function HeroSection() {
     );
   };
 
-  const Target = ({
-    tech,
-    initPosX,
-    initPosY,
-  }: {
-    tech: string;
-    initPosX: number;
-    initPosY: number;
-  }) => {
-    return (
-      <motion.span
-        className="absolute bottom-0 text-xs font-bold uppercase text-orange-600"
-        initial={{ x: initPosX, y: initPosY }}
-        aria-hidden="true"
-      >
-        {tech}
-      </motion.span>
-    );
-  };
-
   const TechListTargets = () => {
     const { techList } = data;
 
     return (
       <>
-        {techList.map(({ label, initPosX, initPosY }, index) => {
+        {techList.map(({ label, initPosX, initPosY, delay }, index) => {
           return (
-            <Target
+            <motion.span
               key={index}
-              tech={label}
-              initPosX={initPosX}
-              initPosY={initPosY}
-            />
+              className="absolute bottom-0 text-xs font-bold uppercase text-orange-600 z-50"
+              initial={{ x: initPosX, y: initPosY, opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{
+                delay: delay,
+                duration: 10,
+                repeat: Infinity,
+                repeatDelay: 5,
+                ease: [0.1, 0.2, 0.3, 1],
+              }}
+              aria-hidden="true"
+            >
+              {label}
+            </motion.span>
           );
         })}
       </>
@@ -90,20 +81,28 @@ export default function HeroSection() {
   const RadarScreenEffect = () => {
     const { radarDisplayEffect } = data;
 
+    const glowVariants = {
+      start: { opacity: 0.4 },
+      end: {
+        opacity: 0.2,
+        transition: {
+          duration: 2,
+          repeat: Infinity,
+          repeatType: "reverse" as const, // Throws an error if I don't use 'as const', ugh TypeScript
+          ease: "linear",
+        },
+      },
+    };
+
     return (
       <>
         <TechListTargets />
         {/* Gradient */}
         <motion.div
           className="absolute bottom-0 h-screen w-screen translate-y-1/2 bg-[radial-gradient(circle,_#ea580c_0%,_transparent_60%)]"
-          initial={{ opacity: 0.3 }}
-          animate={{ opacity: 0.1 }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "linear",
-          }}
+          initial="start"
+          animate="end"
+          variants={glowVariants}
         />
         {/* Grid */}
         <img
@@ -117,14 +116,9 @@ export default function HeroSection() {
           src={radarDisplayEffect[0]}
           alt=""
           className="absolute bottom-0 h-full w-full translate-y-1/2 object-cover md:h-max md:w-max"
-          initial={{ opacity: 0.4 }}
-          animate={{ opacity: 0.2 }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "linear",
-          }}
+          initial="start"
+          animate="end"
+          variants={glowVariants}
           aria-hidden="true"
         />
 
@@ -151,10 +145,18 @@ export default function HeroSection() {
           aria-hidden="true"
         />
         {/* Separator */}
-        <img
+        <motion.img
           src={radarDisplayEffect[4]}
           alt=""
           className="absolute bottom-0 w-full"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0.5 }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "linear",
+          }}
           aria-hidden="true"
         />
       </>
@@ -163,8 +165,8 @@ export default function HeroSection() {
 
   const HeroText = () => {
     return (
-      <div className="relative flex min-h-[55vh] flex-col items-center justify-center bg-stone-950">
-        <div className="z-50 text-center md:space-y-4 md:pt-16">
+      <div className="relative flex min-h-[55vh] flex-col items-center justify-end md:justify-center bg-stone-950">
+        <div className="z-50 text-center md:space-y-4 pb-32 md:pb-0 md:pt-32">
           <HeroHeader />
           <Tagline />
         </div>
