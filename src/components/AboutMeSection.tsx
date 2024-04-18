@@ -25,19 +25,20 @@ export default function AboutMeSection() {
     return <img src={img.src} alt={img.alt} />;
   };
 
+  // TODO: Replace emojis with svg icons
   const Hobbies = () => {
     const heading = "Hobbies & Interests";
 
-    const p1 = "During my free time I enjoy:";
-
     const hobbyList = [
-      "Hiking",
-      "Running",
-      "Traveling",
-      "Playing Video Games",
-      "Home cooking",
-      "PC Building",
-      "Watching Movies, Anime, Shows",
+      { hobby: "Hiking", icon: "🗻" },
+      { hobby: "Running", icon: "🏃" },
+      { hobby: "Traveling", icon: "✈️" },
+      { hobby: "Video Games", icon: "🎮" },
+      { hobby: "Home cooking", icon: "🍳" },
+      { hobby: "PC Building", icon: "🖥️" },
+      { hobby: "Movies", icon: "📽️" },
+      { hobby: "Anime", icon: "🎌" },
+      { hobby: "Streaming Shows", icon: "📺" },
     ];
 
     return (
@@ -45,63 +46,95 @@ export default function AboutMeSection() {
         <h3 className="mb-4 text-lg font-bold uppercase text-stone-200">
           {heading}
         </h3>
-        <p className="text-stone-300">{p1}</p>
-        <ul className="space-y-1 pl-4 pt-2 text-stone-400">
-          {hobbyList.map((hobby, index) => (
-            <li key={index}>{hobby}</li>
+        <ul className="flex flex-wrap justify-between gap-4 pt-4 text-stone-400">
+          {hobbyList.map(({ hobby, icon }, index) => (
+            <li key={index} className="flex items-center">
+              <span className="rounded-s-lg border border-white/25 bg-stone-700 p-2">
+                {icon}
+              </span>
+              <span className="rounded-e-lg border border-white/25 bg-stone-900 p-2">
+                {hobby}
+              </span>
+            </li>
           ))}
         </ul>
       </>
     );
   };
 
+  // TODO: Find a more procedural way to list everything, code is temporary
   const Availability = () => {
     const header = "Current Availability";
 
-    const positions = ["Full Time", "Part Time", "Contract"];
+    const employment = [
+      { type: "Full Time", icon: "🧑‍💻" },
+      { type: "Part Time", icon: "🕔" },
+      { type: "Contract", icon: "📝" },
+      { type: "Freelance", icon: "💻" },
+    ];
 
-    const locations = ["Local", "Remote", "Hybrid"];
+    const locations = [
+      { type: "On-Site", available: "✅" },
+      { type: "Remote", available: "✅" },
+      { type: "Hybrid", available: "✅" },
+    ];
 
-    const buttonText = "Let's Connect!";
+    // ✅ = available, ❌ = not
 
     return (
       <>
-        <h3 className="mb-4 text-lg font-bold uppercase text-stone-200">
+        <h3 className="mb-4 text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
-        <ul className="text-stone-300">
-          {positions.map((position, index) => (
-            <li key={index} className="">{position}</li>
+        <ul className="flex justify-end gap-2 text-stone-400">
+          {locations.map(({ type }, index) => (
+            <li key={index} className="flex gap-2 p-1 text-sm">
+              <span>{type}</span>
+            </li>
           ))}
         </ul>
-        <ul className="text-stone-300 flex justify-between py-4">
-          {locations.map((location, index) => (
-            <li key={index}>{location}</li>
+        <ul className="space-y-8 text-stone-300">
+          {employment.map(({ type, icon }, index) => (
+            <li key={index} className="flex justify-between bg-stone-900 py-1">
+              <div>
+                <span className="bg-stone-700 p-1">{icon}</span>
+                <span className="bg-stone-900 px-2 font-bold">{type}</span>
+              </div>
+              <div className="flex gap-12">
+                <span>✅</span>
+                <span>✅</span>
+                <span>✅</span>
+              </div>
+            </li>
           ))}
         </ul>
-        <div className="flex flex-col gap-8">
-          <button className="rounded-2xl border border-orange-600 px-8 py-4 text-white">
-            {buttonText}
-          </button>
-        </div>
       </>
     );
   };
 
+  // TODO: Social Link logos are temporary, need to change them to svg
   const SocialLinkList = () => {
-    const header = "Socials";
+    const header = "My Socials";
 
     const socialLinks = [
       {
         href: "https://www.linkedin.com/in/edward-von/",
-        logo: "",
+        logo: "linkedin_logo.png",
         label: "LinkedIn",
       },
-      { href: "https://github.com/Torvec", logo: "", label: "GitHub" },
-      { href: "https://dev.to/torvec", logo: "", label: "Dev.to" },
+      {
+        href: "https://github.com/Torvec",
+        logo: "github_logo.png",
+        label: "GitHub",
+      },
+      {
+        href: "https://dev.to/torvec",
+        logo: "devto_logo.png",
+        label: "Dev.to",
+      },
       {
         href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
-        logo: "",
+        logo: "youtube_logo.png",
         label: "YouTube",
       },
     ];
@@ -116,9 +149,15 @@ export default function AboutMeSection() {
       label: string;
     }) => {
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          <div className="flex flex-col gap-4">
-            <span className="size-8 rounded-full bg-orange-600">{logo}</span>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="col-span-1 row-span-3 place-content-center rounded-lg bg-stone-900"
+        >
+          <div className="flex flex-col items-center gap-4">
+            {/* <span className="size-8 rounded-full bg-orange-600">{logo}</span> */}
+            <img src={logo} alt={label} />
             <span className="text-orange-500 transition-all duration-300 ease-in-out hover:text-orange-600">
               {label}
             </span>
@@ -129,32 +168,33 @@ export default function AboutMeSection() {
 
     return (
       <>
-        <h3 className="mb-4 text-lg font-bold uppercase text-stone-200">
+        <h3 className="col-span-4 row-span-1 place-content-center text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
-        <div className="flex justify-between">
-          {socialLinks.map(({ href, logo, label }, index) => (
-            <SocialLink key={index} href={href} logo={logo} label={label} />
-          ))}
-        </div>
+        {socialLinks.map(({ href, logo, label }, index) => (
+          <SocialLink key={index} href={href} logo={logo} label={label} />
+        ))}
       </>
     );
   };
 
+  // TODO: Icons are temporary, need to come up with a unique design and save as svg
   const GoalList = () => {
     const header = "I Design and Develop";
 
-    const goalText = [
-      "Captivating, Responsive, Accessible designs.",
-      "User-Friendly, Engaging Interactive Experiences.",
-      "Secure, Robust, Scalable Data-driven Applications.",
-      "SEO and Performance Optimized Websites.",
+    const goalContent = [
+      { text: "Captivating, Responsive, Accessible designs.", icon: "responsive.png" },
+      { text: "User-Friendly, Engaging Interactive Experiences.", icon: "interactive.png" },
+      { text: "Secure, Robust, Scalable Data-driven Applications.", icon: "secure.png" },
+      { text: "SEO and Performance Optimized Websites.", icon: "performance.png" },
     ];
 
-    const GoalItem = ({ number, text }: { number: number; text: string }) => {
+    const GoalItem = ({ number, text, icon }: { number: number; text: string, icon: string }) => {
       return (
         <div className="row-span-3 flex flex-col justify-between rounded-lg border border-orange-900 bg-stone-900/25 p-8 text-stone-300">
           <span className="text-center">0{number}</span>
+          {/* <span className="size-32 bg-orange-900 rounded-3xl mx-auto">{icon}</span> */}
+          <img src={icon} alt="" className="size-32 mx-auto" />
           <p className="text-pretty text-lg">{text}</p>
         </div>
       );
@@ -162,91 +202,45 @@ export default function AboutMeSection() {
 
     return (
       <>
-        <div className="col-span-4 row-span-1 place-content-center border">
+        <div className="col-span-4 row-span-1 place-content-end">
           <h3 className="text-center text-3xl text-stone-300 md:text-5xl">
             {header}
           </h3>
         </div>
-        {goalText.map((goal, index) => (
-          <GoalItem key={index} number={index + 1} text={goal} />
+        {goalContent.map(({ text, icon }, index) => (
+          <GoalItem key={index} number={index + 1} text={text} icon={icon} />
         ))}
       </>
     );
   };
 
-  // const ToolItem = ({ logo, label }: { logo: string; label: string }) => {
-  //   return (
-  //     <div className="flex aspect-square flex-col items-center justify-center gap-2">
-  //       <span className="size-16 bg-orange-600">{logo}</span>
-  //       <span className="text-sm uppercase text-stone-400">{label}</span>
-  //     </div>
-  //   );
-  // };
-
-  // const ToolGroup = ({
-  //   groupData,
-  // }: {
-  //   groupData: { logo: string; label: string }[];
-  // }) => {
-  //   return (
-  //     <div className="grid grid-cols-2 border border-white/15">
-  //       {groupData.map(({ logo, label }, index) => (
-  //         <ToolItem key={index} logo={logo} label={label} />
-  //       ))}
-  //     </div>
-  //   );
-  // };
-
-  // const ToolList = () => {
-  //   const { tools } = data.toolsList;
-
-  //   // Group tools into groups of 4
-  //   const groupedTools = [];
-  //   const groupSize = 4;
-  //   for (let i = 0; i < tools.length; i += groupSize) {
-  //     groupedTools.push(tools.slice(i, i + groupSize));
-  //   }
-
-  //   return (
-  //     <div className="grid gap-4 border border-white/15 bg-stone-950 p-4 md:grid-cols-2">
-  //       {groupedTools.map((group, index) => (
-  //         <ToolGroup key={index} groupData={group} />
-  //       ))}
-  //     </div>
-  //   );
-  // };
-
-  // const ToolsSection = () => {
-  //   const { header: toolHeaderText } = data.toolsList;
-
-  //   return (
-  //     <div className="container mx-auto flex flex-col justify-evenly">
-  //       <SubHeader text={toolHeaderText} />
-  //       <ToolList />
-  //     </div>
-  //   );
-  // };
 
   return (
-    <section className="flex flex-col justify-evenly">
-      <SectionHeader title="A Brief Introduction" />
-      <div className="container mx-auto grid grid-cols-6 grid-rows-4 gap-8">
-        <div className="col-span-2 row-span-1 rounded-lg border border-orange-900 bg-stone-900/25 p-8">
+    <section>
+      <div className="container mx-auto grid grid-cols-12 grid-rows-5 gap-8">
+        {/* Row 1 */}
+        <div className="col-span-12 row-span-1">
+          <SectionHeader title="A Brief Introduction" />
+        </div>
+        {/* Row 2 */}
+        <div className="col-span-4 row-span-1 rounded-lg border border-orange-900 bg-stone-900/25 p-8">
           <Intro />
         </div>
-        <div className="col-span-2 row-span-1 rounded-lg border border-orange-900 bg-stone-900/25 p-8">
+        <div className="col-span-4 row-span-1  rounded-lg border border-orange-900 bg-stone-900/25 p-8">
           <ProfilePic />
         </div>
-        <div className="col-span-2 row-span-1 rounded-lg border border-orange-900 bg-stone-900/25 p-8">
+        <div className="col-span-4 row-span-1  rounded-lg border border-orange-900 bg-stone-900/25 p-8">
           <Hobbies />
         </div>
-        <div className="col-span-2 row-span-1 rounded-lg border border-orange-900 bg-stone-900/25 p-8">
+        {/* Row 3 */}
+        <div className="col-span-4 row-span-1  rounded-lg border border-orange-900 bg-stone-900/25 p-8">
           <Availability />
         </div>
-        <div className="col-span-4 row-span-1 rounded-lg border border-orange-900 bg-stone-900/25 p-8">
+        <div className="col-span-8 row-span-1 grid grid-cols-4 grid-rows-4 place-content-center gap-4 rounded-lg border border-orange-900 bg-stone-900/25 p-4">
           <SocialLinkList />
         </div>
-        <div className="col-span-6 row-span-2 grid grid-cols-4 grid-rows-4 gap-8">
+        {/* Row 4 and 5 */}
+        <div className="col-span-12 row-span-2 grid grid-cols-4 grid-rows-4 gap-8">
           <GoalList />
         </div>
       </div>
