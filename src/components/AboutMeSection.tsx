@@ -56,10 +56,10 @@ export default function AboutMeSection() {
           {hobbyList.map(({ hobby, icon }, index) => (
             <li
               key={index}
-              className="flex items-center rounded-lg bg-stone-900"
+              className="flex items-center rounded-lg bg-stone-800 border-4 border-stone-900"
             >
-              <span className="border-r border-black p-2">{icon}</span>
-              <span className="p-2">{hobby}</span>
+              <span className="px-2 py-1">{icon}</span>
+              <span className="px-2 py-1">{hobby}</span>
             </li>
           ))}
         </ul>
@@ -91,6 +91,7 @@ export default function AboutMeSection() {
         <h3 className="mb-4 text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
+        {/* Location Options */}
         <ul className="flex justify-end gap-2 text-stone-400">
           {locations.map(({ type }, index) => (
             <li key={index} className="flex gap-2 p-1 text-sm">
@@ -98,12 +99,13 @@ export default function AboutMeSection() {
             </li>
           ))}
         </ul>
+        {/* Employment Options */}
         <ul className="space-y-8 text-stone-300">
           {employment.map(({ type, icon }, index) => (
-            <li key={index} className="flex justify-between bg-stone-900 py-1">
+            <li key={index} className="flex justify-between bg-stone-800 border-4 border-stone-900 py-1 px-2">
               <div>
-                <span className="bg-stone-700 p-1">{icon}</span>
-                <span className="bg-stone-900 px-2 font-bold">{type}</span>
+                <span className="p-1">{icon}</span>
+                <span className="px-2 font-bold">{type}</span>
               </div>
               <div className="flex gap-12">
                 <span>✅</span>
@@ -163,10 +165,9 @@ export default function AboutMeSection() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="col-span-1 row-span-3 place-content-center rounded-lg bg-stone-900"
+          className="col-span-1 row-span-3 place-content-center rounded-lg bg-stone-800 border-4 border-stone-900"
         >
           <div className="flex flex-col items-center gap-4">
-            {/* <span className="size-8 rounded-full bg-orange-600">{logo}</span> */}
             <img src={logo} alt={label} />
             <span className="text-orange-500 transition-all duration-300 ease-in-out hover:text-orange-600">
               {label}

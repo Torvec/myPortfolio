@@ -31,10 +31,10 @@ export default function HeroSection() {
     const { intro, firstName, lastName } = data;
 
     return (
-      <h1 className="p-4 font-bold text-stone-200 md:p-0">
+      <h1 className="p-4 font-black text-stone-300 md:p-0">
         <span className="text-5xl md:text-7xl">{intro}</span>
-        <span className="text-5xl uppercase md:text-7xl">{firstName}</span>
-        <span className="block text-5xl uppercase md:text-7xl">{lastName}</span>
+        <span className="text-5xl md:text-7xl text-orange-700">{firstName}</span>
+        <span className="block text-5xl md:text-7xl text-orange-700">{lastName}</span>
       </h1>
     );
   };

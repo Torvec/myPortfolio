@@ -2,11 +2,49 @@ import SectionHeader from "./template/SectionHeader";
 import ActionButton from "./template/ActionButton";
 
 export default function ProjectsSection() {
-  const data = {
-    sectionHeader: {
-      title: "Featured Full-Stack Projects",
-    },
-    projects: [
+  const ProjectCard = ({
+    imgURL,
+    projectName,
+    deploymentURL,
+    description,
+    techStack,
+  }: {
+    imgURL: string;
+    projectName: string;
+    deploymentURL: string;
+    description: string;
+    techStack: string[];
+  }) => {
+    return (
+      <div className="overflow-hidden rounded-lg border border-stone-800 bg-gradient-to-tl from-stone-900">
+        <h3 className="p-8 text-4xl font-bold text-stone-300">{projectName}</h3>
+        <div className="flex">
+          <div className="w-1/3 px-8">
+            <p className="mb-4 text-base text-stone-400">{description}</p>
+            <ul className="flex flex-wrap gap-2">
+              {techStack.map((tech) => (
+                <li className="rounded-lg border-4 border-stone-900 bg-stone-800 px-4 py-1 text-sm text-stone-400">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="w-2/3 overflow-hidden rounded-tl-lg border-l border-t border-stone-800">
+            <a href={deploymentURL} target="_blank" rel="noopener noreferrer">
+              <img
+                src={imgURL}
+                alt={projectName}
+                className="max-h-[75vh] w-full object-cover object-top opacity-80"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const ProjectCardList = () => {
+    const projectData = [
       {
         id: 1,
         projectName: "Loot Vault",
@@ -74,60 +112,11 @@ export default function ProjectsSection() {
           "Redux",
         ],
       },
-    ],
-    moreProjects: {
-      text: "More Projects",
-      href: "https://github.com/Torvec?tab=repositories",
-    },
-  };
-
-  const ProjectCard = ({
-    imgURL,
-    projectName,
-    deploymentURL,
-    description,
-    techStack,
-  }: {
-    imgURL: string;
-    projectName: string;
-    deploymentURL: string;
-    description: string;
-    techStack: string[];
-  }) => {
-    return (
-      <div className="border-b border-white/15 p-4 md:p-8">
-        <div className="relative">
-          <a href={deploymentURL}>
-            <img
-              src={imgURL}
-              alt={projectName}
-              className="max-h-[80vh] min-h-[80vh] w-full object-cover object-top"
-            />
-            <div className="absolute bottom-0 left-0 flex h-full w-full flex-col justify-end bg-gradient-to-t from-stone-950 from-20% px-4 pb-4">
-              <h3 className="mb-2 text-2xl font-bold text-stone-200">
-                {projectName}
-              </h3>
-              <p className="mb-4 text-base text-stone-300">{description}</p>
-              <ul className="flex flex-wrap gap-2">
-                {techStack.map((tech) => (
-                  <li className="bg-stone-800 px-4 py-1 text-sm text-stone-400">
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </a>
-        </div>
-      </div>
-    );
-  };
-
-  const ProjectCardList = () => {
-    const { projects } = data;
+    ];
 
     return (
-      <div className="grid bg-stone-950 md:grid-cols-2 md:bg-transparent">
-        {projects.map(
+      <div className="grid gap-32">
+        {projectData.map(
           ({
             id,
             imgURL,
@@ -151,20 +140,25 @@ export default function ProjectsSection() {
   };
 
   const MoreProjects = () => {
-    const { text, href } = data.moreProjects;
+    const buttonData = {
+      text: "More Projects",
+      href: "https://github.com/Torvec?tab=repositories",
+    };
 
     return (
       <div className="mx-auto flex items-center justify-center bg-stone-950 py-32 md:w-1/2">
-        <ActionButton text={text} icon="north_east" href={href} />
+        <ActionButton
+          text={buttonData.text}
+          icon="north_east"
+          href={buttonData.href}
+        />
       </div>
     );
   };
 
-  const { title } = data.sectionHeader;
-
   return (
-    <section>
-      <SectionHeader title={title} />
+    <section className="container mx-auto">
+      <SectionHeader title="Featured Full-Stack Projects" />
       <ProjectCardList />
       <MoreProjects />
     </section>
