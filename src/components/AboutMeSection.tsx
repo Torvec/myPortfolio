@@ -22,7 +22,13 @@ export default function AboutMeSection() {
   const ProfilePic = () => {
     const img = { src: "me.png", alt: "Me at the Grand Canyon" };
 
-    return <img src={img.src} alt={img.alt} />;
+    return (
+      <img
+        src={img.src}
+        alt={img.alt}
+        className="h-full w-full rounded-lg object-cover "
+      />
+    );
   };
 
   // TODO: Replace emojis with svg icons
@@ -46,15 +52,14 @@ export default function AboutMeSection() {
         <h3 className="mb-4 text-lg font-bold uppercase text-stone-200">
           {heading}
         </h3>
-        <ul className="flex flex-wrap justify-between gap-4 pt-4 text-stone-400">
+        <ul className="flex flex-wrap gap-4 pt-4 text-stone-400">
           {hobbyList.map(({ hobby, icon }, index) => (
-            <li key={index} className="flex items-center">
-              <span className="rounded-s-lg border border-white/25 bg-stone-700 p-2">
-                {icon}
-              </span>
-              <span className="rounded-e-lg border border-white/25 bg-stone-900 p-2">
-                {hobby}
-              </span>
+            <li
+              key={index}
+              className="flex items-center rounded-lg bg-stone-900"
+            >
+              <span className="border-r border-black p-2">{icon}</span>
+              <span className="p-2">{hobby}</span>
             </li>
           ))}
         </ul>
@@ -108,6 +113,11 @@ export default function AboutMeSection() {
             </li>
           ))}
         </ul>
+        <div className="grid place-content-center pt-8">
+          <button className="rounded-lg bg-orange-600 p-2 text-white/75 font-bold">
+            Contact Me
+          </button>
+        </div>
       </>
     );
   };
@@ -183,18 +193,38 @@ export default function AboutMeSection() {
     const header = "I Design and Develop";
 
     const goalContent = [
-      { text: "Captivating, Responsive, Accessible designs.", icon: "responsive.png" },
-      { text: "User-Friendly, Engaging Interactive Experiences.", icon: "interactive.png" },
-      { text: "Secure, Robust, Scalable Data-driven Applications.", icon: "secure.png" },
-      { text: "SEO and Performance Optimized Websites.", icon: "performance.png" },
+      {
+        text: "Captivating, Responsive, Accessible designs.",
+        icon: "responsive.png",
+      },
+      {
+        text: "User-Friendly, Engaging Interactive Experiences.",
+        icon: "interactive.png",
+      },
+      {
+        text: "Secure, Robust, Scalable Data-driven Applications.",
+        icon: "secure.png",
+      },
+      {
+        text: "SEO and Performance Optimized Websites.",
+        icon: "performance.png",
+      },
     ];
 
-    const GoalItem = ({ number, text, icon }: { number: number; text: string, icon: string }) => {
+    const GoalItem = ({
+      number,
+      text,
+      icon,
+    }: {
+      number: number;
+      text: string;
+      icon: string;
+    }) => {
       return (
         <div className="row-span-3 flex flex-col justify-between rounded-lg border border-orange-900 bg-stone-900/25 p-8 text-stone-300">
           <span className="text-center">0{number}</span>
           {/* <span className="size-32 bg-orange-900 rounded-3xl mx-auto">{icon}</span> */}
-          <img src={icon} alt="" className="size-32 mx-auto" />
+          <img src={icon} alt="" className="mx-auto size-32" />
           <p className="text-pretty text-lg">{text}</p>
         </div>
       );
@@ -214,7 +244,6 @@ export default function AboutMeSection() {
     );
   };
 
-
   return (
     <section>
       <div className="container mx-auto grid grid-cols-12 grid-rows-5 gap-8">
@@ -226,7 +255,7 @@ export default function AboutMeSection() {
         <div className="col-span-4 row-span-1 rounded-lg border border-orange-900 bg-stone-900/25 p-8">
           <Intro />
         </div>
-        <div className="col-span-4 row-span-1  rounded-lg border border-orange-900 bg-stone-900/25 p-8">
+        <div className="col-span-4 row-span-1  rounded-lg border border-white/50 bg-stone-900/25">
           <ProfilePic />
         </div>
         <div className="col-span-4 row-span-1  rounded-lg border border-orange-900 bg-stone-900/25 p-8">
