@@ -56,7 +56,7 @@ export default function AboutMeSection() {
           {hobbyList.map(({ hobby, icon }, index) => (
             <li
               key={index}
-              className="flex items-center rounded-lg bg-stone-800 border-4 border-stone-900"
+              className="flex items-center rounded-lg border-4 border-stone-900 bg-gradient-to-t from-stone-800"
             >
               <span className="px-2 py-1">{icon}</span>
               <span className="px-2 py-1">{hobby}</span>
@@ -78,47 +78,21 @@ export default function AboutMeSection() {
       { type: "Freelance", icon: "💻" },
     ];
 
-    const locations = [
-      { type: "On-Site", available: "✅" },
-      { type: "Remote", available: "✅" },
-      { type: "Hybrid", available: "✅" },
-    ];
-
-    // ✅ = available, ❌ = not
-
     return (
       <>
         <h3 className="mb-4 text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
-        {/* Location Options */}
-        <ul className="flex justify-end gap-2 text-stone-400">
-          {locations.map(({ type }, index) => (
-            <li key={index} className="flex gap-2 p-1 text-sm">
-              <span>{type}</span>
-            </li>
-          ))}
-        </ul>
-        {/* Employment Options */}
-        <ul className="space-y-4 text-stone-400">
+        <div className="grid grid-cols-2 gap-8">
           {employment.map(({ type, icon }, index) => (
-            <li key={index} className="flex justify-between bg-stone-800 border-4 border-stone-900 py-1 px-2">
-              <div>
-                <span className="p-1">{icon}</span>
-                <span className="px-2 font-bold text-sm">{type}</span>
-              </div>
-              <div className="flex gap-12">
-                <span>✅</span>
-                <span>✅</span>
-                <span>✅</span>
-              </div>
-            </li>
+            <div
+              key={index}
+              className="flex aspect-square flex-col items-center justify-center rounded-lg border-4 border-stone-900 bg-gradient-to-tr from-stone-800 text-stone-400"
+            >
+              <span className="p-1">{icon}</span>
+              <span>{type}</span>
+            </div>
           ))}
-        </ul>
-        <div className="grid place-content-center pt-8">
-          <button className="rounded-lg bg-orange-600 p-2 text-white/75 font-bold border-4 border-orange-700">
-            Contact Me
-          </button>
         </div>
       </>
     );
@@ -165,9 +139,9 @@ export default function AboutMeSection() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="col-span-1 row-span-3 place-content-center rounded-lg border border-white/10"
+          className="aspect-square place-content-center rounded-lg border border-white/10 p-2"
         >
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex h-full flex-col items-center justify-center gap-4 rounded-lg border border-white/20 bg-gradient-to-tr from-stone-800">
             <img src={logo} alt={label} />
             <span className="text-orange-500 transition-all duration-300 ease-in-out hover:text-orange-600">
               {label}
@@ -179,12 +153,17 @@ export default function AboutMeSection() {
 
     return (
       <>
-        <h3 className="col-span-4 row-span-1 place-content-center text-center text-lg font-bold uppercase text-stone-200">
+        <h3 className="col-span-4 place-content-center text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
         {socialLinks.map(({ href, logo, label }, index) => (
           <SocialLink key={index} href={href} logo={logo} label={label} />
         ))}
+        {/* <div className="col-span-4 mx-auto place-content-center">
+          <button className="rounded-lg border-4 border-orange-700 bg-orange-600 p-2 font-bold text-white/75">
+            Contact Me
+          </button>
+        </div> */}
       </>
     );
   };
@@ -222,9 +201,9 @@ export default function AboutMeSection() {
       icon: string;
     }) => {
       return (
-        <div className="row-span-3 flex flex-col justify-between rounded-lg border border-white/10 bg-gradient-to-tr from-stone-900 p-8 text-stone-300">
-          <span className="text-center">0{number}</span>
-          <img src={icon} alt="" className="mx-auto size-32" />
+        <div className="col-span-2 row-span-2 flex aspect-square flex-col items-center justify-between rounded-lg border border-white/10 bg-gradient-to-tr from-stone-900 p-8 text-stone-300">
+          <span>0{number}</span>
+          <img src={icon} alt="" className="size-32" />
           <p className="text-pretty text-lg">{text}</p>
         </div>
       );
@@ -232,7 +211,7 @@ export default function AboutMeSection() {
 
     return (
       <>
-        <div className="col-span-4 row-span-1 place-content-end">
+        <div className="col-span-4 row-span-1 place-content-center">
           <h3 className="text-center text-3xl text-stone-300 md:text-5xl">
             {header}
           </h3>
@@ -245,33 +224,31 @@ export default function AboutMeSection() {
   };
 
   return (
-    <section>
-      <div className="container mx-auto grid grid-cols-12 grid-rows-5 gap-8">
-        {/* Row 1 */}
-        <div className="col-span-12 row-span-1">
+    <section className="container mx-auto ">
+      <div className="mb-8 grid grid-cols-3 grid-rows-2 gap-8">
+        <div className="col-span-3 row-span-1">
           <SectionHeader title="A Brief Introduction" />
         </div>
-        {/* Row 2 */}
-        <div className="col-span-4 row-span-1 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
+        <div className="ounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
           <Intro />
         </div>
-        <div className="col-span-4 row-span-1  rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900">
+        <div className="rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900">
           <ProfilePic />
         </div>
-        <div className="col-span-4 row-span-1  rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
+        <div className="rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
           <Hobbies />
         </div>
-        {/* Row 3 */}
-        <div className="col-span-4 row-span-1  rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
+      </div>
+      <div className="mb-8 grid grid-cols-3 gap-8">
+        <div className="col-span-1 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
           <Availability />
         </div>
-        <div className="col-span-8 row-span-1 grid grid-cols-4 grid-rows-4 place-content-center gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-4">
+        <div className="col-span-2 grid grid-cols-4 grid-rows-2 gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-4">
           <SocialLinkList />
         </div>
-        {/* Row 4 and 5 */}
-        <div className="col-span-12 row-span-2 grid grid-cols-4 grid-rows-4 gap-8">
-          <GoalList />
-        </div>
+      </div>
+      <div className="grid grid-cols-4 grid-rows-3 gap-8">
+        <GoalList />
       </div>
     </section>
   );
