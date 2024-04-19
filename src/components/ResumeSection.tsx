@@ -3,9 +3,6 @@ import ActionButton from "./template/ActionButton";
 
 export default function ResumeSection() {
   const data = {
-    sectionHeader: {
-      title: "My Professional and Academic Journey",
-    },
     myResume: [
       {
         id: 9,
@@ -114,7 +111,6 @@ export default function ResumeSection() {
   };
 
   const ResumeItem = ({
-    id,
     startDate,
     endDate,
     company,
@@ -135,34 +131,29 @@ export default function ResumeSection() {
     details: string;
   }) => {
     return (
-      <div
-        className={
-          id % 2 === 0
-            ? "flex flex-col text-stone-300 md:flex-row"
-            : "flex flex-col text-stone-300 md:flex-row-reverse"
-        }
-      >
-        <div className="flex justify-center gap-2 border border-white/25 bg-stone-900 p-4 text-center text-sm font-bold md:flex-col">
-          <span className="block">{endDate}</span>
-          <span className="material-symbols-sharp hidden md:block">
-            arrow_drop_down
-          </span>
-          <span className="material-symbols-sharp md:hidden">arrow_right</span>
-          <span className="block">{startDate}</span>
+      <div className="rounded-lg border border-white/25 bg-gradient-to-tl from-stone-800 to-stone-950 p-8">
+        <div className="flex justify-between items-baseline">
+          <h3 className="mb-2 text-pretty text-lg font-bold text-stone-300">
+            {jobTitle || program}
+          </h3>
+          <div className="flex gap-2 text-stone-300">
+            <span>{endDate}</span>
+            <span className="material-symbols-sharp">arrow_right</span>
+            <span>{startDate}</span>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 border border-white/15 bg-stone-950 p-8 md:flex-row">
-          <div className="md:w-5/12 md:self-center">
-            <h3 className="text-pretty text-2xl font-bold">
-              {jobTitle || program}
-            </h3>
-            <h4 className="uppercase text-stone-500">
+        <div className="flex gap-4">
+          <div className="w-5/12">
+            <h4 className="mb-1 font-bold text-stone-300">
               {company || institution}
             </h4>
-            <h5 className="text-stone-500">{location}</h5>
+            <h5 className="text-sm uppercase text-stone-400">{location}</h5>
           </div>
-          <p className="text-pretty text-sm leading-relaxed text-stone-400 md:w-7/12">
-            {details}
-          </p>
+          <div className="w-7/12">
+            <p className="text-pretty text-sm leading-relaxed text-stone-400">
+              {details}
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -172,7 +163,7 @@ export default function ResumeSection() {
     const { myResume } = data;
 
     return (
-      <div className="mx-auto flex flex-col gap-16 px-4 md:px-8">
+      <div className="flex flex-col gap-8">
         {myResume.map(
           ({
             id,
@@ -187,7 +178,11 @@ export default function ResumeSection() {
           }) => (
             <div
               key={id}
-              className={id % 2 === 0 ? "md:w-1/2 md:self-end" : "md:w-1/2"}
+              className={
+                id % 2 === 0
+                  ? "rounded-lg border border-white/10 bg-stone-900 p-2 md:w-7/12 md:self-end"
+                  : "rounded-lg border border-white/10 bg-stone-900 p-2 md:w-7/12"
+              }
             >
               <ResumeItem
                 id={id}
@@ -208,20 +203,32 @@ export default function ResumeSection() {
   };
 
   const Download = () => {
-    const { text, href } = data.download;
+
+    const buttonData = {
+      header: "My Full Resume is available for download in .doc and .pdf format.",
+      text1: "DOC Format",
+      text2: "PDF Format",
+      href: "https://www.linkedin.com/in/edward-von/",
+    };
+
+    const { header, text1, text2, href } = buttonData;
 
     return (
-      <div className="flex items-center justify-center bg-stone-950 py-32">
-        <ActionButton text={text} icon="download" href={href} />
+      <div className="mx-auto flex flex-col items-center justify-center py-64 md:w-1/2">
+        <h4 className="mb-8 text-pretty text-center text-4xl font-bold text-stone-200">
+          {header}
+        </h4>
+        <div className="flex gap-16">
+          <ActionButton text={text1} icon="download" href={href} />
+          <ActionButton text={text2} icon="download" href={href} />
+        </div>
       </div>
     );
   };
 
-  const { title } = data.sectionHeader;
-
   return (
-    <section>
-      <SectionHeader title={title} />
+    <section className="container mx-auto border-b border-white/25 bg-gradient-to-t from-stone-800 to-[2%]">
+      <SectionHeader title="My Professional and Academic Journey" />
       <ResumeList />
       <Download />
     </section>
