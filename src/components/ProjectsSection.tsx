@@ -23,7 +23,7 @@ export default function ProjectsSection() {
             <p className="mb-4 text-base text-stone-400">{description}</p>
             <ul className="flex flex-wrap gap-2">
               {techStack.map((tech) => (
-                <li className="rounded-lg border-4 border-stone-900 bg-stone-800 px-4 py-1 text-sm text-stone-400">
+                <li className="rounded-lg border border-white/10 bg-gradient-to-b from-stone-800 px-4 py-1 text-xs uppercase text-stone-400">
                   {tech}
                 </li>
               ))}
@@ -34,7 +34,7 @@ export default function ProjectsSection() {
               <img
                 src={imgURL}
                 alt={projectName}
-                className="max-h-[75vh] w-full object-cover object-top opacity-80"
+                className="h-[50vh] w-full object-cover object-top opacity-80"
               />
             </a>
           </div>
@@ -141,23 +141,26 @@ export default function ProjectsSection() {
 
   const MoreProjects = () => {
     const buttonData = {
-      text: "More Projects",
+      header:
+        "See more projects, including in-development and experimental ones, on my GitHub.",
+      text: "To GitHub!",
       href: "https://github.com/Torvec?tab=repositories",
     };
 
+    const { header, text, href } = buttonData;
+
     return (
-      <div className="mx-auto flex items-center justify-center bg-stone-950 py-32 md:w-1/2">
-        <ActionButton
-          text={buttonData.text}
-          icon="north_east"
-          href={buttonData.href}
-        />
+      <div className="mx-auto flex flex-col items-center justify-center py-64 md:w-1/2">
+        <h4 className="mb-8 text-pretty text-center text-4xl font-bold text-stone-200">
+          {header}
+        </h4>
+        <ActionButton text={text} icon="north_east" href={href} />
       </div>
     );
   };
 
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto border-b border-white/25 bg-gradient-to-t from-stone-800 to-[2%]">
       <SectionHeader title="Featured Full-Stack Projects" />
       <ProjectCardList />
       <MoreProjects />

@@ -56,7 +56,7 @@ export default function AboutMeSection() {
           {hobbyList.map(({ hobby, icon }, index) => (
             <li
               key={index}
-              className="flex items-center rounded-lg border-4 border-stone-900 bg-gradient-to-t from-stone-800"
+              className="flex items-center rounded-lg border-4 border-stone-900 bg-gradient-to-t from-stone-800 text-xs uppercase"
             >
               <span className="px-2 py-1">{icon}</span>
               <span className="px-2 py-1">{hobby}</span>
@@ -80,17 +80,17 @@ export default function AboutMeSection() {
 
     return (
       <>
-        <h3 className="mb-4 text-center text-lg font-bold uppercase text-stone-200">
+        <h3 className="text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="h-full flex flex-col justify-center gap-4">
           {employment.map(({ type, icon }, index) => (
-            <div
-              key={index}
-              className="flex aspect-square flex-col items-center justify-center rounded-lg border-4 border-stone-900 bg-gradient-to-tr from-stone-800 text-stone-400"
-            >
-              <span className="p-1">{icon}</span>
-              <span>{type}</span>
+            <div className="flex justify-between items-center rounded-lg border-4 border-stone-900 bg-gradient-to-tr from-stone-800 text-stone-400 p-1">
+              <div key={index} className="flex items-center gap-2">
+                <span>{icon}</span>
+                <span className="uppercase text-xs">{type}</span>
+              </div>
+              <span>✅</span>
             </div>
           ))}
         </div>
@@ -135,35 +135,34 @@ export default function AboutMeSection() {
       label: string;
     }) => {
       return (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="aspect-square place-content-center rounded-lg border border-white/10 p-2"
-        >
-          <div className="flex h-full flex-col items-center justify-center gap-4 rounded-lg border border-white/20 bg-gradient-to-tr from-stone-800">
-            <img src={logo} alt={label} />
-            <span className="text-orange-500 transition-all duration-300 ease-in-out hover:text-orange-600">
-              {label}
-            </span>
-          </div>
-        </a>
+        <div className="w-1/4">
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block aspect-square rounded-xl border border-white/10 p-2"
+          >
+            <div className="flex h-full flex-col items-center justify-center rounded-lg border border-white/20 bg-gradient-to-tr from-stone-800">
+              <img src={logo} alt={label} />
+              <span className="text-orange-500 transition-all duration-300 ease-in-out hover:text-orange-600">
+                {label}
+              </span>
+            </div>
+          </a>
+        </div>
       );
     };
 
     return (
       <>
-        <h3 className="col-span-4 place-content-center text-center text-lg font-bold uppercase text-stone-200">
+        <h3 className="text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
-        {socialLinks.map(({ href, logo, label }, index) => (
-          <SocialLink key={index} href={href} logo={logo} label={label} />
-        ))}
-        {/* <div className="col-span-4 mx-auto place-content-center">
-          <button className="rounded-lg border-4 border-orange-700 bg-orange-600 p-2 font-bold text-white/75">
-            Contact Me
-          </button>
-        </div> */}
+        <div className="flex h-full items-center gap-8">
+          {socialLinks.map(({ href, logo, label }, index) => (
+            <SocialLink key={index} href={href} logo={logo} label={label} />
+          ))}
+        </div>
       </>
     );
   };
@@ -224,30 +223,30 @@ export default function AboutMeSection() {
   };
 
   return (
-    <section className="container mx-auto ">
+    <section className="container mx-auto border-b border-white/20 bg-gradient-to-t from-stone-900 to-[2%]">
       <div className="mb-8 grid grid-cols-3 grid-rows-2 gap-8">
         <div className="col-span-3 row-span-1">
           <SectionHeader title="A Brief Introduction" />
         </div>
-        <div className="ounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
+        <div className="ounded-lg border border-white/10 bg-gradient-to-br from-stone-900 p-8">
           <Intro />
         </div>
-        <div className="rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900">
+        <div className="rounded-lg border border-white/10">
           <ProfilePic />
         </div>
-        <div className="rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
+        <div className="rounded-lg border border-white/10 bg-gradient-to-bl from-stone-900 p-8">
           <Hobbies />
         </div>
       </div>
       <div className="mb-8 grid grid-cols-3 gap-8">
-        <div className="col-span-1 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
+        <div className="col-span-1 aspect-square rounded-lg border border-white/10 bg-gradient-to-tr from-stone-900 p-8">
           <Availability />
         </div>
-        <div className="col-span-2 grid grid-cols-4 grid-rows-2 gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-4">
+        <div className="col-span-2 flex flex-col gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
           <SocialLinkList />
         </div>
       </div>
-      <div className="grid grid-cols-4 grid-rows-3 gap-8">
+      <div className="grid grid-cols-4 grid-rows-3 gap-8 mb-64">
         <GoalList />
       </div>
     </section>
