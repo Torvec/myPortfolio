@@ -21,7 +21,7 @@ export default function ResumeSection() {
         type: "education",
         startDate: "04.2023",
         endDate: "10.2023",
-        logo: "ev_old_logo.png",
+        logo: "ucb_logo.svg",
         institution: "UC Berkeley Extension",
         program: "Full Stack Web Development Course",
         location: "Online",
@@ -33,7 +33,7 @@ export default function ResumeSection() {
         type: "education",
         startDate: "12.2022",
         endDate: "12.2022",
-        logo: "ev_old_logo.png",
+        logo: "eandm_logo.png",
         institution: "E and M Training Course",
         program: "Siemens TIA Portal Software Development",
         location: "Fremont, CA",
@@ -113,13 +113,8 @@ export default function ResumeSection() {
           "Spearheaded the creation of the school website, rapidly learning front-end web design and development principles to lead a successful class project.",
       },
     ],
-    download: {
-      text: "Download",
-      href: "https://www.linkedin.com/in/edward-von/",
-    },
   };
 
-  // TODO: Add Icons for each resume item, just have a placeholder circle for now
   const ResumeItem = ({
     startDate,
     endDate,
@@ -142,14 +137,14 @@ export default function ResumeSection() {
     details: string;
   }) => {
     return (
-      <div className="flex gap-4 rounded-lg border border-white/15 bg-gradient-to-tl from-stone-800 to-stone-950 p-8">
+      <div className="flex h-full gap-4 rounded-lg border border-white/15 bg-gradient-to-tl from-stone-800 to-stone-950 p-4">
         <div className="flex-shrink-0 pt-1">
           <img src={logo} alt={jobTitle || program} className="h-max w-auto" />
         </div>
         <div>
-          <div className="flex flex-col gap-4 md:flex-row">
-            <div className="space-y-1 md:w-1/2 md:border-r md:border-stone-950">
-              <div className="flex gap-2 text-stone-400">
+          <div className="flex flex-col gap-4">
+            <div className="">
+              <div className="flex gap-2 text-sm uppercase text-stone-400">
                 <span>{endDate}</span>
                 <span className="material-symbols-sharp">arrow_right</span>
                 <span>{startDate}</span>
@@ -157,16 +152,16 @@ export default function ResumeSection() {
               <h3 className="text-balance text-lg font-bold text-stone-300">
                 {jobTitle || program}
               </h3>
-              <h4 className="font-bold text-stone-400">
-                {company || institution}
-              </h4>
-              <h5 className="text-sm uppercase text-stone-400">{location}</h5>
+              <div className="flex flex-col justify-between lg:flex-row text-sm uppercase text-stone-500">
+                <h4 >
+                  {company || institution}
+                </h4>
+                <h5>{location}</h5>
+              </div>
             </div>
-            <div className="md:w-1/2">
-              <p className="text-balance text-sm leading-relaxed text-stone-500">
-                {details}
-              </p>
-            </div>
+            <p className="text-balance text-sm leading-relaxed text-stone-400">
+              {details}
+            </p>
           </div>
         </div>
       </div>
@@ -177,7 +172,7 @@ export default function ResumeSection() {
     const { myResume } = data;
 
     return (
-      <div className="flex flex-col gap-8">
+      <div className="grid gap-8 md:grid-cols-2">
         {myResume.map(
           ({
             id,
@@ -195,8 +190,8 @@ export default function ResumeSection() {
               key={id}
               className={
                 id % 2 === 0
-                  ? "rounded-lg border border-white/10 bg-stone-900 p-2 md:w-5/6 md:self-end lg:w-2/3"
-                  : "rounded-lg border border-white/10 bg-stone-900 p-2 md:w-5/6 lg:w-2/3"
+                  ? "rounded-lg border border-white/10 bg-stone-900 p-2 md:translate-y-16"
+                  : "rounded-lg border border-white/10 bg-stone-900 p-2"
               }
             >
               <ResumeItem
