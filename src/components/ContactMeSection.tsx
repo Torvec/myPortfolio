@@ -46,8 +46,8 @@ export default function ContactMeSection() {
     };
 
     return (
-      <div className="h-full rounded-lg border border-white/10 bg-stone-900 p-4">
-        <form className="flex h-full flex-col justify-evenly rounded-lg border border-white/20 bg-gradient-to-br from-stone-800 to-stone-950 p-8">
+      <div className="h-full rounded-lg border border-white/10 bg-stone-900 p-2">
+        <form className="flex h-full flex-col gap-8 justify-evenly rounded-lg border border-white/20 bg-gradient-to-br from-stone-800 to-stone-950 p-8">
           <div>
             <FormLabel
               forText={inputLabels[0].labelText}
@@ -125,7 +125,7 @@ export default function ContactMeSection() {
   };
 
   return (
-    <section className="container mx-auto pb-64">
+    <section className="container mx-auto pb-64 px-4 md:px-0">
       <SectionHeader title="Let's Connect and Collaborate!" />
       <div className="grid gap-8 md:grid-cols-12 md:grid-rows-2">
         <div className="md:col-span-9 md:row-span-2">

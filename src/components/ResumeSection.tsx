@@ -137,13 +137,13 @@ export default function ResumeSection() {
           <span className="mx-auto block size-8 rounded-full bg-stone-500"></span>
         </div>
         <div>
-          <div className="flex gap-2 py-1 text-stone-400">
-            <span>{endDate}</span>
-            <span className="material-symbols-sharp">arrow_right</span>
-            <span>{startDate}</span>
-          </div>
           <div className="flex flex-col gap-4 md:flex-row">
             <div className="space-y-1 md:w-1/2 md:border-r md:border-stone-950">
+              <div className="flex gap-2 text-stone-400">
+                <span>{endDate}</span>
+                <span className="material-symbols-sharp">arrow_right</span>
+                <span>{startDate}</span>
+              </div>
               <h3 className="text-balance text-lg font-bold text-stone-300">
                 {jobTitle || program}
               </h3>
@@ -230,7 +230,7 @@ export default function ResumeSection() {
   };
 
   return (
-    <section className="container mx-auto border-b border-white/25 bg-gradient-to-t from-stone-800 to-[2%]">
+    <section className="container mx-auto border-b border-white/25 bg-gradient-to-t from-stone-800 to-[2%] px-3">
       <SectionHeader title="My Professional and Academic Journey" />
       <ResumeList />
       <Download />

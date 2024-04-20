@@ -85,12 +85,12 @@ export default function AboutMeSection() {
         <h3 className="text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
-        <div className="h-full flex flex-col justify-center gap-4">
+        <div className="flex h-full flex-col justify-center gap-4">
           {employment.map(({ type, icon }, index) => (
-            <div className="flex justify-between items-center rounded-lg border-4 border-stone-900 bg-gradient-to-tr from-stone-800 text-stone-400 p-1">
+            <div className="flex items-center justify-between rounded-lg border-4 border-stone-900 bg-gradient-to-tr from-stone-800 p-1 text-stone-400">
               <div key={index} className="flex items-center gap-2">
                 <span>{icon}</span>
-                <span className="uppercase text-xs">{type}</span>
+                <span className="text-xs uppercase">{type}</span>
               </div>
               <span>✅</span>
             </div>
@@ -137,21 +137,19 @@ export default function AboutMeSection() {
       label: string;
     }) => {
       return (
-        <div className="w-1/4">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block aspect-square rounded-xl border border-white/10 p-2"
-          >
-            <div className="flex h-full flex-col items-center justify-center rounded-lg border border-white/20 bg-gradient-to-tr from-stone-800">
-              <img src={logo} alt={label} />
-              <span className="text-orange-500 transition-all duration-300 ease-in-out hover:text-orange-600">
-                {label}
-              </span>
-            </div>
-          </a>
-        </div>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block aspect-square rounded-xl border border-white/10 p-2"
+        >
+          <div className="flex h-full flex-col items-center justify-center rounded-lg border border-white/20 bg-gradient-to-tr from-stone-800">
+            <img src={logo} alt={label} />
+            <span className="text-orange-500 transition-all duration-300 ease-in-out hover:text-orange-600">
+              {label}
+            </span>
+          </div>
+        </a>
       );
     };
 
@@ -160,7 +158,7 @@ export default function AboutMeSection() {
         <h3 className="text-center text-lg font-bold uppercase text-stone-200">
           {header}
         </h3>
-        <div className="flex h-full items-center gap-8">
+        <div className="grid h-full grid-cols-2 place-content-center gap-8 md:grid-cols-4">
           {socialLinks.map(({ href, logo, label }, index) => (
             <SocialLink key={index} href={href} logo={logo} label={label} />
           ))}
@@ -202,7 +200,7 @@ export default function AboutMeSection() {
       icon: string;
     }) => {
       return (
-        <div className="col-span-2 row-span-2 flex aspect-square flex-col items-center justify-between rounded-lg border border-white/10 bg-gradient-to-tr from-stone-900 p-8 text-stone-300">
+        <div className="flex aspect-square flex-col items-center justify-between rounded-lg border border-white/10 bg-gradient-to-tr from-stone-900 p-8 text-stone-300 md:col-span-2 md:row-span-2">
           <span>0{number}</span>
           <img src={icon} alt="" className="size-32" />
           <p className="text-pretty text-lg">{text}</p>
@@ -212,7 +210,7 @@ export default function AboutMeSection() {
 
     return (
       <>
-        <div className="col-span-4 row-span-1 place-content-center">
+        <div className="row-span-1 place-content-center md:col-span-4">
           <h3 className="text-center text-3xl text-stone-300 md:text-5xl">
             {header}
           </h3>
@@ -226,11 +224,11 @@ export default function AboutMeSection() {
 
   return (
     <section className="container mx-auto border-b border-white/20 bg-gradient-to-t from-stone-900 to-[2%]">
-      <div className="mb-8 grid grid-cols-3 grid-rows-2 gap-8">
-        <div className="col-span-3 row-span-1">
+      <div className="mb-8 grid gap-8 px-4 md:grid-cols-3 md:grid-rows-2 md:px-0">
+        <div className="md:col-span-3 md:row-span-1">
           <SectionHeader title="A Brief Introduction" />
         </div>
-        <div className="ounded-lg border border-white/10 bg-gradient-to-br from-stone-900 p-8">
+        <div className="rounded-lg border border-white/10 bg-gradient-to-br from-stone-900 p-8">
           <Intro />
         </div>
         <div className="rounded-lg border border-white/10">
@@ -240,15 +238,15 @@ export default function AboutMeSection() {
           <Hobbies />
         </div>
       </div>
-      <div className="mb-8 grid grid-cols-3 gap-8">
-        <div className="col-span-1 aspect-square rounded-lg border border-white/10 bg-gradient-to-tr from-stone-900 p-8">
+      <div className="mb-8 grid gap-8 px-4 md:grid-cols-3 md:px-0">
+        <div className="rounded-lg border border-white/10 bg-gradient-to-tr from-stone-900 p-8 md:col-span-1 md:aspect-square">
           <Availability />
         </div>
-        <div className="col-span-2 flex flex-col gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8">
+        <div className="rounded-lg border border-white/10 bg-gradient-to-tl from-stone-900 p-8 md:col-span-2">
           <SocialLinkList />
         </div>
       </div>
-      <div className="grid grid-cols-4 grid-rows-3 gap-8 mb-64">
+      <div className="mb-64 grid gap-8 px-4 md:grid-cols-4 md:grid-rows-3 md:px-0">
         <GoalList />
       </div>
     </section>

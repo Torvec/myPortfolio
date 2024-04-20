@@ -17,9 +17,11 @@ export default function ProjectsSection() {
   }) => {
     return (
       <div className="overflow-hidden rounded-lg border border-stone-800 bg-gradient-to-tl from-stone-900">
-        <h3 className="p-8 text-4xl font-bold text-stone-300">{projectName}</h3>
-        <div className="flex">
-          <div className="w-1/3 px-8">
+        <h3 className="p-8 text-2xl font-bold text-stone-300 md:text-4xl">
+          {projectName}
+        </h3>
+        <div className="flex flex-col gap-8 md:flex-row md:gap-0">
+          <div className="px-8 md:w-1/3">
             <p className="mb-4 text-base text-stone-400">{description}</p>
             <ul className="flex flex-wrap gap-2">
               {techStack.map((tech) => (
@@ -29,12 +31,12 @@ export default function ProjectsSection() {
               ))}
             </ul>
           </div>
-          <div className="w-2/3 overflow-hidden rounded-tl-lg border-l border-t border-stone-800">
+          <div className="overflow-hidden rounded-tl-lg border-stone-800 px-4 md:w-2/3 md:border-l md:border-t md:px-0">
             <a href={deploymentURL} target="_blank" rel="noopener noreferrer">
               <img
                 src={imgURL}
                 alt={projectName}
-                className="h-[50vh] w-full object-cover object-top opacity-80"
+                className="h-[25vh] w-full rounded-t-lg object-cover object-top opacity-80 md:h-[50vh]"
               />
             </a>
           </div>
@@ -151,7 +153,7 @@ export default function ProjectsSection() {
 
     return (
       <div className="mx-auto flex flex-col items-center justify-center py-64 md:w-1/2">
-        <h4 className="mb-8 text-pretty text-center text-4xl font-bold text-stone-200">
+        <h4 className="mb-8 text-balance text-center text-2xl font-bold text-stone-200 md:text-4xl">
           {header}
         </h4>
         <ActionButton text={text} icon="north_east" href={href} />
@@ -160,7 +162,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="container mx-auto border-b border-white/25 bg-gradient-to-t from-stone-800 to-[2%]">
+    <section className="container mx-auto border-b border-white/25 bg-gradient-to-t from-stone-800 to-[2%] px-4">
       <SectionHeader title="Featured Full-Stack Projects" />
       <ProjectCardList />
       <MoreProjects />
