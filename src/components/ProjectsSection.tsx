@@ -24,8 +24,11 @@ export default function ProjectsSection() {
           <div className="px-8 md:w-1/3">
             <p className="mb-4 text-base text-stone-400">{description}</p>
             <ul className="flex flex-wrap gap-2">
-              {techStack.map((tech) => (
-                <li className="rounded-lg border border-white/10 bg-gradient-to-b from-stone-800 px-4 py-1 text-xs uppercase text-stone-400">
+              {techStack.map((tech, index) => (
+                <li
+                  key={index}
+                  className="rounded-lg border border-white/10 bg-gradient-to-b from-stone-800 px-4 py-1 text-xs uppercase text-stone-400"
+                >
                   {tech}
                 </li>
               ))}

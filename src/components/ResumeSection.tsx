@@ -10,6 +10,7 @@ export default function ResumeSection() {
         startDate: "10.2023",
         endDate: "Present",
         company: "Freelance",
+        logo: "ev_old_logo.png",
         jobTitle: "Full Stack Web Developer",
         location: "San Francisco Bay Area, CA",
         details:
@@ -20,6 +21,7 @@ export default function ResumeSection() {
         type: "education",
         startDate: "04.2023",
         endDate: "10.2023",
+        logo: "ev_old_logo.png",
         institution: "UC Berkeley Extension",
         program: "Full Stack Web Development Course",
         location: "Online",
@@ -31,6 +33,7 @@ export default function ResumeSection() {
         type: "education",
         startDate: "12.2022",
         endDate: "12.2022",
+        logo: "ev_old_logo.png",
         institution: "E and M Training Course",
         program: "Siemens TIA Portal Software Development",
         location: "Fremont, CA",
@@ -42,6 +45,7 @@ export default function ResumeSection() {
         type: "experience",
         startDate: "09.2020",
         endDate: "01.2024",
+        logo: "tesla_logo.svg",
         company: "Tesla Motors Inc.",
         jobTitle: "Automation Controls Technician",
         location: "Fremont, CA",
@@ -53,6 +57,7 @@ export default function ResumeSection() {
         type: "experience",
         startDate: "10.2019",
         endDate: "09.2020",
+        logo: "tesla_logo.svg",
         company: "Tesla Motors Inc.",
         jobTitle: "Equipment Maintenance Technician",
         location: "Fremont, CA",
@@ -64,6 +69,7 @@ export default function ResumeSection() {
         type: "experience",
         startDate: "12.2010",
         endDate: "10.2018",
+        logo: "usn_logo.svg",
         company: "United States Navy",
         jobTitle: "Electronics Technician",
         location: "Japan & San Diego, CA",
@@ -75,6 +81,7 @@ export default function ResumeSection() {
         type: "education",
         startDate: "12.2010",
         endDate: "04.2016",
+        logo: "usn_logo.svg",
         institution: "US Navy Training Schools",
         program: "Electronics Technology Courses",
         location: "Various Locations, USA",
@@ -86,6 +93,7 @@ export default function ResumeSection() {
         type: "experience",
         startDate: "05.2005",
         endDate: "12.2010",
+        logo: "ev_old_logo.png",
         company: "Freelance",
         jobTitle: "Front-End Web Developer",
         location: "Atlanta Metro Area, GA",
@@ -97,6 +105,7 @@ export default function ResumeSection() {
         type: "education",
         startDate: "08.2001",
         endDate: "05.2005",
+        logo: "nhs_logo.png",
         institution: "Norcross High School",
         program: "High School Diploma",
         location: "Norcross, GA",
@@ -114,6 +123,7 @@ export default function ResumeSection() {
   const ResumeItem = ({
     startDate,
     endDate,
+    logo,
     company,
     institution,
     jobTitle,
@@ -121,9 +131,9 @@ export default function ResumeSection() {
     location,
     details,
   }: {
-    id: number;
     startDate: string;
     endDate: string;
+    logo: string;
     company: string | undefined;
     institution: string | undefined;
     jobTitle: string | undefined;
@@ -132,9 +142,9 @@ export default function ResumeSection() {
     details: string;
   }) => {
     return (
-      <div className="flex rounded-lg border border-white/15 bg-gradient-to-tl from-stone-800 to-stone-950 p-8">
-        <div className="pr-4">
-          <span className="mx-auto block size-8 rounded-full bg-stone-500"></span>
+      <div className="flex gap-4 rounded-lg border border-white/15 bg-gradient-to-tl from-stone-800 to-stone-950 p-8">
+        <div className="flex-shrink-0 pt-1">
+          <img src={logo} alt={jobTitle || program} className="h-max w-auto" />
         </div>
         <div>
           <div className="flex flex-col gap-4 md:flex-row">
@@ -173,6 +183,7 @@ export default function ResumeSection() {
             id,
             startDate,
             endDate,
+            logo,
             company,
             institution,
             jobTitle,
@@ -189,9 +200,9 @@ export default function ResumeSection() {
               }
             >
               <ResumeItem
-                id={id}
                 startDate={startDate}
                 endDate={endDate}
+                logo={logo}
                 company={company}
                 institution={institution}
                 jobTitle={jobTitle}

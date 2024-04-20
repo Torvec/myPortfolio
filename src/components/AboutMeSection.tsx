@@ -87,8 +87,11 @@ export default function AboutMeSection() {
         </h3>
         <div className="flex h-full flex-col justify-center gap-4">
           {employment.map(({ type, icon }, index) => (
-            <div className="flex items-center justify-between rounded-lg border-4 border-stone-900 bg-gradient-to-tr from-stone-800 p-1 text-stone-400">
-              <div key={index} className="flex items-center gap-2">
+            <div
+              key={index}
+              className="flex items-center justify-between rounded-lg border-4 border-stone-900 bg-gradient-to-tr from-stone-800 p-1 text-stone-400"
+            >
+              <div className="flex items-center gap-2">
                 <span>{icon}</span>
                 <span className="text-xs uppercase">{type}</span>
               </div>
