@@ -44,7 +44,9 @@ export default function AboutMeSection() {
       { hobby: "PC Building", icon: "🖥️" },
       { hobby: "Movies", icon: "📽️" },
       { hobby: "Anime", icon: "🎌" },
+      { hobby: "Memes", icon: "M" },
       { hobby: "Streaming Shows", icon: "📺" },
+      { hobby: "Green Energy", icon: "G" },
     ];
 
     return (

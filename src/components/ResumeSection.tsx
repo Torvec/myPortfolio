@@ -110,6 +110,7 @@ export default function ResumeSection() {
     },
   };
 
+  // TODO: Add Icons for each resume item, just have a placeholder circle for now
   const ResumeItem = ({
     startDate,
     endDate,
@@ -131,28 +132,31 @@ export default function ResumeSection() {
     details: string;
   }) => {
     return (
-      <div className="rounded-lg border border-white/25 bg-gradient-to-tl from-stone-800 to-stone-950 p-8">
-        <div className="flex justify-between items-baseline">
-          <h3 className="mb-2 text-pretty text-lg font-bold text-stone-300">
-            {jobTitle || program}
-          </h3>
-          <div className="flex gap-2 text-stone-300">
+      <div className="flex rounded-lg border border-white/15 bg-gradient-to-tl from-stone-800 to-stone-950 p-8">
+        <div className="pr-4">
+          <span className="mx-auto block size-8 rounded-full bg-stone-500"></span>
+        </div>
+        <div>
+          <div className="flex gap-2 py-1 text-stone-400">
             <span>{endDate}</span>
             <span className="material-symbols-sharp">arrow_right</span>
             <span>{startDate}</span>
           </div>
-        </div>
-        <div className="flex gap-4">
-          <div className="w-5/12">
-            <h4 className="mb-1 font-bold text-stone-300">
-              {company || institution}
-            </h4>
-            <h5 className="text-sm uppercase text-stone-400">{location}</h5>
-          </div>
-          <div className="w-7/12">
-            <p className="text-pretty text-sm leading-relaxed text-stone-400">
-              {details}
-            </p>
+          <div className="flex flex-col gap-4 md:flex-row">
+            <div className="space-y-1 md:w-1/2 md:border-r md:border-stone-950">
+              <h3 className="text-balance text-lg font-bold text-stone-300">
+                {jobTitle || program}
+              </h3>
+              <h4 className="font-bold text-stone-400">
+                {company || institution}
+              </h4>
+              <h5 className="text-sm uppercase text-stone-400">{location}</h5>
+            </div>
+            <div className="md:w-1/2">
+              <p className="text-balance text-sm leading-relaxed text-stone-500">
+                {details}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -180,8 +184,8 @@ export default function ResumeSection() {
               key={id}
               className={
                 id % 2 === 0
-                  ? "rounded-lg border border-white/10 bg-stone-900 p-2 md:w-7/12 md:self-end"
-                  : "rounded-lg border border-white/10 bg-stone-900 p-2 md:w-7/12"
+                  ? "rounded-lg border border-white/10 bg-stone-900 p-2 md:w-5/6 md:self-end lg:w-2/3"
+                  : "rounded-lg border border-white/10 bg-stone-900 p-2 md:w-5/6 lg:w-2/3"
               }
             >
               <ResumeItem
@@ -203,9 +207,8 @@ export default function ResumeSection() {
   };
 
   const Download = () => {
-
     const buttonData = {
-      header: "My Full Resume is available for download in .doc and .pdf format.",
+      header: "Download my full resume in .doc or .pdf format",
       text1: "DOC Format",
       text2: "PDF Format",
       href: "https://www.linkedin.com/in/edward-von/",
@@ -215,7 +218,7 @@ export default function ResumeSection() {
 
     return (
       <div className="mx-auto flex flex-col items-center justify-center py-64 md:w-1/2">
-        <h4 className="mb-8 text-pretty text-center text-4xl font-bold text-stone-200">
+        <h4 className="mb-8 text-balance text-center text-4xl font-bold text-stone-200">
           {header}
         </h4>
         <div className="flex gap-16">

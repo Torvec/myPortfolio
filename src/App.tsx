@@ -25,7 +25,9 @@ export default function App() {
         <div id="resume">
           <ResumeSection />
         </div>
-        <ContactMeSection />
+        <div id="contact">
+          <ContactMeSection />
+        </div>
       </main>
       <Footer />
     </>
