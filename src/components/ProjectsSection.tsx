@@ -120,7 +120,7 @@ export default function ProjectsSection() {
     ];
 
     return (
-      <div className="grid gap-32">
+      <div className="container mx-auto mb-32 grid gap-32 px-4 md:px-0">
         {projectData.map(
           ({
             id,
@@ -155,8 +155,8 @@ export default function ProjectsSection() {
     const { header, text, href } = buttonData;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center py-64 md:w-1/2">
-        <h4 className="mb-8 text-balance text-center text-2xl font-bold text-stone-200 md:text-4xl">
+      <div className="mx-auto flex flex-col items-center justify-center border-y border-white/25 bg-gradient-to-t from-stone-900 to-10% py-64">
+        <h4 className="mb-8 text-balance text-center text-2xl font-bold text-stone-200 md:w-1/2 md:text-4xl">
           {header}
         </h4>
         <ActionButton text={text} icon="north_east" href={href} />
@@ -165,7 +165,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="container mx-auto border-b border-white/25 bg-gradient-to-t from-stone-800 to-[2%] px-4">
+    <section id="projects">
       <SectionHeader title="Featured Full-Stack Projects" />
       <ProjectCardList />
       <MoreProjects />

@@ -125,7 +125,7 @@ export default function ContactMeSection() {
   };
 
   return (
-    <section className="container mx-auto px-4 pb-64 md:px-0">
+    <section id="contact" className="container mx-auto px-4 pb-64 md:px-0">
       <SectionHeader title="Let's Connect and Collaborate!" />
       <div className="grid gap-8 md:grid-cols-12 md:grid-rows-2">
         <div className="md:col-span-9 md:row-span-2">

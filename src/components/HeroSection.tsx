@@ -33,8 +33,12 @@ export default function HeroSection() {
     return (
       <h1 className="p-4 font-black text-stone-300 md:p-0">
         <span className="text-5xl md:text-7xl">{intro}</span>
-        <span className="text-5xl md:text-7xl text-orange-700">{firstName}</span>
-        <span className="block text-5xl md:text-7xl text-orange-700">{lastName}</span>
+        <span className="text-5xl text-orange-700 md:text-7xl">
+          {firstName}
+        </span>
+        <span className="block text-5xl text-orange-700 md:text-7xl">
+          {lastName}
+        </span>
       </h1>
     );
   };
@@ -58,7 +62,7 @@ export default function HeroSection() {
           return (
             <motion.span
               key={index}
-              className="absolute bottom-0 text-xs font-bold uppercase text-orange-600 z-40"
+              className="absolute bottom-0 z-40 text-xs font-bold uppercase text-orange-600"
               initial={{ x: initPosX, y: initPosY, opacity: 0 }}
               animate={{ opacity: [0, 1, 0] }}
               transition={{
@@ -165,8 +169,8 @@ export default function HeroSection() {
 
   const HeroText = () => {
     return (
-      <div className="relative flex min-h-[55vh] flex-col items-center justify-end md:justify-center bg-stone-950">
-        <div className="z-40 text-center md:space-y-4 pb-32 md:pb-0 md:pt-32">
+      <div className="relative flex min-h-[55vh] flex-col items-center justify-end bg-stone-950 md:justify-center">
+        <div className="z-40 pb-32 text-center md:space-y-4 md:pb-0 md:pt-32">
           <HeroHeader />
           <Tagline />
         </div>
@@ -176,7 +180,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="overflow-hidden">
+    <section id="hero" className="overflow-hidden">
       <HeroText />
     </section>
   );

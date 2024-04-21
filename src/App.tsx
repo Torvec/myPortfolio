@@ -13,21 +13,11 @@ export default function App() {
     <>
       <Header />
       <main className="bg-stone-950">
-        <div id="hero">
-          <HeroSection />
-        </div>
-        <div id="about">
-          <AboutMeSection />
-        </div>
-        <div id="projects">
-          <ProjectsSection />
-        </div>
-        <div id="resume">
-          <ResumeSection />
-        </div>
-        <div id="contact">
-          <ContactMeSection />
-        </div>
+        <HeroSection />
+        <AboutMeSection />
+        <ProjectsSection />
+        <ResumeSection />
+        <ContactMeSection />
       </main>
       <Footer />
     </>

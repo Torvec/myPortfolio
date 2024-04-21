@@ -35,7 +35,7 @@ export default function ResumeSection() {
         endDate: "12.2022",
         logo: "eandm_logo.png",
         institution: "E and M Training Course",
-        program: "Siemens TIA Portal Software Development",
+        program: "Siemens TIA Portal Software Development Course",
         location: "Fremont, CA",
         details:
           "Two week, instructor-led, hands-on course using TIA Portal software to integrate PLC, HMI, and Variable Frequency Drive (VFD) controls. Learned how to program in Ladder Logic, Function Block Diagrams, Sequential Function Charts, and Structured Text.",
@@ -83,7 +83,7 @@ export default function ResumeSection() {
         endDate: "04.2016",
         logo: "usn_logo.svg",
         institution: "US Navy Training Schools",
-        program: "Electronics Technology Courses",
+        program: "Electronics Technology Schools",
         location: "Various Locations, USA",
         details:
           "Mastered seamanship fundamentals, electrical theory, and radio/radar electronics. Excelled in six equipment schools, specializing in air traffic control radar systems, and became the lead technician on both assigned ships.",
@@ -152,10 +152,8 @@ export default function ResumeSection() {
               <h3 className="text-balance text-lg font-bold text-stone-300">
                 {jobTitle || program}
               </h3>
-              <div className="flex flex-col justify-between lg:flex-row text-sm uppercase text-stone-500">
-                <h4 >
-                  {company || institution}
-                </h4>
+              <div className="flex flex-col justify-between text-sm uppercase text-stone-500 lg:flex-row">
+                <h4>{company || institution}</h4>
                 <h5>{location}</h5>
               </div>
             </div>
@@ -172,7 +170,7 @@ export default function ResumeSection() {
     const { myResume } = data;
 
     return (
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="container mx-auto mb-32 grid gap-x-16 gap-y-8 md:grid-cols-2">
         {myResume.map(
           ({
             id,
@@ -223,7 +221,7 @@ export default function ResumeSection() {
     const { header, text1, text2, href } = buttonData;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center py-64 md:w-1/2">
+      <div className="mx-auto flex flex-col items-center justify-center border-y border-white/25 bg-gradient-to-t from-stone-900 to-10% py-64">
         <h4 className="mb-8 text-balance text-center text-4xl font-bold text-stone-200">
           {header}
         </h4>
@@ -236,7 +234,7 @@ export default function ResumeSection() {
   };
 
   return (
-    <section className="container mx-auto border-b border-white/25 bg-gradient-to-t from-stone-800 to-[2%] px-3">
+    <section id="resume">
       <SectionHeader title="My Professional and Academic Journey" />
       <ResumeList />
       <Download />

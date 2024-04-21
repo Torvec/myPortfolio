@@ -226,7 +226,7 @@ export default function AboutMeSection() {
   };
 
   return (
-    <section className="container mx-auto border-b border-white/20 bg-gradient-to-t from-stone-900 to-[2%]">
+    <section id="about" className="container mx-auto">
       <div className="mb-8 grid gap-8 px-4 md:grid-cols-3 md:grid-rows-2 md:px-0">
         <div className="md:col-span-3 md:row-span-1">
           <SectionHeader title="A Brief Introduction" />
