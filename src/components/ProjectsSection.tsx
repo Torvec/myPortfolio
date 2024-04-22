@@ -1,6 +1,6 @@
 import SectionHeader from "./template/SectionHeader";
 import ActionButton from "./template/ActionButton";
-import { projectData } from "../data/projectData";
+import { projectsData } from "../data/projectsData";
 
 export default function ProjectsSection() {
   const ProjectCard = ({
@@ -129,7 +129,7 @@ export default function ProjectsSection() {
   const ProjectCardList = () => {
     return (
       <div className="container mx-auto mb-32 flex flex-col gap-32 px-4 md:px-0">
-        {projectData.map(
+        {projectsData.map(
           ({
             id,
             imgURL,
