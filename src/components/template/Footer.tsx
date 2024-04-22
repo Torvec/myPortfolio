@@ -46,7 +46,7 @@ export default function Footer() {
     }) => {
       return (
         <a href={href} target="_blank" rel="noopener noreferrer">
-          <img src={logo} alt={label} className="h-8 w-auto" />
+          <img src={logo} alt={label} className="h-6 w-auto" />
         </a>
       );
     };
@@ -64,7 +64,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/20 bg-gradient-to-b from-stone-900 to-stone-950 to-50%">
-      <div className="container relative mx-auto flex items-center justify-between px-4 pb-32 pt-8">
+      <div className="container relative mx-auto flex items-start justify-between px-4 md:px-0 pb-32 pt-8">
         <Copyright />
         <SocialLinkList />
       </div>

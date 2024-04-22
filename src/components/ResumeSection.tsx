@@ -170,7 +170,7 @@ export default function ResumeSection() {
     const { myResume } = data;
 
     return (
-      <div className="container mx-auto mb-32 grid gap-x-16 gap-y-8 md:grid-cols-2">
+      <div className="container mx-auto mb-32 grid gap-x-16 gap-y-8 md:grid-cols-2 px-4 md:px-0">
         {myResume.map(
           ({
             id,
@@ -221,11 +221,11 @@ export default function ResumeSection() {
     const { header, text1, text2, href } = buttonData;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-y border-white/25 bg-gradient-to-t from-stone-900 to-10% py-64">
+      <div className="mx-auto flex flex-col items-center justify-center border-y border-white/25 bg-gradient-to-t from-stone-900 to-10% py-64 px-4 md:px-0">
         <h4 className="mb-8 text-balance text-center text-4xl font-bold text-stone-200">
           {header}
         </h4>
-        <div className="flex gap-16">
+        <div className="flex gap-8 md:gap-16">
           <ActionButton text={text1} icon="download" href={href} />
           <ActionButton text={text2} icon="download" href={href} />
         </div>

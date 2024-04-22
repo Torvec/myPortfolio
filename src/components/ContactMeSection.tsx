@@ -2,11 +2,31 @@ import SectionHeader from "./template/SectionHeader";
 
 export default function ContactMeSection() {
   const ContactForm = () => {
-    const inputLabels = [
-      { labelText: "name", placeholderText: "Your Name Here" },
-      { labelText: "email", placeholderText: "Your Email Here" },
-      { labelText: "message", placeholderText: "Your Message Here" },
-    ];
+    const fullName = {
+      type: "text",
+      id: "name",
+      name: "name",
+      forText: "name",
+      labelText: "Name",
+      placeholderText: "Enter your full name",
+    };
+
+    const email = {
+      type: "email",
+      id: "email",
+      name: "email",
+      forText: "email",
+      labelText: "E-Mail",
+      placeholderText: "Enter your email",
+    };
+
+    const message = {
+      id: "message",
+      name: "message",
+      forText: "message",
+      labelText: "Message",
+      placeholderText: "Enter your message",
+    };
 
     const FormLabel = ({
       forText,
@@ -16,7 +36,7 @@ export default function ContactMeSection() {
       labelText: string;
     }) => {
       return (
-        <label htmlFor={forText} className="uppercase text-stone-300">
+        <label htmlFor={forText} className="mb-2 block text-stone-400">
           {labelText}
         </label>
       );
@@ -40,86 +60,73 @@ export default function ContactMeSection() {
           name={inputName}
           placeholder={inputPlaceholder}
           required
-          className="w-full rounded-lg border border-white/25 bg-stone-900 p-4 text-stone-200"
+          className="w-full rounded-lg border border-white/15 bg-stone-900 p-4 text-stone-300 focus:bg-stone-800 focus:outline-none focus:ring focus:ring-orange-500/75"
         />
       );
     };
 
     return (
-      <div className="h-full rounded-lg border border-white/10 bg-stone-900 p-2">
-        <form className="flex h-full flex-col justify-evenly gap-8 rounded-lg border border-white/20 bg-gradient-to-br from-stone-800 to-stone-950 p-8">
-          <div>
-            <FormLabel
-              forText={inputLabels[0].labelText}
-              labelText={inputLabels[0].labelText}
-            />
-            <FormInput
-              inputType="text"
-              inputId={inputLabels[0].labelText}
-              inputName={inputLabels[0].labelText}
-              inputPlaceholder={inputLabels[0].placeholderText}
-            />
-          </div>
-          <div>
-            <FormLabel
-              forText={inputLabels[1].labelText}
-              labelText={inputLabels[1].labelText}
-            />
-            <FormInput
-              inputType="text"
-              inputId={inputLabels[1].labelText}
-              inputName={inputLabels[1].labelText}
-              inputPlaceholder={inputLabels[1].placeholderText}
-            />
-          </div>
-          <div>
-            <FormLabel
-              forText={inputLabels[2].labelText}
-              labelText={inputLabels[2].labelText}
-            />
-            <textarea
-              id={inputLabels[2].labelText}
-              name={inputLabels[2].labelText}
-              placeholder={inputLabels[2].placeholderText}
-              required
-              className="w-full resize-none rounded-lg border border-white/25 bg-stone-900 p-4 text-stone-200"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="self-center rounded-lg border-4 border-orange-900 bg-gradient-to-t from-orange-700 to-orange-500 px-4 py-2 text-stone-200"
-          >
-            Send
-          </button>
-        </form>
-      </div>
+      <form className="flex h-full md:w-4/6 flex-col justify-evenly gap-8 rounded-lg">
+        <div>
+          <FormLabel
+            forText={fullName.forText}
+            labelText={fullName.labelText}
+          />
+          <FormInput
+            inputType={fullName.type}
+            inputId={fullName.id}
+            inputName={fullName.name}
+            inputPlaceholder={fullName.placeholderText}
+          />
+        </div>
+        <div>
+          <FormLabel forText={email.forText} labelText={email.labelText} />
+          <FormInput
+            inputType={email.type}
+            inputId={email.id}
+            inputName={email.name}
+            inputPlaceholder={email.placeholderText}
+          />
+        </div>
+        <div>
+          <FormLabel forText={message.forText} labelText={message.labelText} />
+          <textarea
+            id={message.id}
+            name={message.name}
+            placeholder={message.placeholderText}
+            rows={8}
+            maxLength={500}
+            required
+            className="w-full resize-none rounded-lg border border-white/15 bg-stone-900 p-4 text-stone-200 focus:bg-stone-800 focus:outline-none focus:ring focus:ring-orange-500/75"
+          />
+        </div>
+        <button
+          type="submit"
+          className="self-center rounded-lg border-4 border-orange-900 bg-gradient-to-t from-orange-700 to-orange-500 px-4 py-2 text-stone-200"
+        >
+          Send Message
+        </button>
+      </form>
     );
   };
 
-  const AlternateContact = () => {
+  const DirectContact = () => {
     const content = {
-      text: "Alternatively, you can contact me here:",
+      text: "Get in touch with me directly:",
       email: "me@edward-vonschondorf.dev",
       mailto:
         "mailto:me@edward-vonschondorf.dev?subject=Let's Connect and Collaborate!",
     };
 
     return (
-      <div className="aspect-square rounded-lg border border-white/10 bg-stone-900 p-4 text-stone-300">
-        <p>
-          {content.text}
-          <br />
-          <a href={content.mailto}>{content.email}</a>
-        </p>
-      </div>
-    );
-  };
-
-  const ThanksForVisiting = () => {
-    return (
-      <div className="aspect-square rounded-lg border border-white/10 bg-stone-900 p-4 text-stone-300">
-        Thanks for Visiting!
+      <div className="md:w-2/6">
+        <p className="mb-2 text-stone-400">{content.text}</p>
+        <a
+          href={content.mailto}
+          className="font-bold text-stone-200 hover:text-orange-600"
+        >
+          {content.email}
+        </a>
       </div>
     );
   };
@@ -127,16 +134,9 @@ export default function ContactMeSection() {
   return (
     <section id="contact" className="container mx-auto px-4 pb-64 md:px-0">
       <SectionHeader title="Let's Connect and Collaborate!" />
-      <div className="grid gap-8 md:grid-cols-12 md:grid-rows-2">
-        <div className="md:col-span-9 md:row-span-2">
-          <ContactForm />
-        </div>
-        <div className="md:col-span-3">
-          <AlternateContact />
-        </div>
-        <div className="md:col-span-3">
-          <ThanksForVisiting />
-        </div>
+      <div className="flex flex-col md:flex-row gap-32">
+        <ContactForm />
+        <DirectContact />
       </div>
     </section>
   );
