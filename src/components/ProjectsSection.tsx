@@ -4,7 +4,7 @@ import { projectData } from "../data/projectData";
 
 export default function ProjectsSection() {
   const ProjectCard = ({
-    colOrder,
+    colOrderStyles,
     translateImg,
     imgURL,
     projectName,
@@ -13,7 +13,7 @@ export default function ProjectsSection() {
     description,
     techStack,
   }: {
-    colOrder: string;
+    colOrderStyles: string;
     translateImg: string;
     imgURL: string;
     projectName: string;
@@ -61,7 +61,7 @@ export default function ProjectsSection() {
       techStack: string[];
     }) => {
       return (
-        <div className="flex flex-col justify-center gap-8 md:gap-16 p-4 md:w-1/3 md:p-0">
+        <div className="flex flex-col justify-center gap-8 p-4 md:w-1/3 md:gap-16 md:p-0">
           <div>
             <h3 className="mb-4 text-2xl font-bold text-stone-300 md:text-4xl">
               {projectName}
@@ -104,29 +104,31 @@ export default function ProjectsSection() {
     };
 
     return (
-      <div
-        className={`flex flex-col-reverse gap-8 rounded-lg border border-white/15 bg-gradient-to-tl from-stone-800 md:gap-0 md:py-16 ${colOrder}`}
-      >
-        <InfoContainer
-          projectName={projectName}
-          description={description}
-          techStack={techStack}
-          repositoryURL={repositoryURL}
-          deploymentURL={deploymentURL}
-        />
-        <ImageContainer
-          translateImg={translateImg}
-          deploymentURL={deploymentURL}
-          imgURL={imgURL}
-          projectName={projectName}
-        />
+      <div>
+        <div
+          className={`flex flex-col-reverse gap-8 rounded-lg border border-white/15 bg-gradient-to-b from-stone-800 md:w-[calc(100%-64px)] md:gap-0 md:py-16 ${colOrderStyles}`}
+        >
+          <InfoContainer
+            projectName={projectName}
+            description={description}
+            techStack={techStack}
+            repositoryURL={repositoryURL}
+            deploymentURL={deploymentURL}
+          />
+          <ImageContainer
+            translateImg={translateImg}
+            deploymentURL={deploymentURL}
+            imgURL={imgURL}
+            projectName={projectName}
+          />
+        </div>
       </div>
     );
   };
 
   const ProjectCardList = () => {
     return (
-      <div className="container mx-auto mb-32 grid gap-32 px-4 md:px-0">
+      <div className="container mx-auto mb-32 flex flex-col gap-32 px-4 md:px-0">
         {projectData.map(
           ({
             id,
@@ -140,12 +142,12 @@ export default function ProjectsSection() {
             <ProjectCard
               key={id}
               translateImg={
-                id % 2 === 0 ? "md:translate-x-16" : "md:-translate-x-16"
+                id % 2 !== 0 ? "md:translate-x-16" : "md:-translate-x-16"
               }
-              colOrder={
-                id % 2 === 0
-                  ? "md:flex-row md:pl-8"
-                  : "md:flex-row-reverse md:pr-8"
+              colOrderStyles={
+                id % 2 !== 0
+                  ? "md:flex-row md:pl-8 md:bg-gradient-to-tl"
+                  : "md:flex-row-reverse md:pr-8 md:bg-gradient-to-tr md:translate-x-16"
               }
               imgURL={imgURL}
               projectName={projectName}
