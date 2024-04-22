@@ -64,7 +64,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/20 bg-gradient-to-b from-stone-900 to-stone-950 to-50%">
-      <div className="container relative mx-auto flex items-start justify-between px-4 md:px-0 pb-32 pt-8">
+      <div className="container relative mx-auto flex items-start justify-between px-4 pb-32 pt-8 md:px-0">
         <Copyright />
         <SocialLinkList />
       </div>

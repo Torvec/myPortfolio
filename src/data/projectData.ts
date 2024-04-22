@@ -1,0 +1,73 @@
+export const projectData = [
+  {
+    id: 1,
+    projectName: "Loot Vault",
+    imgURL: "loot_vault.jpg",
+    repositoryURL: "https://github.com/Torvec/Loot-Vault",
+    deploymentURL: "https://torvec.github.io/Loot-Vault/",
+    description:
+      "A video game deals site for gamers on a budget using third party API's.",
+    techStack: ["HTML", "Bulma CSS", "JavaScript", "Fetch API"],
+  },
+  {
+    id: 2,
+    projectName: "Task Titan",
+    imgURL: "task_titan.jpg",
+    repositoryURL: "https://github.com/Torvec/Task-Titan",
+    deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
+    description:
+      "A task completion and collaboration app for managing projects and crushing tasks!",
+    techStack: [
+      "Handlebars",
+      "Materialize CSS",
+      "MySQL",
+      "Node",
+      "Express",
+      "Sequelize",
+    ],
+  },
+  {
+    id: 3,
+    projectName: "Wedloc",
+    imgURL: "wedloc.jpg",
+    repositoryURL: "https://github.com/Torvec/wedloc",
+    deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
+    description:
+      "A social media app for wedding photographers to share their work and allow clients to interact with guests.",
+    techStack: [
+      "React",
+      "Tailwind",
+      "Material UI",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "GraphQL",
+      "Apollo Server",
+    ],
+  },
+  {
+    id: 4,
+    projectName: "Bootcamp Challenges",
+    imgURL: "bootcamp_challenges.jpg",
+    repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
+    deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
+    description:
+      "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
+    techStack: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "JQuery",
+      "Bootstrap",
+      "Node",
+      "Express",
+      "MySQL",
+      "Handlebars",
+      "MongoDB",
+      "PWA",
+      "React",
+      "Redux",
+    ],
+  },
+];
