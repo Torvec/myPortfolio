@@ -164,7 +164,7 @@ export default function AboutMeSection() {
         <h3 className="pb-16 pt-32 text-center text-3xl text-stone-300 md:text-5xl">
           {devGoalsHeader}
         </h3>
-        <div className="flex gap-8">
+        <div className="flex flex-col gap-8 px-4 md:flex-row md:px-0">
           {devGoalList.map(({ text, icon }, index) => (
             <GoalItem key={index} number={index + 1} text={text} icon={icon} />
           ))}

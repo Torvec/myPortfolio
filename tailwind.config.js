@@ -10,6 +10,7 @@ export default {
       white: colors.white,
       stone: colors.stone,
       orange: colors.orange,
+      amber: colors.amber,
     },
     screens: {
       sm: "640px",

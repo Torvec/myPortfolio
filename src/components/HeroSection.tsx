@@ -1,42 +1,19 @@
-import { motion } from "framer-motion";
+import { heroData } from "../data/heroData";
+// import { motion } from "framer-motion";
 
 export default function HeroSection() {
-  const data = {
-    intro: "Hi! I'm ",
-    firstName: "Edward ",
-    lastName: "Vonschondorf",
-    tagline:
-      "A Full Stack Web Developer with a technician's eye, and a passion for troubleshooting, creating, and collaborating.",
-    techList: [
-      { label: "React", initPosX: -450, initPosY: -200, delay: 1 },
-      { label: "Node", initPosX: -240, initPosY: -100, delay: 1 },
-      { label: "Express", initPosX: -270, initPosY: -470, delay: 3 },
-      { label: "MongoDB", initPosX: 120, initPosY: -80, delay: 7.5 },
-      { label: "GraphQL", initPosX: 150, initPosY: -500, delay: 5.5 },
-      { label: "TypeScript", initPosX: 300, initPosY: -50, delay: 8.75 },
-      { label: "Tailwind", initPosX: 320, initPosY: -220, delay: 7.5 },
-      { label: "MySQL", initPosX: 450, initPosY: -300, delay: 7.5 },
-      { label: "JavaScript", initPosX: 0, initPosY: -140, delay: 4.75 },
-    ],
-    radarDisplayEffect: [
-      "radar_screen.svg",
-      "radar_grid.svg",
-      "radar_dot.svg",
-      "radar_scan_line.svg",
-      "separator_line.svg",
-    ],
-  };
-
   const HeroHeader = () => {
-    const { intro, firstName, lastName } = data;
+    const { intro, firstName, lastName } = heroData;
 
     return (
-      <h1 className="p-4 font-black text-stone-300 md:p-0">
-        <span className="text-5xl md:text-7xl">{intro}</span>
-        <span className="text-5xl text-orange-700 md:text-7xl">
+      <h1 className="p-4 font-black md:p-0">
+        <span className="bg-gradient-to-l from-stone-200 to-stone-500 bg-clip-text text-6xl text-transparent md:text-8xl">
+          {intro}
+        </span>
+        <span className="bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-6xl text-transparent md:text-8xl">
           {firstName}
         </span>
-        <span className="block text-5xl text-orange-700 md:text-7xl">
+        <span className="block bg-gradient-to-l from-orange-500 to-orange-700 bg-clip-text text-6xl text-transparent md:text-8xl">
           {lastName}
         </span>
       </h1>
@@ -44,115 +21,114 @@ export default function HeroSection() {
   };
 
   const Tagline = () => {
-    const { tagline } = data;
+    const { tagline } = heroData;
 
     return (
-      <h2 className="mx-auto max-w-[45ch] text-stone-400 md:text-xl">
+      <h2 className="mx-auto max-w-[45ch] text-stone-400 md:text-2xl">
         {tagline}
       </h2>
     );
   };
 
-  const TechListTargets = () => {
-    const { techList } = data;
+  // const TechListTargets = () => {
+  //   const { techList } = heroData;
 
-    return (
-      <>
-        {techList.map(({ label, initPosX, initPosY, delay }, index) => {
-          return (
-            <motion.span
-              key={index}
-              className="absolute bottom-0 z-40 text-xs font-bold uppercase text-orange-600"
-              initial={{ x: initPosX, y: initPosY, opacity: 0 }}
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{
-                delay: delay,
-                duration: 10,
-                repeat: Infinity,
-                repeatDelay: 5,
-                ease: [0.1, 0.2, 0.3, 1],
-              }}
-              aria-hidden="true"
-            >
-              {label}
-            </motion.span>
-          );
-        })}
-      </>
-    );
-  };
+  //   return (
+  //     <>
+  //       {techList.map(({ label, initPosX, initPosY, delay }, index) => {
+  //         return (
+  //           <motion.span
+  //             key={index}
+  //             className="absolute bottom-0 z-40 text-xs font-bold uppercase text-orange-600"
+  //             initial={{ x: initPosX, y: initPosY, opacity: 0 }}
+  //             animate={{ opacity: [0, 1, 0] }}
+  //             transition={{
+  //               delay: delay,
+  //               duration: 10,
+  //               repeat: Infinity,
+  //               repeatDelay: 5,
+  //               ease: [0.1, 0.2, 0.3, 1],
+  //             }}
+  //             aria-hidden="true"
+  //           >
+  //             {label}
+  //           </motion.span>
+  //         );
+  //       })}
+  //     </>
+  //   );
+  // };
 
   const RadarScreenEffect = () => {
-    const { radarDisplayEffect } = data;
+    // const { radarDisplayEffect } = heroData;
 
-    const glowVariants = {
-      start: { opacity: 0.4 },
-      end: {
-        opacity: 0.2,
-        transition: {
-          duration: 2,
-          repeat: Infinity,
-          repeatType: "reverse" as const, // Throws an error if I don't use 'as const', ugh TypeScript
-          ease: "linear",
-        },
-      },
-    };
+    // const glowVariants = {
+    //   start: { opacity: 0.4 },
+    //   end: {
+    //     opacity: 0.2,
+    //     transition: {
+    //       duration: 2,
+    //       repeat: Infinity,
+    //       repeatType: "reverse" as const, // Throws an error if I don't use 'as const', ugh TypeScript
+    //       ease: "linear",
+    //     },
+    //   },
+    // };
 
     return (
       <>
-        <TechListTargets />
+        {/* <TechListTargets /> */}
         {/* Gradient */}
-        <motion.div
-          className="absolute bottom-0 h-screen w-screen translate-y-1/2 bg-[radial-gradient(circle,_#ea580c_0%,_transparent_60%)]"
+        {/* <motion.div
+          className="absolute bottom-0 h-screen w-screen bg-[radial-gradient(circle,_#ea580c_0%,_transparent_60%)]"
           initial="start"
           animate="end"
           variants={glowVariants}
-        />
+        /> */}
         {/* Grid */}
-        <img
+        {/* <img
           src={radarDisplayEffect[1]}
           alt=""
-          className="absolute bottom-0 h-full w-full translate-y-1/2 object-cover opacity-30 md:h-max md:w-max"
+          className="absolute bottom-0 h-full w-full object-cover opacity-30 md:h-max md:w-max"
           aria-hidden="true"
-        />
+        /> */}
         {/* Rings */}
-        <motion.img
+        {/* <motion.img
           src={radarDisplayEffect[0]}
           alt=""
-          className="absolute bottom-0 h-full w-full translate-y-1/2 object-cover md:h-max md:w-max"
+          className="absolute bottom-0 h-full w-full object-cover md:h-max md:w-max"
           initial="start"
           animate="end"
           variants={glowVariants}
           aria-hidden="true"
-        />
+        /> */}
 
         {/* Dot */}
-        <img
+        {/* <img
           src={radarDisplayEffect[2]}
           alt=""
-          className="absolute bottom-0 translate-y-1/2"
+          className="absolute bottom-1/2"
           aria-hidden="true"
-        />
+        /> */}
         {/* Scan Line */}
-        <motion.img
+        {/* <motion.img
           src={radarDisplayEffect[3]}
           alt=""
-          className="absolute bottom-0 h-full w-full opacity-50 md:h-max md:w-max"
+          className="absolute bottom-1/2 h-full w-full opacity-50 md:h-max md:w-max"
           initial={{ rotate: -95, originY: "bottom" }}
-          animate={{ rotate: [-95, 95], originY: "bottom" }}
+          animate={{ rotate: 360, originY: "bottom" }}
           transition={{
-            duration: 10,
+            duration: 20,
             repeat: Infinity,
-            repeatDelay: 5,
             ease: "linear",
           }}
           aria-hidden="true"
-        />
+        /> */}
         {/* Separator */}
-        <motion.img
+        {/* <motion.img
           src={radarDisplayEffect[4]}
           alt=""
-          className="absolute bottom-0 w-full"
+          className="absolute bottom-1/2 w-full"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0.5 }}
           transition={{
@@ -162,15 +138,15 @@ export default function HeroSection() {
             ease: "linear",
           }}
           aria-hidden="true"
-        />
+        /> */}
       </>
     );
   };
 
   const HeroText = () => {
     return (
-      <div className="relative flex min-h-[55vh] flex-col items-center justify-end bg-stone-950 md:justify-center">
-        <div className="z-40 pb-32 text-center md:space-y-4 md:pb-0 md:pt-32">
+      <div className="relative flex min-h-screen flex-col items-center justify-center bg-stone-950">
+        <div className="z-40 text-center md:space-y-4">
           <HeroHeader />
           <Tagline />
         </div>
@@ -180,7 +156,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="overflow-hidden">
+    <section id="hero">
       <HeroText />
     </section>
   );
