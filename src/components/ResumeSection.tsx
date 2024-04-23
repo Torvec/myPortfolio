@@ -167,7 +167,6 @@ export default function ResumeSection() {
 
   type ResumeItem = {
     id: number;
-    type: string;
     startDate: string;
     endDate: string;
     logo: string;
@@ -179,13 +178,20 @@ export default function ResumeSection() {
     details: string;
   };
 
-  const ResumeList = ({ list }: { list: ResumeItem[] }) => {
+  const ResumeList = ({
+    list,
+    type,
+  }: {
+    list: ResumeItem[];
+    type?: string;
+  }) => {
     return (
-      <div className="space-y-8 md:w-1/2">
+      <div
+        className={`space-y-8 md:w-1/2 ${type === "education" ? "md:translate-y-24" : ""}`}
+      >
         {list.map(
           ({
             id,
-            type,
             startDate,
             endDate,
             logo,
@@ -198,7 +204,7 @@ export default function ResumeSection() {
           }: ResumeItem) => (
             <div
               key={id}
-              className={`rounded-lg border border-white/10 bg-stone-900/75 p-2 ${type === "education" ? "md:translate-y-16" : ""}`}
+              className="rounded-lg border border-white/10 bg-stone-900/75 p-2"
             >
               <ResumeItem
                 startDate={startDate}
@@ -244,9 +250,9 @@ export default function ResumeSection() {
   return (
     <section id="resume">
       <SectionHeader title="My Professional and Academic Journey" />
-      <div className="container mx-auto pb-64 flex flex-col gap-16 px-4 md:flex-row md:px-0">
+      <div className="container mx-auto flex flex-col gap-16 px-4 pb-64 md:flex-row md:px-0">
         <ResumeList list={experience} />
-        <ResumeList list={education} />
+        <ResumeList list={education} type="education" />
       </div>
       <Download />
     </section>
