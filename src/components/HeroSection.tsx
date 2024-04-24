@@ -1,35 +1,7 @@
 import { heroData } from "../data/heroData";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
-  const HeroHeader = () => {
-    const { intro, firstName, lastName } = heroData;
-
-    return (
-      <h1 className="p-4 font-black md:p-0">
-        <span className="bg-gradient-to-l from-stone-200 to-stone-500 bg-clip-text text-6xl text-transparent md:text-8xl">
-          {intro}
-        </span>
-        <span className="bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-6xl text-transparent md:text-8xl">
-          {firstName}
-        </span>
-        <span className="block bg-gradient-to-l from-orange-500 to-orange-700 bg-clip-text text-6xl text-transparent md:text-8xl">
-          {lastName}
-        </span>
-      </h1>
-    );
-  };
-
-  const Tagline = () => {
-    const { tagline } = heroData;
-
-    return (
-      <h2 className="mx-auto max-w-[45ch] text-stone-400 md:text-2xl">
-        {tagline}
-      </h2>
-    );
-  };
-
   // const TechListTargets = () => {
   //   const { techList } = heroData;
 
@@ -59,9 +31,7 @@ export default function HeroSection() {
   //   );
   // };
 
-  const RadarScreenEffect = () => {
-    // const { radarDisplayEffect } = heroData;
-
+  const RadarScanner = () => {
     // const glowVariants = {
     //   start: { opacity: 0.4 },
     //   end: {
@@ -77,6 +47,12 @@ export default function HeroSection() {
 
     return (
       <>
+        <img
+          src={"radar_screen.png"}
+          alt=""
+          className="absolute left-1/2 top-4 h-auto min-w-[1348px] -translate-x-1/2 object-cover"
+        />
+        <motion.div className="absolute -top-1/2 left-1/2 size-[1200px] -translate-x-1/2 translate-y-[172px] rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,_rgba(249,115,22,1)_0%,_rgba(249,115,22,0)_13%)] opacity-50" />
         {/* <TechListTargets /> */}
         {/* Gradient */}
         {/* <motion.div
@@ -102,7 +78,6 @@ export default function HeroSection() {
           variants={glowVariants}
           aria-hidden="true"
         /> */}
-
         {/* Dot */}
         {/* <img
           src={radarDisplayEffect[2]}
@@ -143,20 +118,60 @@ export default function HeroSection() {
     );
   };
 
+  const HeroHeader = () => {
+    const { intro, firstName, lastName } = heroData;
+
+    return (
+      <h1 className="p-4 font-black md:p-0">
+        <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-5xl text-transparent md:text-8xl">
+          {intro}
+        </span>
+        <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-5xl uppercase text-transparent md:text-8xl">
+          {firstName}
+        </span>
+        <span className="block bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-5xl uppercase text-transparent md:text-8xl">
+          {lastName}
+        </span>
+      </h1>
+    );
+  };
+
+  const Tagline = () => {
+    const { tagline } = heroData;
+
+    return (
+      <h2 className="mx-auto max-w-[45ch] text-stone-300 md:text-2xl">
+        {tagline}
+      </h2>
+    );
+  };
+
   const HeroText = () => {
     return (
-      <div className="relative flex min-h-screen flex-col items-center justify-center bg-stone-950">
-        <div className="z-40 text-center md:space-y-4">
-          <HeroHeader />
-          <Tagline />
-        </div>
-        <RadarScreenEffect />
+      <div className="z-40 translate-y-28 text-center md:space-y-4">
+        <HeroHeader />
+        <Tagline />
       </div>
     );
   };
 
+  const Gradients = () => {
+    return (
+      <>
+        <div className="absolute inset-0 -top-full bg-[radial-gradient(circle,_rgba(249,115,22,0)_0%,_rgba(234,88,12,0.5)_60%,_rgba(249,115,22,0)_100%)] opacity-50" />
+        <div className="absolute inset-0 -top-[200%] bg-[radial-gradient(circle,_rgba(12,10,9,0)_50%,_rgba(12,10,9,1)_100%)]" />
+        <div className="absolute inset-0 bottom-0 bg-gradient-to-t from-stone-950 to-10%" />
+      </>
+    );
+  };
+
   return (
-    <section id="hero">
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center justify-center bg-[url(bg_grid_orange_30x30.png)]"
+    >
+      <RadarScanner />
+      <Gradients />
       <HeroText />
     </section>
   );

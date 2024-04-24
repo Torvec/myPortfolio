@@ -12,6 +12,7 @@
 
 :root {
   overflow-y: visible;
+  overflow-x: hidden;
 }
 
 /* For WebKit browsers */

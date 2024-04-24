@@ -1,5 +1,5 @@
 export const heroData = {
-  intro: "Hi! I'm ",
+  intro: "Hey! I'm ",
   firstName: "Edward ",
   lastName: "Vonschondorf",
   tagline:
@@ -15,7 +15,8 @@ export const heroData = {
     { label: "MySQL", initPosX: 450, initPosY: -300, delay: 7.5 },
     { label: "JavaScript", initPosX: 0, initPosY: -140, delay: 4.75 },
   ],
-  radarDisplayEffect: [
+  radarScreen: [
+    { radarScreen: "radar_screen.png" },
     "radar_screen.svg",
     "radar_grid.svg",
     "radar_dot.svg",
