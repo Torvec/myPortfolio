@@ -5,7 +5,7 @@ export const introData = {
 };
 
 export const profilePicData = {
-  src: "me.jpg",
+  src: "about/me.jpg",
   alt: "Me at the Grand Canyon",
 };
 
@@ -41,22 +41,22 @@ export const socialLinksData = {
   socialLinksList: [
     {
       href: "https://www.linkedin.com/in/edward-von/",
-      logo: "linkedin_logo.png",
+      logo: "about/linkedin_logo.png",
       label: "LinkedIn",
     },
     {
       href: "https://github.com/Torvec",
-      logo: "github_logo.png",
+      logo: "about/github_logo.png",
       label: "GitHub",
     },
     {
       href: "https://dev.to/torvec",
-      logo: "devto_logo.png",
+      logo: "about/devto_logo.png",
       label: "Dev.to",
     },
     {
       href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
-      logo: "youtube_logo.png",
+      logo: "about/youtube_logo.png",
       label: "YouTube",
     },
   ],
@@ -67,19 +67,19 @@ export const devGoalsData = {
   devGoalList: [
     {
       text: "Captivating, Responsive, Accessible designs.",
-      icon: "responsive.png",
+      icon: "about/responsive.png",
     },
     {
       text: "User-Friendly, Engaging Interactive Experiences.",
-      icon: "interactive.png",
+      icon: "about/interactive.png",
     },
     {
       text: "Secure, Robust, Scalable Data-driven Applications.",
-      icon: "secure.png",
+      icon: "about/secure.png",
     },
     {
       text: "SEO and Performance Optimized Websites.",
-      icon: "performance.png",
+      icon: "about/performance.png",
     },
   ],
 };

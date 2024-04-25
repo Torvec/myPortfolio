@@ -16,7 +16,7 @@ export const heroData = {
     { label: "JavaScript", initPosX: 0, initPosY: -140, delay: 4.75 },
   ],
   radarScreen: [
-    { radarScreen: "radar_screen.png" },
+    { radarScreen: "hero/radar_screen.png" },
     "radar_screen.svg",
     "radar_grid.svg",
     "radar_dot.svg",

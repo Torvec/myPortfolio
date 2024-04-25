@@ -15,22 +15,22 @@ export default function Footer() {
     const socialLinks = [
       {
         href: "https://www.linkedin.com/in/edward-von/",
-        logo: "linkedin_logo.png",
+        logo: "about/linkedin_logo.png",
         label: "LinkedIn",
       },
       {
         href: "https://github.com/Torvec",
-        logo: "github_logo.png",
+        logo: "about/github_logo.png",
         label: "GitHub",
       },
       {
         href: "https://dev.to/torvec",
-        logo: "devto_logo.png",
+        logo: "about/devto_logo.png",
         label: "Dev.to",
       },
       {
         href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
-        logo: "youtube_logo.png",
+        logo: "about/youtube_logo.png",
         label: "YouTube",
       },
     ];

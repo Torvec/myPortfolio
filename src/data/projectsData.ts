@@ -2,7 +2,7 @@ export const projectsData = [
   {
     id: 1,
     projectName: "Loot Vault",
-    imgURL: "loot_vault.jpg",
+    imgURL: "projects/loot_vault.jpg",
     repositoryURL: "https://github.com/Torvec/Loot-Vault",
     deploymentURL: "https://torvec.github.io/Loot-Vault/",
     description:
@@ -12,7 +12,7 @@ export const projectsData = [
   {
     id: 2,
     projectName: "Task Titan",
-    imgURL: "task_titan.jpg",
+    imgURL: "projects/task_titan.jpg",
     repositoryURL: "https://github.com/Torvec/Task-Titan",
     deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
     description:
@@ -29,7 +29,7 @@ export const projectsData = [
   {
     id: 3,
     projectName: "Wedloc",
-    imgURL: "wedloc.jpg",
+    imgURL: "projects/wedloc.jpg",
     repositoryURL: "https://github.com/Torvec/wedloc",
     deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
     description:
@@ -49,7 +49,7 @@ export const projectsData = [
   {
     id: 4,
     projectName: "Bootcamp Challenges",
-    imgURL: "bootcamp_challenges.jpg",
+    imgURL: "projects/bootcamp_challenges.jpg",
     repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
     deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
     description:

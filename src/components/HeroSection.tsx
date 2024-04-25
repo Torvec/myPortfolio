@@ -47,12 +47,26 @@ export default function HeroSection() {
 
     return (
       <>
-        <img
-          src={"radar_screen.png"}
-          alt=""
-          className="absolute left-1/2 top-4 h-auto min-w-[1348px] -translate-x-1/2 object-cover"
-        />
-        <motion.div className="absolute -top-1/2 left-1/2 size-[1200px] -translate-x-1/2 translate-y-[172px] rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,_rgba(249,115,22,1)_0%,_rgba(249,115,22,0)_13%)] opacity-50" />
+        <div className="absolute inset-0 z-10 h-screen w-full">
+          <img
+            src={"hero/radar_screen.png"}
+            alt=""
+            className="absolute left-1/2 top-0 min-w-[1348px] -translate-x-1/2 object-cover"
+          />
+          <div className="absolute left-1/2 top-[50px] -translate-x-1/2 -translate-y-1/2">
+            <motion.div
+              initial={{ rotate: 0 }}
+              animate={{ rotate: -360 }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="size-[1200px] rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,_rgba(249,115,22,1)_0%,_rgba(249,115,22,0)_13%)] opacity-50"
+            />
+          </div>
+        </div>
+
         {/* <TechListTargets /> */}
         {/* Gradient */}
         {/* <motion.div
@@ -158,8 +172,11 @@ export default function HeroSection() {
   const Gradients = () => {
     return (
       <>
+        {/* Transparent to orange radial gradient */}
         <div className="absolute inset-0 -top-full bg-[radial-gradient(circle,_rgba(249,115,22,0)_0%,_rgba(234,88,12,0.5)_60%,_rgba(249,115,22,0)_100%)] opacity-50" />
+        {/* Transparent to black radial gradient */}
         <div className="absolute inset-0 -top-[200%] bg-[radial-gradient(circle,_rgba(12,10,9,0)_50%,_rgba(12,10,9,1)_100%)]" />
+        {/* Bottom Linear gradient */}
         <div className="absolute inset-0 bottom-0 bg-gradient-to-t from-stone-950 to-10%" />
       </>
     );
@@ -168,7 +185,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center bg-[url(bg_grid_orange_30x30.png)]"
+      className="relative flex min-h-screen items-center justify-center bg-[url(hero/bg_grid_orange_30x30.png)]"
     >
       <RadarScanner />
       <Gradients />

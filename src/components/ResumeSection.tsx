@@ -9,7 +9,7 @@ export default function ResumeSection() {
       startDate: "10.2023",
       endDate: "Present",
       company: "Freelance",
-      logo: "ev_old_logo.png",
+      logo: "resume/ev_old_logo.png",
       jobTitle: "Full Stack Web Developer",
       location: "San Francisco Bay Area, CA",
       details:
@@ -20,7 +20,7 @@ export default function ResumeSection() {
       type: "experience",
       startDate: "09.2020",
       endDate: "01.2024",
-      logo: "tesla_logo.svg",
+      logo: "resume/tesla_logo.svg",
       company: "Tesla Motors Inc.",
       jobTitle: "Automation Controls Technician",
       location: "Fremont, CA",
@@ -32,7 +32,7 @@ export default function ResumeSection() {
       type: "experience",
       startDate: "10.2019",
       endDate: "09.2020",
-      logo: "tesla_logo.svg",
+      logo: "resume/tesla_logo.svg",
       company: "Tesla Motors Inc.",
       jobTitle: "Equipment Maintenance Technician",
       location: "Fremont, CA",
@@ -44,7 +44,7 @@ export default function ResumeSection() {
       type: "experience",
       startDate: "12.2010",
       endDate: "10.2018",
-      logo: "usn_logo.svg",
+      logo: "resume/usn_logo.svg",
       company: "United States Navy",
       jobTitle: "Electronics Technician",
       location: "Japan & San Diego, CA",
@@ -56,7 +56,7 @@ export default function ResumeSection() {
       type: "experience",
       startDate: "05.2005",
       endDate: "12.2010",
-      logo: "ev_old_logo.png",
+      logo: "resume/ev_old_logo.png",
       company: "Freelance",
       jobTitle: "Front-End Web Developer",
       location: "Atlanta Metro Area, GA",
@@ -71,7 +71,7 @@ export default function ResumeSection() {
       type: "education",
       startDate: "04.2023",
       endDate: "10.2023",
-      logo: "ucb_logo.svg",
+      logo: "resume/ucb_logo.svg",
       institution: "UC Berkeley Extension",
       program: "Full Stack Web Development Course",
       location: "Online",
@@ -83,7 +83,7 @@ export default function ResumeSection() {
       type: "education",
       startDate: "12.2022",
       endDate: "12.2022",
-      logo: "eandm_logo.png",
+      logo: "resume/eandm_logo.png",
       institution: "E and M Training Course",
       program: "Siemens TIA Portal Software Development Course",
       location: "Fremont, CA",
@@ -95,7 +95,7 @@ export default function ResumeSection() {
       type: "education",
       startDate: "12.2010",
       endDate: "04.2016",
-      logo: "usn_logo.svg",
+      logo: "resume/usn_et_logo.svg",
       institution: "US Navy Training Schools",
       program: "Electronics Technology Schools",
       location: "Various Locations, USA",
@@ -107,7 +107,7 @@ export default function ResumeSection() {
       type: "education",
       startDate: "08.2001",
       endDate: "05.2005",
-      logo: "nhs_logo.png",
+      logo: "resume/nhs_logo.png",
       institution: "Norcross High School",
       program: "High School Diploma",
       location: "Norcross, GA",
@@ -140,7 +140,7 @@ export default function ResumeSection() {
     return (
       <div className="flex h-full gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-800 to-stone-950 p-4">
         <div className="flex-shrink-0 pt-1">
-          <img src={logo} alt={jobTitle || program} className="h-max w-auto" />
+          <img src={logo} alt={jobTitle || program} className="h-auto w-8" />
         </div>
         <div>
           <div>
