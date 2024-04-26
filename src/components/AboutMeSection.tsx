@@ -3,9 +3,9 @@ import {
   introData,
   profilePicData,
   hobbiesData,
-  socialLinksData,
   devGoalsData,
 } from "../data/aboutMeData";
+import { socialLinksData } from "../data/commonData";
 import { twMerge } from "tailwind-merge";
 
 export default function AboutMeSection() {
@@ -17,9 +17,11 @@ export default function AboutMeSection() {
         {/* <h3 className="mb-4 text-lg font-bold uppercase text-stone-200">
           {introHeader}
         </h3> */}
-        <p className="text-stone-300 text-2xl font-bold text-pretty">{introP1}</p>
-        <p className="text-stone-300 font-light">{introP2}</p>
-        <p className="text-stone-300 font-light">{introP3}</p>
+        <p className="text-pretty text-2xl font-bold text-stone-300">
+          {introP1}
+        </p>
+        <p className="font-light text-stone-300">{introP2}</p>
+        <p className="font-light text-stone-300">{introP3}</p>
         <button
           onClick={() =>
             window.scrollTo({
@@ -27,7 +29,7 @@ export default function AboutMeSection() {
               behavior: "smooth",
             })
           }
-          className="text-orange-500 border border-orange-800 w-max mx-auto rounded-lg px-4 py-2 mb-8"
+          className="mx-auto mb-8 w-max rounded-lg border border-orange-800 px-4 py-2 text-orange-500"
         >
           {cta}
         </button>
@@ -110,7 +112,6 @@ export default function AboutMeSection() {
 
   // TODO: Social Link logos are temporary, need to change them to svg
   const SocialLinkList = () => {
-    const { socialLinksList } = socialLinksData;
     // Order = linkedin, github, dev.to, youtube
     const bgGradientColors = [
       "from-[#0077b5]",
@@ -121,7 +122,7 @@ export default function AboutMeSection() {
 
     return (
       <ul className="grid grid-cols-2 grid-rows-2 gap-4 md:col-span-3">
-        {socialLinksList.map(({ href, logo, label }, index) => (
+        {socialLinksData.map(({ href, logo, label }, index) => (
           <SocialLinkItem
             key={index}
             href={href}

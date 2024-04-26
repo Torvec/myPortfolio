@@ -1,3 +1,5 @@
+import { socialLinksData } from "../../data/commonData";
+
 export default function Footer() {
   const Copyright = () => {
     const getCurrentYear = () => {
@@ -11,50 +13,27 @@ export default function Footer() {
     );
   };
 
+  const SocialLink = ({
+    href,
+    logo,
+    label,
+  }: {
+    href: string;
+    logo: string;
+    label: string;
+  }) => {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <img src={logo} alt={label} className="h-6 w-auto" />
+      </a>
+    );
+  };
+
   const SocialLinkList = () => {
-    const socialLinks = [
-      {
-        href: "https://www.linkedin.com/in/edward-von/",
-        logo: "about/linkedin_logo.png",
-        label: "LinkedIn",
-      },
-      {
-        href: "https://github.com/Torvec",
-        logo: "about/github_logo.png",
-        label: "GitHub",
-      },
-      {
-        href: "https://dev.to/torvec",
-        logo: "about/devto_logo.png",
-        label: "Dev.to",
-      },
-      {
-        href: "https://www.youtube.com/channel/UCdhU_w39u0BIgNfsRXs8taQ",
-        logo: "about/youtube_logo.png",
-        label: "YouTube",
-      },
-    ];
-
-    const SocialLink = ({
-      href,
-      logo,
-      label,
-    }: {
-      href: string;
-      logo: string;
-      label: string;
-    }) => {
-      return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          <img src={logo} alt={label} className="h-6 w-auto" />
-        </a>
-      );
-    };
-
     return (
       <>
         <div className="flex gap-4">
-          {socialLinks.map(({ href, logo, label }, index) => (
+          {socialLinksData.map(({ href, logo, label }, index) => (
             <SocialLink key={index} href={href} logo={logo} label={label} />
           ))}
         </div>
