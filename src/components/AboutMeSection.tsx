@@ -3,28 +3,35 @@ import {
   introData,
   profilePicData,
   hobbiesData,
-  availabilityData,
   socialLinksData,
   devGoalsData,
 } from "../data/aboutMeData";
+import { twMerge } from "tailwind-merge";
 
 export default function AboutMeSection() {
-  const AboutMeSubHeader = ({ headingText }: { headingText: string }) => {
-    return (
-      <h3 className="mb-4 text-lg font-bold uppercase text-stone-200">
-        {headingText}
-      </h3>
-    );
-  };
-
   const Intro = () => {
-    const { introHeader, introP1, introP2 } = introData;
+    const { introP1, introP2, introP3, cta } = introData;
 
     return (
-      <div className="rounded-lg border border-white/10 bg-gradient-to-tl from-stone-800 p-8 md:w-4/12">
-        <AboutMeSubHeader headingText={introHeader} />
-        <p className="mb-4 text-stone-300">{introP1}</p>
-        <p className="text-stone-300">{introP2}</p>
+      <div className="flex flex-col justify-center gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-800 p-8 md:col-span-9 md:row-span-2">
+        {/* <h3 className="mb-4 text-lg font-bold uppercase text-stone-200">
+          {introHeader}
+        </h3> */}
+        <p className="text-stone-300 text-2xl font-bold text-pretty">{introP1}</p>
+        <p className="text-stone-300 font-light">{introP2}</p>
+        <p className="text-stone-300 font-light">{introP3}</p>
+        <button
+          onClick={() =>
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            })
+          }
+          className="text-orange-500 border border-orange-800 w-max mx-auto rounded-lg px-4 py-2 mb-8"
+        >
+          {cta}
+        </button>
+        <HobbiesList />
       </div>
     );
   };
@@ -33,7 +40,7 @@ export default function AboutMeSection() {
     const { src, alt } = profilePicData;
 
     return (
-      <div className="rounded-lg border border-white/10 bg-stone-800 p-2 md:w-4/12">
+      <div className="rounded-lg border border-white/10 bg-stone-800 p-2 md:col-span-3">
         <img
           src={src}
           alt={alt}
@@ -45,7 +52,7 @@ export default function AboutMeSection() {
 
   const HobbyItem = ({ hobby, icon }: { hobby: string; icon: string }) => {
     return (
-      <li className="flex items-center gap-2 rounded-lg border border-white/10 bg-gradient-to-bl from-stone-800 to-stone-950 px-2 py-1.5 text-sm font-light uppercase">
+      <li className="flex items-center gap-2 rounded-lg border border-white/10 bg-gradient-to-bl from-stone-800 to-stone-950 px-2 py-1.5 text-xs uppercase">
         <span>{icon}</span>
         <span>{hobby}</span>
       </li>
@@ -57,38 +64,11 @@ export default function AboutMeSection() {
     const { hobbyHeader, hobbyList } = hobbiesData;
 
     return (
-      <div className="rounded-lg border border-white/10 bg-gradient-to-bl from-stone-800 p-8 md:w-4/12">
-        <AboutMeSubHeader headingText={hobbyHeader} />
-        <ul className="flex flex-wrap gap-4 pt-4 text-stone-400">
+      <div>
+        <h4 className="font-bold text-stone-300">{hobbyHeader}</h4>
+        <ul className="flex flex-wrap gap-x-4 gap-y-2 pt-4 text-stone-400">
           {hobbyList.map(({ hobby, icon }, index) => (
             <HobbyItem key={index} hobby={hobby} icon={icon} />
-          ))}
-        </ul>
-      </div>
-    );
-  };
-
-  const AvailabilityItem = ({ type, icon }: { type: string; icon: string }) => {
-    return (
-      <li className="flex items-center justify-between rounded-lg border border-white/10 bg-gradient-to-tr from-stone-800 to-stone-950 p-2 text-stone-400">
-        <div className="flex items-center gap-2">
-          <span>{icon}</span>
-          <span className="text-sm font-light uppercase">{type}</span>
-        </div>
-        <span>✅</span>
-      </li>
-    );
-  };
-
-  const AvailabilityList = () => {
-    const { availabilityHeader, availabilityList } = availabilityData;
-
-    return (
-      <div className="rounded-lg border border-white/10 bg-gradient-to-tr from-stone-800 p-8 md:w-4/12">
-        <AboutMeSubHeader headingText={availabilityHeader} />
-        <ul className="flex flex-col gap-8">
-          {availabilityList.map(({ type, icon }, index) => (
-            <AvailabilityItem key={index} type={type} icon={icon} />
           ))}
         </ul>
       </div>
@@ -99,23 +79,30 @@ export default function AboutMeSection() {
     href,
     logo,
     label,
+    className,
   }: {
     href: string;
     logo: string;
     label: string;
+    className?: string;
   }) => {
     return (
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`group w-1/2 border-white/25`}
+        className={twMerge(
+          "aspect-square rounded-lg border border-white/25 bg-white/10 p-2",
+          className,
+        )}
       >
-        <li className="flex flex-col items-center justify-center gap-2 py-8">
-          <img src={logo} alt={label} className="h-8" />
-          <span className="text-orange-500 transition-all duration-300 ease-in-out hover:text-orange-600">
-            {label}
-          </span>
+        <li
+          className={twMerge(
+            "grid h-full w-full place-content-center rounded-lg border border-white/15 bg-gradient-to-tr to-black",
+            className,
+          )}
+        >
+          <img src={logo} alt={label} className="h-10" />
         </li>
       </a>
     );
@@ -123,17 +110,27 @@ export default function AboutMeSection() {
 
   // TODO: Social Link logos are temporary, need to change them to svg
   const SocialLinkList = () => {
-    const { socialLinksHeader, socialLinksList } = socialLinksData;
+    const { socialLinksList } = socialLinksData;
+    // Order = linkedin, github, dev.to, youtube
+    const bgGradientColors = [
+      "from-[#0077b5]",
+      "from-[#2dba4e]",
+      "from-white/20",
+      "from-[#FF0000]",
+    ];
 
     return (
-      <div className="rounded-lg border border-white/10 bg-gradient-to-br from-stone-800 p-8 md:w-4/12">
-        <AboutMeSubHeader headingText={socialLinksHeader} />
-        <ul className="flex flex-wrap">
-          {socialLinksList.map(({ href, logo, label }, index) => (
-            <SocialLinkItem key={index} href={href} logo={logo} label={label} />
-          ))}
-        </ul>
-      </div>
+      <ul className="grid grid-cols-2 grid-rows-2 gap-4 md:col-span-3">
+        {socialLinksList.map(({ href, logo, label }, index) => (
+          <SocialLinkItem
+            key={index}
+            href={href}
+            logo={logo}
+            label={label}
+            className={bgGradientColors[index % bgGradientColors.length]} // index Cycle through colors
+          />
+        ))}
+      </ul>
     );
   };
 
@@ -176,13 +173,9 @@ export default function AboutMeSection() {
   return (
     <section id="about" className="container mx-auto">
       <SectionHeader title="A Brief Introduction" />
-      <div className="mb-8 flex flex-col gap-8 px-4 md:flex-row md:px-0">
+      <div className="grid gap-8 px-4 md:grid-cols-12 md:grid-rows-2 md:px-0">
         <Intro />
         <ProfilePic />
-        <AvailabilityList />
-      </div>
-      <div className="flex flex-col justify-center gap-8 px-4 md:flex-row md:px-0">
-        <HobbiesList />
         <SocialLinkList />
       </div>
       <GoalList />

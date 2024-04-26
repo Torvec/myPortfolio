@@ -17,7 +17,10 @@ export default function Navigation() {
     const element = document.getElementById(sectId);
     if (element) {
       const rect = element.getBoundingClientRect();
-      window.scrollTo({ top: rect.top + window.scrollY - 100 });
+      window.scrollTo({
+        top: rect.top + window.scrollY - 100,
+        behavior: "smooth",
+      });
     }
   };
 
