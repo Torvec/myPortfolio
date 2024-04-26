@@ -14,9 +14,6 @@ export default function AboutMeSection() {
 
     return (
       <div className="flex flex-col justify-center gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-800 p-8 md:col-span-9 md:row-span-2">
-        {/* <h3 className="mb-4 text-lg font-bold uppercase text-stone-200">
-          {introHeader}
-        </h3> */}
         <p className="text-pretty text-2xl font-bold text-stone-300">
           {introP1}
         </p>
@@ -29,7 +26,7 @@ export default function AboutMeSection() {
               behavior: "smooth",
             })
           }
-          className="mx-auto mb-8 w-max rounded-lg border border-orange-800 px-4 py-2 text-orange-500"
+          className="mb-8 w-max text-orange-500"
         >
           {cta}
         </button>

@@ -48,12 +48,14 @@ export default function HeroSection() {
     return (
       <>
         <div className="absolute inset-0 z-10 h-screen w-full">
-          <img
-            src={"hero/radar_screen.png"}
-            alt=""
-            className="absolute left-1/2 top-0 min-w-[1348px] -translate-x-1/2 object-cover"
-          />
-          <div className="absolute left-1/2 top-[50px] -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-1/2 -translate-x-1/2 -translate-y-[432px] rounded-full shadow-[0_35px_60px_-15px_rgba(0,0,0,1)]">
+            <img
+              src={"hero/radar_screen.svg"}
+              alt=""
+              className="min-h-[1000px] min-w-[1000px] object-cover"
+            />
+          </div>
+          <div className="absolute left-1/2 -translate-x-1/2 -translate-y-[432px]">
             <motion.div
               initial={{ rotate: 0 }}
               animate={{ rotate: -360 }}
@@ -62,7 +64,7 @@ export default function HeroSection() {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="size-[1200px] rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,_rgba(249,115,22,1)_0%,_rgba(249,115,22,0)_13%)] opacity-50"
+              className="size-[1000px] rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,_rgba(249,115,22,1)_0%,_rgba(249,115,22,0)_13%)] opacity-50"
             />
           </div>
         </div>
@@ -162,7 +164,7 @@ export default function HeroSection() {
 
   const HeroText = () => {
     return (
-      <div className="z-40 translate-y-28 text-center md:space-y-4">
+      <div className="z-40 translate-y-16 text-center md:space-y-4">
         <HeroHeader />
         <Tagline />
       </div>
