@@ -147,7 +147,7 @@ export default function ContactMeSection() {
 
   return (
     <section id="contact" className="container mx-auto min-h-screen px-4 md:px-0">
-      <SectionHeader title="Let's Connect and Collaborate!" />
+      <SectionHeader section="Contact" title="Let's Connect and Collaborate!" />
       <div className="flex flex-col gap-32 md:flex-row">
         <ContactForm />
         <div className="flex md:w-1/3 flex-col gap-8">

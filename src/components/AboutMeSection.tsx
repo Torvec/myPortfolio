@@ -168,7 +168,7 @@ export default function AboutMeSection() {
 
   return (
     <section id="about" className="container mx-auto min-h-screen">
-      <SectionHeader title="A Brief Introduction" />
+      <SectionHeader section="About" title="A Brief Introduction" />
       <div className="grid gap-8 px-4 md:grid-cols-12 md:grid-rows-2 md:px-0">
         <Intro />
         <SocialLinkList />

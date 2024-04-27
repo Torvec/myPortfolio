@@ -122,7 +122,7 @@ export default function ResumeSection() {
 
   return (
     <section id="resume">
-      <SectionHeader title="My Professional and Academic Journey" />
+      <SectionHeader section="Resume" title="My Professional and Academic Journey" />
       <div className="container mx-auto flex flex-col gap-16 px-4 pb-64 md:flex-row md:px-0">
         <ResumeList list={experience} />
         <ResumeList list={education} type="education" />

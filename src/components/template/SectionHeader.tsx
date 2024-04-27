@@ -1,7 +1,18 @@
-export default function SectionHeader({ title }: { title: string }) {
+export default function SectionHeader({
+  section,
+  title,
+}: {
+  section: string;
+  title: string;
+}) {
   return (
-    <h2 className="mx-auto text-balance px-8 pb-16 pt-64 text-center text-4xl font-medium text-stone-200 md:w-1/2 md:px-0 md:text-6xl">
-      {title}
-    </h2>
+    <div className="mb-16 mt-64 flex flex-col items-center justify-center gap-2">
+      <span className="rounded-full border border-orange-500/50 px-4 py-1 text-xs uppercase text-orange-600">
+        {section}
+      </span>
+      <h2 className="mx-auto  text-balance bg-gradient-to-b from-stone-100 to-stone-500 bg-clip-text p-1 text-center text-5xl font-bold text-transparent md:w-1/2 md:text-6xl">
+        {title}
+      </h2>
+    </div>
   );
 }

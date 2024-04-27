@@ -184,7 +184,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects">
-      <SectionHeader title="Featured Full-Stack Projects" />
+      <SectionHeader section="Projects" title="Featured Full-Stack Projects" />
       <ProjectCardList />
       <MoreProjects />
     </section>
