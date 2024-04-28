@@ -1,8 +1,99 @@
 import SectionHeader from "./template/SectionHeader";
 import ActionButton from "./template/ActionButton";
-import { projectsData } from "../data/projectsData";
+import { projectsData, moreProjects } from "../data/projectsData";
 
 export default function ProjectsSection() {
+  const TechStackItem = ({ item }: { item: string }) => {
+    return (
+      <li className="rounded-lg border border-white/10 bg-gradient-to-b from-stone-800 px-4 py-1 text-xs font-light uppercase text-stone-400">
+        {item}
+      </li>
+    );
+  };
+
+  const TechStackList = ({ list }: { list: string[] }) => {
+    return (
+      <ul className="flex flex-wrap gap-2">
+        {list.map((list, index) => (
+          <TechStackItem key={index} item={list} />
+        ))}
+      </ul>
+    );
+  };
+
+  const ViewButton = ({ text, href }: { text: string; href: string }) => {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <button className="rounded-lg border border-white/50 px-4 py-2">
+          {text}
+        </button>
+      </a>
+    );
+  };
+
+  const InfoContainer = ({
+    projectName,
+    description,
+    techStack,
+    repositoryURL,
+    deploymentURL,
+  }: {
+    projectName: string;
+    description: string;
+    techStack: string[];
+    repositoryURL: string;
+    deploymentURL: string;
+  }) => {
+    return (
+      <div className="flex flex-col justify-center gap-8 p-4 md:w-1/3 md:gap-16 md:p-0">
+        <div>
+          <h3 className="mb-4 text-2xl font-bold text-stone-300 md:text-4xl">
+            {projectName}
+          </h3>
+          <div>
+            <p className="mb-4 text-base text-stone-300">{description}</p>
+            <TechStackList list={techStack} />
+          </div>
+        </div>
+        <div className="flex justify-between text-sm text-stone-300">
+          <ViewButton text="View Repository" href={repositoryURL} />
+          <ViewButton text="View Deployment" href={deploymentURL} />
+        </div>
+      </div>
+    );
+  };
+
+  const ImageContainer = ({
+    translateImg,
+    deploymentURL,
+    imgURL,
+    projectName,
+  }: {
+    translateImg: string;
+    deploymentURL: string;
+    imgURL: string;
+    projectName: string;
+  }) => {
+    return (
+      <div
+        className={`md:w-2/3 ${translateImg} overflow-hidden rounded-lg border border-white/10 bg-stone-800  md:px-0`}
+      >
+        <div className="flex gap-2 p-3 border-b border-white/10">
+          <div className="size-3 rounded-full bg-stone-700" />
+          <div className="size-3 rounded-full bg-stone-700" />
+          <div className="size-3 rounded-full bg-stone-700" />
+        </div>
+        <a href={deploymentURL} target="_blank" rel="noopener noreferrer">
+          <img
+            src={imgURL}
+            alt={projectName}
+            className="h-[30vh] w-full object-cover object-top md:h-[50vh]"
+          />
+        </a>
+      </div>
+    );
+  };
+
   const ProjectCard = ({
     colOrderStyles,
     translateImg,
@@ -22,87 +113,6 @@ export default function ProjectsSection() {
     description: string;
     techStack: string[];
   }) => {
-    const TechStackList = ({ list }: { list: string[] }) => {
-      return (
-        <ul className="flex flex-wrap gap-2">
-          {list.map((item, index) => (
-            <li
-              key={index}
-              className="rounded-lg border border-white/10 bg-gradient-to-b from-stone-800 px-4 py-1 text-xs font-light uppercase text-stone-400"
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-      );
-    };
-
-    const ViewButton = ({ text, href }: { text: string; href: string }) => {
-      return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          <button className="rounded-lg border border-white/50 px-4 py-2">
-            {text}
-          </button>
-        </a>
-      );
-    };
-
-    const InfoContainer = ({
-      projectName,
-      description,
-      techStack,
-      repositoryURL,
-      deploymentURL,
-    }: {
-      projectName: string;
-      repositoryURL: string;
-      deploymentURL: string;
-      description: string;
-      techStack: string[];
-    }) => {
-      return (
-        <div className="flex flex-col justify-center gap-8 p-4 md:w-1/3 md:gap-16 md:p-0">
-          <div>
-            <h3 className="mb-4 text-2xl font-bold text-stone-300 md:text-4xl">
-              {projectName}
-            </h3>
-            <div>
-              <p className="mb-4 text-base text-stone-300">{description}</p>
-              <TechStackList list={techStack} />
-            </div>
-          </div>
-          <div className="flex justify-between text-sm text-stone-300">
-            <ViewButton text="View Repository" href={repositoryURL} />
-            <ViewButton text="View Deployment" href={deploymentURL} />
-          </div>
-        </div>
-      );
-    };
-
-    const ImageContainer = ({
-      translateImg,
-      deploymentURL,
-      imgURL,
-      projectName,
-    }: {
-      translateImg: string;
-      deploymentURL: string;
-      imgURL: string;
-      projectName: string;
-    }) => {
-      return (
-        <div className={`md:w-2/3 ${translateImg} md:px-0`}>
-          <a href={deploymentURL} target="_blank" rel="noopener noreferrer">
-            <img
-              src={imgURL}
-              alt={projectName}
-              className="h-[30vh] w-full rounded-lg border-white/30 object-cover object-top md:h-[50vh] md:border"
-            />
-          </a>
-        </div>
-      );
-    };
-
     return (
       <div>
         <div
@@ -163,14 +173,7 @@ export default function ProjectsSection() {
   };
 
   const MoreProjects = () => {
-    const buttonData = {
-      header:
-        "Explore my other projects, both in-development and experimental, on my GItHub.",
-      text: "Let's Go!",
-      href: "https://github.com/Torvec?tab=repositories",
-    };
-
-    const { header, text, href } = buttonData;
+    const { header, text, href } = moreProjects;
 
     return (
       <div className="mx-auto flex flex-col items-center justify-center border-y border-white/25 bg-gradient-to-t from-stone-900 to-10% py-64">
@@ -184,7 +187,10 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects">
-      <SectionHeader section="Projects" title="Featured Full-Stack Projects" />
+      <SectionHeader
+        section="Projects"
+        title="Some Interesting Things I've Made"
+      />
       <ProjectCardList />
       <MoreProjects />
     </section>

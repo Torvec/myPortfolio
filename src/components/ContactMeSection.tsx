@@ -132,7 +132,6 @@ export default function ContactMeSection() {
     const { availabilityHeader, availabilityList } = availabilityData;
     return (
       <div className="rounded-lg border border-white/10 bg-stone-900 p-8">
-        {/* <AboutMeSubHeader headingText={availabilityHeader} /> */}
         <h3 className="mb-4 text-center text-sm font-bold uppercase text-stone-300">
           {availabilityHeader}
         </h3>
@@ -146,7 +145,7 @@ export default function ContactMeSection() {
   };
 
   return (
-    <section id="contact" className="container mx-auto min-h-screen px-4 md:px-0">
+    <section id="contact" className="flex flex-col justify-center container mx-auto min-h-screen px-4 md:px-0">
       <SectionHeader section="Contact" title="Let's Connect and Collaborate!" />
       <div className="flex flex-col gap-32 md:flex-row">
         <ContactForm />

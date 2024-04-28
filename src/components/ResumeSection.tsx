@@ -44,7 +44,7 @@ export default function ResumeSection() {
               <h4 className="text-sm font-light uppercase text-stone-400">
                 {company || institution}
               </h4>
-              <h5 className="text-sm font-light uppercase text-stone-400">
+              <h5 className="text-sm font-light text-stone-400">
                 {location}
               </h5>
             </div>

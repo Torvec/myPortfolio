@@ -6,7 +6,7 @@ export default function SectionHeader({
   title: string;
 }) {
   return (
-    <div className="mb-16 mt-64 flex flex-col items-center justify-center gap-2">
+    <div className="mb-32 mt-64 flex flex-col items-center justify-center gap-2">
       <span className="rounded-full border border-orange-500/50 px-4 py-1 text-xs uppercase text-orange-600">
         {section}
       </span>

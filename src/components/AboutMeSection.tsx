@@ -1,7 +1,6 @@
 import SectionHeader from "./template/SectionHeader";
 import {
   introData,
-  profilePicData,
   hobbiesData,
 } from "../data/aboutMeData";
 import { socialLinksData } from "../data/commonData";
@@ -9,11 +8,17 @@ import { twMerge } from "tailwind-merge";
 
 export default function AboutMeSection() {
   const Intro = () => {
-    const { introP1, introP2, introP3, cta } = introData;
+    const { picSrc, picAlt, introP1, introP2, introP3, cta } = introData;
 
     return (
       <div className="flex flex-col justify-center gap-4 rounded-lg border border-white/10 bg-gradient-to-tl from-stone-800 p-8 md:col-span-9 md:row-span-2">
-        <ProfilePic />
+        <div className="mx-auto w-max rounded-full border border-white/10 bg-stone-800 p-2 md:mx-0">
+          <img
+            src={picSrc}
+            alt={picAlt}
+            className="size-48 rounded-full border border-white/15 object-cover"
+          />
+        </div>
         <p className="text-pretty text-xl font-bold text-stone-300">
           {introP1}
         </p>
@@ -30,20 +35,6 @@ export default function AboutMeSection() {
         >
           {cta}
         </button>
-      </div>
-    );
-  };
-
-  const ProfilePic = () => {
-    const { src, alt } = profilePicData;
-
-    return (
-      <div className="rounded-full border border-white/10 bg-stone-800 p-2 w-max mx-auto md:mx-0">
-        <img
-          src={src}
-          alt={alt}
-          className="size-48 rounded-full border border-white/15 object-cover"
-        />
       </div>
     );
   };
@@ -167,7 +158,7 @@ export default function AboutMeSection() {
   // };
 
   return (
-    <section id="about" className="container mx-auto min-h-screen">
+    <section id="about" className="flex flex-col justify-center container mx-auto min-h-screen">
       <SectionHeader section="About" title="A Brief Introduction" />
       <div className="grid gap-8 px-4 md:grid-cols-12 md:grid-rows-2 md:px-0">
         <Intro />
