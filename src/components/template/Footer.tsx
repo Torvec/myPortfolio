@@ -1,4 +1,4 @@
-import { socialLinksData } from "../../data/commonData";
+import { SocialLinkList } from "../Common";
 
 export default function Footer() {
   const Copyright = () => {
@@ -10,34 +10,6 @@ export default function Footer() {
         <p>&copy; {getCurrentYear()} Edward Vonschondorf</p>
         <p>Designed and Developed by Edward Vonschondorf</p>
       </div>
-    );
-  };
-
-  const SocialLink = ({
-    href,
-    logo,
-    label,
-  }: {
-    href: string;
-    logo: string;
-    label: string;
-  }) => {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        <img src={logo} alt={label} className="h-6 w-auto" />
-      </a>
-    );
-  };
-
-  const SocialLinkList = () => {
-    return (
-      <>
-        <div className="flex gap-4">
-          {socialLinksData.map(({ href, logo, label }, index) => (
-            <SocialLink key={index} href={href} logo={logo} label={label} />
-          ))}
-        </div>
-      </>
     );
   };
 
