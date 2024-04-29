@@ -27,10 +27,14 @@ export default function ResumeSection() {
     details: string;
   }) => {
     return (
-      <div className="rounded-lg border border-white/10 bg-gradient-to-tl from-stone-800 to-stone-950 px-4 py-8">
-        <div className="flex items-center gap-4">
-          <div className="grid size-20 flex-shrink-0 place-content-center overflow-hidden rounded-full bg-gradient-to-tl from-stone-800">
-            <img src={logo} alt={jobTitle || program} className="size-10 opacity-90" />
+      <div className="rounded-lg bg-gradient-to-tl from-stone-800 to-stone-950 to-60% px-4 py-8">
+        <div className="flex items-center gap-6">
+          <div className="grid size-20 flex-shrink-0 place-content-center rounded-full border border-stone-700/50 bg-gradient-to-tl from-stone-800 to-50%">
+            <img
+              src={logo}
+              alt={jobTitle || program}
+              className="size-10 opacity-90"
+            />
           </div>
           <div className="w-full">
             <div className="flex gap-2 text-sm font-medium uppercase text-stone-400">
@@ -42,16 +46,14 @@ export default function ResumeSection() {
               {jobTitle || program}
             </h3>
             <div className="flex flex-col md:flex-row md:justify-between">
-              <h4 className="text-sm font-light uppercase text-stone-400">
+              <h4 className="text-sm font-light text-stone-400">
                 {company || institution}
               </h4>
-              <h5 className="text-sm font-light text-stone-400">
-                {location}
-              </h5>
+              <h5 className="text-sm font-light text-stone-400">{location}</h5>
             </div>
           </div>
         </div>
-        <p className="text-pretty text-sm font-light leading-relaxed text-stone-400 pt-4 px-8">
+        <p className="text-pretty px-8 pt-4 text-sm font-light leading-relaxed text-stone-400">
           {details}
         </p>
       </div>
@@ -84,7 +86,7 @@ export default function ResumeSection() {
           }: ResumeItemType) => (
             <div
               key={id}
-              className="rounded-lg border border-white/10 bg-stone-900/75 p-2"
+              className="rounded-lg bg-gradient-to-tl from-stone-800 to-stone-950 to-80% p-2"
             >
               <ResumeItem
                 startDate={startDate}
@@ -105,7 +107,6 @@ export default function ResumeSection() {
   };
 
   const Download = () => {
-
     const { headerText, docText, pdfText, docHref, pdfHref } = download;
 
     return (
@@ -121,7 +122,10 @@ export default function ResumeSection() {
 
   return (
     <section id="resume">
-      <SectionHeader section="Resume" title="My Professional and Academic Journey" />
+      <SectionHeader
+        section="Resume"
+        title="My Professional and Academic Journey"
+      />
       <div className="container mx-auto flex flex-col gap-16 px-4 pb-64 md:flex-row md:px-0">
         <ResumeList list={experience} />
         <ResumeList list={education} type="education" />
