@@ -170,38 +170,24 @@ export default function HeroSection() {
   // };
 
   const HeroHeader = () => {
-    const { intro, firstName, lastName } = heroData;
+    const { intro, firstName, lastName, tagline } = heroData;
 
-    return (
-      <h1 className="p-4 font-black md:p-0">
-        <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-5xl text-transparent md:text-8xl">
-          {intro}
-        </span>
-        <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-5xl uppercase text-transparent md:text-8xl">
-          {firstName}
-        </span>
-        <span className="block bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-5xl uppercase text-transparent md:text-8xl">
-          {lastName}
-        </span>
-      </h1>
-    );
-  };
-
-  const Tagline = () => {
-    const { tagline } = heroData;
-
-    return (
-      <h2 className="mx-auto max-w-[45ch] text-stone-300 md:text-2xl">
-        {tagline}
-      </h2>
-    );
-  };
-
-  const HeroText = () => {
     return (
       <div className="z-40 text-center md:space-y-4">
-        <HeroHeader />
-        <Tagline />
+        <h1 className="p-4 font-black md:p-0">
+          <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-5xl text-transparent md:text-8xl">
+            {intro}
+          </span>
+          <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-5xl uppercase text-transparent md:text-8xl">
+            {firstName}
+          </span>
+          <span className="block bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-5xl uppercase text-transparent md:text-8xl">
+            {lastName}
+          </span>
+        </h1>
+        <h2 className="mx-auto max-w-[45ch] text-stone-300 md:text-2xl">
+          {tagline}
+        </h2>
       </div>
     );
   };
@@ -228,7 +214,7 @@ export default function HeroSection() {
       className="relative flex min-h-screen items-center justify-center bg-[url(hero/bg_grid_orange_30x30.png)]"
     >
       <Gradients />
-      <HeroText />
+      <HeroHeader />
     </section>
   );
 }

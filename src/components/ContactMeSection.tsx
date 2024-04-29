@@ -104,7 +104,7 @@ export default function ContactMeSection() {
         "mailto:me@edward-vonschondorf.dev?subject=Let's Connect and Collaborate!",
     };
     return (
-      <div className="">
+      <div>
         <p className="mb-2 text-stone-400">{content.text}</p>
         <a
           href={content.mailto}
@@ -118,12 +118,14 @@ export default function ContactMeSection() {
 
   const AvailabilityItem = ({ type, icon }: { type: string; icon: string }) => {
     return (
-      <li className="flex items-center justify-between rounded-lg border border-white/10 bg-gradient-to-tr from-stone-800 to-stone-950 p-2 text-stone-400">
-        <div className="flex items-center gap-2">
-          <span>{icon}</span>
-          <span className="text-sm font-light uppercase">{type}</span>
+      <li className="rounded-lg bg-gradient-to-b from-stone-900 p-2 border-t border-white/25 text-stone-400">
+        <div className="flex items-center justify-between rounded-lg bg-gradient-to-b from-stone-800 to-30% p-2">
+          <div className="flex items-center gap-2">
+            <span>{icon}</span>
+            <span className="text-sm font-light">{type}</span>
+          </div>
+          <span>✅</span>
         </div>
-        <span>✅</span>
       </li>
     );
   };
@@ -131,11 +133,11 @@ export default function ContactMeSection() {
   const AvailabilityList = () => {
     const { availabilityHeader, availabilityList } = availabilityData;
     return (
-      <div className="rounded-lg border border-white/10 bg-stone-900 p-8">
-        <h3 className="mb-4 text-center text-sm font-bold uppercase text-stone-300">
+      <div>
+        <h3 className="mb-4 text-sm font-bold uppercase text-stone-300">
           {availabilityHeader}
         </h3>
-        <ul className="flex flex-col gap-8">
+        <ul className="flex flex-col gap-6">
           {availabilityList.map(({ type, icon }, index) => (
             <AvailabilityItem key={index} type={type} icon={icon} />
           ))}
@@ -145,11 +147,11 @@ export default function ContactMeSection() {
   };
 
   return (
-    <section id="contact" className="flex flex-col justify-center container mx-auto min-h-screen px-4 md:px-0">
+    <section id="contact" className="flex flex-col justify-center container mx-auto min-h-screen px-4 md:px-0 pb-16">
       <SectionHeader section="Contact" title="Let's Connect and Collaborate!" />
       <div className="flex flex-col gap-32 md:flex-row">
         <ContactForm />
-        <div className="flex md:w-1/3 flex-col gap-8">
+        <div className="flex md:w-1/3 flex-col gap-16">
           <DirectContact />
           <AvailabilityList />
         </div>

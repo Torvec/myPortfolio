@@ -1,5 +1,6 @@
 import SectionHeader from "./template/SectionHeader";
 import ActionButton from "./template/ActionButton";
+import ActionHeader from "./template/ActionHeader";
 import { projectsData, moreProjects } from "../data/projectsData";
 
 export default function ProjectsSection() {
@@ -65,31 +66,31 @@ export default function ProjectsSection() {
 
   const ImageContainer = ({
     translateImg,
-    deploymentURL,
     imgURL,
     projectName,
   }: {
     translateImg: string;
-    deploymentURL: string;
     imgURL: string;
     projectName: string;
   }) => {
     return (
       <div
-        className={`md:w-2/3 ${translateImg} overflow-hidden rounded-lg border border-white/10 bg-stone-800  md:px-0`}
+        className={`md:w-2/3 ${translateImg} overflow-hidden rounded-lg border border-white/10 bg-stone-800 shadow-2xl`}
       >
-        <div className="flex gap-2 p-3 border-b border-white/10">
+        <header className="flex gap-2 border-b border-white/50 p-4">
           <div className="size-3 rounded-full bg-stone-700" />
           <div className="size-3 rounded-full bg-stone-700" />
           <div className="size-3 rounded-full bg-stone-700" />
-        </div>
-        <a href={deploymentURL} target="_blank" rel="noopener noreferrer">
+        </header>
+        <main className="relative">
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50" /> */}
           <img
             src={imgURL}
             alt={projectName}
             className="h-[30vh] w-full object-cover object-top md:h-[50vh]"
           />
-        </a>
+        </main>
+        <footer className="border-top border-white/50 p-4"></footer>
       </div>
     );
   };
@@ -127,7 +128,6 @@ export default function ProjectsSection() {
           />
           <ImageContainer
             translateImg={translateImg}
-            deploymentURL={deploymentURL}
             imgURL={imgURL}
             projectName={projectName}
           />
@@ -176,10 +176,8 @@ export default function ProjectsSection() {
     const { header, text, href } = moreProjects;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-y border-white/25 bg-gradient-to-t from-stone-900 to-10% py-64">
-        <h4 className="mb-8 max-w-[30ch] text-balance text-center text-2xl font-medium text-stone-300 md:w-1/2 md:text-4xl">
-          {header}
-        </h4>
+      <div className="mx-auto flex flex-col items-center justify-center border-b border-white/25 bg-gradient-to-t from-stone-900 to-10% pb-32">
+        <ActionHeader header={header} />
         <ActionButton text={text} icon="north_east" href={href} />
       </div>
     );
@@ -189,7 +187,7 @@ export default function ProjectsSection() {
     <section id="projects">
       <SectionHeader
         section="Projects"
-        title="Some Interesting Things I've Made"
+        title="Some Interesting Things I've Created"
       />
       <ProjectCardList />
       <MoreProjects />

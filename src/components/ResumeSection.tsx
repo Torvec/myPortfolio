@@ -1,5 +1,6 @@
 import SectionHeader from "./template/SectionHeader";
 import ActionButton from "./template/ActionButton";
+import ActionHeader from "./template/ActionHeader";
 import { education, experience, download } from "../data/resumeData";
 import { ResumeItemType } from "../types/allTypes";
 
@@ -108,10 +109,8 @@ export default function ResumeSection() {
     const { headerText, docText, pdfText, docHref, pdfHref } = download;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-y border-white/25 bg-gradient-to-t from-stone-900 to-10% px-4 py-64 md:px-0">
-        <h4 className="mb-8 max-w-[30ch] text-balance text-center text-4xl font-medium text-stone-300">
-          {headerText}
-        </h4>
+      <div className="mx-auto flex flex-col items-center justify-center border-b border-white/25 bg-gradient-to-t from-stone-900 to-10% px-4 pb-32 md:px-0">
+        <ActionHeader header={headerText} />
         <div className="flex gap-8 md:gap-16">
           <ActionButton text={docText} icon="download" href={docHref} />
           <ActionButton text={pdfText} icon="download" href={pdfHref} />
