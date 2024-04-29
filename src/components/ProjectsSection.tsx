@@ -6,7 +6,7 @@ import { projectsData, moreProjects } from "../data/projectsData";
 export default function ProjectsSection() {
   const TechStackItem = ({ item }: { item: string }) => {
     return (
-      <li className="rounded-lg border border-white/10 bg-gradient-to-b from-stone-800 px-4 py-1 text-xs font-light uppercase text-stone-400">
+      <li className="rounded-lg border border-stone-800 bg-gradient-to-b from-stone-800 px-4 py-1 text-xs font-light text-stone-400">
         {item}
       </li>
     );
@@ -25,7 +25,7 @@ export default function ProjectsSection() {
   const ViewButton = ({ text, href }: { text: string; href: string }) => {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer">
-        <button className="rounded-lg border border-white/50 px-4 py-2">
+        <button className="rounded-lg border border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:scale-110 hover:border-orange-500 hover:text-orange-500">
           {text}
         </button>
       </a>
@@ -46,7 +46,7 @@ export default function ProjectsSection() {
     deploymentURL: string;
   }) => {
     return (
-      <div className="flex flex-col justify-center gap-8 p-4 md:w-1/3 md:gap-16 md:p-0">
+      <div className="flex flex-col justify-center gap-16 px-4 py-8 md:w-1/3 md:p-0">
         <div>
           <h3 className="mb-4 text-2xl font-bold text-stone-300 md:text-4xl">
             {projectName}
@@ -66,31 +66,28 @@ export default function ProjectsSection() {
 
   const ImageContainer = ({
     translateImg,
+    translateShadow,
     imgURL,
     projectName,
   }: {
     translateImg: string;
+    translateShadow: string;
     imgURL: string;
     projectName: string;
   }) => {
     return (
-      <div
-        className={`md:w-2/3 ${translateImg} overflow-hidden rounded-lg border border-white/10 bg-stone-800 shadow-2xl`}
-      >
-        <header className="flex gap-2 border-b border-white/50 p-4">
-          <div className="size-3 rounded-full bg-stone-700" />
-          <div className="size-3 rounded-full bg-stone-700" />
-          <div className="size-3 rounded-full bg-stone-700" />
-        </header>
-        <main className="relative">
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50" /> */}
+      <div className={`md:w-2/3 ${translateImg} relative mb-8 md:mb-0`}>
+        <div
+          className={`absolute inset-0 z-0 rounded-3xl bg-black blur-lg ${translateShadow} md:translate-y-8`}
+          aria-hidden="true"
+        />
+        <div className="relative z-10">
           <img
             src={imgURL}
             alt={projectName}
-            className="h-[30vh] w-full object-cover object-top md:h-[50vh]"
+            className="h-[30vh] w-full rounded-lg border border-stone-600 object-cover object-top md:h-[50vh]"
           />
-        </main>
-        <footer className="border-top border-white/50 p-4"></footer>
+        </div>
       </div>
     );
   };
@@ -98,6 +95,7 @@ export default function ProjectsSection() {
   const ProjectCard = ({
     colOrderStyles,
     translateImg,
+    translateShadow,
     imgURL,
     projectName,
     repositoryURL,
@@ -107,6 +105,7 @@ export default function ProjectsSection() {
   }: {
     colOrderStyles: string;
     translateImg: string;
+    translateShadow: string;
     imgURL: string;
     projectName: string;
     repositoryURL: string;
@@ -117,7 +116,7 @@ export default function ProjectsSection() {
     return (
       <div>
         <div
-          className={`flex flex-col-reverse gap-8 rounded-lg border border-white/15 bg-gradient-to-b from-stone-800 md:w-[calc(100%-64px)] md:gap-0 md:py-16 ${colOrderStyles}`}
+          className={`flex flex-col-reverse rounded-lg border border-stone-800 from-stone-800 to-90% md:w-[calc(100%-64px)] md:py-16 ${colOrderStyles}`}
         >
           <InfoContainer
             projectName={projectName}
@@ -128,6 +127,7 @@ export default function ProjectsSection() {
           />
           <ImageContainer
             translateImg={translateImg}
+            translateShadow={translateShadow}
             imgURL={imgURL}
             projectName={projectName}
           />
@@ -154,10 +154,13 @@ export default function ProjectsSection() {
               translateImg={
                 id % 2 !== 0 ? "md:translate-x-16" : "md:-translate-x-16"
               }
+              translateShadow={
+                id % 2 !== 0 ? "md:-translate-x-8" : "md:translate-x-8"
+              }
               colOrderStyles={
                 id % 2 !== 0
-                  ? "md:flex-row md:pl-8 md:bg-gradient-to-tl"
-                  : "md:flex-row-reverse md:pr-8 md:bg-gradient-to-tr md:translate-x-16"
+                  ? "md:flex-row md:pl-8 md:bg-gradient-to-l"
+                  : "md:flex-row-reverse md:pr-8 md:bg-gradient-to-r md:translate-x-16"
               }
               imgURL={imgURL}
               projectName={projectName}
@@ -176,7 +179,7 @@ export default function ProjectsSection() {
     const { header, text, href } = moreProjects;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-b border-white/25 bg-gradient-to-t from-stone-900 to-10% pb-32">
+      <div className="mx-auto flex flex-col items-center justify-center border-b border-white/25 bg-gradient-to-t from-stone-900 to-10% py-32">
         <ActionHeader header={header} />
         <ActionButton text={text} icon="north_east" href={href} />
       </div>

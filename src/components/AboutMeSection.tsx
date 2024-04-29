@@ -24,7 +24,7 @@ export default function AboutMeSection() {
                   behavior: "smooth",
                 })
               }
-              className="w-max text-orange-500 hover:text-orange-600"
+              className="w-max text-orange-500 transition-all duration-300 ease-in-out hover:scale-110 hover:text-orange-600"
             >
               {cta}
             </button>

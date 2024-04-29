@@ -6,7 +6,7 @@ export const projectsData = [
     repositoryURL: "https://github.com/Torvec/Loot-Vault",
     deploymentURL: "https://torvec.github.io/Loot-Vault/",
     description:
-      "A video game deals site for gamers on a budget using third party API's.",
+      "A video game deals site for gamers on a budget using third party API's. This was the first UC Berkeley group project where I worked on the front-end design and implemented the Bulma CSS library, wishlist functionality, and free games API.",
     techStack: ["HTML", "Bulma CSS", "JavaScript", "Fetch API"],
   },
   {
@@ -16,7 +16,7 @@ export const projectsData = [
     repositoryURL: "https://github.com/Torvec/Task-Titan",
     deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
     description:
-      "A task completion and collaboration app for managing projects and crushing tasks!",
+      "A task completion and collaboration app for managing projects and crushing tasks! This was the second UC Berkeley group project where I worked on the front-end design and Handlebars templates and implemented the Materialize CSS library.",
     techStack: [
       "Handlebars",
       "Materialize CSS",
@@ -33,7 +33,7 @@ export const projectsData = [
     repositoryURL: "https://github.com/Torvec/wedloc",
     deploymentURL: "https://wedloc-84c89e3ae29d.herokuapp.com/",
     description:
-      "A social media app for wedding photographers to share their work and allow clients to interact with guests.",
+      "A social media app for wedding photographers to share their work and allow clients to interact with guests. This was the third UC Berkeley group project where I worked on the front-end design, React components, and Tailwind + Material UI implementation.",
     techStack: [
       "React",
       "Tailwind",
@@ -53,7 +53,7 @@ export const projectsData = [
     repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
     deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
     description:
-      "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp",
+      "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp.",
     techStack: [
       "HTML",
       "CSS",
