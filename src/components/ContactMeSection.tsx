@@ -4,7 +4,8 @@ import {
   fullNameInput,
   emailInput,
   messageInput,
-} from "../data/contactData";
+  directContactData,
+} from "../data/contactMeData";
 
 export default function ContactMeSection() {
   const FormLabel = ({
@@ -39,8 +40,45 @@ export default function ContactMeSection() {
         name={inputName}
         placeholder={inputPlaceholder}
         required
-        className="w-full rounded-lg border border-white/15 bg-stone-900 p-4 text-stone-300 focus:bg-stone-800 focus:outline-none focus:ring focus:ring-orange-500/75"
+        className="w-full rounded-lg border border-white/15 bg-stone-900 p-4 text-stone-300 focus:bg-stone-800 focus:outline-none focus:ring focus:ring-orange-500/50"
       />
+    );
+  };
+
+  const FormMessage = ({
+    messageId,
+    messageName,
+    messagePlaceholder,
+    messageRows,
+    messageMaxLength,
+  }: {
+    messageId: string;
+    messageName: string;
+    messagePlaceholder: string;
+    messageRows: number;
+    messageMaxLength: number;
+  }) => {
+    return (
+      <textarea
+        id={messageId}
+        name={messageName}
+        placeholder={messagePlaceholder}
+        rows={messageRows}
+        maxLength={messageMaxLength}
+        required
+        className="w-full resize-none rounded-lg border border-white/15 bg-stone-900 p-4 text-stone-200 focus:bg-stone-800 focus:outline-none focus:ring focus:ring-orange-500/50"
+      />
+    );
+  };
+
+  const SubmitButton = ({ text }: { text: string }) => {
+    return (
+      <button
+        type="submit"
+        className="self-center rounded-lg border-4 border-orange-900 bg-gradient-to-t from-orange-700 to-orange-500 px-4 py-2 text-stone-200 transition-all duration-300 ease-in-out hover:scale-110 hover:border-orange-700 hover:bg-gradient-to-b"
+      >
+        {text}
+      </button>
     );
   };
 
@@ -76,55 +114,49 @@ export default function ContactMeSection() {
             forText={messageInput.forText}
             labelText={messageInput.labelText}
           />
-          <textarea
-            id={messageInput.id}
-            name={messageInput.name}
-            placeholder={messageInput.placeholderText}
-            rows={8}
-            maxLength={500}
-            required
-            className="w-full resize-none rounded-lg border border-white/15 bg-stone-900 p-4 text-stone-200 focus:bg-stone-800 focus:outline-none focus:ring focus:ring-orange-500/75"
+          <FormMessage
+            messageId={messageInput.id}
+            messageName={messageInput.name}
+            messagePlaceholder={messageInput.placeholderText}
+            messageRows={8}
+            messageMaxLength={500}
           />
         </div>
-        <button
-          type="submit"
-          className="self-center rounded-lg border-4 border-orange-900 bg-gradient-to-t from-orange-700 to-orange-500 px-4 py-2 text-stone-200"
-        >
-          Send Message
-        </button>
+        <SubmitButton text="Send Message" />
       </form>
     );
   };
 
   const DirectContact = () => {
-    const content = {
-      text: "Get in touch with me directly:",
-      email: "me@edward-vonschondorf.dev",
-      mailto:
-        "mailto:me@edward-vonschondorf.dev?subject=Let's Connect and Collaborate!",
-    };
+    const { text, email, mailto } = directContactData;
+
     return (
       <div>
-        <p className="mb-2 text-stone-400">{content.text}</p>
+        <p className="mb-2 text-stone-400">{text}</p>
         <a
-          href={content.mailto}
-          className="font-bold text-stone-200 hover:text-orange-600"
+          href={mailto}
+          className="block font-bold text-stone-200 transition-all duration-300 ease-in-out hover:scale-105 hover:text-orange-600"
         >
-          {content.email}
+          {email}
         </a>
       </div>
     );
   };
 
-  const AvailabilityItem = ({ type, icon }: { type: string; icon: string }) => {
+  const AvailabilityItem = ({
+    type,
+    availability,
+  }: {
+    type: string;
+    availability: string;
+  }) => {
     return (
-      <li className="rounded-lg bg-gradient-to-b from-stone-900 p-2 border-t border-white/25 text-stone-400">
-        <div className="flex items-center justify-between rounded-lg bg-gradient-to-b from-stone-800 to-30% p-2">
-          <div className="flex items-center gap-2">
-            <span>{icon}</span>
-            <span className="text-sm font-light">{type}</span>
-          </div>
-          <span>✅</span>
+      <li className="rounded-lg border-y border-l border-stone-900  text-stone-400">
+        <div className="flex items-center justify-between rounded-lg bg-gradient-to-tl from-orange-950/50 to-40% px-5 py-3">
+          <span className="text-sm">{type}</span>
+          <span className="text-xs font-medium uppercase text-orange-500">
+            {availability}
+          </span>
         </div>
       </li>
     );
@@ -138,8 +170,12 @@ export default function ContactMeSection() {
           {availabilityHeader}
         </h3>
         <ul className="flex flex-col gap-6">
-          {availabilityList.map(({ type, icon }, index) => (
-            <AvailabilityItem key={index} type={type} icon={icon} />
+          {availabilityList.map(({ type, availability }, index) => (
+            <AvailabilityItem
+              key={index}
+              type={type}
+              availability={availability}
+            />
           ))}
         </ul>
       </div>
@@ -147,11 +183,14 @@ export default function ContactMeSection() {
   };
 
   return (
-    <section id="contact" className="flex flex-col justify-center container mx-auto min-h-screen px-4 md:px-0 pb-16">
+    <section
+      id="contact"
+      className="container mx-auto flex min-h-screen flex-col justify-center px-4 pb-16 md:px-0"
+    >
       <SectionHeader section="Contact" title="Let's Connect and Collaborate!" />
       <div className="flex flex-col gap-32 md:flex-row">
         <ContactForm />
-        <div className="flex md:w-1/3 flex-col gap-16">
+        <div className="flex flex-col gap-16 md:w-1/3">
           <DirectContact />
           <AvailabilityList />
         </div>
