@@ -1,4 +1,4 @@
-import { SocialLinkList } from "../Common";
+import SocialLinkList from "../SocialLinkList";
 
 export default function Footer() {
   const Copyright = () => {

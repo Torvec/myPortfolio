@@ -1,12 +1,6 @@
-export default function ActionButton({
-  text,
-  icon,
-  href,
-}: {
-  text: string;
-  icon: string;
-  href: string;
-}) {
+import { type ActionButtonProps } from "../types/allTypes";
+
+export default function ActionButton({ text, icon, href }: ActionButtonProps) {
   return (
     <a
       href={href}

@@ -1,4 +1,4 @@
-import SectionHeader from "./template/SectionHeader";
+import SectionHeader from "../components/SectionHeader";
 import {
   availabilityData,
   fullNameInput,

@@ -1,6 +1,6 @@
-import SectionHeader from "./template/SectionHeader";
-import ActionButton from "./template/ActionButton";
-import ActionHeader from "./template/ActionHeader";
+import SectionHeader from "../components/SectionHeader";
+import ActionButton from "../components/ActionButton";
+import ActionHeader from "../components/ActionHeader";
 import {
   type TechStackItemProps,
   type TechStackListProps,

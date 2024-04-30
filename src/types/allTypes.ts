@@ -98,3 +98,31 @@ export type AvailabilityItemProps = {
   type: string;
   availability: string;
 };
+
+// Component Types
+
+export type ActionButtonProps = {
+  text: string;
+  icon: string;
+  href: string;
+};
+
+export type ActionHeaderProps = {
+  header: string;
+};
+
+export type SectionHeaderProps = {
+  section: string;
+  title: string;
+};
+
+export type SocialLinkItemProps = {
+  href: string;
+  logo: string;
+  label: string;
+};
+
+export type MenuItemProps = {
+  children: React.ReactNode;
+  section: string;
+};

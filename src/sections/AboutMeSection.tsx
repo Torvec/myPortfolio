@@ -1,5 +1,5 @@
-import SectionHeader from "./template/SectionHeader";
-import { SocialLinkList } from "./Common";
+import SectionHeader from "../components/SectionHeader";
+import SocialLinkList from "../components/SocialLinkList";
 import { introData } from "../data/aboutMeData";
 
 export default function AboutMeSection() {

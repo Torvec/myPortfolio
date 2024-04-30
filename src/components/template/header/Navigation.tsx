@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "./Logo";
+import { type MenuItemProps } from "../../../types/allTypes";
 
 export default function Navigation() {
   const data = {
@@ -24,13 +25,7 @@ export default function Navigation() {
     }
   };
 
-  const MenuItem = ({
-    children,
-    section,
-  }: {
-    children: React.ReactNode;
-    section: string;
-  }) => {
+  const MenuItem = ({ children, section }: MenuItemProps) => {
     return (
       <li>
         <button
