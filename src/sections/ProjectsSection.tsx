@@ -59,8 +59,8 @@ export default function ProjectsSection() {
           </div>
         </div>
         <div className="flex justify-between text-sm text-stone-300">
-          <ViewButton text="View Repository" href={repositoryURL} />
-          <ViewButton text="View Deployment" href={deploymentURL} />
+          <ViewButton text="Repository" href={repositoryURL} />
+          <ViewButton text="Deployment" href={deploymentURL} />
         </div>
       </div>
     );
@@ -82,7 +82,7 @@ export default function ProjectsSection() {
           <img
             src={imgURL}
             alt={projectName}
-            className="h-[30vh] w-full rounded-lg border border-stone-600 object-cover object-top md:h-[50vh]"
+            className="h-[30vh] w-full rounded-lg border border-stone-700 object-cover object-top md:h-[50vh]"
           />
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function ProjectsSection() {
     return (
       <div>
         <div
-          className={`flex flex-col-reverse rounded-lg border border-stone-800 from-stone-800 to-90% md:w-[calc(100%-64px)] md:py-16 ${colOrderStyles}`}
+          className={`flex flex-col-reverse rounded-lg border border-stone-800 from-stone-800 to-95% md:w-[calc(100%-64px)] md:py-16 ${colOrderStyles}`}
         >
           <InfoContainer
             projectName={projectName}
