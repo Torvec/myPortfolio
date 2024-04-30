@@ -200,7 +200,7 @@ export default function HeroSection() {
           initial="start"
           animate="end"
           variants={glowVariants}
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(234,88,12,1)0%,rgba(12,10,9,1)70%,rgba(12,10,9,1)100%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,_var(--tw-gradient-stops))] from-orange-600 via-stone-950 via-70% to-stone-950"
         />
         {/* Bottom Linear gradient */}
         <div className="absolute inset-0 bottom-0 bg-gradient-to-t from-stone-950 to-20%" />

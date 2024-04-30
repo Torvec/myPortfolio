@@ -8,7 +8,7 @@ export default function AboutMeSection() {
 
     return (
       <>
-        <div className="flex flex-col justify-between gap-y-16 rounded-lg bg-gradient-to-tl from-stone-800 via-transparent to-stone-800 p-8">
+        <div className="flex flex-col justify-between gap-y-16 rounded-lg p-8">
           <main className="space-y-4">
             <p className="text-pretty text-xl font-bold text-stone-300">
               {introP1}
@@ -39,11 +39,15 @@ export default function AboutMeSection() {
     const { picSrc, picAlt } = introData;
 
     return (
-      <div className="flex-shrink-0">
+      <div className="relative flex-shrink-0">
+        <div
+          className="absolute inset-0 z-0 translate-y-4 rounded-lg bg-black blur-lg md:translate-x-4"
+          aria-hidden="true"
+        />
         <img
           src={picSrc}
           alt={picAlt}
-          className="size-full rounded-lg object-cover md:size-96"
+          className="relative z-10 size-full rounded-lg object-cover md:size-96"
         />
       </div>
     );
@@ -51,7 +55,7 @@ export default function AboutMeSection() {
 
   const Intro = () => {
     return (
-      <div className="flex flex-col-reverse gap-8 rounded-lg border-t border-white/15 bg-gradient-to-b from-stone-900 p-4 md:flex-row md:items-center md:gap-16 md:p-16">
+      <div className="flex flex-col-reverse gap-8 rounded-lg border-t border-white/15 bg-[radial-gradient(circle_at_right_top,_var(--tw-gradient-stops))] from-stone-900 p-4 md:flex-row md:items-center md:gap-16 md:p-16">
         <IntroContent />
         <IntroProfilePic />
       </div>

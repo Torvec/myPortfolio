@@ -17,9 +17,9 @@ export default function ResumeSection() {
     details,
   }: ResumeItemProps) => {
     return (
-      <div className="rounded-lg bg-gradient-to-tl from-stone-800 to-stone-950 to-60% px-4 py-8">
-        <div className="flex items-center gap-6">
-          <div className="grid size-20 flex-shrink-0 place-content-center rounded-full border border-stone-700/50 bg-gradient-to-tl from-stone-800 to-50%">
+      <div className="rounded-lg bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-stone-900/50 to-stone-950 to-50% px-8 py-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center">
+          <div className="grid size-12 flex-shrink-0 place-content-center rounded-full bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-stone-800 from-20% via-stone-900 via-90% to-stone-950 md:size-20">
             <img
               src={logo}
               alt={jobTitle || program}
@@ -43,7 +43,7 @@ export default function ResumeSection() {
             </div>
           </div>
         </div>
-        <p className="text-pretty px-8 pt-4 text-sm font-light leading-relaxed text-stone-400">
+        <p className="text-pretty pt-4 text-sm font-light leading-relaxed text-stone-400">
           {details}
         </p>
       </div>
@@ -70,7 +70,7 @@ export default function ResumeSection() {
           }: ResumeItemProps) => (
             <div
               key={id}
-              className="rounded-lg bg-gradient-to-tl from-stone-800 to-stone-950 to-80% p-2"
+              className="rounded-lg bg-gradient-to-b from-stone-800 to-stone-950 to-80% p-2"
             >
               <ResumeItem
                 startDate={startDate}
@@ -94,7 +94,7 @@ export default function ResumeSection() {
     const { headerText, docText, pdfText, docHref, pdfHref } = download;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-b border-white/25 bg-gradient-to-t from-stone-900 to-10% px-4 pb-32 md:px-0">
+      <div className="mx-auto flex flex-col items-center justify-center border-b border-stone-900 px-4 pb-32 md:px-0">
         <ActionHeader header={headerText} />
         <div className="flex gap-8 md:gap-16">
           <ActionButton text={docText} icon="download" href={docHref} />

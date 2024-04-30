@@ -54,7 +54,7 @@ export default function ProjectsSection() {
             {projectName}
           </h3>
           <div>
-            <p className="mb-4 text-base text-stone-300">{description}</p>
+            <p className="mb-4 text-base text-stone-400">{description}</p>
             <TechStackList list={techStack} />
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function ProjectsSection() {
     return (
       <div className={`md:w-2/3 ${translateImg} relative mb-8 md:mb-0`}>
         <div
-          className={`absolute inset-0 z-0 rounded-3xl bg-black blur-lg ${translateShadow} md:translate-y-8`}
+          className={`absolute inset-0 z-0 rounded-3xl bg-black blur-lg ${translateShadow} translate-y-8`}
           aria-hidden="true"
         />
         <div className="relative z-10">
@@ -103,7 +103,7 @@ export default function ProjectsSection() {
     return (
       <div>
         <div
-          className={`flex flex-col-reverse rounded-lg border border-stone-800 from-stone-800 to-95% md:w-[calc(100%-64px)] md:py-16 ${colOrderStyles}`}
+          className={`flex flex-col-reverse rounded-lg border border-stone-800 bg-gradient-to-b from-stone-800 to-95% md:w-[calc(100%-64px)] md:py-16 ${colOrderStyles}`}
         >
           <InfoContainer
             projectName={projectName}
@@ -166,7 +166,7 @@ export default function ProjectsSection() {
     const { header, text, href } = moreProjects;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-b border-white/25 bg-gradient-to-t from-stone-900 to-10% py-32">
+      <div className="mx-auto flex flex-col items-center justify-center border-b border-stone-900 py-32">
         <ActionHeader header={header} />
         <ActionButton text={text} icon="north_east" href={href} />
       </div>
