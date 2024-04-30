@@ -1,10 +1,18 @@
 import SectionHeader from "./template/SectionHeader";
 import ActionButton from "./template/ActionButton";
 import ActionHeader from "./template/ActionHeader";
+import {
+  type TechStackItemProps,
+  type TechStackListProps,
+  type ViewButtonProps,
+  type InfoContainerProps,
+  type ImageContainerProps,
+  type ProjectCardProps,
+} from "../types/allTypes";
 import { projectsData, moreProjects } from "../data/projectsData";
 
 export default function ProjectsSection() {
-  const TechStackItem = ({ item }: { item: string }) => {
+  const TechStackItem = ({ item }: TechStackItemProps) => {
     return (
       <li className="rounded-lg border border-stone-800 bg-gradient-to-b from-stone-800 px-4 py-1 text-xs font-light text-stone-400">
         {item}
@@ -12,7 +20,7 @@ export default function ProjectsSection() {
     );
   };
 
-  const TechStackList = ({ list }: { list: string[] }) => {
+  const TechStackList = ({ list }: TechStackListProps) => {
     return (
       <ul className="flex flex-wrap gap-2">
         {list.map((list, index) => (
@@ -22,7 +30,7 @@ export default function ProjectsSection() {
     );
   };
 
-  const ViewButton = ({ text, href }: { text: string; href: string }) => {
+  const ViewButton = ({ text, href }: ViewButtonProps) => {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer">
         <button className="rounded-lg border border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:scale-110 hover:border-orange-500 hover:text-orange-500">
@@ -38,13 +46,7 @@ export default function ProjectsSection() {
     techStack,
     repositoryURL,
     deploymentURL,
-  }: {
-    projectName: string;
-    description: string;
-    techStack: string[];
-    repositoryURL: string;
-    deploymentURL: string;
-  }) => {
+  }: InfoContainerProps) => {
     return (
       <div className="flex flex-col justify-center gap-16 px-4 py-8 md:w-1/3 md:p-0">
         <div>
@@ -69,12 +71,7 @@ export default function ProjectsSection() {
     translateShadow,
     imgURL,
     projectName,
-  }: {
-    translateImg: string;
-    translateShadow: string;
-    imgURL: string;
-    projectName: string;
-  }) => {
+  }: ImageContainerProps) => {
     return (
       <div className={`md:w-2/3 ${translateImg} relative mb-8 md:mb-0`}>
         <div
@@ -102,17 +99,7 @@ export default function ProjectsSection() {
     deploymentURL,
     description,
     techStack,
-  }: {
-    colOrderStyles: string;
-    translateImg: string;
-    translateShadow: string;
-    imgURL: string;
-    projectName: string;
-    repositoryURL: string;
-    deploymentURL: string;
-    description: string;
-    techStack: string[];
-  }) => {
+  }: ProjectCardProps) => {
     return (
       <div>
         <div

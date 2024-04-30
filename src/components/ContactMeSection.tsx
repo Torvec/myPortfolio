@@ -6,15 +6,16 @@ import {
   messageInput,
   directContactData,
 } from "../data/contactMeData";
+import {
+  type FormLabelProps,
+  type FormInputProps,
+  type FormMessageProps,
+  type SubmitButtonProps,
+  type AvailabilityItemProps,
+} from "../types/allTypes";
 
 export default function ContactMeSection() {
-  const FormLabel = ({
-    forText,
-    labelText,
-  }: {
-    forText: string;
-    labelText: string;
-  }) => {
+  const FormLabel = ({ forText, labelText }: FormLabelProps) => {
     return (
       <label htmlFor={forText} className="mb-2 block text-stone-400">
         {labelText}
@@ -27,12 +28,7 @@ export default function ContactMeSection() {
     inputId,
     inputName,
     inputPlaceholder,
-  }: {
-    inputType: string;
-    inputId: string;
-    inputName: string;
-    inputPlaceholder: string;
-  }) => {
+  }: FormInputProps) => {
     return (
       <input
         type={inputType}
@@ -51,13 +47,7 @@ export default function ContactMeSection() {
     messagePlaceholder,
     messageRows,
     messageMaxLength,
-  }: {
-    messageId: string;
-    messageName: string;
-    messagePlaceholder: string;
-    messageRows: number;
-    messageMaxLength: number;
-  }) => {
+  }: FormMessageProps) => {
     return (
       <textarea
         id={messageId}
@@ -71,7 +61,7 @@ export default function ContactMeSection() {
     );
   };
 
-  const SubmitButton = ({ text }: { text: string }) => {
+  const SubmitButton = ({ text }: SubmitButtonProps) => {
     return (
       <button
         type="submit"
@@ -143,13 +133,7 @@ export default function ContactMeSection() {
     );
   };
 
-  const AvailabilityItem = ({
-    type,
-    availability,
-  }: {
-    type: string;
-    availability: string;
-  }) => {
+  const AvailabilityItem = ({ type, availability }: AvailabilityItemProps) => {
     return (
       <li className="rounded-lg border-y border-l border-stone-900  text-stone-400">
         <div className="flex items-center justify-between rounded-lg bg-gradient-to-tl from-orange-950/50 to-40% px-5 py-3">

@@ -2,7 +2,7 @@ import SectionHeader from "./template/SectionHeader";
 import ActionButton from "./template/ActionButton";
 import ActionHeader from "./template/ActionHeader";
 import { education, experience, download } from "../data/resumeData";
-import { ResumeItemType } from "../types/allTypes";
+import { type ResumeItemProps, type ResumeListProps } from "../types/allTypes";
 
 export default function ResumeSection() {
   const ResumeItem = ({
@@ -15,17 +15,7 @@ export default function ResumeSection() {
     program,
     location,
     details,
-  }: {
-    startDate: string;
-    endDate: string;
-    logo: string;
-    company: string | undefined;
-    institution: string | undefined;
-    jobTitle: string | undefined;
-    program: string | undefined;
-    location: string;
-    details: string;
-  }) => {
+  }: ResumeItemProps) => {
     return (
       <div className="rounded-lg bg-gradient-to-tl from-stone-800 to-stone-950 to-60% px-4 py-8">
         <div className="flex items-center gap-6">
@@ -60,13 +50,7 @@ export default function ResumeSection() {
     );
   };
 
-  const ResumeList = ({
-    list,
-    type,
-  }: {
-    list: ResumeItemType[];
-    type?: string;
-  }) => {
+  const ResumeList = ({ list, type }: ResumeListProps) => {
     return (
       <div
         className={`space-y-8 md:w-1/2 ${type === "education" ? "md:translate-y-24" : ""}`}
@@ -83,7 +67,7 @@ export default function ResumeSection() {
             program,
             location,
             details,
-          }: ResumeItemType) => (
+          }: ResumeItemProps) => (
             <div
               key={id}
               className="rounded-lg bg-gradient-to-tl from-stone-800 to-stone-950 to-80% p-2"
