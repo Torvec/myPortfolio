@@ -65,7 +65,7 @@ export default function AboutMeSection() {
   return (
     <section
       id="about"
-      className="container mx-auto flex min-h-screen flex-col justify-center px-4 md:px-0"
+      className="container mx-auto flex flex-col justify-center px-4 md:px-0"
     >
       <SectionHeader section="About" title="A Brief Introduction" />
       <Intro />
