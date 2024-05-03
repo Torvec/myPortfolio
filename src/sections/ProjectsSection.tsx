@@ -32,8 +32,13 @@ export default function ProjectsSection() {
 
   const ViewButton = ({ text, href }: ViewButtonProps) => {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        <button className="rounded-lg border border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:scale-110 hover:border-orange-500 hover:text-orange-500">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full md:inline-block md:w-max"
+      >
+        <button className="w-full rounded-lg border border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:scale-105 hover:border-orange-500 hover:text-orange-500 md:hover:scale-110">
           {text}
         </button>
       </a>
@@ -58,7 +63,7 @@ export default function ProjectsSection() {
             <TechStackList list={techStack} />
           </div>
         </div>
-        <div className="flex justify-between text-sm text-stone-300">
+        <div className="flex flex-col items-center gap-4 text-sm text-stone-300 md:flex-row md:justify-between md:gap-0">
           <ViewButton text="Repository" href={repositoryURL} />
           <ViewButton text="Deployment" href={deploymentURL} />
         </div>

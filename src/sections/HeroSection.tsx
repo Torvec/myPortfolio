@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const glowVariants = {
-    start: { opacity: 0.5 },
+    start: { opacity: 1 },
     end: {
-      opacity: 0.2,
+      opacity: 0.5,
       transition: {
         duration: 2,
         repeat: Infinity,
@@ -196,14 +196,34 @@ export default function HeroSection() {
     return (
       <>
         {/* Transparent to orange radial gradient */}
-        <motion.div
+        {/* <motion.div
           initial="start"
           animate="end"
           variants={glowVariants}
           className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,_var(--tw-gradient-stops))] from-orange-600 via-stone-950 via-70% to-stone-950"
-        />
+        /> */}
         {/* Bottom Linear gradient */}
-        <div className="absolute inset-0 bottom-0 bg-gradient-to-t from-stone-950 to-20%" />
+        {/* <div className="absolute inset-0 bottom-0 bg-gradient-to-t from-stone-950 to-20%" /> */}
+
+        {/* <motion.div
+          initial="start"
+          animate="end"
+          variants={glowVariants}
+          className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-stone-950 from-15% via-stone-100 to-stone-600"
+        /> */}
+        <motion.div
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute inset-0 z-0 bg-[conic-gradient(from_90deg_at_center_center,_var(--tw-gradient-stops))] from-stone-950 from-15% via-stone-100 to-stone-600 opacity-50 rounded-full"
+        />
+        <div className="absolute inset-0 z-10 bg-[url(hero/bg_grid_64x64.png)]" />
+        <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-transparent to-stone-950 to-60%" />
+        {/* background: conic-gradient(from 90deg at 50% 50%, #f5f5f4, #57534e); */}
       </>
     );
   };
@@ -211,7 +231,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center bg-[url(hero/bg_grid_orange_30x30.png)]"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
       <Gradients />
       <HeroHeader />
