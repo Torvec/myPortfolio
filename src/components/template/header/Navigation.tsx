@@ -1,17 +1,15 @@
 import { useState } from "react";
-import Logo from "./Logo";
 import { type MenuItemProps } from "../../../types/allTypes";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Navigation() {
-  const data = {
-    sections: ["About", "Projects", "Resume", "Contact"],
-  };
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const sectionNames = ["About", "Projects", "Resume", "Contact"];
 
   const handleClickToSection = (section: string) => {
     const sectId = section.toLocaleLowerCase();
@@ -27,10 +25,10 @@ export default function Navigation() {
 
   const MenuItem = ({ children, section }: MenuItemProps) => {
     return (
-      <li>
+      <li className="text-4xl font-bold text-stone-300 transition-all duration-300 ease-in-out hover:text-orange-600 md:text-base md:active:scale-75">
         <button
-          className="w-full border-b-2 border-white/50 text-left md:border-0"
           onClick={() => handleClickToSection(section)}
+          className="w-full text-left md:w-max md:text-center"
         >
           {children}
         </button>
@@ -39,11 +37,9 @@ export default function Navigation() {
   };
 
   const HorizontalMenu = () => {
-    const { sections } = data;
-
     return (
-      <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-16 font-bold text-stone-200 md:flex">
-        {sections.map((section, index) => (
+      <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-16 md:flex">
+        {sectionNames.map((section, index) => (
           <MenuItem key={index} section={section}>
             {section}
           </MenuItem>
@@ -56,7 +52,7 @@ export default function Navigation() {
     return (
       <button
         onClick={toggleMenu}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-200 md:hidden"
+        className={`absolute ${isMenuOpen ? "hidden" : ""} right-4 top-1/2 -translate-y-1/2 text-stone-200 md:hidden`}
       >
         <span className="material-symbols-sharp">menu</span>
       </button>
@@ -66,25 +62,31 @@ export default function Navigation() {
   const VerticalMenuCloseBtn = () => {
     return (
       <button onClick={toggleMenu}>
-        <span className="material-symbols-sharp">close</span>
+        <span className="material-symbols-sharp text-stone-200">close</span>
       </button>
     );
   };
 
   const MenuItemList = () => {
-    const { sections } = data;
-
     return (
-      <ul className="space-y-32 px-4 py-32 text-6xl">
-        {sections.map((section, index) => (
-          <MenuItem key={index} section={section}>
-            <div className="flex items-baseline justify-between">
-              <span>{section}</span>
-              <span className="text-base text-white/50">0{index + 1}</span>
-            </div>
-          </MenuItem>
-        ))}
-      </ul>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.ul
+            key="slideInMenu"
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="space-y-16 border border-stone-800 bg-stone-900 p-8"
+          >
+            {sectionNames.map((section, index) => (
+              <MenuItem key={index} section={section}>
+                {section}
+              </MenuItem>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     );
   };
 
@@ -92,11 +94,10 @@ export default function Navigation() {
     return (
       <div
         id="menu"
-        className={`fixed inset-0 z-10 ${isMenuOpen ? "" : "hidden"} h-max rounded-lg border border-white/25 bg-orange-600 text-stone-200 md:hidden`}
+        className={`fixed inset-0 z-10 ${isMenuOpen ? "" : "hidden"} h-max rounded-lg md:hidden`}
         onClick={toggleMenu}
       >
-        <div className="flex justify-between border-b border-white/25 px-4 py-2">
-          <Logo />
+        <div className="flex justify-end border-b border-stone-900 px-4 py-2">
           <VerticalMenuCloseBtn />
         </div>
         <MenuItemList />

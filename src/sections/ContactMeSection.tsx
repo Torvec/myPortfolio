@@ -136,7 +136,7 @@ export default function ContactMeSection() {
   const AvailabilityItem = ({ type, availability }: AvailabilityItemProps) => {
     return (
       <li className="rounded-lg border-y border-l border-stone-900  text-stone-400">
-        <div className="flex items-center justify-between rounded-lg bg-gradient-to-tl from-orange-950/50 to-40% px-5 py-3">
+        <div className="flex items-center justify-between rounded-lg bg-gradient-to-l from-orange-950/50 to-40% px-5 py-3">
           <span className="text-sm">{type}</span>
           <span className="text-xs font-medium uppercase text-orange-500">
             {availability}

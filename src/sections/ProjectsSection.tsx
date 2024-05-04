@@ -63,7 +63,7 @@ export default function ProjectsSection() {
             <TechStackList list={techStack} />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 text-sm text-stone-300 md:flex-row md:justify-between md:gap-0">
+        <div className="flex flex-col items-center gap-4 text-sm text-stone-300 md:flex-row md:justify-center md:gap-8">
           <ViewButton text="Repository" href={repositoryURL} />
           <ViewButton text="Deployment" href={deploymentURL} />
         </div>
