@@ -25,28 +25,16 @@ export default function Navigation() {
 
   const MenuItem = ({ children, section }: MenuItemProps) => {
     return (
-      <li className="text-4xl font-bold text-stone-300 transition-all duration-300 ease-in-out hover:text-orange-600 md:text-base md:active:scale-75">
+      <li>
         <button
           onClick={() => handleClickToSection(section)}
-          className="w-full text-left md:w-max md:text-center"
+          className="w-full bg-stone-800 py-8 pl-8 text-left text-2xl font-bold text-stone-200 hover:bg-stone-700 transition-all duration-300 ease-in-out hover:text-orange-500 active:scale-90"
         >
           {children}
         </button>
       </li>
     );
   };
-
-  // const HorizontalMenu = () => {
-  //   return (
-  //     <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-16 md:flex">
-  //       {sectionNames.map((section, index) => (
-  //         <MenuItem key={index} section={section}>
-  //           {section}
-  //         </MenuItem>
-  //       ))}
-  //     </ul>
-  //   );
-  // };
 
   const VerticalMenuOpenBtn = () => {
     return (
@@ -70,11 +58,10 @@ export default function Navigation() {
         {isMenuOpen && (
           <motion.ul
             key="slideInMenu"
-            initial={{ x: "100%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="space-y-16 border border-stone-800 bg-stone-900 p-8"
+            initial={{ scaleY: 0, opacity: 0 }}
+            animate={{ scaleY: "100%", originY: "top", opacity: 1 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="flex min-w-96 flex-col border border-stone-800 bg-stone-900/75 py-8"
           >
             {sectionNames.map((section, index) => (
               <MenuItem key={index} section={section}>
@@ -91,10 +78,10 @@ export default function Navigation() {
     return (
       <div
         id="menu"
-        className={`z-10 ${isMenuOpen ? "" : "hidden"} h-max rounded-lg`}
+        className={`${isMenuOpen ? "" : "hidden"}`}
         onClick={toggleMenu}
       >
-        <div className="flex justify-end border-b border-stone-900 px-4 py-2">
+        <div className="mb-4 flex justify-end">
           <VerticalMenuCloseBtn />
         </div>
         <MenuItemList />
@@ -104,7 +91,6 @@ export default function Navigation() {
 
   return (
     <>
-      {/* <HorizontalMenu /> */}
       <VerticalMenuOpenBtn />
       <VerticalMenu />
     </>
