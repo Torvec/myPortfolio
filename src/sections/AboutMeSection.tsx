@@ -8,7 +8,7 @@ export default function AboutMeSection() {
 
     return (
       <>
-        <div className="flex flex-col justify-between gap-y-16 rounded-lg p-8">
+        <div className="flex flex-col justify-between gap-y-16 rounded-lg md:p-8">
           <main className="space-y-4">
             <p className="text-pretty text-xl font-bold text-stone-300">
               {introP1}
@@ -16,7 +16,7 @@ export default function AboutMeSection() {
             <p className="font-light text-stone-400">{introP2}</p>
             <p className="font-light text-stone-400">{introP3}</p>
           </main>
-          <footer className="flex justify-between">
+          <footer className="flex flex-col gap-4 md:flex-row md:justify-between md:gap-0">
             <button
               onClick={() =>
                 window.scrollTo({

@@ -87,7 +87,7 @@ export default function ProjectsSection() {
           <img
             src={imgURL}
             alt={projectName}
-            className="h-[30vh] w-full rounded-lg border border-stone-700 object-cover object-top md:h-[50vh]"
+            className="h-[50vh] w-full rounded-lg border border-stone-700 object-cover object-top"
           />
         </div>
       </div>

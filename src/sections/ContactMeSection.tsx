@@ -77,10 +77,10 @@ export default function ContactMeSection() {
 
   const ContactForm = () => {
     return (
-      <form className="flex h-full flex-col justify-evenly gap-8 rounded-lg md:w-4/6">
-        <div className="mx-auto w-max rounded-lg border border-orange-700 px-6 py-1 text-center text-sm font-bold uppercase text-stone-300">
+      <form className="flex flex-col justify-evenly gap-8 rounded-lg md:w-4/6">
+        <p className="mx-auto rounded-lg border border-orange-700 px-6 py-1 text-center text-sm font-bold uppercase text-stone-300">
           This form is currently disabled/under development
-        </div>
+        </p>
         <div>
           <FormLabel
             forText={fullNameInput.forText}
