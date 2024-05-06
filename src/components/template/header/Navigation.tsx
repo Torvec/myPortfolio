@@ -61,7 +61,7 @@ export default function Navigation() {
             initial={{ scaleY: 0, opacity: 0 }}
             animate={{ scaleY: "100%", originY: "top", opacity: 1 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="flex min-w-96 flex-col border border-stone-800 bg-stone-900/50 py-8 backdrop-blur-lg"
+            className="absolute right-0 flex w-screen md:w-96 flex-col border border-stone-800 bg-stone-900/50 py-8 backdrop-blur-lg"
           >
             {sectionNames.map((section, index) => (
               <MenuItem key={index} section={section}>
@@ -78,7 +78,7 @@ export default function Navigation() {
     return (
       <div
         id="menu"
-        className={`${isMenuOpen ? "" : "hidden"}`}
+        className={`relative ${isMenuOpen ? "" : "hidden"}`}
         onClick={toggleMenu}
       >
         <div className="mb-4 flex justify-end">
