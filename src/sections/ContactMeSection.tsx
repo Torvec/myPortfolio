@@ -36,6 +36,7 @@ export default function ContactMeSection() {
         name={inputName}
         placeholder={inputPlaceholder}
         required
+        disabled
         className="w-full rounded-lg border border-white/15 bg-stone-900 p-4 text-stone-300 focus:bg-stone-800 focus:outline-none focus:ring focus:ring-orange-500/50"
       />
     );
@@ -56,6 +57,7 @@ export default function ContactMeSection() {
         rows={messageRows}
         maxLength={messageMaxLength}
         required
+        disabled
         className="w-full resize-none rounded-lg border border-white/15 bg-stone-900 p-4 text-stone-200 focus:bg-stone-800 focus:outline-none focus:ring focus:ring-orange-500/50"
       />
     );
@@ -66,6 +68,7 @@ export default function ContactMeSection() {
       <button
         type="submit"
         className="self-center rounded-lg border-4 border-orange-900 bg-gradient-to-t from-orange-700 to-orange-500 px-4 py-2 text-stone-200 transition-all duration-300 ease-in-out hover:scale-110 hover:border-orange-700 hover:bg-gradient-to-b"
+        disabled
       >
         {text}
       </button>
@@ -75,6 +78,7 @@ export default function ContactMeSection() {
   const ContactForm = () => {
     return (
       <form className="flex h-full flex-col justify-evenly gap-8 rounded-lg md:w-4/6">
+        <div className="text-orange-600 text-center font-bold uppercase">***This form is currently disabled and under development***</div>
         <div>
           <FormLabel
             forText={fullNameInput.forText}

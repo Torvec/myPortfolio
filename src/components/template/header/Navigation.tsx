@@ -28,7 +28,7 @@ export default function Navigation() {
       <li>
         <button
           onClick={() => handleClickToSection(section)}
-          className="w-full bg-stone-800 py-8 pl-8 text-left text-2xl font-bold text-stone-200 hover:bg-stone-700 transition-all duration-300 ease-in-out hover:text-orange-500 active:scale-90"
+          className="w-full bg-stone-800/50 border-b-2 border-stone-800 hover:border-stone-500 py-8 pl-8 text-left text-2xl font-bold text-stone-200 hover:bg-stone-700 transition-all duration-300 ease-in-out hover:text-orange-500 active:scale-90"
         >
           {children}
         </button>
@@ -61,7 +61,7 @@ export default function Navigation() {
             initial={{ scaleY: 0, opacity: 0 }}
             animate={{ scaleY: "100%", originY: "top", opacity: 1 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="flex min-w-96 flex-col border border-stone-800 bg-stone-900/75 py-8"
+            className="flex min-w-96 flex-col border border-stone-800 bg-stone-900/50 py-8 backdrop-blur-lg"
           >
             {sectionNames.map((section, index) => (
               <MenuItem key={index} section={section}>
