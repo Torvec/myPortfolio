@@ -36,25 +36,22 @@ export default function Navigation() {
     );
   };
 
-  const HorizontalMenu = () => {
-    return (
-      <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-16 md:flex">
-        {sectionNames.map((section, index) => (
-          <MenuItem key={index} section={section}>
-            {section}
-          </MenuItem>
-        ))}
-      </ul>
-    );
-  };
+  // const HorizontalMenu = () => {
+  //   return (
+  //     <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 gap-16 md:flex">
+  //       {sectionNames.map((section, index) => (
+  //         <MenuItem key={index} section={section}>
+  //           {section}
+  //         </MenuItem>
+  //       ))}
+  //     </ul>
+  //   );
+  // };
 
   const VerticalMenuOpenBtn = () => {
     return (
-      <button
-        onClick={toggleMenu}
-        className={`absolute ${isMenuOpen ? "hidden" : ""} right-4 top-1/2 -translate-y-1/2 text-stone-200 md:hidden`}
-      >
-        <span className="material-symbols-sharp">menu</span>
+      <button onClick={toggleMenu} className={`${isMenuOpen ? "hidden" : ""}`}>
+        <img src="nav/menuOpen.svg" alt="Open Menu" />
       </button>
     );
   };
@@ -62,7 +59,7 @@ export default function Navigation() {
   const VerticalMenuCloseBtn = () => {
     return (
       <button onClick={toggleMenu}>
-        <span className="material-symbols-sharp text-stone-200">close</span>
+        <img src="nav/menuClose.svg" alt="Close Menu" />
       </button>
     );
   };
@@ -94,7 +91,7 @@ export default function Navigation() {
     return (
       <div
         id="menu"
-        className={`fixed inset-0 z-10 ${isMenuOpen ? "" : "hidden"} h-max rounded-lg md:hidden`}
+        className={`z-10 ${isMenuOpen ? "" : "hidden"} h-max rounded-lg`}
         onClick={toggleMenu}
       >
         <div className="flex justify-end border-b border-stone-900 px-4 py-2">
@@ -107,7 +104,7 @@ export default function Navigation() {
 
   return (
     <>
-      <HorizontalMenu />
+      {/* <HorizontalMenu /> */}
       <VerticalMenuOpenBtn />
       <VerticalMenu />
     </>
