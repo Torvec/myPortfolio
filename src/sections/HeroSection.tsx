@@ -46,7 +46,7 @@ export default function HeroSection() {
           }}
           className="absolute z-0 h-[12000px] w-[12000px] rounded-full bg-[conic-gradient(from_90deg_at_center_center,_var(--tw-gradient-stops))] from-orange-950 from-10% via-orange-400 to-orange-600"
         />
-        <div className="absolute inset-0 z-10 bg-[url(hero/bg_grid_64x64.png)]" />
+        <div className="absolute inset-0 z-10 bg-hero-pattern" />
         <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-transparent to-stone-950 to-50%" />
       </>
     );

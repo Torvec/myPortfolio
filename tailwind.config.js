@@ -21,7 +21,11 @@ export default {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': 'url("/hero/bg_grid_64x64.png")',
+      }
+    },
   },
   plugins: [],
 };
