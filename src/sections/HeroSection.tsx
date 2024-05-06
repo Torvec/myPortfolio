@@ -8,13 +8,13 @@ export default function HeroSection() {
     return (
       <div className="z-30 text-center md:space-y-4">
         <h1 className="p-4 font-black md:p-0">
-          <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-5xl text-transparent md:text-8xl">
+          <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-4xl text-transparent md:text-8xl">
             {intro}
           </span>
-          <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-5xl uppercase text-transparent md:text-8xl">
+          <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-4xl uppercase text-transparent md:text-8xl">
             {firstName}
           </span>
-          <span className="block bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-5xl uppercase text-transparent md:text-8xl">
+          <span className="block bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-4xl uppercase text-transparent md:text-8xl">
             {lastName}
           </span>
         </h1>
@@ -44,7 +44,7 @@ export default function HeroSection() {
               ease: "linear",
             },
           }}
-          className="absolute z-0 h-[12000px] w-[12000px] rounded-full bg-[conic-gradient(from_90deg_at_center_center,_var(--tw-gradient-stops))] from-orange-950 from-10% via-orange-400 to-orange-600"
+          className="absolute z-0 h-[1200px] w-[1200px] rounded-full bg-[conic-gradient(from_90deg_at_center_center,_var(--tw-gradient-stops))] from-orange-950 from-10% via-orange-400 to-orange-600"
         />
         <div className="absolute inset-0 z-10 bg-hero-pattern" />
         <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-transparent to-stone-950 to-50%" />
@@ -55,7 +55,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[70vh] items-center justify-center overflow-hidden border-b border-stone-900"
+      className="relative flex min-h-screen md:min-h-[70vh] items-center justify-center overflow-hidden border-b border-stone-900"
     >
       <RadarScanner />
       <HeroHeader />
