@@ -6,7 +6,11 @@ export default function Logo() {
       }}
       className="relative z-50 size-8"
     >
-     <img src="nav/logo.png" alt="" className="m-auto size-full" />
+      <img
+        src="nav/logo.png"
+        alt=""
+        className="m-auto size-full transition-all duration-300 ease-in-out active:scale-75"
+      />
     </button>
   );
 }

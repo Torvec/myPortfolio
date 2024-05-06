@@ -1,6 +1,6 @@
 export const socialLinksData = [
   {
-    href: "https://www.linkedin.com/in/edward-von/",
+    href: "https://www.linkedin.com/in/edward-vonschondorf/",
     logo: "about/linkedin_logo.png",
     label: "LinkedIn",
   },
