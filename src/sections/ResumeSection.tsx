@@ -96,10 +96,11 @@ export default function ResumeSection() {
     return (
       <div className="mx-auto flex flex-col items-center justify-center border-b border-stone-900 px-4 pb-32 md:px-0">
         <ActionHeader header={headerText} />
-        <div className="flex gap-8 md:gap-16">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-16">
           <ActionButton text={docText} icon="download" href={docHref} />
           <ActionButton text={pdfText} icon="download" href={pdfHref} />
         </div>
+        <p className="text-stone-400 p-8 text-sm">Last Updated: N/A</p>
       </div>
     );
   };
