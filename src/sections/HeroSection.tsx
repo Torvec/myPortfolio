@@ -18,7 +18,7 @@ export default function HeroSection() {
             {lastName}
           </span>
         </h1>
-        <h2 className="mx-auto max-w-[45ch] text-pretty px-2 text-sm text-stone-300 md:px-0 md:text-2xl">
+        <h2 className="mx-auto text-pretty max-w-[45ch] text-sm text-stone-300 md:text-2xl px-2 md:px-0">
           {tagline}
         </h2>
       </div>
@@ -29,8 +29,8 @@ export default function HeroSection() {
     return (
       <>
         <motion.div
-          initial={{ rotate: 0, opacity: 0.3 }}
-          animate={{ rotate: -360, opacity: 0.9 }}
+          initial={{ rotate: 0, opacity: 0.25 }}
+          animate={{ rotate: -360, opacity: 1 }}
           transition={{
             rotate: {
               duration: 5,
@@ -44,7 +44,7 @@ export default function HeroSection() {
               ease: "linear",
             },
           }}
-          className="absolute z-0 h-[1200px] w-[1200px] rounded-full bg-[conic-gradient(from_90deg_at_center_center,_var(--tw-gradient-stops))] from-orange-950 from-10% via-orange-400 to-orange-600"
+          className="absolute z-0 h-[1000px] w-[1000px] bg-[conic-gradient(from_90deg_at_center_center,_var(--tw-gradient-stops))] from-orange-950 from-10% via-orange-400 to-orange-600"
         />
         <div className="absolute inset-0 z-10 bg-hero-pattern" />
         <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-transparent to-stone-950 to-50%" />
@@ -55,7 +55,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden border-b border-stone-900 md:min-h-[70vh]"
+      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden border-b border-stone-900"
     >
       <RadarScanner />
       <HeroHeader />

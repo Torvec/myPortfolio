@@ -2,7 +2,7 @@ import { type SectionHeaderProps } from "../types/allTypes";
 
 export default function SectionHeader({ section, title }: SectionHeaderProps) {
   return (
-    <div className="mb-32 mt-64 flex flex-col items-center justify-center gap-2 px-4 md:px-0">
+    <div className="mb-16 md:mb-32 flex flex-col items-center justify-center gap-2">
       <span className="rounded-full border border-orange-500/50 px-4 py-1 text-xs uppercase text-orange-600">
         {section}
       </span>

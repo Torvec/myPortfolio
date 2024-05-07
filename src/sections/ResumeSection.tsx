@@ -1,5 +1,6 @@
+import Container from "../components/ui/Container";
 import SectionHeader from "../components/SectionHeader";
-import ActionButton from "../components/ActionButton";
+import ActionButton from "../components/ui/ActionButton";
 import ActionHeader from "../components/ActionHeader";
 import { education, experience, download } from "../data/resumeData";
 import { type ResumeItemProps, type ResumeListProps } from "../types/allTypes";
@@ -94,7 +95,7 @@ export default function ResumeSection() {
     const { headerText, docText, pdfText, docHref, pdfHref } = download;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-b border-stone-900 px-4 pb-32 md:px-0">
+      <div className="flex flex-col items-center justify-center border-b border-stone-900 pb-32">
         <ActionHeader header={headerText} />
         <div className="flex flex-col gap-4 md:flex-row md:gap-16">
           <ActionButton text={docText} icon="download" href={docHref} />
@@ -106,16 +107,16 @@ export default function ResumeSection() {
   };
 
   return (
-    <section id="resume">
+    <Container id="resume">
       <SectionHeader
         section="Resume"
         title="My Professional and Academic Journey"
       />
-      <div className="container mx-auto flex flex-col gap-16 px-4 pb-64 md:flex-row md:px-0">
+      <div className="flex flex-col gap-16 md:flex-row pb-32">
         <ResumeList list={experience} />
         <ResumeList list={education} type="education" />
       </div>
       <Download />
-    </section>
+    </Container>
   );
 }

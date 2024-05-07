@@ -1,3 +1,5 @@
+
+import Container from "../components/ui/Container";
 import SectionHeader from "../components/SectionHeader";
 import SocialLinkList from "../components/SocialLinkList";
 import { introData } from "../data/aboutMeData";
@@ -63,12 +65,11 @@ export default function AboutMeSection() {
   };
 
   return (
-    <section
+    <Container
       id="about"
-      className="container mx-auto flex flex-col justify-center px-4 md:px-0"
     >
       <SectionHeader section="About" title="A Brief Introduction" />
       <Intro />
-    </section>
+    </Container>
   );
 }

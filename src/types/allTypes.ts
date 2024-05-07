@@ -101,6 +101,11 @@ export type AvailabilityItemProps = {
 
 // Component Types
 
+export type ContainerProps = {
+  children: React.ReactNode;
+  id: string;
+};
+
 export type ActionButtonProps = {
   text: string;
   icon: string;

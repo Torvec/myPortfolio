@@ -1,3 +1,4 @@
+import Container from "../components/ui/Container";
 import SectionHeader from "../components/SectionHeader";
 import {
   availabilityData,
@@ -173,9 +174,8 @@ export default function ContactMeSection() {
   };
 
   return (
-    <section
+    <Container
       id="contact"
-      className="container mx-auto flex min-h-screen flex-col justify-center px-4 pb-16 md:px-0"
     >
       <SectionHeader section="Contact" title="Let's Connect and Collaborate!" />
       <div className="flex flex-col gap-32 md:flex-row">
@@ -185,6 +185,6 @@ export default function ContactMeSection() {
           <AvailabilityList />
         </div>
       </div>
-    </section>
+    </Container>
   );
 }

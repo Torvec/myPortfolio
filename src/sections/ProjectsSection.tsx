@@ -1,5 +1,6 @@
+import Container from "../components/ui/Container";
 import SectionHeader from "../components/SectionHeader";
-import ActionButton from "../components/ActionButton";
+import ActionButton from "../components/ui/ActionButton";
 import ActionHeader from "../components/ActionHeader";
 import {
   type TechStackItemProps,
@@ -108,7 +109,7 @@ export default function ProjectsSection() {
     return (
       <div>
         <div
-          className={`flex flex-col-reverse rounded-lg border border-stone-800 bg-gradient-to-b from-stone-800 to-95% md:w-[calc(100%-64px)] md:py-16 ${colOrderStyles}`}
+          className={`flex flex-col-reverse rounded-lg border border-stone-800 bg-gradient-to-b from-stone-800 to-95% md:w-[calc(100%-64px)] md:py-16 ${colOrderStyles} mb-32`}
         >
           <InfoContainer
             projectName={projectName}
@@ -130,7 +131,7 @@ export default function ProjectsSection() {
 
   const ProjectCardList = () => {
     return (
-      <div className="container mx-auto mb-32 flex flex-col gap-32 px-4 md:px-0">
+      <>
         {projectsData.map(
           ({
             id,
@@ -163,7 +164,7 @@ export default function ProjectsSection() {
             />
           ),
         )}
-      </div>
+      </>
     );
   };
 
@@ -171,7 +172,7 @@ export default function ProjectsSection() {
     const { header, text, href } = moreProjects;
 
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-b border-stone-900 py-32">
+      <div className="mx-auto flex flex-col items-center justify-center border-b border-stone-900 pb-32">
         <ActionHeader header={header} />
         <ActionButton text={text} icon="north_east" href={href} />
       </div>
@@ -179,13 +180,13 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects">
+    <Container id="projects">
       <SectionHeader
         section="Projects"
         title="Some Interesting Things I've Created"
       />
       <ProjectCardList />
       <MoreProjects />
-    </section>
+    </Container>
   );
 }
