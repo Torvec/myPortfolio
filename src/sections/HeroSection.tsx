@@ -18,7 +18,7 @@ export default function HeroSection() {
             {lastName}
           </span>
         </h1>
-        <h2 className="mx-auto max-w-[45ch] text-stone-300 md:text-2xl px-2 md:px-0">
+        <h2 className="mx-auto text-pretty max-w-[45ch] text-sm text-stone-300 md:text-2xl px-2 md:px-0">
           {tagline}
         </h2>
       </div>
