@@ -113,9 +113,9 @@ export const education = [
 ];
 
 export const download = {
-  headerText: "Download my full resume in .doc or .pdf format",
+  headerText: "Download my full resume in multiple formats:",
   docText: "DOC Format",
   pdfText: "PDF Format",
-  docHref: "https://www.linkedin.com/in/edward-von/",
-  pdfHref: "https://www.linkedin.com/in/edward-von/",
+  docHref: "https://www.linkedin.com/in/edward-vonschondorf/",
+  pdfHref: "https://www.linkedin.com/in/edward-vonschondorf/",
 };

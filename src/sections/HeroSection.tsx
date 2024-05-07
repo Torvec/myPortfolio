@@ -18,7 +18,7 @@ export default function HeroSection() {
             {lastName}
           </span>
         </h1>
-        <h2 className="mx-auto text-pretty max-w-[45ch] text-sm text-stone-300 md:text-2xl px-2 md:px-0">
+        <h2 className="mx-auto max-w-[45ch] text-pretty px-2 text-sm text-stone-300 md:px-0 md:text-2xl">
           {tagline}
         </h2>
       </div>
@@ -55,7 +55,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen md:min-h-[70vh] items-center justify-center overflow-hidden border-b border-stone-900"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden border-b border-stone-900 md:min-h-[70vh]"
     >
       <RadarScanner />
       <HeroHeader />
