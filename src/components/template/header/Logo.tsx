@@ -4,12 +4,12 @@ export default function Logo() {
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
-      className="relative z-50 size-8"
+      className="relative z-50 size-7"
     >
       <img
         src="nav/logo.png"
         alt="EV Logo"
-        className="m-auto size-full transition-all duration-300 ease-in-out active:scale-75"
+        className="size-full ml-2 transition-all duration-300 ease-in-out active:scale-75"
       />
     </button>
   );

@@ -28,7 +28,7 @@ export default function Navigation() {
       <li>
         <button
           onClick={() => handleClickToSection(section)}
-          className="w-full bg-stone-800/50 border-b-2 border-stone-800 hover:border-stone-500 py-8 pl-8 text-left text-2xl font-bold text-stone-200 hover:bg-stone-700 transition-all duration-300 ease-in-out hover:text-orange-500 active:scale-90"
+          className="w-full border-b-2 border-stone-800 bg-stone-800/80 py-8 pl-8 text-left text-2xl font-bold text-stone-200 transition-all duration-300 ease-in-out hover:border-stone-500 hover:bg-stone-700 hover:text-orange-500 active:scale-90"
         >
           {children}
         </button>
@@ -38,7 +38,10 @@ export default function Navigation() {
 
   const VerticalMenuOpenBtn = () => {
     return (
-      <button onClick={toggleMenu} className={`${isMenuOpen ? "hidden" : ""}`}>
+      <button
+        onClick={toggleMenu}
+        className={`${isMenuOpen ? "hidden" : ""} mr-2`}
+      >
         <img src="nav/menuOpen.svg" alt="Open Menu" />
       </button>
     );
@@ -46,7 +49,7 @@ export default function Navigation() {
 
   const VerticalMenuCloseBtn = () => {
     return (
-      <button onClick={toggleMenu}>
+      <button onClick={toggleMenu} className="mr-2">
         <img src="nav/menuClose.svg" alt="Close Menu" />
       </button>
     );
@@ -61,7 +64,7 @@ export default function Navigation() {
             initial={{ scaleY: 0, opacity: 0 }}
             animate={{ scaleY: "100%", originY: "top", opacity: 1 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="absolute right-0 flex w-screen md:w-96 flex-col border border-stone-800 bg-stone-900/50 py-8 backdrop-blur-lg"
+            className="absolute right-0 top-10 flex w-screen flex-col border border-stone-800 bg-stone-900/80 py-8 md:w-96"
           >
             {sectionNames.map((section, index) => (
               <MenuItem key={index} section={section}>
@@ -81,9 +84,7 @@ export default function Navigation() {
         className={`relative ${isMenuOpen ? "" : "hidden"}`}
         onClick={toggleMenu}
       >
-        <div className="mb-4 flex justify-end">
-          <VerticalMenuCloseBtn />
-        </div>
+        <VerticalMenuCloseBtn />
         <MenuItemList />
       </div>
     );
