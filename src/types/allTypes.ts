@@ -107,9 +107,13 @@ export type ContainerProps = {
 };
 
 export type ActionButtonProps = {
-  text: string;
-  icon: string;
-  href: string;
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "outline" | "disabled" | "link" | "icon";
+  className?: string;
+  disabled?: boolean;
+  type: "button" | "submit" | "reset";
+  href?: string;
+  hasLink?: boolean;
 };
 
 export type ActionHeaderProps = {

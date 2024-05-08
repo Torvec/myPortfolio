@@ -24,15 +24,7 @@ export const messageInput = {
   placeholderText: "Enter your message",
 };
 
-export const directContactData = {
-  text: "Get in touch with me directly:",
-  email: "me@edward-vonschondorf.dev",
-  mailto:
-    "mailto:me@edward-vonschondorf.dev?subject=Let's Connect and Collaborate!",
-};
-
 export const availabilityData = {
-  availabilityHeader: "Current Availability",
   availabilityList: [
     { type: "Full Time:", availability: "Available" },
     { type: "Part Time:", availability: "Available" },

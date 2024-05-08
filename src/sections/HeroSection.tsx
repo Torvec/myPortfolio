@@ -1,25 +1,23 @@
-import { heroData } from "../data/heroData";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const HeroHeader = () => {
-    const { intro, firstName, lastName, tagline } = heroData;
-
     return (
       <div className="z-30 text-center md:space-y-4">
         <h1 className="p-4 font-black md:p-0">
           <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-4xl text-transparent md:text-8xl">
-            {intro}
+            Hey! I'm{" "}
           </span>
           <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-4xl uppercase text-transparent md:text-8xl">
-            {firstName}
+            Edward
           </span>
           <span className="block bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-4xl uppercase text-transparent md:text-8xl">
-            {lastName}
+            Vonschondorf
           </span>
         </h1>
-        <h2 className="mx-auto text-pretty max-w-[45ch] text-sm text-stone-300 md:text-2xl px-2 md:px-0">
-          {tagline}
+        <h2 className="mx-auto max-w-[45ch] text-pretty px-2 text-sm text-stone-300 md:px-0 md:text-2xl">
+          A Full Stack Web Developer with a technician's eye, and a passion for
+          troubleshooting, creating, and collaborating.
         </h2>
       </div>
     );

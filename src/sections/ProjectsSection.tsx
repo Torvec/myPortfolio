@@ -5,12 +5,12 @@ import ActionHeader from "../components/ActionHeader";
 import {
   type TechStackItemProps,
   type TechStackListProps,
-  type ViewButtonProps,
   type InfoContainerProps,
   type ImageContainerProps,
   type ProjectCardProps,
 } from "../types/allTypes";
-import { projectsData, moreProjects } from "../data/projectsData";
+import { projectsData } from "../data/projectsData";
+import { ExternalLink, Github, SquareArrowOutUpRight } from "lucide-react";
 
 export default function ProjectsSection() {
   const TechStackItem = ({ item }: TechStackItemProps) => {
@@ -28,21 +28,6 @@ export default function ProjectsSection() {
           <TechStackItem key={index} item={list} />
         ))}
       </ul>
-    );
-  };
-
-  const ViewButton = ({ text, href }: ViewButtonProps) => {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block w-full md:inline-block md:w-max"
-      >
-        <button className="w-full rounded-lg border border-white/50 px-4 py-2 transition-all duration-300 ease-in-out hover:scale-105 hover:border-orange-500 hover:text-orange-500 md:hover:scale-110">
-          {text}
-        </button>
-      </a>
     );
   };
 
@@ -64,9 +49,29 @@ export default function ProjectsSection() {
             <TechStackList list={techStack} />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 text-sm text-stone-300 md:flex-row md:justify-center md:gap-8">
-          <ViewButton text="Repository" href={repositoryURL} />
-          <ViewButton text="Deployment" href={deploymentURL} />
+        <div className="flex flex-col gap-4 text-sm text-stone-300 md:flex-row md:justify-center md:gap-8">
+          <ActionButton
+            variant="outline"
+            type="button"
+            hasLink
+            href={deploymentURL}
+          >
+            <span className="flex items-center gap-2">
+              Deployment
+              <ExternalLink size={20} />
+            </span>
+          </ActionButton>
+          <ActionButton
+            variant="outline"
+            type="button"
+            hasLink
+            href={repositoryURL}
+          >
+            <span className="flex items-center gap-2">
+              Repository
+              <Github size={20} />
+            </span>
+          </ActionButton>
         </div>
       </div>
     );
@@ -169,12 +174,19 @@ export default function ProjectsSection() {
   };
 
   const MoreProjects = () => {
-    const { header, text, href } = moreProjects;
-
     return (
-      <div className="mx-auto flex flex-col items-center justify-center border-b border-stone-900 pb-32">
-        <ActionHeader header={header} />
-        <ActionButton text={text} icon="north_east" href={href} />
+      <div className="mx-auto flex flex-col justify-center border-b border-stone-900 pb-32">
+        <ActionHeader header="Explore my other projects on GitHub and see what I've been working on!" />
+        <ActionButton
+          variant="primary"
+          type="button"
+          hasLink
+          href="https://github.com/Torvec?tab=repositories"
+        >
+          <span className="flex items-center gap-2">
+            Let's Go! <SquareArrowOutUpRight size={20} />
+          </span>
+        </ActionButton>
       </div>
     );
   };

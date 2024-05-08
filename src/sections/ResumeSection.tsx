@@ -2,8 +2,9 @@ import Container from "../components/ui/Container";
 import SectionHeader from "../components/SectionHeader";
 import ActionButton from "../components/ui/ActionButton";
 import ActionHeader from "../components/ActionHeader";
-import { education, experience, download } from "../data/resumeData";
+import { education, experience } from "../data/resumeData";
 import { type ResumeItemProps, type ResumeListProps } from "../types/allTypes";
+import { FileDown } from "lucide-react";
 
 export default function ResumeSection() {
   const ResumeItem = ({
@@ -18,7 +19,7 @@ export default function ResumeSection() {
     details,
   }: ResumeItemProps) => {
     return (
-      <div className="rounded-lg bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-stone-900/50 to-stone-950 to-50% px-8 py-8">
+      <div className="rounded-lg bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-stone-900/50 to-stone-950 to-50% p-4 md:p-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <div className="grid size-12 flex-shrink-0 place-content-center rounded-full bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-stone-800 from-20% via-stone-900 via-90% to-stone-950 md:size-20">
             <img
@@ -92,16 +93,23 @@ export default function ResumeSection() {
   };
 
   const Download = () => {
-    const { headerText, docText, pdfText, docHref, pdfHref } = download;
 
     return (
-      <div className="flex flex-col items-center justify-center border-b border-stone-900 pb-32">
-        <ActionHeader header={headerText} />
-        <div className="flex flex-col gap-4 md:flex-row md:gap-16">
-          <ActionButton text={docText} icon="download" href={docHref} />
-          <ActionButton text={pdfText} icon="download" href={pdfHref} />
+      <div className="flex flex-col justify-center border-b border-stone-900 pb-32">
+        <ActionHeader header="Download my full resume in multiple formats:" />
+        <div className="flex flex-col gap-4 md:mx-auto md:flex-row md:gap-16">
+          <ActionButton variant="disabled" type="button" disabled>
+            DOC Format
+            <FileDown />
+          </ActionButton>
+          <ActionButton variant="disabled" type="button" disabled>
+            PDF Format
+            <FileDown />
+          </ActionButton>
         </div>
-        <p className="p-8 text-sm text-stone-400">Last Updated: N/A</p>
+        <p className="p-8 text-center text-sm text-stone-400">
+          Last Updated: N/A
+        </p>
       </div>
     );
   };
@@ -112,7 +120,7 @@ export default function ResumeSection() {
         section="Resume"
         title="My Professional and Academic Journey"
       />
-      <div className="flex flex-col gap-16 md:flex-row pb-32">
+      <div className="flex flex-col gap-16 pb-32 md:flex-row">
         <ResumeList list={experience} />
         <ResumeList list={education} type="education" />
       </div>

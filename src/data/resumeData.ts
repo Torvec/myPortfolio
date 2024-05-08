@@ -111,11 +111,3 @@ export const education = [
       "Spearheaded the creation of the school website, rapidly learning front-end web design and development principles to lead a successful class project.",
   },
 ];
-
-export const download = {
-  headerText: "Download my full resume in multiple formats:",
-  docText: "DOC Format",
-  pdfText: "PDF Format",
-  docHref: "https://www.linkedin.com/in/edward-vonschondorf/",
-  pdfHref: "https://www.linkedin.com/in/edward-vonschondorf/",
-};

@@ -71,10 +71,3 @@ export const projectsData = [
     ],
   },
 ];
-
-export const moreProjects = {
-  header:
-    "Explore my other projects on GitHub and see what I've been working on!",
-  text: "Let's Go!",
-  href: "https://github.com/Torvec?tab=repositories",
-};

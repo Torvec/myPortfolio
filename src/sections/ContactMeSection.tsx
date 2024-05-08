@@ -1,19 +1,19 @@
 import Container from "../components/ui/Container";
 import SectionHeader from "../components/SectionHeader";
+import ActionButton from "../components/ui/ActionButton";
 import {
   availabilityData,
   fullNameInput,
   emailInput,
   messageInput,
-  directContactData,
 } from "../data/contactMeData";
 import {
   type FormLabelProps,
   type FormInputProps,
   type FormMessageProps,
-  type SubmitButtonProps,
   type AvailabilityItemProps,
 } from "../types/allTypes";
+import { Send } from "lucide-react";
 
 export default function ContactMeSection() {
   const FormLabel = ({ forText, labelText }: FormLabelProps) => {
@@ -64,22 +64,10 @@ export default function ContactMeSection() {
     );
   };
 
-  const SubmitButton = ({ text }: SubmitButtonProps) => {
-    return (
-      <button
-        type="submit"
-        className="self-center rounded-lg border-4 border-stone-900 bg-gradient-to-t from-stone-700 to-stone-500 px-4 py-2 text-stone-950"
-        disabled
-      >
-        {text}
-      </button>
-    );
-  };
-
   const ContactForm = () => {
     return (
       <form className="flex flex-col justify-evenly gap-8 rounded-lg md:w-4/6">
-        <p className="mx-auto rounded-lg border border-orange-700 px-6 py-1 text-center text-sm font-bold uppercase text-stone-300">
+        <p className="mx-auto text-balance rounded-lg border border-orange-700 px-6 py-1 text-center text-sm font-bold uppercase text-stone-300">
           This form is currently disabled/under development
         </p>
         <div>
@@ -119,23 +107,29 @@ export default function ContactMeSection() {
             messageMaxLength={500}
           />
         </div>
-        <SubmitButton text="Send Message" />
+        <ActionButton variant="disabled" type="submit" disabled>
+          Send Message
+          <Send size={16} />
+        </ActionButton>
       </form>
     );
   };
 
   const DirectContact = () => {
-    const { text, email, mailto } = directContactData;
-
     return (
       <div>
-        <p className="mb-2 text-stone-400">{text}</p>
-        <a
-          href={mailto}
-          className="block font-bold text-stone-200 transition-all duration-300 ease-in-out hover:scale-105 hover:text-orange-600"
+        <p className="text-center text-stone-400">
+          Get in touch with me directly:
+        </p>
+
+        <ActionButton
+          variant="link"
+          type="button"
+          hasLink
+          href="mailto:me@edward-vonschondorf.dev?subject=Let's Connect and Collaborate!"
         >
-          {email}
-        </a>
+          me@edward-vonschondorf.dev
+        </ActionButton>
       </div>
     );
   };
@@ -154,11 +148,11 @@ export default function ContactMeSection() {
   };
 
   const AvailabilityList = () => {
-    const { availabilityHeader, availabilityList } = availabilityData;
+    const { availabilityList } = availabilityData;
     return (
       <div>
-        <h3 className="mb-4 text-sm font-bold uppercase text-stone-300">
-          {availabilityHeader}
+        <h3 className="mb-4 text-center text-sm font-bold uppercase text-stone-300">
+          Current Availability
         </h3>
         <ul className="flex flex-col gap-6">
           {availabilityList.map(({ type, availability }, index) => (
@@ -174,9 +168,7 @@ export default function ContactMeSection() {
   };
 
   return (
-    <Container
-      id="contact"
-    >
+    <Container id="contact">
       <SectionHeader section="Contact" title="Let's Connect and Collaborate!" />
       <div className="flex flex-col gap-32 md:flex-row">
         <ContactForm />
