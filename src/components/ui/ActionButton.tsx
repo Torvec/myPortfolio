@@ -8,13 +8,12 @@ export default function ActionButton({
   className,
   variant,
   type,
-  hasLink,
   href,
   disabled,
   ...props
 }: ActionButtonProps) {
   const buttonVariants = cva(
-    "md:mx-auto md:w-max rounded-lg transition-all duration-300 ease-in-out active:scale-90 py-2 md:py-2 md:px-4 font-medium flex justify-center items-center gap-2",
+    "md:mx-auto md:w-max w-full rounded-lg transition-all duration-300 ease-in-out active:scale-90 py-2 md:py-2 md:px-4 font-medium flex justify-center items-center gap-2",
     {
       variants: {
         variant: {
@@ -32,23 +31,33 @@ export default function ActionButton({
       },
     },
   );
-
-  return (
+  const Button = (
     <button
       {...props}
       className={cn(buttonVariants({ variant }), className)}
       type={type}
       disabled={disabled}
     >
-      {hasLink ? (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          {children}
-        </a>
-      ) : (
-        children
-      )}
+      {children}
     </button>
   );
+  // Used for rendering a button element with an anchor tag around it, so that the link works no matter where you press the button
+  const ButtonWrapper = () => {
+    return href ? (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        {Button}
+      </a>
+    ) : (
+      Button
+    );
+  };
+
+  return ButtonWrapper();
 }
 
 // This utility function merges the classnames from tailwindcss using twMerge and clsx

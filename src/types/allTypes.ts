@@ -113,7 +113,6 @@ export type ActionButtonProps = {
   disabled?: boolean;
   type: "button" | "submit" | "reset";
   href?: string;
-  hasLink?: boolean;
 };
 
 export type ActionHeaderProps = {
