@@ -125,7 +125,6 @@ export default function ContactMeSection() {
         <ActionButton
           variant="link"
           type="button"
-          hasLink
           href="mailto:me@edward-vonschondorf.dev?subject=Let's Connect and Collaborate!"
         >
           me@edward-vonschondorf.dev

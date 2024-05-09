@@ -53,7 +53,6 @@ export default function ProjectsSection() {
           <ActionButton
             variant="outline"
             type="button"
-            hasLink
             href={deploymentURL}
           >
             <span className="flex items-center gap-2">
@@ -64,7 +63,6 @@ export default function ProjectsSection() {
           <ActionButton
             variant="outline"
             type="button"
-            hasLink
             href={repositoryURL}
           >
             <span className="flex items-center gap-2">
@@ -180,7 +178,6 @@ export default function ProjectsSection() {
         <ActionButton
           variant="primary"
           type="button"
-          hasLink
           href="https://github.com/Torvec?tab=repositories"
         >
           <span className="flex items-center gap-2">
