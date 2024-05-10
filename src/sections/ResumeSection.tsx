@@ -93,22 +93,29 @@ export default function ResumeSection() {
   };
 
   const Download = () => {
-
     return (
       <div className="flex flex-col justify-center border-b border-stone-900 pb-32">
         <ActionHeader header="Download my full resume in multiple formats:" />
         <div className="flex flex-col gap-4 md:mx-auto md:flex-row md:gap-16">
-          <ActionButton variant="disabled" type="button" disabled>
+          <ActionButton
+            variant="primary"
+            type="button"
+            href="resume/edward_vonschondorf_developer_resume.docx"
+          >
             DOC Format
             <FileDown />
           </ActionButton>
-          <ActionButton variant="disabled" type="button" disabled>
+          <ActionButton
+            variant="secondary"
+            type="button"
+            href="resume/edward_vonschondorf_developer_resume.pdf"
+          >
             PDF Format
             <FileDown />
           </ActionButton>
         </div>
         <p className="p-8 text-center text-sm text-stone-400">
-          Last Updated: N/A
+          Last Updated: 10 May 2024
         </p>
       </div>
     );

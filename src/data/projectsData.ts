@@ -11,6 +11,25 @@ export const projectsData = [
   },
   {
     id: 2,
+    projectName: "MVC Tech Blog",
+    imgURL: "projects/mvc_tech_blog.jpg",
+    repositoryURL:
+      "https://github.com/Torvec/bootcamp-challenges/tree/main/m14_mvc_tech_blog",
+    deploymentURL: "https://obscure-badlands-14784-588733df30d2.herokuapp.com/",
+    description:
+      "A simple blog created using Handlebars, MySQL, and Sequelize. This was a solo project from my UC Berkeley Full Stack Web Development Bootcamp where I implemented the MVC design pattern and CRUD functionality.",
+    techStack: [
+      "Handlebars",
+      "Materialize CSS",
+      "MySQL",
+      "Node",
+      "Express",
+      "Sequelize",
+      "DayJS",
+    ],
+  },
+  {
+    id: 3,
     projectName: "Task Titan",
     imgURL: "projects/task_titan.jpg",
     repositoryURL: "https://github.com/Torvec/Task-Titan",
@@ -27,7 +46,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     projectName: "Wedloc",
     imgURL: "projects/wedloc.jpg",
     repositoryURL: "https://github.com/Torvec/wedloc",
@@ -47,7 +66,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     projectName: "Bootcamp Challenges",
     imgURL: "projects/bootcamp_challenges.jpg",
     repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
