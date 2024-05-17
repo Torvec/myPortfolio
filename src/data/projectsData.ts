@@ -70,7 +70,7 @@ export const projectsData = [
     projectName: "Bootcamp Challenges",
     imgURL: "projects/bootcamp_challenges.jpg",
     repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
-    deploymentURL: "https://torvec.github.io/bootcamp-challenges/",
+    deploymentURL: "https://bootcamp-challenges.pages.dev/",
     description:
       "All of the weekly projects from my UC Berkeley Full Stack Web Development Bootcamp.",
     techStack: [
