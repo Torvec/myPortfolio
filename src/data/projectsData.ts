@@ -68,7 +68,7 @@ export const projectsData = [
   {
     id: 5,
     projectName: "Bootcamp Challenges",
-    imgURL: "projects/bootcamp_challenges.jpg",
+    imgURL: "projects/ucb_bootcamp_challenges.jpg",
     repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
     deploymentURL: "https://bootcamp-challenges.pages.dev/",
     description:
