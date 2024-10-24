@@ -56,7 +56,7 @@ export default function AboutMeSection() {
           aria-hidden="true"
         />
         <img
-          src="about/me.jpg"
+          src="about/me2.jpg"
           alt="Me at the Grand Canyon"
           className="relative z-10 size-full rounded-lg object-cover md:size-96"
         />
