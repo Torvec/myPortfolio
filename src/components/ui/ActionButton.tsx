@@ -1,7 +1,15 @@
-import { type ActionButtonProps } from "../../types/allTypes";
 import { cva } from "class-variance-authority";
 import { ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+
+type ActionButtonProps = {
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "outline" | "disabled" | "link" | "icon";
+  className?: string;
+  disabled?: boolean;
+  type: "button" | "submit" | "reset";
+  href?: string;
+};
 
 export default function ActionButton({
   children,

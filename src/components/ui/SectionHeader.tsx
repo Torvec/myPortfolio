@@ -1,4 +1,7 @@
-import { type SectionHeaderProps } from "../types/allTypes";
+type SectionHeaderProps = {
+  section: string;
+  title: string;
+};
 
 export default function SectionHeader({ section, title }: SectionHeaderProps) {
   return (

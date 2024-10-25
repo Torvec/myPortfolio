@@ -1,10 +1,10 @@
-import Header from "./components/template/header/Header";
-import HeroSection from "./sections/HeroSection";
-import AboutMeSection from "./sections/AboutMeSection";
-import ProjectsSection from "./sections/ProjectsSection";
-import ResumeSection from "./sections/ResumeSection";
-import ContactMeSection from "./sections/ContactMeSection";
-import Footer from "./components/template/Footer";
+import Header from "./components/ui/Header";
+import HeroSection from "./components/sections/HeroSection";
+import AboutMeSection from "./components/sections/AboutMeSection";
+import ProjectsSection from "./components/sections/ProjectsSection";
+import ResumeSection from "./components/sections/ResumeSection";
+import ContactMeSection from "./components/sections/ContactMeSection";
+import Footer from "./components/ui/Footer";
 
 export default function App() {
   console.log("Made in 2024 by Edward Vonschondorf");

@@ -1,4 +1,6 @@
-import { type ActionHeaderProps } from "../types/allTypes";
+type ActionHeaderProps = {
+  header: string;
+};
 
 export default function ActionHeader({ header }: ActionHeaderProps) {
   return (

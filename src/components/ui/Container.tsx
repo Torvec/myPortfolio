@@ -1,4 +1,7 @@
-import { type ContainerProps } from "../../types/allTypes";
+type ContainerProps = {
+  children: React.ReactNode;
+  id: string;
+};
 
 export default function Container({ children, id }: ContainerProps) {
   return (
