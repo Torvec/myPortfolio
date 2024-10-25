@@ -7,6 +7,15 @@ interface DropDownMenuProps {
   menuOpen: boolean;
 }
 
+interface CloseMenuButtonProps {
+  togglemenu: () => void;
+}
+
+interface MenuItemProps {
+  section: string;
+  clickToSection: (section: string) => void;
+}
+
 export default function DropDownMenu({
   sectionNames,
   toggleMenu,
@@ -19,9 +28,7 @@ export default function DropDownMenu({
       className={`relative ${menuOpen ? "" : "hidden"}`}
       onClick={toggleMenu}
     >
-      <button onClick={toggleMenu} className="mr-2" aria-label="Close Menu">
-        <img src="nav/menuClose.svg" alt="Close Menu" />
-      </button>
+      <CloseMenuButton togglemenu={toggleMenu} />
       <AnimatePresence>
         {menuOpen && (
           <motion.ul
@@ -33,12 +40,10 @@ export default function DropDownMenu({
           >
             {sectionNames.map((section) => (
               <li key={section}>
-                <button
-                  onClick={() => clickToSection(section)}
-                  className="w-full border-b-2 border-stone-800 bg-stone-800/80 py-8 pl-8 text-left text-2xl font-bold text-stone-200 transition-all duration-300 ease-in-out hover:border-stone-500 hover:bg-stone-700 hover:text-orange-500 active:scale-90"
-                >
-                  {section}
-                </button>
+                <MenuItemButton
+                  section={section}
+                  clickToSection={clickToSection}
+                />
               </li>
             ))}
           </motion.ul>
@@ -47,3 +52,26 @@ export default function DropDownMenu({
     </div>
   );
 }
+
+const CloseMenuButton = ({ togglemenu }: CloseMenuButtonProps) => {
+  return (
+    <button
+      onClick={togglemenu}
+      className="mr-3 xl:mr-0"
+      aria-label="Close Menu"
+    >
+      <img src="nav/menuClose.svg" alt="Close Menu" />
+    </button>
+  );
+};
+
+const MenuItemButton = ({ section, clickToSection }: MenuItemProps) => {
+  return (
+    <button
+      onClick={() => clickToSection(section)}
+      className="w-full border-b-2 border-stone-800 bg-stone-800/80 py-8 pl-8 text-left text-2xl font-bold text-stone-200 transition-all duration-300 ease-in-out hover:border-stone-500 hover:bg-stone-700 hover:text-orange-500 active:scale-90"
+    >
+      {section}
+    </button>
+  );
+};

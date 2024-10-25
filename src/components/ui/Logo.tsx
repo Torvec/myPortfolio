@@ -9,7 +9,7 @@ export default function Logo() {
       <img
         src="nav/logo.png"
         alt="EV Logo"
-        className="ml-2 size-full transition-all duration-300 ease-in-out active:scale-75"
+        className="ml-3 size-full transition-all duration-300 ease-in-out active:scale-75 xl:ml-0"
       />
     </button>
   );

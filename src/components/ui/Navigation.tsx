@@ -42,7 +42,7 @@ const OpenMenuButton = ({ toggleMenu, menuOpen }: OpenMenuButtonProps) => {
   return (
     <button
       onClick={toggleMenu}
-      className={`${menuOpen ? "hidden" : ""} mr-2`}
+      className={`${menuOpen ? "hidden" : ""} mr-3 xl:mr-0`}
       aria-label="Open Menu"
     >
       <img src="nav/menuOpen.svg" alt="Open Menu" />

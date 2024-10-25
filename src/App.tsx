@@ -1,3 +1,4 @@
+import "./app.css";
 import Header from "./components/ui/Header";
 import HeroSection from "./components/sections/HeroSection";
 import AboutMeSection from "./components/sections/AboutMeSection";
