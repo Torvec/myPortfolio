@@ -16,13 +16,13 @@ const HeroHeader = () => {
   return (
     <div className="z-30 text-center md:space-y-4">
       <h1 className="p-4 font-black md:p-0">
-        <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-4xl text-transparent md:text-8xl">
+        <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-3xl text-transparent md:text-7xl lg:text-8xl">
           Hey! I'm{" "}
         </span>
-        <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-4xl uppercase text-transparent md:text-8xl">
+        <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-3xl uppercase text-transparent md:text-7xl lg:text-8xl">
           Edward
         </span>
-        <span className="block bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-4xl uppercase text-transparent md:text-8xl">
+        <span className="block bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-3xl uppercase text-transparent md:text-7xl lg:text-8xl">
           Vonschondorf
         </span>
       </h1>
