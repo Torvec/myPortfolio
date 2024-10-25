@@ -7,7 +7,7 @@ export default function AboutMeSection() {
   return (
     <Container id="about">
       <SectionHeader section="About" title="A Brief Introduction" />
-      <div className="flex flex-col-reverse gap-8 rounded-lg border-t border-white/15 bg-[radial-gradient(circle_at_right_top,_var(--tw-gradient-stops))] from-stone-900 p-4 md:flex-row md:items-center md:gap-16 md:p-16">
+      <div className="flex flex-col-reverse gap-8 rounded-lg border-t border-white/15 bg-[radial-gradient(circle_at_right_top,_var(--tw-gradient-stops))] from-stone-900 p-4 lg:flex-row lg:items-center lg:gap-12 lg:p-12">
         <IntroContent />
         <IntroProfilePic />
       </div>
@@ -63,13 +63,13 @@ const IntroProfilePic = () => {
   return (
     <div className="relative flex-shrink-0">
       <div
-        className="absolute inset-0 z-0 translate-y-4 rounded-lg bg-black blur-lg md:translate-x-4"
+        className="absolute inset-0 z-0 translate-y-4 rounded-lg bg-black blur-lg lg:translate-x-4"
         aria-hidden="true"
       />
       <img
         src="about/me2.jpg"
         alt="Me at the Grand Canyon"
-        className="relative z-10 size-full rounded-lg object-cover md:size-96"
+        className="relative z-10 size-full rounded-lg object-cover lg:size-96"
       />
     </div>
   );

@@ -30,7 +30,7 @@ export default function ResumeSection() {
         section="Resume"
         title="My Professional and Academic Journey"
       />
-      <div className="flex flex-col gap-16 pb-32 md:flex-row">
+      <div className="flex flex-col gap-8 pb-32 md:flex-row">
         <ResumeList list={experience} />
         <ResumeList list={education} type="education" />
       </div>

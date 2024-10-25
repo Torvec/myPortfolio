@@ -89,7 +89,7 @@ const InfoContainer = ({
           <TechStackList list={techStack} />
         </div>
       </div>
-      <div className="flex flex-col gap-4 text-sm text-stone-300 md:flex-row md:justify-center md:gap-8">
+      <div className="flex flex-col gap-4 text-sm text-stone-300 lg:flex-row lg:justify-center lg:gap-8">
         <ActionButton variant="outline" type="button" href={deploymentURL}>
           <span className="flex items-center gap-2">
             Deployment
