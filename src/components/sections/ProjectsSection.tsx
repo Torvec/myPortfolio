@@ -45,7 +45,7 @@ export default function ProjectsSection() {
     <Container id="projects">
       <SectionHeader
         section="Projects"
-        title="Some Interesting Things I've Created"
+        title="Some Interesting Projects I've Made"
       />
       <ProjectCardList />
       <MoreProjects />
@@ -206,7 +206,9 @@ const ProjectCardList = () => {
 const MoreProjects = () => {
   return (
     <div className="mx-auto flex flex-col justify-center border-b border-stone-900 pb-32">
-      <ActionHeader header="Explore my other projects on GitHub and see what I've been working on!" />
+      <ActionHeader>
+        Check out my other projects on GitHub to see what I'm working on!
+      </ActionHeader>
       <ActionButton
         variant="primary"
         type="button"

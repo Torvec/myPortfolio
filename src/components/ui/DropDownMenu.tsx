@@ -7,15 +7,6 @@ interface DropDownMenuProps {
   menuOpen: boolean;
 }
 
-interface CloseMenuButtonProps {
-  togglemenu: () => void;
-}
-
-interface MenuItemProps {
-  section: string;
-  clickToSection: (section: string) => void;
-}
-
 export default function DropDownMenu({
   sectionNames,
   toggleMenu,
@@ -53,7 +44,7 @@ export default function DropDownMenu({
   );
 }
 
-const CloseMenuButton = ({ togglemenu }: CloseMenuButtonProps) => {
+const CloseMenuButton = ({ togglemenu }: { togglemenu: () => void }) => {
   return (
     <button
       onClick={togglemenu}
@@ -65,7 +56,13 @@ const CloseMenuButton = ({ togglemenu }: CloseMenuButtonProps) => {
   );
 };
 
-const MenuItemButton = ({ section, clickToSection }: MenuItemProps) => {
+const MenuItemButton = ({
+  section,
+  clickToSection,
+}: {
+  section: string;
+  clickToSection: (section: string) => void;
+}) => {
   return (
     <button
       onClick={() => clickToSection(section)}

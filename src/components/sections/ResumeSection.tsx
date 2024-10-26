@@ -127,7 +127,7 @@ const ResumeList = ({ list, type }: ResumeListProps) => {
 const Download = () => {
   return (
     <div className="flex flex-col justify-center border-b border-stone-900 pb-32">
-      <ActionHeader header="Download my full resume in multiple formats:" />
+      <ActionHeader>Download my full resume:</ActionHeader>
       <div className="flex flex-col gap-4 md:mx-auto md:flex-row md:gap-16">
         <ActionButton
           variant="primary"
