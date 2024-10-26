@@ -89,4 +89,34 @@ export const projectsData = [
       "Redux",
     ],
   },
+  {
+    id: 6,
+    projectName: "The Running Dog",
+    imgURL: "projects/the_running_dog.jpg",
+    repositoryURL: "https://github.com/Torvec/dog-runner-game",
+    deploymentURL: "https://dog-runner-game.pages.dev/",
+    description:
+      "A vanilla JavaScript game using the canvas element where you play as a dog with super powers and defeat monsters to get the highest score on each level.",
+    techStack: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    id: 7,
+    projectName: "Tic Tac Toe Classic",
+    imgURL: "projects/tic_tac_toe_classic.jpg",
+    repositoryURL: "https://github.com/Torvec/tic-tac-toe-classic",
+    deploymentURL: "https://tic-tac-toe-classic.pages.dev/",
+    description:
+      "A vanilla JavaScript game using the canvas element to play the classic version of tic tac toe.",
+    techStack: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    id: 8,
+    projectName: "Tic Tac Toe Ultimate",
+    imgURL: "projects/tic_tac_toe_ultimate.jpg",
+    repositoryURL: "https://github.com/Torvec/tic-tac-toe-ultimate",
+    deploymentURL: "https://tic-tac-toe-ultimate.pages.dev/",
+    description:
+      "A vanilla JavaScript game using the canvas element to play the ultimate version of tic tac toe.",
+    techStack: ["HTML", "CSS", "JavaScript"],
+  },
 ];
