@@ -68,7 +68,7 @@ const IntroProfilePic = () => {
       />
       <img
         src="about/me2.jpg"
-        alt="Me at the Grand Canyon"
+        alt="Me in front of the Unicorn Gundam in Tokyo, Japan"
         className="relative z-10 size-full rounded-lg object-cover lg:size-96"
       />
     </div>

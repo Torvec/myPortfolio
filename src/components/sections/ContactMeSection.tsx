@@ -1,7 +1,7 @@
 import Container from "../ui/Container";
 import SectionHeader from "../ui/SectionHeader";
-import ActionButton from "../ui/ActionButton";
 import { availabilityData } from "../../data/contactMeData";
+import { Mail } from "lucide-react";
 
 type AvailabilityItemProps = {
   type: string;
@@ -12,38 +12,20 @@ export default function ContactMeSection() {
   return (
     <Container id="contact">
       <SectionHeader section="Contact" title="Let's Connect and Collaborate!" />
-      <div className="mx-auto flex flex-col gap-16 md:w-1/2">
-        <DirectContact />
+      <div className="mx-auto space-y-16 lg:w-1/2">
         <AvailabilityList />
+        <DirectContact />
       </div>
     </Container>
   );
 }
 
-const DirectContact = () => {
-  return (
-    <div>
-      <p className="text-center text-stone-400">
-        Get in touch with me directly:
-      </p>
-
-      <ActionButton
-        variant="link"
-        type="button"
-        href="mailto:me@edward-vonschondorf.dev?subject=Let's Connect and Collaborate!"
-      >
-        me@edward-vonschondorf.dev
-      </ActionButton>
-    </div>
-  );
-};
-
 const AvailabilityItem = ({ type, availability }: AvailabilityItemProps) => {
   return (
-    <li className="rounded-lg border-y border-l border-stone-900  text-stone-400">
-      <div className="flex items-center justify-between rounded-lg bg-gradient-to-l from-orange-950/50 to-40% px-5 py-3">
+    <li className="rounded-lg border-y border-l border-stone-800  text-stone-400">
+      <div className="flex flex-col gap-8 rounded-lg bg-gradient-to-t from-orange-950/50 to-40% px-5 py-3 text-center">
         <span className="text-sm">{type}</span>
-        <span className="text-xs font-medium uppercase text-orange-500">
+        <span className="text-sm font-bold uppercase text-orange-500">
           {availability}
         </span>
       </div>
@@ -54,11 +36,11 @@ const AvailabilityItem = ({ type, availability }: AvailabilityItemProps) => {
 const AvailabilityList = () => {
   const { availabilityList } = availabilityData;
   return (
-    <div>
+    <div className="rounded-3xl border-2 border-stone-900 bg-gradient-to-b from-stone-900/50 to-40% p-4 lg:p-8">
       <h3 className="mb-4 text-center text-sm font-bold uppercase text-stone-300">
-        Current Availability
+        Availability
       </h3>
-      <ul className="flex flex-col gap-6">
+      <ul className="grid gap-6 md:grid-cols-2">
         {availabilityList.map(({ type, availability }, index) => (
           <AvailabilityItem
             key={index}
@@ -67,6 +49,26 @@ const AvailabilityList = () => {
           />
         ))}
       </ul>
+    </div>
+  );
+};
+
+const DirectContact = () => {
+  return (
+    <div className="space-y-6">
+      <p className="text-center font-bold text-stone-400 sm:text-xl">
+        Get in touch with me directly:
+      </p>
+
+      <a
+        href="mailto:me@edward-vonschondorf.dev?subject=Let's Connect and Collaborate!"
+        className="mx-auto block w-max text-orange-500 hover:text-orange-400"
+      >
+        <Mail size={40} className="mx-auto" />
+        <span className="font-black sm:text-2xl md:text-4xl">
+          me@edward-vonschondorf.dev
+        </span>
+      </a>
     </div>
   );
 };

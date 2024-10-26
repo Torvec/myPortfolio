@@ -29,7 +29,7 @@ type ImageContainerProps = {
 };
 
 type ProjectCardProps = {
-  colOrderStyles: string;
+  columnOrderStyles: string;
   translateImg: string;
   translateShadow: string;
   imgURL: string;
@@ -79,7 +79,7 @@ const InfoContainer = ({
   deploymentURL,
 }: InfoContainerProps) => {
   return (
-    <div className="flex flex-col justify-center gap-16 px-4 py-8 md:w-1/3 md:p-0">
+    <div className="flex flex-col justify-center gap-16 px-4 py-8 lg:w-1/3 lg:p-0">
       <div>
         <h3 className="mb-4 text-2xl font-bold text-stone-300 md:text-4xl">
           {projectName}
@@ -114,16 +114,16 @@ const ImageContainer = ({
   projectName,
 }: ImageContainerProps) => {
   return (
-    <div className={`md:w-2/3 ${translateImg} relative mb-8 md:mb-0`}>
+    <div className={`lg:w-2/3 ${translateImg} relative mb-8 lg:mb-0`}>
       <div
-        className={`absolute inset-0 z-0 rounded-3xl bg-black blur-lg ${translateShadow} translate-y-8`}
+        className={`absolute inset-0 z-0 max-h-96 min-h-96 rounded-3xl bg-black blur-lg md:max-h-[768px] ${translateShadow} translate-y-8`}
         aria-hidden="true"
       />
       <div className="relative z-10">
         <img
           src={imgURL}
           alt={projectName}
-          className="h-[50vh] w-full rounded-lg border border-stone-700 object-cover object-top"
+          className="aspect-square h-auto max-h-96 min-h-96 w-full rounded-lg border border-stone-700 object-cover object-top md:aspect-auto md:max-h-[768px]"
         />
       </div>
     </div>
@@ -131,7 +131,7 @@ const ImageContainer = ({
 };
 
 const ProjectCard = ({
-  colOrderStyles,
+  columnOrderStyles,
   translateImg,
   translateShadow,
   imgURL,
@@ -144,7 +144,7 @@ const ProjectCard = ({
   return (
     <div>
       <div
-        className={`flex flex-col-reverse rounded-lg border border-stone-800 bg-gradient-to-b from-stone-800 to-95% md:w-[calc(100%-64px)] md:py-16 ${colOrderStyles} mb-32`}
+        className={`flex flex-col-reverse rounded-lg border border-stone-800 bg-gradient-to-b from-stone-800 to-95% lg:w-[calc(100%-64px)] lg:py-16 ${columnOrderStyles} mb-32`}
       >
         <InfoContainer
           projectName={projectName}
@@ -180,15 +180,15 @@ const ProjectCardList = () => {
           <ProjectCard
             key={id}
             translateImg={
-              id % 2 !== 0 ? "md:translate-x-16" : "md:-translate-x-16"
+              id % 2 !== 0 ? "lg:translate-x-16" : "lg:-translate-x-16"
             }
             translateShadow={
-              id % 2 !== 0 ? "md:-translate-x-8" : "md:translate-x-8"
+              id % 2 !== 0 ? "lg:-translate-x-8" : "lg:translate-x-8"
             }
-            colOrderStyles={
+            columnOrderStyles={
               id % 2 !== 0
-                ? "md:flex-row md:pl-8 md:bg-gradient-to-l"
-                : "md:flex-row-reverse md:pr-8 md:bg-gradient-to-r md:translate-x-16"
+                ? "lg:flex-row lg:pl-8 lg:bg-gradient-to-l"
+                : "lg:flex-row-reverse lg:pr-8 lg:bg-gradient-to-r lg:translate-x-16"
             }
             imgURL={imgURL}
             projectName={projectName}

@@ -53,7 +53,7 @@ const ResumeItem = ({
   return (
     <div className="rounded-lg bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-stone-900/50 to-stone-950 to-50% p-4 md:p-8">
       <div className="flex flex-col gap-6 md:flex-row md:items-center">
-        <div className="grid size-12 flex-shrink-0 place-content-center rounded-full bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-stone-800 from-20% via-stone-900 via-90% to-stone-950 md:size-20">
+        <div className="grid size-12 flex-shrink-0 place-content-center rounded-full bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-stone-800/50 from-20% via-stone-900 via-90% to-stone-950 md:size-20">
           <img
             src={logo}
             alt={jobTitle || program}
@@ -69,7 +69,7 @@ const ResumeItem = ({
           <h3 className="text-pretty text-lg font-extrabold text-stone-300">
             {jobTitle || program}
           </h3>
-          <div className="flex flex-col md:flex-row md:justify-between">
+          <div className="flex flex-col md:justify-between lg:flex-row">
             <h4 className="text-sm font-light text-stone-400">
               {company || institution}
             </h4>
@@ -104,7 +104,7 @@ const ResumeList = ({ list, type }: ResumeListProps) => {
         }: ResumeItemProps) => (
           <div
             key={id}
-            className="rounded-lg bg-gradient-to-b from-stone-800 to-stone-950 to-80% p-2"
+            className="rounded-lg bg-gradient-to-b from-stone-800/70 to-stone-950 to-80% p-1"
           >
             <ResumeItem
               startDate={startDate}
