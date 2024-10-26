@@ -206,9 +206,7 @@ const ProjectCardList = () => {
 const MoreProjects = () => {
   return (
     <div className="mx-auto flex flex-col justify-center border-b border-stone-900 pb-32">
-      <ActionHeader>
-        Check out my other projects on GitHub to see what I'm working on!
-      </ActionHeader>
+      <ActionHeader>Check out my other projects on GitHub!</ActionHeader>
       <ActionButton
         variant="primary"
         type="button"
