@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden border-b border-stone-900"
+      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden border-b border-stone-700"
     >
       <RadarScanner />
       <HeroHeader />

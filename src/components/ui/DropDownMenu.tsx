@@ -27,7 +27,7 @@ export default function DropDownMenu({
             initial={{ scaleY: 0, opacity: 0 }}
             animate={{ scaleY: "100%", originY: "top", opacity: 1 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="absolute right-0 top-10 flex w-screen flex-col border border-stone-800 bg-stone-900/80 py-8 md:w-96"
+            className="absolute right-0 top-11 flex w-screen flex-col border-x border-t border-stone-800 bg-stone-900 md:w-96"
           >
             {sectionNames.map((section) => (
               <li key={section}>
@@ -66,7 +66,7 @@ const MenuItemButton = ({
   return (
     <button
       onClick={() => clickToSection(section)}
-      className="w-full border-b-2 border-stone-800 bg-stone-800/80 py-8 pl-8 text-left text-2xl font-bold text-stone-200 transition-all duration-300 ease-in-out hover:border-stone-500 hover:bg-stone-700 hover:text-orange-500 active:scale-90"
+      className="w-full border-b-2 border-stone-800 bg-stone-950 py-8 pl-8 text-left text-2xl font-bold text-orange-500 transition-all duration-300 ease-in-out hover:bg-orange-500 hover:text-stone-200 active:scale-90"
     >
       {section}
     </button>

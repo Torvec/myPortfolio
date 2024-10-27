@@ -5,7 +5,7 @@ export const experience = [
     startDate: "10.2023",
     endDate: "Present",
     company: "Freelance",
-    logo: "nav/logo.png",
+    logo: "nav/logo_bo.png",
     jobTitle: "Full Stack Web Developer",
     location: "San Francisco Bay Area, CA",
     details:

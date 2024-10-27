@@ -7,7 +7,7 @@ export default function Logo() {
       className="relative z-50 size-7"
     >
       <img
-        src="nav/logo.png"
+        src="nav/logo_bo.png"
         alt="EV Logo"
         className="ml-3 size-full transition-all duration-300 ease-in-out active:scale-75 xl:ml-0"
       />

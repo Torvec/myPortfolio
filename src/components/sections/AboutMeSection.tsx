@@ -1,13 +1,12 @@
 import Container from "../ui/Container";
 import SectionHeader from "../ui/SectionHeader";
 import SocialLinkList from "../ui/SocialLinkList";
-import { CornerRightDown } from "lucide-react";
 
 export default function AboutMeSection() {
   return (
     <Container id="about">
       <SectionHeader section="About" title="A Brief Introduction" />
-      <div className="flex flex-col-reverse gap-8 rounded-lg border-t border-white/15 bg-[radial-gradient(circle_at_right_top,_var(--tw-gradient-stops))] from-stone-900 p-4 lg:flex-row lg:items-center lg:gap-12 lg:p-12">
+      <div className="flex flex-col-reverse gap-8 rounded-xl border-r border-t border-stone-800 bg-[radial-gradient(circle_at_right_top,_var(--tw-gradient-stops))] from-stone-800 to-stone-950 p-4 lg:flex-row lg:items-start lg:gap-12 lg:p-12">
         <IntroContent />
         <IntroProfilePic />
       </div>
@@ -18,7 +17,7 @@ export default function AboutMeSection() {
 const IntroContent = () => {
   return (
     <>
-      <div className="flex flex-col justify-between gap-y-16 rounded-lg md:p-8">
+      <div className="flex flex-col justify-between gap-y-16 rounded-lg">
         <main className="space-y-4">
           <p className="text-pretty text-xl font-bold text-stone-300">
             With a foundation in robotics and radar systems, I've leveraged my
@@ -40,20 +39,9 @@ const IntroContent = () => {
             team/project!
           </p>
         </main>
-        <footer className="flex flex-col gap-4 md:flex-row md:justify-between md:gap-0">
-          <button
-            onClick={() =>
-              window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth",
-              })
-            }
-            className="flex w-max items-end gap-2 text-orange-500 transition-all duration-300 ease-in-out hover:scale-110 hover:text-orange-600"
-          >
-            Let's Connect! <CornerRightDown size={20} />
-          </button>
+        <div className="flex justify-center pb-8">
           <SocialLinkList />
-        </footer>
+        </div>
       </div>
     </>
   );

@@ -22,6 +22,9 @@ export default {
       sans: ["Inter", "sans-serif"],
     },
     extend: {
+      // colors: {
+      //   color1: "rgba(var(--color1)",
+      // },
       backgroundImage: {
         "hero-pattern": 'url("/hero/bg_grid_64x64.png")',
       },
