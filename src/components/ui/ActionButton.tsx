@@ -21,7 +21,7 @@ export default function ActionButton({
   ...props
 }: ActionButtonProps) {
   const buttonVariants = cva(
-    "md:mx-auto max-w-96 lg:w-max w-full rounded-lg transition-all duration-300 ease-in-out active:scale-90 py-2 md:py-2 md:px-4 font-medium flex justify-center items-center gap-2",
+    "md:mx-auto max-w-96 w-full rounded-lg transition-all duration-300 ease-in-out active:scale-90 py-2 md:py-2 md:px-4 font-medium flex justify-center items-center gap-2",
     {
       variants: {
         variant: {

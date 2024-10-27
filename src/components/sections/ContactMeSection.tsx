@@ -20,27 +20,14 @@ export default function ContactMeSection() {
   );
 }
 
-const AvailabilityItem = ({ type, availability }: AvailabilityItemProps) => {
-  return (
-    <li className="rounded-lg border-y border-l border-stone-800  text-stone-400">
-      <div className="flex flex-col gap-4 rounded-lg bg-gradient-to-t from-stone-800 to-stone-950 to-40% px-5 py-3 text-center">
-        <span className="text-sm">{type}</span>
-        <span className="text-sm font-bold uppercase text-orange-500">
-          {availability}
-        </span>
-      </div>
-    </li>
-  );
-};
-
 const AvailabilityList = () => {
   const { availabilityList } = availabilityData;
   return (
-    <div className="rounded-3xl border-2 border-stone-800 bg-gradient-to-b from-stone-900/50 to-40% p-4 lg:p-8">
-      <h3 className="mb-4 text-center text-sm font-bold uppercase text-stone-300">
+    <div className="rounded-3xl border-2 border-stone-800 bg-gradient-to-b from-stone-900/50 to-40% p-2 lg:p-4">
+      <h3 className="mb-4 text-center font-bold uppercase text-stone-300">
         Availability
       </h3>
-      <ul className="grid gap-6 md:grid-cols-2">
+      <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {availabilityList.map(({ type, availability }, index) => (
           <AvailabilityItem
             key={index}
@@ -50,6 +37,19 @@ const AvailabilityList = () => {
         ))}
       </ul>
     </div>
+  );
+};
+
+const AvailabilityItem = ({ type, availability }: AvailabilityItemProps) => {
+  return (
+    <li className="rounded-lg border-y border-l border-stone-800  text-stone-400">
+      <div className="flex flex-col gap-4 rounded-lg bg-gradient-to-t from-stone-800 to-stone-900 to-40% px-6 py-2 text-center text-sm">
+        <span>{type}</span>
+        <span className="font-bold uppercase text-orange-500">
+          {availability}
+        </span>
+      </div>
+    </li>
   );
 };
 

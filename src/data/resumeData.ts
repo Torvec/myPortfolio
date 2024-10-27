@@ -52,7 +52,7 @@ export const experience = [
     type: "experience",
     startDate: "05.2005",
     endDate: "12.2010",
-    logo: "resume/ev_old_logo.png",
+    logo: "resume/logo.png",
     company: "Freelance",
     jobTitle: "Front-End Web Developer",
     location: "Atlanta Metro Area, GA",
