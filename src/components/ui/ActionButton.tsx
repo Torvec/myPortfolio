@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 type ActionButtonProps = {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline" | "disabled" | "link" | "icon";
+  variant?: "primary" | "secondary" | "outline";
   className?: string;
   disabled?: boolean;
   type: "button" | "submit" | "reset";
@@ -28,13 +28,9 @@ export default function ActionButton({
           primary:
             "bg-gradient-to-t from-orange-500 to-orange-700 hover:bg-gradient-to-b text-stone-200 hover:text-stone-50 border border-orange-400 hover:border-orange-300",
           secondary:
-            "bg-gradient-to-b from-stone-600 to-stone-800 text-orange-600 border border-stone-700 hover:bg-gradient-to-t hover:border-stone-600 hover:text-white",
+            "bg-gradient-to-b from-stone-600 to-stone-800 text-orange-600 border border-stone-700 hover:bg-gradient-to-t hover:border-stone-600 hover:text-stone-50",
           outline:
             "text-stone-200 border border-stone-700 hover:border-orange-500 hover:text-orange-500",
-          disabled:
-            "bg-stone-900 text-stone-500 cursor-not-allowed active:scale-100",
-          link: "text-orange-600 hover:text-stone-200 w-max font-bold mx-auto",
-          icon: "w-max h-max aspect-square text-white border border-white rounded-full",
         },
       },
     },
@@ -58,7 +54,14 @@ export default function ActionButton({
         rel="noopener noreferrer"
         className="block"
       >
-        {Button}
+        <button
+          {...props}
+          className={cn(buttonVariants({ variant }), className)}
+          type={type}
+          disabled={disabled}
+        >
+          {children}
+        </button>
       </a>
     ) : (
       Button

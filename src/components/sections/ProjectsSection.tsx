@@ -139,8 +139,8 @@ const InfoContainer = ({
         <h3 className="mb-4 text-2xl font-bold text-stone-200 md:text-4xl">
           {projectName}
         </h3>
-        <div>
-          <p className="mb-4 text-base text-stone-400">{description}</p>
+        <div className="text-stone-400">
+          <p className="mb-4 text-base">{description}</p>
           <TechStackList list={techStack} />
         </div>
       </div>
@@ -164,7 +164,7 @@ const InfoContainer = ({
 
 const TechStackItem = ({ item }: TechStackItemProps) => {
   return (
-    <li className="rounded-lg border border-stone-800 bg-gradient-to-b from-stone-950 px-4 py-1 text-xs font-light text-stone-400">
+    <li className="rounded-lg border border-stone-800 bg-gradient-to-b from-stone-950 px-4 py-1 text-xs font-light">
       {item}
     </li>
   );
@@ -196,7 +196,7 @@ const ImageContainer = ({
         <img
           src={imgURL}
           alt={projectName}
-          className="aspect-square h-auto max-h-96 min-h-96 w-full rounded-lg border border-stone-700 object-cover object-top md:aspect-auto md:max-h-[768px]"
+          className="aspect-square h-auto max-h-96 min-h-96 w-full rounded-lg border border-stone-800 object-cover object-top md:aspect-auto md:max-h-[768px]"
         />
       </div>
     </div>

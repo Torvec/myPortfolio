@@ -18,7 +18,7 @@ type ResumeItemProps = {
   details: string;
 };
 
-type ResumeListProps = {
+type ResumeItemListProps = {
   list: ResumeItemProps[];
   type?: string;
 };
@@ -31,15 +31,15 @@ export default function ResumeSection() {
         title="My Professional and Academic Journey"
       />
       <div className="flex flex-col gap-8 pb-32 md:flex-row">
-        <ResumeList list={experience} />
-        <ResumeList list={education} type="education" />
+        <ResumeItemList list={experience} />
+        <ResumeItemList list={education} type="education" />
       </div>
       <Download />
     </Container>
   );
 }
 
-const ResumeList = ({ list, type }: ResumeListProps) => {
+const ResumeItemList = ({ list, type }: ResumeItemListProps) => {
   return (
     <div
       className={`space-y-8 md:w-1/2 ${type === "education" ? "md:translate-y-24" : ""}`}
@@ -59,7 +59,7 @@ const ResumeList = ({ list, type }: ResumeListProps) => {
         }: ResumeItemProps) => (
           <div
             key={id}
-            className="rounded-lg bg-gradient-to-b from-stone-800/70 to-stone-950 to-80% p-1"
+            className="rounded-lg bg-gradient-to-b from-stone-800 to-stone-950 to-80% p-1"
           >
             <ResumeItem
               startDate={startDate}
@@ -91,7 +91,7 @@ const ResumeItem = ({
   details,
 }: ResumeItemProps) => {
   return (
-    <div className="rounded-lg bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-stone-900 to-stone-950 to-50% p-4 md:p-8">
+    <div className="rounded-lg bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-stone-900 to-stone-950 to-50% p-4 text-stone-400 md:p-8">
       <div className="flex flex-col gap-6 md:flex-row md:items-center">
         <div className="grid size-12 flex-shrink-0 place-content-center rounded-full bg-[radial-gradient(circle_at_center_center,_var(--tw-gradient-stops))] from-stone-900 from-20% via-stone-900 via-90% to-stone-950 md:size-20">
           <img
@@ -101,7 +101,7 @@ const ResumeItem = ({
           />
         </div>
         <div className="w-full">
-          <div className="flex gap-2 text-sm font-medium uppercase text-stone-400">
+          <div className="flex gap-2 text-sm font-medium uppercase">
             <span>{endDate}</span>
             <span className="material-symbols-sharp">arrow_right</span>
             <span>{startDate}</span>
@@ -109,15 +109,13 @@ const ResumeItem = ({
           <h3 className="text-pretty text-lg font-extrabold text-stone-300">
             {jobTitle || program}
           </h3>
-          <div className="flex flex-col md:justify-between lg:flex-row">
-            <h4 className="text-sm font-light text-stone-400">
-              {company || institution}
-            </h4>
-            <h5 className="text-sm font-light text-stone-400">{location}</h5>
+          <div className="flex flex-col text-sm font-light md:justify-between lg:flex-row">
+            <h4>{company || institution}</h4>
+            <h5>{location}</h5>
           </div>
         </div>
       </div>
-      <p className="text-pretty pt-4 text-sm font-light leading-relaxed text-stone-400">
+      <p className="text-pretty pt-4 text-sm font-light leading-relaxed">
         {details}
       </p>
     </div>

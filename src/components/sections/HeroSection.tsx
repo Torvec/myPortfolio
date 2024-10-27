@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden border-b border-stone-700"
+      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden border-b border-stone-800"
     >
       <RadarScanner />
       <HeroHeader />
@@ -16,7 +16,7 @@ const HeroHeader = () => {
   return (
     <div className="z-30 text-center md:space-y-4">
       <h1 className="p-4 font-black md:p-0">
-        <span className="bg-gradient-to-br from-stone-200 to-stone-500 bg-clip-text text-4xl text-transparent md:text-7xl lg:text-8xl">
+        <span className="bg-gradient-to-br from-stone-200 to-stone-600 bg-clip-text text-4xl text-transparent md:text-7xl lg:text-8xl">
           Hey! I'm{" "}
         </span>
         <span className="bg-gradient-to-br from-orange-500 to-orange-700 bg-clip-text text-4xl uppercase text-transparent md:text-7xl lg:text-8xl">
@@ -26,7 +26,7 @@ const HeroHeader = () => {
           Vonschondorf
         </span>
       </h1>
-      <h2 className="mx-auto max-w-[45ch] text-pretty px-2 text-base text-stone-300 md:px-0 md:text-2xl">
+      <h2 className="mx-auto max-w-[45ch] text-pretty px-2 text-base text-stone-400 md:px-0 md:text-2xl">
         A Full Stack Web Developer with a technician's eye, and a passion for
         troubleshooting, creating, and collaborating.
       </h2>

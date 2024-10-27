@@ -1,11 +1,6 @@
 import { useState } from "react";
 import DropDownMenu from "./DropDownMenu";
 
-interface OpenMenuButtonProps {
-  toggleMenu: () => void;
-  menuOpen: boolean;
-}
-
 export default function Navigation() {
   const sectionNames = ["About", "Projects", "Resume", "Contact"];
 
@@ -38,7 +33,13 @@ export default function Navigation() {
   );
 }
 
-const OpenMenuButton = ({ toggleMenu, menuOpen }: OpenMenuButtonProps) => {
+const OpenMenuButton = ({
+  toggleMenu,
+  menuOpen,
+}: {
+  toggleMenu: () => void;
+  menuOpen: boolean;
+}) => {
   return (
     <button
       onClick={toggleMenu}
