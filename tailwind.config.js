@@ -10,7 +10,6 @@ export default {
       white: colors.white,
       stone: colors.stone,
       orange: colors.orange,
-      amber: colors.amber,
     },
     screens: {
       sm: "640px",
@@ -22,9 +21,6 @@ export default {
       sans: ["Inter", "sans-serif"],
     },
     extend: {
-      // colors: {
-      //   color1: "rgba(var(--color1)",
-      // },
       backgroundImage: {
         "hero-pattern": 'url("/hero/bg_grid_64x64.png")',
       },

@@ -26,9 +26,9 @@ export default function ActionButton({
       variants: {
         variant: {
           primary:
-            "bg-gradient-to-t from-orange-500 to-orange-700 hover:bg-gradient-to-b text-stone-200 hover:text-stone-50 border border-orange-400 hover:border-orange-300",
+            "bg-gradient-to-t from-orange-500 to-orange-700 hover:bg-gradient-to-b text-orange-100 hover:text-orange-50 border border-orange-400 hover:border-orange-300",
           secondary:
-            "bg-gradient-to-b from-stone-600 to-stone-800 text-orange-600 border border-stone-700 hover:bg-gradient-to-t hover:border-stone-600 hover:text-stone-50",
+            "bg-gradient-to-b from-stone-300 to-stone-500 text-stone-800 border border-stone-300 hover:bg-gradient-to-t hover:border-stone-200 hover:text-stone-50",
           outline:
             "text-stone-200 border border-stone-700 hover:border-orange-500 hover:text-orange-500",
         },

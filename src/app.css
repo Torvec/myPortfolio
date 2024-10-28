@@ -2,38 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .lightTheme {
-  --primary: 0, 0, 0;
-  --primary-accent: 10, 10, 10;
-  --secondary: 255, 255, 255;
-  --secondary-accent: 245, 245, 245;
-  --tertiary: 100, 100, 100;
-  --tertiary-accent: 90, 90, 90;
-  --background: 255, 255, 255;
-  --background-accent: 245, 245, 245;
-  --text-primary: 0, 0, 0;
-  --text-secondary: 100, 100, 100;
-  --text-tertiary: 150, 150, 150;
-  --border: 200, 200, 200;
-  --border-accent: 180, 180, 180;
-} */
-
-/* .darkTheme {
-  --primary: 0, 0, 0;
-  --primary-accent: 10, 10, 10;
-  --secondary: 255, 255, 255;
-  --secondary-accent: 245, 245, 245;
-  --tertiary: 100, 100, 100;
-  --tertiary-accent: 90, 90, 90;
-  --background: 255, 255, 255;
-  --background-accent: 245, 245, 245;
-  --text-primary: 0, 0, 0;
-  --text-secondary: 100, 100, 100;
-  --text-tertiary: 150, 150, 150;
-  --border: 200, 200, 200;
-  --border-accent: 180, 180, 180;
-} */
-
 .material-symbols-sharp {
   font-variation-settings:
     "FILL" 0,
