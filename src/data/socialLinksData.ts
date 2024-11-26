@@ -10,6 +10,16 @@ export const socialLinksData = [
     label: "GitHub",
   },
   {
+    href: "https://bsky.app/profile/edward-vonschondorf.dev",
+    logo: "about/bluesky_logo.png",
+    label: "BlueSky",
+  },
+  {
+    href: "https://mastodon.social/@edvonschondorf",
+    logo: "about/mastodon_logo.png",
+    label: "Mastodon",
+  },
+  {
     href: "https://dev.to/torvec",
     logo: "about/devto_logo.png",
     label: "Dev.to",
