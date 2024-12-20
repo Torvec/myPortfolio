@@ -56,38 +56,41 @@ export default function ProjectsSection() {
 const ProjectCardList = () => {
   return (
     <>
-      {projectsData.map(
-        ({
-          id,
-          imgURL,
-          projectName,
-          repositoryURL,
-          deploymentURL,
-          description,
-          techStack,
-        }) => (
-          <ProjectCard
-            key={id}
-            translateImg={
-              id % 2 !== 0 ? "lg:translate-x-16" : "lg:-translate-x-16"
-            }
-            translateShadow={
-              id % 2 !== 0 ? "lg:-translate-x-8" : "lg:translate-x-8"
-            }
-            columnOrderStyles={
-              id % 2 !== 0
-                ? "lg:flex-row lg:pl-8 lg:bg-gradient-to-tl"
-                : "lg:flex-row-reverse lg:pr-8 lg:bg-gradient-to-tr lg:translate-x-16"
-            }
-            imgURL={imgURL}
-            projectName={projectName}
-            repositoryURL={repositoryURL}
-            deploymentURL={deploymentURL}
-            description={description}
-            techStack={techStack}
-          />
-        ),
-      )}
+      {projectsData
+        .slice()
+        .reverse()
+        .map(
+          ({
+            id,
+            imgURL,
+            projectName,
+            repositoryURL,
+            deploymentURL,
+            description,
+            techStack,
+          }) => (
+            <ProjectCard
+              key={id}
+              translateImg={
+                id % 2 !== 0 ? "lg:translate-x-16" : "lg:-translate-x-16"
+              }
+              translateShadow={
+                id % 2 !== 0 ? "lg:-translate-x-8" : "lg:translate-x-8"
+              }
+              columnOrderStyles={
+                id % 2 !== 0
+                  ? "lg:flex-row lg:pl-8 lg:bg-gradient-to-tl"
+                  : "lg:flex-row-reverse lg:pr-8 lg:bg-gradient-to-tr lg:translate-x-16"
+              }
+              imgURL={imgURL}
+              projectName={projectName}
+              repositoryURL={repositoryURL}
+              deploymentURL={deploymentURL}
+              description={description}
+              techStack={techStack}
+            />
+          ),
+        )}
     </>
   );
 };

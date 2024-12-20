@@ -119,4 +119,14 @@ export const projectsData = [
       "A vanilla JavaScript game using the canvas element to play the ultimate version of tic tac toe.",
     techStack: ["HTML", "CSS", "JavaScript"],
   },
+  {
+    id: 9,
+    projectName: "Next Level Loot",
+    imgURL: "projects/next_level_loot.jpg",
+    repositoryURL: "https://github.com/Torvec/next-level-loot",
+    deploymentURL: "https://next-level-loot.vercel.app/",
+    description:
+      "A Next.js app that aggregates and displays video game related data from multiple third party API's and allows users to search for deals, giveaways, and games with ease as well as save their favorite games to a wishlist. TLDR; It's Loot Vault 2.0.",
+    techStack: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "TypeScript"],
+  },
 ];
