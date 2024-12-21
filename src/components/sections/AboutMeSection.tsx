@@ -55,7 +55,7 @@ const IntroProfilePic = () => {
         aria-hidden="true"
       />
       <img
-        src="about/me2.jpg"
+        src="about/me3.jpg"
         alt="Me in front of the Unicorn Gundam in Tokyo, Japan"
         className="relative z-10 size-full rounded-lg object-cover lg:size-96"
       />
