@@ -130,7 +130,7 @@ const Download = () => {
         <ActionButton
           variant="primary"
           type="button"
-          href="resume/edward_vonschondorf_resume_v121924.docx"
+          href="resume/edward_vonschondorf_resume_v122324.docx"
         >
           DOC Format
           <FileDown />
@@ -138,14 +138,14 @@ const Download = () => {
         <ActionButton
           variant="secondary"
           type="button"
-          href="resume/edward_vonschondorf_resume_v121924.pdf"
+          href="resume/edward_vonschondorf_resume_v122324.pdf"
         >
           PDF Format
           <FileDown />
         </ActionButton>
       </div>
       <p className="p-8 text-center text-sm text-stone-400">
-        Last Updated: 19 Dec 2024
+        Last Updated: 23 Dec 2024
       </p>
     </div>
   );
