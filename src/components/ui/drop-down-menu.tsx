@@ -85,7 +85,7 @@ const CloseMenuButton = ({ togglemenu }: { togglemenu: () => void }) => {
       className="mr-3 xl:mr-0"
       aria-label="Close Menu"
     >
-      <img src="nav/menuClose.svg" alt="Close Menu" />
+      <img src="nav/menu-close.svg" alt="Close Menu" />
     </button>
   );
 };

@@ -1,8 +1,8 @@
-import Container from "../ui/Container";
-import SectionHeader from "../ui/SectionHeader";
-import ActionButton from "../ui/ActionButton";
-import ActionHeader from "../ui/ActionHeader";
-import { education, experience } from "../../data/resumeData";
+import Container from "../components/ui/container";
+import SectionHeader from "../components/ui/section-header";
+import ActionButton from "../components/ui/action-button";
+import ActionHeader from "../components/ui/action-header";
+import { education, experience } from "../data/resume-data";
 import { FileDown } from "lucide-react";
 
 type ResumeItemProps = {
@@ -123,6 +123,13 @@ const ResumeItem = ({
 };
 
 const Download = () => {
+  const date = new Date(2024, 11, 27);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <div className="flex flex-col justify-center border-b border-stone-800 pb-32">
       <ActionHeader>Download my full resume:</ActionHeader>
@@ -130,7 +137,7 @@ const Download = () => {
         <ActionButton
           variant="primary"
           type="button"
-          href="resume/edward_vonschondorf_resume_v122324.docx"
+          href="resume/edward-vonschondorf-resume-v122724.docx"
         >
           DOC Format
           <FileDown />
@@ -138,14 +145,14 @@ const Download = () => {
         <ActionButton
           variant="secondary"
           type="button"
-          href="resume/edward_vonschondorf_resume_v122324.pdf"
+          href="resume/edward-vonschondorf-resume-v122724.pdf"
         >
           PDF Format
           <FileDown />
         </ActionButton>
       </div>
       <p className="p-8 text-center text-sm text-stone-400">
-        Last Updated: 23 Dec 2024
+        Last Updated: <time dateTime={"2024-12-27"}>{formattedDate}</time>
       </p>
     </div>
   );

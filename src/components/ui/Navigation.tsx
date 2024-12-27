@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DropDownMenu from "./DropDownMenu";
+import DropDownMenu from "./drop-down-menu";
 
 export default function Navigation() {
   const sectionNames = ["About", "Projects", "Resume", "Contact"];
@@ -46,7 +46,7 @@ const OpenMenuButton = ({
       className={`${menuOpen ? "hidden" : ""} mr-3 xl:mr-0`}
       aria-label="Open Menu"
     >
-      <img src="nav/menuOpen.svg" alt="Open Menu" />
+      <img src="nav/menu-open.svg" alt="Open Menu" />
     </button>
   );
 };

@@ -1,6 +1,6 @@
-import Container from "../ui/Container";
-import SectionHeader from "../ui/SectionHeader";
-import { availabilityData } from "../../data/contactMeData";
+import Container from "../components/ui/container";
+import SectionHeader from "../components/ui/section-header";
+import { availabilityData } from "../data/contact-me-data";
 import { Mail } from "lucide-react";
 
 type AvailabilityItemProps = {

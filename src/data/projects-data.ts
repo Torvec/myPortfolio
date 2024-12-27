@@ -2,7 +2,7 @@ export const projectsData = [
   {
     id: 1,
     projectName: "Loot Vault",
-    imgURL: "projects/loot_vault.jpg",
+    imgURL: "projects/loot-vault.jpg",
     repositoryURL: "https://github.com/Torvec/Loot-Vault",
     deploymentURL: "https://torvec.github.io/Loot-Vault/",
     description:
@@ -12,7 +12,7 @@ export const projectsData = [
   {
     id: 2,
     projectName: "MVC Tech Blog",
-    imgURL: "projects/mvc_tech_blog.jpg",
+    imgURL: "projects/mvc-tech-blog.jpg",
     repositoryURL:
       "https://github.com/Torvec/bootcamp-challenges/tree/main/m14_mvc_tech_blog",
     deploymentURL: "https://obscure-badlands-14784-588733df30d2.herokuapp.com/",
@@ -31,7 +31,7 @@ export const projectsData = [
   {
     id: 3,
     projectName: "Task Titan",
-    imgURL: "projects/task_titan.jpg",
+    imgURL: "projects/task-titan.jpg",
     repositoryURL: "https://github.com/Torvec/Task-Titan",
     deploymentURL: "https://task-titan-bec51c55ebe5.herokuapp.com/",
     description:
@@ -68,7 +68,7 @@ export const projectsData = [
   {
     id: 5,
     projectName: "Bootcamp Challenges",
-    imgURL: "projects/ucb_bootcamp_challenges.jpg",
+    imgURL: "projects/ucb-bootcamp-challenges.jpg",
     repositoryURL: "https://github.com/Torvec/bootcamp-challenges",
     deploymentURL: "https://bootcamp-challenges.pages.dev/",
     description:
@@ -92,7 +92,7 @@ export const projectsData = [
   {
     id: 6,
     projectName: "The Running Dog",
-    imgURL: "projects/the_running_dog.jpg",
+    imgURL: "projects/the-running-dog.jpg",
     repositoryURL: "https://github.com/Torvec/dog-runner-game",
     deploymentURL: "https://dog-runner-game.pages.dev/",
     description:
@@ -102,7 +102,7 @@ export const projectsData = [
   {
     id: 7,
     projectName: "Tic Tac Toe Classic",
-    imgURL: "projects/tic_tac_toe_classic.jpg",
+    imgURL: "projects/tic-tac-toe-classic.jpg",
     repositoryURL: "https://github.com/Torvec/tic-tac-toe-classic",
     deploymentURL: "https://tic-tac-toe-classic.pages.dev/",
     description:
@@ -112,7 +112,7 @@ export const projectsData = [
   {
     id: 8,
     projectName: "Tic Tac Toe Ultimate",
-    imgURL: "projects/tic_tac_toe_ultimate.jpg",
+    imgURL: "projects/tic-tac-toe-ultimate.jpg",
     repositoryURL: "https://github.com/Torvec/tic-tac-toe-ultimate",
     deploymentURL: "https://tic-tac-toe-ultimate.pages.dev/",
     description:
@@ -122,11 +122,21 @@ export const projectsData = [
   {
     id: 9,
     projectName: "Next Level Loot",
-    imgURL: "projects/next_level_loot.jpg",
+    imgURL: "projects/next-level-loot.jpg",
     repositoryURL: "https://github.com/Torvec/next-level-loot",
     deploymentURL: "https://next-level-loot.vercel.app/",
     description:
       "A Next.js app that aggregates and displays video game related data from multiple third party API's and allows users to search for deals, giveaways, and games with ease as well as save their favorite games to a wishlist. TLDR; It's Loot Vault 2.0.",
     techStack: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "TypeScript"],
+  },
+  {
+    id: 10,
+    projectName: "My Blog",
+    imgURL: "projects/my-blog.jpg",
+    repositoryURL: "https://github.com/Torvec/blog",
+    deploymentURL: "https://blog.edward-vonschondorf.dev/",
+    description:
+      "A minimalistic, statically generated blog about my work and the journey it took to create it.",
+    techStack: ["Astro", "Vue", "Tailwind CSS", "TypeScript"],
   },
 ];

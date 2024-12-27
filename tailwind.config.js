@@ -22,7 +22,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        "hero-pattern": 'url("/hero/bg_grid_64x64.png")',
+        "hero-pattern": 'url("/hero/bg-grid-64x64.png")',
       },
     },
   },

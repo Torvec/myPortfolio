@@ -1,8 +1,8 @@
-import Container from "../ui/Container";
-import SectionHeader from "../ui/SectionHeader";
-import ActionButton from "../ui/ActionButton";
-import ActionHeader from "../ui/ActionHeader";
-import { projectsData } from "../../data/projectsData";
+import Container from "../components/ui/container";
+import SectionHeader from "../components/ui/section-header";
+import ActionButton from "../components/ui/action-button";
+import ActionHeader from "../components/ui/action-header";
+import { projectsData } from "../data/projects-data";
 import { ExternalLink, Github, SquareArrowOutUpRight } from "lucide-react";
 
 type TechStackItemProps = {
