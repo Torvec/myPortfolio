@@ -20,11 +20,6 @@ const socialLinks = [
     label: "Mastodon",
   },
   {
-    href: "https://dev.to/torvec",
-    logo: "about/devto.png",
-    label: "Dev.to",
-  },
-  {
     href: "https://www.youtube.com/@edward-vonschondorf-dev",
     logo: "about/youtube.png",
     label: "YouTube",
